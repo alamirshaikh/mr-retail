@@ -655,14 +655,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Mr.Retail.exe" size="3102728">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Mr.Retail.exe" size="3101704">
       <assemblyIdentity name="Mr.Retail" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>fAd25n1cBrnYBeQXefYwWAD/rp2Ud6KYsUh5ap6GIRY=</dsig:DigestValue>
+        <dsig:DigestValue>l5Y5USZ3QwiNdQjUDpoyLlKLGZtYgpbLFJFzcdRIFF0=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

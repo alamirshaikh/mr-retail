@@ -44,7 +44,7 @@ namespace CrystalReport.Components
 
 
 
-                     sql = $"select cust_name,cust_phone,cust_addres,pcity,cust_date,Balance from Customer";
+                     sql = $"select cust_name,cust_phone,cust_addres,pcity,cust_date,Balance from Customer where Balance <0 ";
                     List<dynamic> bal = MainEngine_.GetDataScript<dynamic>(sql).ToList();
 
                     dataGridView1.Rows.Clear();

@@ -952,6 +952,10 @@ namespace CrystalReport.Components
 
                     DialogResult result = MessageBox.Show("If you wan to Print ?","Print ?",MessageBoxButtons.YesNo,MessageBoxIcon.Question);
 
+                    comboBox1.SelectedIndex = 0;
+                    comboBox2.SelectedIndex = 0;
+                    onlinep.Text = "0";
+                    paid.Text = "0";
                     if (result == DialogResult.Yes)
                     {
 

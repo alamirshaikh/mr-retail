@@ -29,6 +29,9 @@ namespace CrystalReport.Components
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -45,14 +48,7 @@ namespace CrystalReport.Components
             this.label3 = new System.Windows.Forms.Label();
             this.city = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
-           // this.sqlDataAdapter1 = new Microsoft.Data.SqlClient.SqlDataAdapter();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.custname = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cust_p = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cust_add = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.citys = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dat_c = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bcs = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button2 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel20 = new System.Windows.Forms.Panel();
@@ -66,6 +62,12 @@ namespace CrystalReport.Components
             this.panel12 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.custname = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cust_p = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cust_add = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.citys = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dat_c = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bcs = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -104,7 +106,7 @@ namespace CrystalReport.Components
             // 
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.panel2.BackColor = System.Drawing.SystemColors.Control;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.checkBox2);
             this.panel2.Controls.Add(this.button1);
@@ -123,21 +125,22 @@ namespace CrystalReport.Components
             // checkBox2
             // 
             this.checkBox2.AutoSize = true;
+            this.checkBox2.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkBox2.Location = new System.Drawing.Point(552, 87);
             this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(59, 17);
+            this.checkBox2.Size = new System.Drawing.Size(61, 17);
             this.checkBox2.TabIndex = 10;
             this.checkBox2.Text = "is Date";
             this.checkBox2.UseVisualStyleBackColor = true;
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.FloralWhite;
+            this.button1.BackColor = System.Drawing.Color.Gold;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(371, 63);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 26);
+            this.button1.Size = new System.Drawing.Size(75, 28);
             this.button1.TabIndex = 9;
             this.button1.Text = "Show";
             this.button1.UseVisualStyleBackColor = false;
@@ -146,9 +149,10 @@ namespace CrystalReport.Components
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(555, 8);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(92, 13);
+            this.label4.Size = new System.Drawing.Size(97, 13);
             this.label4.TabIndex = 0;
             this.label4.Text = "Date Wise Report";
             // 
@@ -170,7 +174,7 @@ namespace CrystalReport.Components
             // 
             this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(36, 32);
+            this.dateTimePicker1.Location = new System.Drawing.Point(37, 32);
             this.dateTimePicker1.MinDate = new System.DateTime(1800, 12, 31, 0, 0, 0, 0);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(149, 24);
@@ -191,7 +195,9 @@ namespace CrystalReport.Components
             this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(189, 38);
+            this.label6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label6.ForeColor = System.Drawing.Color.DarkBlue;
+            this.label6.Location = new System.Drawing.Point(190, 38);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(23, 13);
             this.label6.TabIndex = 10;
@@ -202,18 +208,23 @@ namespace CrystalReport.Components
             this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(2, 37);
+            this.label5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label5.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.DarkBlue;
+            this.label5.Location = new System.Drawing.Point(1, 37);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(36, 13);
+            this.label5.Size = new System.Drawing.Size(39, 13);
             this.label5.TabIndex = 9;
             this.label5.Text = "From :";
             // 
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
+            this.checkBox1.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox1.ForeColor = System.Drawing.Color.Crimson;
             this.checkBox1.Location = new System.Drawing.Point(371, 25);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(89, 17);
+            this.checkBox1.Size = new System.Drawing.Size(96, 17);
             this.checkBox1.TabIndex = 7;
             this.checkBox1.Text = "All Customers";
             this.checkBox1.UseVisualStyleBackColor = true;
@@ -234,10 +245,10 @@ namespace CrystalReport.Components
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(3, 68);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(32, 15);
+            this.label3.Size = new System.Drawing.Size(30, 13);
             this.label3.TabIndex = 1;
             this.label3.Text = "Area";
             // 
@@ -256,22 +267,34 @@ namespace CrystalReport.Components
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(4, 22);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(29, 15);
+            this.label2.Size = new System.Drawing.Size(30, 13);
             this.label2.TabIndex = 0;
             this.label2.Text = "City:";
             // 
             // dataGridView1
             // 
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Yu Gothic UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dataGridView1.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
             this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Yu Gothic UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.ColumnHeadersHeight = 40;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.custname,
@@ -280,47 +303,19 @@ namespace CrystalReport.Components
             this.citys,
             this.dat_c,
             this.bcs});
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.AliceBlue;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Yu Gothic UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.Location = new System.Drawing.Point(3, 167);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 72;
             this.dataGridView1.Size = new System.Drawing.Size(946, 448);
             this.dataGridView1.TabIndex = 5;
-            // 
-            // custname
-            // 
-            this.custname.HeaderText = "Cust Name";
-            this.custname.MinimumWidth = 9;
-            this.custname.Name = "custname";
-            // 
-            // cust_p
-            // 
-            this.cust_p.HeaderText = "Cust Phone";
-            this.cust_p.MinimumWidth = 9;
-            this.cust_p.Name = "cust_p";
-            // 
-            // cust_add
-            // 
-            this.cust_add.HeaderText = "Cust_Address";
-            this.cust_add.MinimumWidth = 9;
-            this.cust_add.Name = "cust_add";
-            // 
-            // citys
-            // 
-            this.citys.HeaderText = "City";
-            this.citys.MinimumWidth = 9;
-            this.citys.Name = "citys";
-            // 
-            // dat_c
-            // 
-            this.dat_c.HeaderText = "Date";
-            this.dat_c.MinimumWidth = 9;
-            this.dat_c.Name = "dat_c";
-            // 
-            // bcs
-            // 
-            this.bcs.HeaderText = "Balance";
-            this.bcs.MinimumWidth = 9;
-            this.bcs.Name = "bcs";
             // 
             // button2
             // 
@@ -479,6 +474,48 @@ namespace CrystalReport.Components
             this.panel5.Size = new System.Drawing.Size(941, 86);
             this.panel5.TabIndex = 122216;
             // 
+            // custname
+            // 
+            this.custname.FillWeight = 121.8274F;
+            this.custname.HeaderText = "Cust Name";
+            this.custname.MinimumWidth = 9;
+            this.custname.Name = "custname";
+            // 
+            // cust_p
+            // 
+            this.cust_p.FillWeight = 95.6345F;
+            this.cust_p.HeaderText = "Cust Phone";
+            this.cust_p.MinimumWidth = 9;
+            this.cust_p.Name = "cust_p";
+            // 
+            // cust_add
+            // 
+            this.cust_add.FillWeight = 95.6345F;
+            this.cust_add.HeaderText = "Cust_Address";
+            this.cust_add.MinimumWidth = 9;
+            this.cust_add.Name = "cust_add";
+            // 
+            // citys
+            // 
+            this.citys.FillWeight = 95.6345F;
+            this.citys.HeaderText = "City";
+            this.citys.MinimumWidth = 9;
+            this.citys.Name = "citys";
+            // 
+            // dat_c
+            // 
+            this.dat_c.FillWeight = 95.6345F;
+            this.dat_c.HeaderText = "Date";
+            this.dat_c.MinimumWidth = 9;
+            this.dat_c.Name = "dat_c";
+            // 
+            // bcs
+            // 
+            this.bcs.FillWeight = 95.6345F;
+            this.bcs.HeaderText = "Balance";
+            this.bcs.MinimumWidth = 9;
+            this.bcs.Name = "bcs";
+            // 
             // LoadRotray
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -530,12 +567,6 @@ namespace CrystalReport.Components
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn custname;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cust_p;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cust_add;
-        private System.Windows.Forms.DataGridViewTextBoxColumn citys;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dat_c;
-        private System.Windows.Forms.DataGridViewTextBoxColumn bcs;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel20;
@@ -551,5 +582,11 @@ namespace CrystalReport.Components
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn custname;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cust_p;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cust_add;
+        private System.Windows.Forms.DataGridViewTextBoxColumn citys;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dat_c;
+        private System.Windows.Forms.DataGridViewTextBoxColumn bcs;
     }
 }
