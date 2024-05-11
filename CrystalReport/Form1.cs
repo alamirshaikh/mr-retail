@@ -561,5 +561,28 @@ namespace CrystalReport
 
             }
         }
+
+        private void panel1_MouseHover(object sender, EventArgs e)
+        {
+            try
+            {
+                // Check if the control that triggered the event is a label
+                if (sender is Label)
+                {
+                    // Change the mouse cursor to a hand pointer
+                    Cursor = Cursors.Hand;
+                }
+                else
+                {
+                    // Change the mouse cursor to the default pointer
+                    Cursor = Cursors.Default;
+                }
+            }
+            catch (Exception ex)
+            {
+                // Handle any exceptions here
+                Console.WriteLine("Error: " + ex.Message);
+            }
+        }
     }
 }
