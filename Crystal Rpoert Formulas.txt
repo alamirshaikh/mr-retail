@@ -1,0 +1,11 @@
+--Sales Report---
+SELECT SUBSTRING((CONVERT(VARCHAR(11),T0.DOCDATE,106)),4,11), 
+Sum(T1.[Quantity]) 'Quantity', Sum(T1.[LineTotal]) 'Amount',
+(Sum(T1.[LineTotal])/Sum(T1.[Quantity])) 'Rate', T2.SlpName 
+ FROM OINV T0  INNER JOIN INV1 T1 ON T0.DocEntry = T1.DocEntry 
+LEFT Outer Join OSLP T2 On T0.SlpCode=T1.SlpCode
+Group By SUBSTRING((CONVERT(VARCHAR(11),T0.DOCDATE,106)),4,11), 
+T2.SlpName 
+Order By SUBSTRING((CONVERT(VARCHAR(11),T0.DOCDATE,106)),4,11)
+
+--end--

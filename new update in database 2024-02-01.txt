@@ -1,0 +1,116 @@
+USE [drsale]
+GO
+/****** Object:  StoredProcedure [dbo].[UpdateStock]    Script Date: 2024-01-02 11:03:48 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER procedure [dbo].[UpdateStock]
+@item varchar(120),
+@SALE varchar(120),
+@COST varchar(120),
+@BARCODE  varchar(120),
+@UNIT  varchar(120),
+@STOCK  int,
+@ID int
+as
+begin
+ declare @before int
+
+ select @before =  STOCK from Product_Item where ID = @ID
+
+ SET @before = @before + @STOCK;
+
+ update Product_Item set BARCODE = @BARCODE , UNIT = @UNIT,STOCK = @before , SALE_PRICE = @SALE, COST_PRICE=@COST ,ITEM_NAME = @item where ID = @ID
+
+end
+
+--triger saleafter
+alter TRIGGER trgAfterInsertSInvoice
+ON SInvoice
+AFTER INSERT
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    DECLARE @billDesc VARCHAR(120);
+	declare @totalqt int;
+    declare @place varchar(120);
+	INSERT INTO Transactions (AccountID, Amount, Type, Date_, Description,REFRANCE_ID)
+     
+	SELECT 
+        1 AS AccountID, 
+        i.TotalBill AS Amount, 
+        'Saving' AS Type, 
+        i.invdate AS Date_, 
+        CONCAT('Bill For', i.cust_Name) AS Description,
+		(select id from Customer where cust_name = i.cust_name) AS REFRANCE_ID
+
+		
+		 
+    FROM inserted i;
+
+ SELECT @place = (select place from inserted)
+
+
+	select @totalqt = Count(qty) from Sale_Items where Invoice = (select invoiceID from inserted);
+
+	select * from SInvoice
+	
+	UPDATE Customer SET place = @place where cust_name =  (select cust_name from inserted);
+
+	UPDATE SInvoice
+	SET @totalqt = totalQty  where invoiceID = (select invoiceID from inserted);
+
+	update Product_Item 
+	set STOCK = STOCK - @totalqt
+
+    UPDATE Accounts
+    SET Balance = Balance + (SELECT SUM(TotalBill) FROM inserted)
+    WHERE AccountID = 1120; -- Replace with the appropriate AccountID
+
+
+
+	 
+END;
+
+--this for actual update stock problem
+alter TRIGGER UpdateSalesItem
+ON Sale_Items
+AFTER INSERT
+AS
+BEGIN
+    UPDATE Sale_Items
+    SET invdate = GETDATE()
+    FROM Sale_Items si
+    INNER JOIN inserted i ON si.id = i.id;
+
+
+	UPDATE Product_Item
+    SET STOCK = STOCK - (SELECT qty FROM inserted) WHERE  ITEM_NAME = (select description from inserted)
+
+END;
+--update procedure for getlist
+
+
+USE [drsale]
+GO
+/****** Object:  StoredProcedure [dbo].[spGetitem]    Script Date: 2024-01-03 11:35:57 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER procedure [dbo].[spGetitem]
+@ITEM_NAME VARCHAR(120)
+as
+begin
+IF @ITEM_NAME = ''
+BEGIN
+RETURN
+END
+ELSE
+BEGIN
+SELECT * FROM Product_Item WHERE REPLACE(ITEM_NAME, '[^\w\s]', '') LIKE '%' + @ITEM_NAME + '%';
+
+END
+end	
