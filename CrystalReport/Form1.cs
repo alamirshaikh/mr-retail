@@ -487,7 +487,19 @@ namespace CrystalReport
 
         private void gunaButton3_Click(object sender, EventArgs e)
         {
+            try
+            {
 
+                main.Controls.Clear();
+                Backup item = new Backup();
+                item.Dock = DockStyle.Fill;
+                main.Controls.Add(item);
+
+            }
+            catch (Exception ex)
+            {
+                 
+            }
         }
 
         private void gunaButton2_Click(object sender, EventArgs e)

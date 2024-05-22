@@ -32,8 +32,11 @@ namespace CrystalReport.Components
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.label25 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
             this.email = new System.Windows.Forms.TextBox();
             this.label24 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lic = new System.Windows.Forms.TextBox();
             this.label23 = new System.Windows.Forms.Label();
             this.macid = new System.Windows.Forms.TextBox();
@@ -54,15 +57,15 @@ namespace CrystalReport.Components
             this.panel2 = new System.Windows.Forms.Panel();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.label20 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.cgst = new System.Windows.Forms.TextBox();
-            this.sgst = new System.Windows.Forms.TextBox();
-            this.label18 = new System.Windows.Forms.Label();
-            this.gst = new System.Windows.Forms.TextBox();
-            this.typeb = new System.Windows.Forms.ComboBox();
-            this.label17 = new System.Windows.Forms.Label();
-            this.gstin = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.typeb = new System.Windows.Forms.ComboBox();
+            this.gst = new System.Windows.Forms.TextBox();
+            this.cgst = new System.Windows.Forms.TextBox();
+            this.gstin = new System.Windows.Forms.TextBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.sgst = new System.Windows.Forms.TextBox();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
@@ -85,18 +88,15 @@ namespace CrystalReport.Components
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label21 = new System.Windows.Forms.Label();
-            this.label25 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel9.SuspendLayout();
             this.panel7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -154,6 +154,31 @@ namespace CrystalReport.Components
             this.panel3.Size = new System.Drawing.Size(486, 421);
             this.panel3.TabIndex = 9;
             // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.BackColor = System.Drawing.Color.Transparent;
+            this.label25.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.label25.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.label25.Location = new System.Drawing.Point(301, 57);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(73, 19);
+            this.label25.TabIndex = 19;
+            this.label25.Text = "image.png";
+            this.label25.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.BackColor = System.Drawing.Color.Transparent;
+            this.label21.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.label21.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label21.Location = new System.Drawing.Point(8, 40);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(75, 19);
+            this.label21.TabIndex = 11;
+            this.label21.Text = "Shop Logo";
+            // 
             // email
             // 
             this.email.BackColor = System.Drawing.Color.White;
@@ -172,6 +197,18 @@ namespace CrystalReport.Components
             this.label24.Size = new System.Drawing.Size(97, 19);
             this.label24.TabIndex = 9;
             this.label24.Text = "Email Address:";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox1.Location = new System.Drawing.Point(155, 5);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(140, 74);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 18;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // lic
             // 
@@ -419,6 +456,26 @@ namespace CrystalReport.Components
             this.label20.TabIndex = 17;
             this.label20.Text = "CGST %";
             // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.label16.Location = new System.Drawing.Point(7, 5);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(104, 19);
+            this.label16.TabIndex = 8;
+            this.label16.Text = "GSTIN Number:";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.label17.Location = new System.Drawing.Point(4, 45);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(109, 19);
+            this.label17.TabIndex = 10;
+            this.label17.Text = "Type of Business";
+            // 
             // label19
             // 
             this.label19.AutoSize = true;
@@ -428,44 +485,6 @@ namespace CrystalReport.Components
             this.label19.Size = new System.Drawing.Size(55, 19);
             this.label19.TabIndex = 16;
             this.label19.Text = "SGST %";
-            // 
-            // cgst
-            // 
-            this.cgst.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(252)))), ((int)(((byte)(192)))));
-            this.cgst.Font = new System.Drawing.Font("Verdana", 12F);
-            this.cgst.Location = new System.Drawing.Point(632, 39);
-            this.cgst.Name = "cgst";
-            this.cgst.Size = new System.Drawing.Size(103, 27);
-            this.cgst.TabIndex = 18;
-            // 
-            // sgst
-            // 
-            this.sgst.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(252)))), ((int)(((byte)(192)))));
-            this.sgst.Font = new System.Drawing.Font("Verdana", 12F);
-            this.sgst.Location = new System.Drawing.Point(524, 39);
-            this.sgst.Name = "sgst";
-            this.sgst.Size = new System.Drawing.Size(103, 27);
-            this.sgst.TabIndex = 17;
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.label18.Location = new System.Drawing.Point(419, 15);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(48, 19);
-            this.label18.TabIndex = 14;
-            this.label18.Text = "GST %";
-            // 
-            // gst
-            // 
-            this.gst.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(252)))), ((int)(((byte)(192)))));
-            this.gst.Font = new System.Drawing.Font("Verdana", 12F);
-            this.gst.Location = new System.Drawing.Point(416, 39);
-            this.gst.Name = "gst";
-            this.gst.Size = new System.Drawing.Size(103, 27);
-            this.gst.TabIndex = 16;
-            this.gst.TextChanged += new System.EventHandler(this.gst_TextChanged);
             // 
             // typeb
             // 
@@ -522,15 +541,24 @@ namespace CrystalReport.Components
             this.typeb.Size = new System.Drawing.Size(295, 26);
             this.typeb.TabIndex = 15;
             // 
-            // label17
+            // gst
             // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.label17.Location = new System.Drawing.Point(4, 45);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(109, 19);
-            this.label17.TabIndex = 10;
-            this.label17.Text = "Type of Business";
+            this.gst.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(252)))), ((int)(((byte)(192)))));
+            this.gst.Font = new System.Drawing.Font("Verdana", 12F);
+            this.gst.Location = new System.Drawing.Point(416, 39);
+            this.gst.Name = "gst";
+            this.gst.Size = new System.Drawing.Size(103, 27);
+            this.gst.TabIndex = 16;
+            this.gst.TextChanged += new System.EventHandler(this.gst_TextChanged);
+            // 
+            // cgst
+            // 
+            this.cgst.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(252)))), ((int)(((byte)(192)))));
+            this.cgst.Font = new System.Drawing.Font("Verdana", 12F);
+            this.cgst.Location = new System.Drawing.Point(632, 39);
+            this.cgst.Name = "cgst";
+            this.cgst.Size = new System.Drawing.Size(103, 27);
+            this.cgst.TabIndex = 18;
             // 
             // gstin
             // 
@@ -541,15 +569,24 @@ namespace CrystalReport.Components
             this.gstin.Size = new System.Drawing.Size(295, 27);
             this.gstin.TabIndex = 14;
             // 
-            // label16
+            // label18
             // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.label16.Location = new System.Drawing.Point(7, 5);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(104, 19);
-            this.label16.TabIndex = 8;
-            this.label16.Text = "GSTIN Number:";
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.label18.Location = new System.Drawing.Point(419, 15);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(48, 19);
+            this.label18.TabIndex = 14;
+            this.label18.Text = "GST %";
+            // 
+            // sgst
+            // 
+            this.sgst.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(252)))), ((int)(((byte)(192)))));
+            this.sgst.Font = new System.Drawing.Font("Verdana", 12F);
+            this.sgst.Location = new System.Drawing.Point(524, 39);
+            this.sgst.Name = "sgst";
+            this.sgst.Size = new System.Drawing.Size(103, 27);
+            this.sgst.TabIndex = 17;
             // 
             // button4
             // 
@@ -578,11 +615,11 @@ namespace CrystalReport.Components
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.label9.ForeColor = System.Drawing.Color.Cornsilk;
             this.label9.Location = new System.Drawing.Point(3, 6);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(117, 17);
+            this.label9.Size = new System.Drawing.Size(129, 19);
             this.label9.TabIndex = 7;
             this.label9.Text = "Owner Information";
             // 
@@ -759,22 +796,22 @@ namespace CrystalReport.Components
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.label10.ForeColor = System.Drawing.Color.Cornsilk;
             this.label10.Location = new System.Drawing.Point(3, 5);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(78, 17);
+            this.label10.Size = new System.Drawing.Size(86, 19);
             this.label10.TabIndex = 12;
             this.label10.Text = "Bank Details";
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.label11.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.label11.ForeColor = System.Drawing.Color.White;
             this.label11.Location = new System.Drawing.Point(4, 4);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(103, 19);
+            this.label11.Size = new System.Drawing.Size(108, 19);
             this.label11.TabIndex = 13;
             this.label11.Text = "Tax Information";
             // 
@@ -824,7 +861,7 @@ namespace CrystalReport.Components
             // 
             // panel5
             // 
-            this.panel5.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.panel5.BackColor = System.Drawing.Color.DarkSalmon;
             this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel5.Controls.Add(this.label9);
             this.panel5.Location = new System.Drawing.Point(2, 41);
@@ -836,7 +873,7 @@ namespace CrystalReport.Components
             // 
             this.panel9.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel9.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.panel9.BackColor = System.Drawing.Color.DarkSalmon;
             this.panel9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel9.Controls.Add(this.label10);
             this.panel9.Location = new System.Drawing.Point(493, 41);
@@ -848,50 +885,13 @@ namespace CrystalReport.Components
             // 
             this.panel7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel7.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.panel7.BackColor = System.Drawing.Color.DarkSalmon;
             this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel7.Controls.Add(this.label11);
             this.panel7.Location = new System.Drawing.Point(2, 499);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(956, 31);
             this.panel7.TabIndex = 17;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Location = new System.Drawing.Point(155, 5);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(140, 74);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 18;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.BackColor = System.Drawing.Color.Transparent;
-            this.label21.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.label21.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label21.Location = new System.Drawing.Point(8, 40);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(75, 19);
-            this.label21.TabIndex = 11;
-            this.label21.Text = "Shop Logo";
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.BackColor = System.Drawing.Color.Transparent;
-            this.label25.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.label25.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.label25.Location = new System.Drawing.Point(301, 57);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(73, 19);
-            this.label25.TabIndex = 19;
-            this.label25.Text = "image.png";
-            this.label25.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // Company
             // 
@@ -915,6 +915,7 @@ namespace CrystalReport.Components
             this.panel1.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel4.ResumeLayout(false);
@@ -926,7 +927,6 @@ namespace CrystalReport.Components
             this.panel9.PerformLayout();
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

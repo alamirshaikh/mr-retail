@@ -101,5 +101,20 @@ namespace CrystalReport.Components
         {
 
         }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+
+
+
+
+            }
+            catch (Exception ex)
+            {
+                 
+            }
+        }
     }
 }

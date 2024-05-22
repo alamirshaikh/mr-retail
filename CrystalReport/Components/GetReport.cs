@@ -271,8 +271,9 @@ namespace CrystalReport.Components
             if (MainEngine_.GetDataScript<int>("select COUNT(id) from CustomerTransactions where Cust_Name = '" + cust_s + "'").FirstOrDefault() > 0)
             {
 
-                tdebitval.Value = $"₹{(bal + current) - paid}";
 
+
+                tdebitval.Value = $"₹{bal}";
             }
             else
             {
@@ -285,8 +286,12 @@ namespace CrystalReport.Components
 
                 ParameterDiscreteValue oldval = new ParameterDiscreteValue();
                 old.ParameterFieldName = "prc";
-                oldval.Value = $"₹{bal}";
-                old.CurrentValues.Add(oldval);
+
+            decimal pss = (bal + paid) - current;
+
+
+            oldval.Value = $"₹{pss}";
+            old.CurrentValues.Add(oldval);
 
 
      

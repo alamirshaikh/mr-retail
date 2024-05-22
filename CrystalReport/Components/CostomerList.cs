@@ -112,42 +112,11 @@ namespace CrystalReport.Components
              
             InvoiceTrs?.Invoke(this, StoreRoom.GetData= data);
         }
+        private int rowindex;
 
         private void data_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            try
-            {
-                DialogResult result = MessageBox.Show("if you want to Reprint Sey Yes! else No","Selet",MessageBoxButtons.YesNo,MessageBoxIcon.Question);
-                if (result == DialogResult.Yes)
-                {
-
-
-                    if (_ter == "SaleReport")
-                    {
-                        ReportStd rp = new ReportStd(data.Rows[e.RowIndex].Cells[1].Value.ToString(), textBox1.Text);
-                        rp.Show();
-                    }
-
-                    else if (_ter == "ledger")
-                    {
-                        OnDataTransferred(data.Rows[e.RowIndex].Cells[1].Value.ToString());
-                        HideOR?.Invoke(this, true);
-                    }
-                    else
-                    {
-                        OnDataTransferred(data.Rows[e.RowIndex].Cells[1].Value.ToString());
-                        HideOR?.Invoke(this, true);
-                    }
-                }
-                else
-                {
-                    
-                }
-            }
-            catch (Exception ex)
-            {
-                 
-            }
+            rowindex = e.RowIndex;
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -196,11 +165,30 @@ namespace CrystalReport.Components
             try
             {
 
+               
+
+                    if (_ter == "SaleReport")
+                    {
+                        ReportStd rp = new ReportStd(data.Rows[rowindex].Cells[1].Value.ToString(), textBox1.Text);
+                        rp.Show();
+                    }
+
+                    else if (_ter == "ledger")
+                    {
+                        OnDataTransferred(data.Rows[rowindex].Cells[1].Value.ToString());
+                        HideOR?.Invoke(this, true);
+                    }
+                    else
+                    {
+                        OnDataTransferred(data.Rows[rowindex].Cells[1].Value.ToString());
+                        HideOR?.Invoke(this, true);
+                    }
+              
+                
             }
             catch (Exception ex)
             {
 
-                throw;
             }
         }
 

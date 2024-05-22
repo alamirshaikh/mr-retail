@@ -26,6 +26,19 @@ namespace CrystalReport.Components
             textBox4.Text = StoreRoom.Balance();
 
 
+
+
+
+            try
+            {
+                label6.Text = StoreRoom.ShopNames();
+
+            }
+            catch (Exception ex)
+            {
+                 
+            }
+
         }
     }
 }

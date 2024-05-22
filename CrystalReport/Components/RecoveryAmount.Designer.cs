@@ -46,6 +46,14 @@ namespace CrystalReport.Components
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.datacust = new System.Windows.Forms.DataGridView();
+            this.cust_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cust_na = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.customer_phone = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CustArea = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Citys = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Balance = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.View = new System.Windows.Forms.DataGridViewButtonColumn();
             this.find = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
             this.totalamt = new System.Windows.Forms.TextBox();
@@ -66,14 +74,6 @@ namespace CrystalReport.Components
             this.panel6 = new System.Windows.Forms.Panel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.cust_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cust_na = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.customer_phone = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CustArea = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Citys = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Balance = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.View = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -159,7 +159,7 @@ namespace CrystalReport.Components
             // 
             // panel3
             // 
-            this.panel3.BackColor = System.Drawing.Color.AliceBlue;
+            this.panel3.BackColor = System.Drawing.Color.White;
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel3.Controls.Add(this.label4);
             this.panel3.Controls.Add(this.display);
@@ -196,7 +196,7 @@ namespace CrystalReport.Components
             // 
             // panel4
             // 
-            this.panel4.BackColor = System.Drawing.Color.AliceBlue;
+            this.panel4.BackColor = System.Drawing.Color.DarkSalmon;
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel4.Location = new System.Drawing.Point(8, 49);
             this.panel4.Name = "panel4";
@@ -272,6 +272,54 @@ namespace CrystalReport.Components
             this.datacust.Size = new System.Drawing.Size(946, 377);
             this.datacust.TabIndex = 1;
             this.datacust.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.datacust_CellClick);
+            // 
+            // cust_ID
+            // 
+            this.cust_ID.FillWeight = 52.3644F;
+            this.cust_ID.HeaderText = "ID";
+            this.cust_ID.Name = "cust_ID";
+            // 
+            // cust_na
+            // 
+            this.cust_na.FillWeight = 203.0456F;
+            this.cust_na.HeaderText = "Customer Name";
+            this.cust_na.Name = "cust_na";
+            // 
+            // customer_phone
+            // 
+            this.customer_phone.FillWeight = 90.76497F;
+            this.customer_phone.HeaderText = "Customer Phone";
+            this.customer_phone.Name = "customer_phone";
+            // 
+            // CustArea
+            // 
+            this.CustArea.FillWeight = 90.76497F;
+            this.CustArea.HeaderText = "Area";
+            this.CustArea.Name = "CustArea";
+            // 
+            // Date
+            // 
+            this.Date.FillWeight = 90.76497F;
+            this.Date.HeaderText = "Date";
+            this.Date.Name = "Date";
+            // 
+            // Citys
+            // 
+            this.Citys.FillWeight = 90.76497F;
+            this.Citys.HeaderText = "City";
+            this.Citys.Name = "Citys";
+            // 
+            // Balance
+            // 
+            this.Balance.FillWeight = 90.76497F;
+            this.Balance.HeaderText = "Balance";
+            this.Balance.Name = "Balance";
+            // 
+            // View
+            // 
+            this.View.FillWeight = 90.76497F;
+            this.View.HeaderText = "View Invoice";
+            this.View.Name = "View";
             // 
             // find
             // 
@@ -367,7 +415,7 @@ namespace CrystalReport.Components
             // 
             this.panel5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel5.BackColor = System.Drawing.Color.AliceBlue;
+            this.panel5.BackColor = System.Drawing.Color.White;
             this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel5.Controls.Add(this.reviedby);
             this.panel5.Controls.Add(this.label8);
@@ -482,7 +530,7 @@ namespace CrystalReport.Components
             // 
             this.panel6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel6.BackColor = System.Drawing.Color.AliceBlue;
+            this.panel6.BackColor = System.Drawing.Color.DarkSalmon;
             this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel6.Location = new System.Drawing.Point(408, 50);
             this.panel6.Name = "panel6";
@@ -508,54 +556,6 @@ namespace CrystalReport.Components
             this.label9.Size = new System.Drawing.Size(0, 13);
             this.label9.TabIndex = 8000002;
             this.label9.Visible = false;
-            // 
-            // cust_ID
-            // 
-            this.cust_ID.FillWeight = 52.3644F;
-            this.cust_ID.HeaderText = "ID";
-            this.cust_ID.Name = "cust_ID";
-            // 
-            // cust_na
-            // 
-            this.cust_na.FillWeight = 203.0456F;
-            this.cust_na.HeaderText = "Customer Name";
-            this.cust_na.Name = "cust_na";
-            // 
-            // customer_phone
-            // 
-            this.customer_phone.FillWeight = 90.76497F;
-            this.customer_phone.HeaderText = "Customer Phone";
-            this.customer_phone.Name = "customer_phone";
-            // 
-            // CustArea
-            // 
-            this.CustArea.FillWeight = 90.76497F;
-            this.CustArea.HeaderText = "Area";
-            this.CustArea.Name = "CustArea";
-            // 
-            // Date
-            // 
-            this.Date.FillWeight = 90.76497F;
-            this.Date.HeaderText = "Date";
-            this.Date.Name = "Date";
-            // 
-            // Citys
-            // 
-            this.Citys.FillWeight = 90.76497F;
-            this.Citys.HeaderText = "City";
-            this.Citys.Name = "Citys";
-            // 
-            // Balance
-            // 
-            this.Balance.FillWeight = 90.76497F;
-            this.Balance.HeaderText = "Balance";
-            this.Balance.Name = "Balance";
-            // 
-            // View
-            // 
-            this.View.FillWeight = 90.76497F;
-            this.View.HeaderText = "View Invoice";
-            this.View.Name = "View";
             // 
             // RecoveryAmount
             // 

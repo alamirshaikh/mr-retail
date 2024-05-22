@@ -81,37 +81,33 @@ namespace CrystalReport.Components
             }
         }
 
+
+
+
+
         private async Task LoadData(string searchTerm)
         {
             // Fetch data based on the search term and current page number
-            int size = Convert.ToInt32(PageSize);
-            List<ItemModels> data = GetNextPage(searchTerm, currentPage, size);
 
-            // Add fetched data to DataGridView
-            dataGridView1.Rows.Clear();
-            foreach (var item in data.Take(40))
-            { 
-                dataGridView1.Rows.Add(item.ID, item.ITEM_NAME, item.UNIT, item.SALE_PRICE,item.COST_PRICE,item.BARCODE, item.STOCK);
-            }
-           
-        }
-
-
-        private async Task LoadData1(string searchTerm)
-        {
-            // Fetch data based on the search term and current page number
-            int size = Convert.ToInt32(PageSize);
             List<ItemModels> data = MainEngine_.GetDataScript<ItemModels>($"SELECT * FROM Product_Item WHERE ITEM_NAME LIKE '%{searchTerm}%'");
 
             // Add fetched data to DataGridView
             dataGridView1.Rows.Clear();
-            foreach (var item in data.Take(100))
+            foreach (var item in data.Take(40))
             {
-                dataGridView1.Rows.Add(item.ID, item.ITEM_NAME, item.UNIT, item.SALE_PRICE, item.COST_PRICE, item.BARCODE, item.STOCK);
+                count++;
+                dataGridView1.Rows.Add(count, item.ITEM_NAME, item.UNIT, item.SALE_PRICE,item.COST_PRICE,item.BARCODE, item.STOCK);
             }
-
+            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+            {
+                dataGridView1.Rows[i].Cells[0].Value = i + 1;
+                count = i - 1;
+            }
         }
 
+
+
+ 
 
 
 
@@ -301,14 +297,19 @@ namespace CrystalReport.Components
 
         private async void textBox1_TextChanged_2(object sender, EventArgs e)
         {
-            if(textBox1.Text !="")
+            try
             {
-                await LoadData(textBox1.Text);
-
+                if (textBox1.Text == "")
+                {
+                    LoadInitialData();
+                }
+                else
+                {
+                    await LoadData(textBox1.Text);
+                }
             }
-            else
+            catch (Exception ex)
             {
-                await LoadData1(textBox1.Text);
 
             }
         }

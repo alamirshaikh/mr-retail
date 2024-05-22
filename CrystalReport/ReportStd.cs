@@ -290,7 +290,6 @@ namespace CrystalReport
                     
                         tdebitval.Value = $"₹{bal}";
 
-                 
                    
                 }
                 else
@@ -304,7 +303,10 @@ namespace CrystalReport
                 old.ParameterFieldName = "prc";
 
 
-                oldval.Value = $"₹{current-paid}";
+                decimal pss = (bal + paid) - current;
+
+
+                oldval.Value = $"₹{pss}";
                 old.CurrentValues.Add(oldval);
 
                 pfield.Add(tdebit);

@@ -1,4 +1,5 @@
-﻿using Back_Dr.Sale;
+﻿using Back_Dr.Backup;
+using Back_Dr.Sale;
 using Dapper;
 using Dr.Sale.Components;
 using FoxLearn.License;
@@ -8,7 +9,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
-using System.IO;
+using System.IO; 
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,6 +19,7 @@ namespace CrystalReport
 {
     public partial class LoadPro : Form
     {
+  
         private int progress;
         private string lics;
         private string getstr;
@@ -98,6 +100,17 @@ namespace CrystalReport
                 return false;
             }
         }
+
+
+        void UpdateProgress(string processName, int progress)
+        {
+            progressBar1.Value = progress;
+            label2.Text = processName;
+            // Ensure the form updates immediately
+            Application.DoEvents();
+        }
+
+
         private async void LoadPro_Load(object sender, EventArgs e)
         {
             
@@ -148,21 +161,22 @@ FOR ATTACH;
                     }
                        
                 }
-    
-
-                timer1.Enabled = true;
-
-                timer1.Interval = 100;
-
-
 
 
             if (CheackKey(lics) == true)
-                {
+            {
 
                 LICTO.Text = getstr;
 
             }
+
+            UpdateProgress("Loading Data from Database....", 20);
+             timer1.Enabled = true;
+              timer1.Interval = 1;
+            UpdateProgress("Welcome to Mr.Retaile", 100);
+
+
+
 
 
 
@@ -214,6 +228,7 @@ FOR ATTACH;
                     {
                         Login fs1 = new Login();
                         fs1.Show();
+
                         this.Hide();
 
                     }

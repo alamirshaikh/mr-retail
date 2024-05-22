@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using Back_Dr.Backup;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -16,6 +17,8 @@ namespace CrystalReport
         {
             InitializeComponent();
         }
+
+        public GenerateScript services = new GenerateScript();
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -37,9 +40,8 @@ namespace CrystalReport
             }
         }
 
-        private void Login_Load(object sender, EventArgs e)
+        private async  void Login_Load(object sender, EventArgs e)
         {
-
         }
 
         private void Login_KeyUp(object sender, KeyEventArgs e)

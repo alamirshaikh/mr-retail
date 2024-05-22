@@ -401,6 +401,12 @@
     <Compile Include="Components\AddItem.Designer.cs">
       <DependentUpon>AddItem.cs</DependentUpon>
     </Compile>
+    <Compile Include="Components\Backup.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Components\Backup.Designer.cs">
+      <DependentUpon>Backup.cs</DependentUpon>
+    </Compile>
     <Compile Include="Components\Barcode.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -678,6 +684,9 @@
     </Compile>
     <EmbeddedResource Include="Components\AddItem.resx">
       <DependentUpon>AddItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Components\Backup.resx">
+      <DependentUpon>Backup.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Components\Barcode.resx">
       <DependentUpon>Barcode.cs</DependentUpon>
@@ -966,6 +975,7 @@
     <None Include="Resources\backup.png" />
     <None Include="Resources\download-PhotoRoom.png-PhotoRoom.png" />
     <None Include="Resources\cashback.png" />
+    <None Include="Resources\download-PhotoRoom.png-PhotoRoom1.png" />
     <Content Include="tr.ico" />
   </ItemGroup>
   <ItemGroup>

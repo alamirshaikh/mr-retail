@@ -412,8 +412,12 @@ namespace CrystalReport.Components
 
             if(_inv !="")
             {
-
-
+                invnum.Text =_inv;
+ 
+            }
+            else
+            {
+                invnum.Text = GenerateInvoice();
             }
  
 
@@ -782,191 +786,407 @@ namespace CrystalReport.Components
 
                 if (dataGridView1.Rows.Count > 0)
                 {
-                    try
+
+
+                     if (MainEngine_.GetDataScript<string>("select items from SInvoice where items = '" + _inv + "'").FirstOrDefault() == _inv)
                     {
 
-                        StoreRoom tr = new StoreRoom();
-                        tr.NewData(cust_name.Text, textBox1.Text, mobile_num.Text,city.Text);
-
-                    }
-                    catch (Exception ex12)
-                    {
-                         
-                    }
-                    string cashred;
-
-                    decimal to = 0;
 
 
 
-                    if (comboBox1.Text == "Cash")
-                    {
-                        cashred = "cash";
-                        to = Convert.ToDecimal(totalamt.Text);
 
 
 
-                    }
+                        try
+
+                        {
+
+                            StoreRoom tr = new StoreRoom();
+                            tr.NewData(cust_name.Text, textBox1.Text, mobile_num.Text, city.Text);
+
+                        }
+                        catch (Exception ex12)
+                        {
+
+                        }
+                        string cashred;
+
+                        decimal to = 0;
+
+
+
+                        if (comboBox1.Text == "Cash")
+                        {
+                            cashred = "cash";
+                            to = Convert.ToDecimal(totalamt.Text);
+
+
+
+                        }
+                        else
+                        {
+                            cashred = "credit";
+                            to = Convert.ToDecimal(totalamt.Text);
+                        }
+
+                        string callid = MainEngine_.GetDataScript<string>("select id from Customer Where cust_name = '" + cust_name.Text + "'").FirstOrDefault();
+
+
+                        if (decimal.Parse(onlinep.Text) > 0)
+                        {
+                            var TransCustomer = new
+                            {
+                                Cust_ID = int.Parse(callid),
+                                Cust_Name = cust_name.Text,
+                                InvoiceId = invnum.Text,
+                                PayMode = comboBox3.Text,
+                                Amount = to,
+                                Paid = decimal.Parse(onlinep.Text),
+                                Quantity = decimal.Parse(sumqty.Text)
+
+                            };
+
+                            await MainEngine_.Add(TransCustomer, "UpdateCustomerTransaction");
+                            MainEngine_.GetDataScript<dynamic>($"UPDATE Transactions SET AccountID = 1, Amount = {decimal.Parse(onlinep.Text)}, Type = 'Saving', Date_ = '{invdate.Text}', Description = 'Sale/Recovery', Particular = '{cust_name.Text}', voucher_t = '{comboBox3.Text}' WHERE REFRANCE_ID = '"+invnum.Text+"'");
+
+
+                        }
+                        if (decimal.Parse(paid.Text) > 0 && decimal.Parse(onlinep.Text) > 0 || decimal.Parse(paid.Text) > 0)
+                        {
+                            var TransCustomer = new
+                            {
+                                Cust_ID = int.Parse(callid),
+                                Cust_Name = cust_name.Text,
+                                InvoiceId = invnum.Text,
+                                PayMode = comboBox2.Text,
+                                Amount = to,
+                                Paid = decimal.Parse(paid.Text),
+                                Quantity = decimal.Parse(sumqty.Text)
+
+                            };
+
+
+                            await MainEngine_.Add(TransCustomer, "UpdateCustomerTransaction");
+                            MainEngine_.GetDataScript<dynamic>($"UPDATE Transactions SET AccountID = 1, Amount = {decimal.Parse(paid.Text)}, Type = 'Saving', Date_ = '{invdate.Text}', Description = 'Sale/Recovery', Particular = '{cust_name.Text}', voucher_t = '{comboBox3.Text}' WHERE REFRANCE_ID = '" + invnum.Text + "'");
+
+
+                        }
+                        if (paid.Text == "0" && onlinep.Text == "0")
+                        {
+                            var TransCustomer = new
+                            {
+                                Cust_ID = int.Parse(callid),
+                                Cust_Name = cust_name.Text,
+                                InvoiceId = invnum.Text,
+                                PayMode = "Credit",
+                                Amount = to,
+                                Paid = decimal.Parse(paid.Text),
+                                Quantity = decimal.Parse(sumqty.Text)
+
+                            };
+
+
+                            await MainEngine_.Add(TransCustomer, "UpdateCustomerTransaction");
+                            MainEngine_.GetDataScript<dynamic>($"UPDATE Transactions SET AccountID = 1, Amount = {decimal.Parse(blc.Text)}, Type = 'Saving', Date_ = '{invdate.Text}', Description = 'Sale/Recovery', Particular = '{cust_name.Text}', voucher_t = 'Credit' WHERE REFRANCE_ID = '" + invnum.Text + "'");
+
+                        }
+
+
+
+
+                        for (int i = 0; i < dataGridView1.Rows.Count - 1; i++)
+                        {
+
+                            var dynamic = new
+                            {
+
+                                sr_no = dataGridView1.Rows[i].Cells[0].Value.ToString(),
+                                description = dataGridView1.Rows[i].Cells[1].Value.ToString(),
+                                qty = Convert.ToInt32(dataGridView1.Rows[i].Cells[2].Value.ToString()),
+                                rate = Convert.ToDecimal(dataGridView1.Rows[i].Cells[3].Value.ToString()),
+                                discount = Convert.ToDecimal(dataGridView1.Rows[i].Cells[4].Value.ToString()),
+                                amount = Convert.ToDecimal(dataGridView1.Rows[i].Cells[5].Value.ToString()),
+
+                                Invoice = invnum.Text
+                            };
+
+
+                            await MainEngine_.Add(dynamic, "sp_addsaleitem");
+
+                        }
+
+
+
+
+                        decimal td = 0;
+                        inv = GenerateInvoice();
+                        decimal sub = Convert.ToDecimal(totalamt.Text) - Convert.ToDecimal(discount_.Text);
+                        var smodel = new
+                        {
+                            invoiceID = invnum.Text,
+                            cust_Name = cust_name.Text,
+                            items = invnum.Text,
+                            sub_total = sub,
+                            perdis = td,
+                            discount = Convert.ToDecimal(senddiscount),
+                            other = Convert.ToDecimal(tax.Text),
+                            TotalBill = Convert.ToDecimal(totalamt.Text),
+                            invdate = DateTime.Now,
+                            place = textBox1.Text
+
+
+
+                        };
+
+                        await MainEngine_.Add(smodel, "spSaleInsert");
+
+
+
+
+
+                        dataGridView1.Rows.Clear();
+
+
+                        StoreRoom.ClearData(this.Controls);
+                        amt.Text = "";
+                        //sub_t.Text = "0";
+                        //perdisc.Text = "0";
+                        //discount_.Text = "0";
+                        //other.Text = "0";
+                        totalamt.Text = "0";
+                        cal.discounts = 0;
+                        cal.sub_amount = 0;
+                        cal.total = 0;
+                        tax.Text = "0";
+                        sumqty.Text = "0";
+                        items.Text = "0";
+                        discount_.Text = "0";
+                        CustCount = CustCount + 1;
+
+                        textBox2.Text = CustCount.ToString();
+                     
+                        DialogResult result = MessageBox.Show("If you wan to Print ?", "Print ?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                        comboBox1.SelectedIndex = 0;
+                        comboBox2.SelectedIndex = 0;
+                        onlinep.Text = "0";
+                        paid.Text = "0";
+                        if (result == DialogResult.Yes)
+                        {
+
+
+
+                            ReportStd rp = new ReportStd(smodel.invoiceID, textBox1.Text);
+                            rp.Show();
+                        }
+                        else
+                        {
+                            //pass
+                        }
+
+
+           
+
+            }
                     else
                     {
-                        cashred = "credit";
-                        to = Convert.ToDecimal(totalamt.Text);
-                    }
-
-                    string callid = MainEngine_.GetDataScript<string>("select id from Customer Where cust_name = '" + cust_name.Text + "'").FirstOrDefault();
 
 
-                    if(decimal.Parse(onlinep.Text) > 0)
-                    {
-                        var TransCustomer = new
+
+
+
+
+
+
+                        try
+
                         {
-                            Cust_ID = int.Parse(callid),
-                            Cust_Name = cust_name.Text,
-                            InvoiceId = invnum.Text,
-                            PayMode = comboBox3.Text,
-                            Amount = to,
-                            Paid = decimal.Parse(onlinep.Text),
-                            Quantity = decimal.Parse(sumqty.Text)
+
+                            StoreRoom tr = new StoreRoom();
+                            tr.NewData(cust_name.Text, textBox1.Text, mobile_num.Text, city.Text);
+
+                        }
+                        catch (Exception ex12)
+                        {
+
+                        }
+                        string cashred;
+
+                        decimal to = 0;
+
+
+
+                        if (comboBox1.Text == "Cash")
+                        {
+                            cashred = "cash";
+                            to = Convert.ToDecimal(totalamt.Text);
+
+
+
+                        }
+                        else
+                        {
+                            cashred = "credit";
+                            to = Convert.ToDecimal(totalamt.Text);
+                        }
+
+                        string callid = MainEngine_.GetDataScript<string>("select id from Customer Where cust_name = '" + cust_name.Text + "'").FirstOrDefault();
+
+
+                        if (decimal.Parse(onlinep.Text) > 0)
+                        {
+                            var TransCustomer = new
+                            {
+                                Cust_ID = int.Parse(callid),
+                                Cust_Name = cust_name.Text,
+                                InvoiceId = invnum.Text,
+                                PayMode = comboBox3.Text,
+                                Amount = to,
+                                Paid = decimal.Parse(onlinep.Text),
+                                Quantity = decimal.Parse(sumqty.Text)
+
+                            };
+
+                            await MainEngine_.Add(TransCustomer, "InsertCustomerTransaction");
+                            MainEngine_.GetDataScript<dynamic>($"INSERT INTO Transactions (AccountID, Amount, Type, Date_, Description, REFRANCE_ID,Particular,voucher_t) values(1,{decimal.Parse(onlinep.Text)},'Saving','{invdate.Text}','Sale/Recovery','{invnum.Text}','{cust_name.Text}','{comboBox3.Text}')");
+
+
+                        }
+                        if (decimal.Parse(paid.Text) > 0 && decimal.Parse(onlinep.Text) > 0 || decimal.Parse(paid.Text) > 0)
+                        {
+                            var TransCustomer = new
+                            {
+                                Cust_ID = int.Parse(callid),
+                                Cust_Name = cust_name.Text,
+                                InvoiceId = invnum.Text,
+                                PayMode = comboBox2.Text,
+                                Amount = to,
+                                Paid = decimal.Parse(paid.Text),
+                                Quantity = decimal.Parse(sumqty.Text)
+
+                            };
+
+
+                            await MainEngine_.Add(TransCustomer, "InsertCustomerTransaction");
+                            MainEngine_.GetDataScript<dynamic>($"INSERT INTO Transactions (AccountID, Amount, Type, Date_, Description, REFRANCE_ID,Particular,voucher_t) values(1,{decimal.Parse(paid.Text)},'Saving','{invdate.Text}','Sale/Recovery','{invnum.Text}','{cust_name.Text}','{comboBox2.Text}')");
+
+
+                        }
+                        if (paid.Text == "0" && onlinep.Text == "0")
+                        {
+                            var TransCustomer = new
+                            {
+                                Cust_ID = int.Parse(callid),
+                                Cust_Name = cust_name.Text,
+                                InvoiceId = invnum.Text,
+                                PayMode = "Credit",
+                                Amount = to,
+                                Paid = decimal.Parse(paid.Text),
+                                Quantity = decimal.Parse(sumqty.Text)
+
+                            };
+
+
+                            await MainEngine_.Add(TransCustomer, "InsertCustomerTransaction");
+                            MainEngine_.GetDataScript<dynamic>($"INSERT INTO Transactions (AccountID, Amount, Type, Date_, Description, REFRANCE_ID,Particular,voucher_t) values(1,{decimal.Parse(blc.Text)},'Saving','{invdate.Text}','Sale/Recovery','{invnum.Text}','{cust_name.Text}','Credit')");
+
+                        }
+
+
+
+
+                        for (int i = 0; i < dataGridView1.Rows.Count - 1; i++)
+                        {
+
+                            var dynamic = new
+                            {
+
+                                sr_no = dataGridView1.Rows[i].Cells[0].Value.ToString(),
+                                description = dataGridView1.Rows[i].Cells[1].Value.ToString(),
+                                qty = Convert.ToInt32(dataGridView1.Rows[i].Cells[2].Value.ToString()),
+                                rate = Convert.ToDecimal(dataGridView1.Rows[i].Cells[3].Value.ToString()),
+                                discount = Convert.ToDecimal(dataGridView1.Rows[i].Cells[4].Value.ToString()),
+                                amount = Convert.ToDecimal(dataGridView1.Rows[i].Cells[5].Value.ToString()),
+
+                                Invoice = invnum.Text
+                            };
+
+
+                            await MainEngine_.Add(dynamic, "sp_addsaleitem");
+
+                        }
+
+
+
+
+                        decimal td = 0;
+                        inv = GenerateInvoice();
+                        decimal sub = Convert.ToDecimal(totalamt.Text) - Convert.ToDecimal(discount_.Text);
+                        var smodel = new
+                        {
+                            invoiceID = inv,
+                            cust_Name = cust_name.Text,
+                            items = inv,
+                            sub_total = sub,
+                            perdis = td,
+                            discount = Convert.ToDecimal(senddiscount),
+                            other = Convert.ToDecimal(tax.Text),
+                            TotalBill = Convert.ToDecimal(totalamt.Text),
+                            invdate = DateTime.Now,
+                            place = textBox1.Text
+
+
 
                         };
 
-                        await MainEngine_.Add(TransCustomer, "InsertCustomerTransaction");
-                         MainEngine_.GetDataScript<dynamic>($"INSERT INTO Transactions (AccountID, Amount, Type, Date_, Description, REFRANCE_ID,Particular,voucher_t) values(1,{decimal.Parse(onlinep.Text)},'Saving','{invdate.Text}','Sale/Recovery',112,'{cust_name.Text}','{comboBox3.Text}')");
-
-
-                    }
-                   if (decimal.Parse(paid.Text) > 0  && decimal.Parse(onlinep.Text) > 0 || decimal.Parse(paid.Text) > 0)
-                    {
-                        var TransCustomer = new
-                        {
-                            Cust_ID = int.Parse(callid),
-                            Cust_Name = cust_name.Text,
-                            InvoiceId = invnum.Text,
-                            PayMode = comboBox2.Text,
-                            Amount = to,
-                            Paid = decimal.Parse(paid.Text),
-                            Quantity = decimal.Parse(sumqty.Text)
-
-                        };
-
-
-                        await MainEngine_.Add(TransCustomer, "InsertCustomerTransaction");
-                         MainEngine_.GetDataScript<dynamic>($"INSERT INTO Transactions (AccountID, Amount, Type, Date_, Description, REFRANCE_ID,Particular,voucher_t) values(1,{decimal.Parse(paid.Text)},'Saving','{invdate.Text}','Sale/Recovery',112,'{cust_name.Text}','{comboBox2.Text}')");
-
-
-                    }
-                    if(paid.Text == "0" && onlinep.Text == "0" )
-                    {
-                        var TransCustomer = new
-                        {
-                            Cust_ID = int.Parse(callid),
-                            Cust_Name = cust_name.Text,
-                            InvoiceId = invnum.Text,
-                            PayMode = "Credit",
-                            Amount = to,
-                            Paid = decimal.Parse(paid.Text),
-                            Quantity = decimal.Parse(sumqty.Text)
-
-                        };
-
-
-                        await MainEngine_.Add(TransCustomer, "InsertCustomerTransaction");
-                        MainEngine_.GetDataScript<dynamic>($"INSERT INTO Transactions (AccountID, Amount, Type, Date_, Description, REFRANCE_ID,Particular,voucher_t) values(1,{decimal.Parse(blc.Text)},'Saving','{invdate.Text}','Sale/Recovery',112,'{cust_name.Text}','Credit')");
-
-                    }
+                        await MainEngine_.Add(smodel, "spSaleInsert");
 
 
 
 
-                    for (int i = 0; i < dataGridView1.Rows.Count - 1; i++)
-                    {
 
-                        var dynamic = new
+                        dataGridView1.Rows.Clear();
+
+
+                        StoreRoom.ClearData(this.Controls);
+                        amt.Text = "";
+                        //sub_t.Text = "0";
+                        //perdisc.Text = "0";
+                        //discount_.Text = "0";
+                        //other.Text = "0";
+                        totalamt.Text = "0";
+                        cal.discounts = 0;
+                        cal.sub_amount = 0;
+                        cal.total = 0;
+                        tax.Text = "0";
+                        sumqty.Text = "0";
+                        items.Text = "0";
+                        discount_.Text = "0";
+                        CustCount = CustCount + 1;
+
+                        textBox2.Text = CustCount.ToString();
+                        invnum.Text = GenerateInvoice();
+
+                        DialogResult result = MessageBox.Show("If you wan to Print ?", "Print ?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                        comboBox1.SelectedIndex = 0;
+                        comboBox2.SelectedIndex = 0;
+                        onlinep.Text = "0";
+                        paid.Text = "0";
+                        if (result == DialogResult.Yes)
                         {
 
-                            sr_no = dataGridView1.Rows[i].Cells[0].Value.ToString(),
-                            description = dataGridView1.Rows[i].Cells[1].Value.ToString(),
-                            qty = Convert.ToInt32(dataGridView1.Rows[i].Cells[2].Value.ToString()),
-                            rate = Convert.ToDecimal(dataGridView1.Rows[i].Cells[3].Value.ToString()),
-                            discount = Convert.ToDecimal(dataGridView1.Rows[i].Cells[4].Value.ToString()),
-                            amount = Convert.ToDecimal(dataGridView1.Rows[i].Cells[5].Value.ToString()),
-
-                            Invoice = invnum.Text
-                        };
 
 
-                        await MainEngine_.Add(dynamic, "sp_addsaleitem");
-
-                    }
-
-
-
-
-                    decimal td = 0;
-                    inv = GenerateInvoice();
-                    decimal sub = Convert.ToDecimal(totalamt.Text) - Convert.ToDecimal(discount_.Text);
-                    var smodel = new
-                    {
-                        invoiceID = inv,
-                        cust_Name = cust_name.Text,
-                        items = inv,
-                        sub_total = sub,
-                        perdis = td,
-                        discount = Convert.ToDecimal(senddiscount),
-                        other = Convert.ToDecimal(tax.Text),
-                        TotalBill = Convert.ToDecimal(totalamt.Text),
-                        invdate = DateTime.Now,
-                        place = textBox1.Text
+                            ReportStd rp = new ReportStd(smodel.invoiceID, textBox1.Text);
+                            rp.Show();
+                        }
+                        else
+                        {
+                            //pass
+                        }
 
 
-
-                    };
-
-                    await MainEngine_.Add(smodel, "spSaleInsert");
-
-                    
-                    
-
-
-                    dataGridView1.Rows.Clear();
-                  
-                  
-                    StoreRoom.ClearData(this.Controls);
-                    amt.Text = "";
-                    //sub_t.Text = "0";
-                    //perdisc.Text = "0";
-                    //discount_.Text = "0";
-                    //other.Text = "0";
-                    totalamt.Text = "0";
-                    cal.discounts = 0;
-                    cal.sub_amount = 0;
-                    cal.total = 0;
-                    tax.Text = "0";
-                    sumqty.Text = "0";
-                    items.Text = "0";
-                    discount_.Text = "0";
-                    CustCount = CustCount + 1;
-
-                    textBox2.Text = CustCount.ToString();
-                    invnum.Text = GenerateInvoice();
-
-                    DialogResult result = MessageBox.Show("If you wan to Print ?","Print ?",MessageBoxButtons.YesNo,MessageBoxIcon.Question);
-
-                    comboBox1.SelectedIndex = 0;
-                    comboBox2.SelectedIndex = 0;
-                    onlinep.Text = "0";
-                    paid.Text = "0";
-                    if (result == DialogResult.Yes)
-                    {
-
-
-
-                        ReportStd rp = new ReportStd(smodel.invoiceID, textBox1.Text);
-                        rp.Show();
-                    }
-                    else
-                    {
-                        //pass
                     }
                 }
                 else
@@ -1079,6 +1299,7 @@ namespace CrystalReport.Components
 
 
                             string cals = cal.SubTotal(amt.Text).ToString();
+
                             totalamt.Text = (decimal.Parse(cals)).ToString();
 
 
@@ -1835,6 +2056,107 @@ namespace CrystalReport.Components
 
             }
             }
+
+        private void invnum_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                dataGridView1.Rows.Clear();
+                List<dynamic> fet=   MainEngine_.GetDataScript<dynamic>("select  sr_no,description,qty,rate,discount,amount from Sale_Items where Invoice = '" + invnum.Text+"' ").ToList();
+                // Suspend the layout to optimize the update process
+                dataGridView1.SuspendLayout();
+
+
+                // Add rows to DataGridView in bulk
+                foreach (var item in fet)
+                {
+                    dataGridView1.Rows.Add(item.sr_no, item.description, item.qty, item.rate, item.discount, item.amount);
+                }
+
+                // Resume the layout to reflect changes
+                dataGridView1.ResumeLayout();
+                string customername = MainEngine_.GetDataScript<string>("select cust_name from SInvoice where  items = '"+invnum.Text+"'").FirstOrDefault();
+                cust_name.Text = customername;
+
+                
+                items.Text = $"{dataGridView1.Rows.Count-1}";
+                TotalQty();
+
+
+                var dynamic = new
+                {
+                    id = _inv,
+                    name = "paid"
+
+                };
+                var dynamic1 = new
+                {
+                    id = _inv,
+                    name = "online"
+
+                };
+
+
+               var p =  MainEngine_.GetData<dynamic>("Get_Amount_PAID", dynamic).FirstOrDefault();
+                var online = MainEngine_.GetData<dynamic>("Get_Amount_PAID", dynamic1).FirstOrDefault();
+                paid.Text = $"{p.PAID}";
+  
+                onlinep.Text = $"{online.PAID}";
+                comboBox3.SelectedIndex = 3;
+
+            }
+            catch (Exception ex)
+            {
+                 
+            }
+        }
+
+        private void dataGridView1_CellEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                // Extract values from DataGridView cells
+                decimal quantity = Convert.ToDecimal(dataGridView1.Rows[e.RowIndex].Cells[2].Value);
+                decimal unitPrice = Convert.ToDecimal(dataGridView1.Rows[e.RowIndex].Cells[3].Value);
+                decimal discountPercentage = Convert.ToDecimal(dataGridView1.Rows[e.RowIndex].Cells[4].Value);
+                decimal actualamount = Convert.ToDecimal(dataGridView1.Rows[e.RowIndex].Cells[5].Value);
+                // Calculate the total price before discount
+                decimal totalPrice = quantity * unitPrice;
+
+                // Calculate the discount amount
+                decimal discountAmount = totalPrice * (discountPercentage / 100);
+
+                // Calculate the final price after applying the discount
+                decimal finalPrice = totalPrice - discountAmount;
+                // Assign the final calculated value to the corresponding cell
+
+
+                decimal act = (-1) * actualamount;
+
+                cal.SubTotal(act.ToString());
+
+                dataGridView1.Rows[e.RowIndex].Cells[5].Value = finalPrice;
+
+
+string cals = cal.SubTotal(finalPrice.ToString()).ToString();
+                totalamt.Text = (decimal.Parse(cals)).ToString();
+                blc.Text = (decimal.Parse(cals)).ToString();
+                prs.Text = (prc - decimal.Parse(cals)).ToString();
+
+                if (tax.Text != "") { totalamt.Text = (decimal.Parse(totalamt.Text) + decimal.Parse(tax.Text)).ToString(); }
+            }
+            catch (Exception ex)
+            {
+                // Handle any exceptions that might occur during the calculation
+                MessageBox.Show("An error occurred: " + ex.Message);
+            }
+
+        }
+
+        private void panel8_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
 
         private void desc_SelectedIndexChanged(object sender, EventArgs e)
         {

@@ -29,11 +29,19 @@ namespace Dr.Sale.Components
             return result;
         }
 
+        public static string OwnerName()
+        {
+            return MainEngine_.GetDataScript<string>("select OwnerName from OwnerInformation").FirstOrDefault();
+
+        }
 
         public StoreRoom()
         {
 
         }
+
+
+
 
 
 
@@ -89,9 +97,31 @@ namespace Dr.Sale.Components
         }
 
 
+
+
+
+        public static string MobileNumber()
+        {
+            return MainEngine_.GetDataScript<string>("select ShopMobile from OwnerInformation").FirstOrDefault();
+
+        }
+
+
+
+
+
+
+
+
         public static string Balance()
         {
             return MainEngine_.GetDataScript<string>("SELECT Balance FROM Accounts").FirstOrDefault();
+
+        }
+
+        public static string ShopNames()
+        {
+            return MainEngine_.GetDataScript<string>("select ShopName from OwnerInformation").FirstOrDefault();
 
         }
 
