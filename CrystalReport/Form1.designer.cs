@@ -62,10 +62,10 @@ namespace CrystalReport
             this.label7 = new System.Windows.Forms.Label();
             this.bill = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox17 = new System.Windows.Forms.PictureBox();
             this.label18 = new System.Windows.Forms.Label();
             this.pictureBox15 = new System.Windows.Forms.PictureBox();
@@ -89,8 +89,8 @@ namespace CrystalReport
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
@@ -111,7 +111,7 @@ namespace CrystalReport
             // 
             this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel3.BackColor = System.Drawing.SystemColors.Control;
+            this.panel3.BackColor = System.Drawing.Color.GhostWhite;
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel3.Controls.Add(this.gunaButton5);
             this.panel3.Controls.Add(this.gunaButton4);
@@ -141,7 +141,7 @@ namespace CrystalReport
             this.gunaButton5.FocusedColor = System.Drawing.Color.Empty;
             this.gunaButton5.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.gunaButton5.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.gunaButton5.Image = global::CrystalReport.Properties.Resources.icons8_bill_64;
+            this.gunaButton5.Image = global::CrystalReport.Properties.Resources.expenses;
             this.gunaButton5.ImageSize = new System.Drawing.Size(20, 20);
             this.gunaButton5.Location = new System.Drawing.Point(412, 3);
             this.gunaButton5.Name = "gunaButton5";
@@ -185,11 +185,11 @@ namespace CrystalReport
             // 
             this.gunaLabel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.gunaLabel1.AutoSize = true;
-            this.gunaLabel1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.gunaLabel1.ForeColor = System.Drawing.Color.Coral;
-            this.gunaLabel1.Location = new System.Drawing.Point(827, 12);
+            this.gunaLabel1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaLabel1.ForeColor = System.Drawing.Color.Black;
+            this.gunaLabel1.Location = new System.Drawing.Point(823, 10);
             this.gunaLabel1.Name = "gunaLabel1";
-            this.gunaLabel1.Size = new System.Drawing.Size(27, 15);
+            this.gunaLabel1.Size = new System.Drawing.Size(38, 21);
             this.gunaLabel1.TabIndex = 11;
             this.gunaLabel1.Text = "____";
             this.gunaLabel1.Click += new System.EventHandler(this.gunaLabel1_Click);
@@ -198,7 +198,7 @@ namespace CrystalReport
             // 
             this.gunaPictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.gunaPictureBox2.BaseColor = System.Drawing.Color.White;
-            this.gunaPictureBox2.Image = global::CrystalReport.Properties.Resources.maximize__2_;
+            this.gunaPictureBox2.Image = global::CrystalReport.Properties.Resources.max1;
             this.gunaPictureBox2.Location = new System.Drawing.Point(867, 5);
             this.gunaPictureBox2.Name = "gunaPictureBox2";
             this.gunaPictureBox2.Size = new System.Drawing.Size(53, 32);
@@ -211,7 +211,7 @@ namespace CrystalReport
             // 
             this.gunaPictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.gunaPictureBox1.BaseColor = System.Drawing.Color.White;
-            this.gunaPictureBox1.Image = global::CrystalReport.Properties.Resources.close_;
+            this.gunaPictureBox1.Image = global::CrystalReport.Properties.Resources.close;
             this.gunaPictureBox1.Location = new System.Drawing.Point(914, 5);
             this.gunaPictureBox1.Name = "gunaPictureBox1";
             this.gunaPictureBox1.Size = new System.Drawing.Size(53, 32);
@@ -353,7 +353,7 @@ namespace CrystalReport
             // 
             this.panel6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.panel6.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.panel6.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(67)))));
             this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel6.Controls.Add(this.label12);
             this.panel6.Controls.Add(this.pictureBox8);
@@ -394,9 +394,9 @@ namespace CrystalReport
             this.label14.AutoSize = true;
             this.label14.BackColor = System.Drawing.Color.Transparent;
             this.label14.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label14.Font = new System.Drawing.Font("Yu Gothic UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.ForeColor = System.Drawing.Color.Black;
-            this.label14.Location = new System.Drawing.Point(55, 166);
+            this.label14.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.Color.BlanchedAlmond;
+            this.label14.Location = new System.Drawing.Point(55, 160);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(66, 17);
             this.label14.TabIndex = 2;
@@ -408,9 +408,9 @@ namespace CrystalReport
             this.label9.AutoSize = true;
             this.label9.BackColor = System.Drawing.Color.Transparent;
             this.label9.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label9.Font = new System.Drawing.Font("Yu Gothic UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.Black;
-            this.label9.Location = new System.Drawing.Point(55, 243);
+            this.label9.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.BlanchedAlmond;
+            this.label9.Location = new System.Drawing.Point(55, 232);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(67, 17);
             this.label9.TabIndex = 2;
@@ -422,9 +422,9 @@ namespace CrystalReport
             this.label8.AutoSize = true;
             this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label8.Font = new System.Drawing.Font("Yu Gothic UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.Black;
-            this.label8.Location = new System.Drawing.Point(56, 278);
+            this.label8.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.BlanchedAlmond;
+            this.label8.Location = new System.Drawing.Point(55, 271);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(121, 17);
             this.label8.TabIndex = 2;
@@ -436,9 +436,9 @@ namespace CrystalReport
             this.label15.AutoSize = true;
             this.label15.BackColor = System.Drawing.Color.Transparent;
             this.label15.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label15.Font = new System.Drawing.Font("Yu Gothic UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.ForeColor = System.Drawing.Color.Black;
-            this.label15.Location = new System.Drawing.Point(57, 130);
+            this.label15.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.ForeColor = System.Drawing.Color.BlanchedAlmond;
+            this.label15.Location = new System.Drawing.Point(55, 125);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(67, 17);
             this.label15.TabIndex = 1;
@@ -450,9 +450,9 @@ namespace CrystalReport
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label2.Font = new System.Drawing.Font("Yu Gothic UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(56, 201);
+            this.label2.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.BlanchedAlmond;
+            this.label2.Location = new System.Drawing.Point(55, 194);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(89, 17);
             this.label2.TabIndex = 2;
@@ -464,9 +464,9 @@ namespace CrystalReport
             this.label17.AutoSize = true;
             this.label17.BackColor = System.Drawing.Color.Transparent;
             this.label17.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label17.Font = new System.Drawing.Font("Yu Gothic UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.ForeColor = System.Drawing.Color.Black;
-            this.label17.Location = new System.Drawing.Point(56, 311);
+            this.label17.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.ForeColor = System.Drawing.Color.BlanchedAlmond;
+            this.label17.Location = new System.Drawing.Point(56, 306);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(57, 17);
             this.label17.TabIndex = 3;
@@ -478,9 +478,9 @@ namespace CrystalReport
             this.label13.AutoSize = true;
             this.label13.BackColor = System.Drawing.Color.Transparent;
             this.label13.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label13.Font = new System.Drawing.Font("Yu Gothic UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.Color.Black;
-            this.label13.Location = new System.Drawing.Point(56, 340);
+            this.label13.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.BlanchedAlmond;
+            this.label13.Location = new System.Drawing.Point(56, 341);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(63, 17);
             this.label13.TabIndex = 5;
@@ -492,9 +492,9 @@ namespace CrystalReport
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label5.Font = new System.Drawing.Font("Yu Gothic UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(56, 375);
+            this.label5.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.BlanchedAlmond;
+            this.label5.Location = new System.Drawing.Point(55, 378);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(78, 17);
             this.label5.TabIndex = 2;
@@ -506,9 +506,9 @@ namespace CrystalReport
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label6.Font = new System.Drawing.Font("Yu Gothic UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(56, 412);
+            this.label6.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.BlanchedAlmond;
+            this.label6.Location = new System.Drawing.Point(56, 416);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(73, 17);
             this.label6.TabIndex = 3;
@@ -520,9 +520,9 @@ namespace CrystalReport
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label7.Font = new System.Drawing.Font("Yu Gothic UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(56, 453);
+            this.label7.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.BlanchedAlmond;
+            this.label7.Location = new System.Drawing.Point(56, 459);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(62, 17);
             this.label7.TabIndex = 3;
@@ -534,9 +534,9 @@ namespace CrystalReport
             this.bill.AutoSize = true;
             this.bill.BackColor = System.Drawing.Color.Transparent;
             this.bill.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bill.Font = new System.Drawing.Font("Yu Gothic UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bill.ForeColor = System.Drawing.Color.Black;
-            this.bill.Location = new System.Drawing.Point(55, 498);
+            this.bill.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bill.ForeColor = System.Drawing.Color.BlanchedAlmond;
+            this.bill.Location = new System.Drawing.Point(59, 555);
             this.bill.Name = "bill";
             this.bill.Size = new System.Drawing.Size(85, 17);
             this.bill.TabIndex = 1;
@@ -547,12 +547,12 @@ namespace CrystalReport
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.panel1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(67)))));
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.pictureBox2);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.pictureBox2);
             this.panel1.Controls.Add(this.pictureBox17);
             this.panel1.Controls.Add(this.label18);
             this.panel1.Controls.Add(this.label7);
@@ -582,6 +582,7 @@ namespace CrystalReport
             this.panel1.Controls.Add(this.label9);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.panel1.ForeColor = System.Drawing.Color.Cornsilk;
             this.panel1.Location = new System.Drawing.Point(0, -1);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(200, 781);
@@ -589,14 +590,37 @@ namespace CrystalReport
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             this.panel1.MouseHover += new System.EventHandler(this.panel1_MouseHover);
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label3.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.BlanchedAlmond;
+            this.label3.Location = new System.Drawing.Point(55, 505);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(135, 17);
+            this.label3.TabIndex = 13;
+            this.label3.Text = "Import / Export Data";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::CrystalReport.Properties.Resources.excel;
+            this.pictureBox1.Location = new System.Drawing.Point(1, 501);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(44, 34);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 14;
+            this.pictureBox1.TabStop = false;
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label4.Font = new System.Drawing.Font("Yu Gothic UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(55, 578);
+            this.label4.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.BlanchedAlmond;
+            this.label4.Location = new System.Drawing.Point(62, 607);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(82, 17);
             this.label4.TabIndex = 12;
@@ -606,40 +630,16 @@ namespace CrystalReport
             // pictureBox2
             // 
             this.pictureBox2.Image = global::CrystalReport.Properties.Resources.rupee_indian;
-            this.pictureBox2.Location = new System.Drawing.Point(0, 572);
+            this.pictureBox2.Location = new System.Drawing.Point(7, 602);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(42, 35);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 11;
             this.pictureBox2.TabStop = false;
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label3.Font = new System.Drawing.Font("Yu Gothic UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(56, 538);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(112, 17);
-            this.label3.TabIndex = 9;
-            this.label3.Text = "Special Customer";
-            this.label3.Click += new System.EventHandler(this.label3_Click_1);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::CrystalReport.Properties.Resources.service;
-            this.pictureBox1.Location = new System.Drawing.Point(1, 531);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(44, 34);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 10;
-            this.pictureBox1.TabStop = false;
-            // 
             // pictureBox17
             // 
-            this.pictureBox17.Image = global::CrystalReport.Properties.Resources.cashless_payment;
+            this.pictureBox17.Image = global::CrystalReport.Properties.Resources.paymnet1;
             this.pictureBox17.Location = new System.Drawing.Point(1, 453);
             this.pictureBox17.Name = "pictureBox17";
             this.pictureBox17.Size = new System.Drawing.Size(43, 31);
@@ -653,9 +653,9 @@ namespace CrystalReport
             this.label18.AutoSize = true;
             this.label18.BackColor = System.Drawing.Color.Transparent;
             this.label18.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label18.Font = new System.Drawing.Font("Yu Gothic UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.ForeColor = System.Drawing.Color.Black;
-            this.label18.Location = new System.Drawing.Point(56, 628);
+            this.label18.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.ForeColor = System.Drawing.Color.BlanchedAlmond;
+            this.label18.Location = new System.Drawing.Point(63, 660);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(81, 17);
             this.label18.TabIndex = 7;
@@ -665,7 +665,7 @@ namespace CrystalReport
             // pictureBox15
             // 
             this.pictureBox15.Image = global::CrystalReport.Properties.Resources.businessman_6997519;
-            this.pictureBox15.Location = new System.Drawing.Point(1, 620);
+            this.pictureBox15.Location = new System.Drawing.Point(7, 655);
             this.pictureBox15.Name = "pictureBox15";
             this.pictureBox15.Size = new System.Drawing.Size(42, 35);
             this.pictureBox15.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -674,8 +674,8 @@ namespace CrystalReport
             // 
             // pictureBox9
             // 
-            this.pictureBox9.Image = global::CrystalReport.Properties.Resources.bill1;
-            this.pictureBox9.Location = new System.Drawing.Point(1, 492);
+            this.pictureBox9.Image = global::CrystalReport.Properties.Resources.bill;
+            this.pictureBox9.Location = new System.Drawing.Point(5, 551);
             this.pictureBox9.Name = "pictureBox9";
             this.pictureBox9.Size = new System.Drawing.Size(44, 34);
             this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -684,7 +684,7 @@ namespace CrystalReport
             // 
             // pictureBox12
             // 
-            this.pictureBox12.Image = global::CrystalReport.Properties.Resources.material_management;
+            this.pictureBox12.Image = global::CrystalReport.Properties.Resources.supplier1;
             this.pictureBox12.Location = new System.Drawing.Point(2, 412);
             this.pictureBox12.Name = "pictureBox12";
             this.pictureBox12.Size = new System.Drawing.Size(43, 31);
@@ -695,7 +695,8 @@ namespace CrystalReport
             // 
             // pictureBox16
             // 
-            this.pictureBox16.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.pictureBox16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(67)))));
+            this.pictureBox16.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox16.Image = global::CrystalReport.Properties.Resources.logo_no_background2;
             this.pictureBox16.Location = new System.Drawing.Point(-1, 0);
             this.pictureBox16.Name = "pictureBox16";
@@ -706,7 +707,7 @@ namespace CrystalReport
             // 
             // pictureBox10
             // 
-            this.pictureBox10.Image = global::CrystalReport.Properties.Resources.purches1;
+            this.pictureBox10.Image = global::CrystalReport.Properties.Resources.shopping_cart1;
             this.pictureBox10.Location = new System.Drawing.Point(1, 340);
             this.pictureBox10.Name = "pictureBox10";
             this.pictureBox10.Size = new System.Drawing.Size(41, 28);
@@ -717,7 +718,7 @@ namespace CrystalReport
             // 
             // pictureBox11
             // 
-            this.pictureBox11.Image = global::CrystalReport.Properties.Resources.team;
+            this.pictureBox11.Image = global::CrystalReport.Properties.Resources.supplier_list1;
             this.pictureBox11.Location = new System.Drawing.Point(1, 375);
             this.pictureBox11.Name = "pictureBox11";
             this.pictureBox11.Size = new System.Drawing.Size(41, 30);
@@ -741,9 +742,9 @@ namespace CrystalReport
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label1.Font = new System.Drawing.Font("Yu Gothic UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(57, 95);
+            this.label1.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.BlanchedAlmond;
+            this.label1.Location = new System.Drawing.Point(55, 89);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(74, 17);
             this.label1.TabIndex = 1;
@@ -752,18 +753,18 @@ namespace CrystalReport
             // 
             // pictureBox4
             // 
-            this.pictureBox4.Image = global::CrystalReport.Properties.Resources.material_management;
-            this.pictureBox4.Location = new System.Drawing.Point(6, 120);
+            this.pictureBox4.Image = global::CrystalReport.Properties.Resources.add_enw;
+            this.pictureBox4.Location = new System.Drawing.Point(3, 120);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(41, 31);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox4.TabIndex = 0;
             this.pictureBox4.TabStop = false;
             this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
             // 
             // pictureBox14
             // 
-            this.pictureBox14.Image = global::CrystalReport.Properties.Resources.sales1;
+            this.pictureBox14.Image = global::CrystalReport.Properties.Resources.POINT_OF_SALE1;
             this.pictureBox14.Location = new System.Drawing.Point(4, 266);
             this.pictureBox14.Name = "pictureBox14";
             this.pictureBox14.Size = new System.Drawing.Size(42, 31);
@@ -777,7 +778,7 @@ namespace CrystalReport
             this.pictureBox5.Location = new System.Drawing.Point(7, 156);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(40, 31);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox5.TabIndex = 0;
             this.pictureBox5.TabStop = false;
             this.pictureBox5.Click += new System.EventHandler(this.pictureBox4_Click);
@@ -799,18 +800,18 @@ namespace CrystalReport
             this.pictureBox6.Location = new System.Drawing.Point(6, 192);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(40, 31);
-            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox6.TabIndex = 0;
             this.pictureBox6.TabStop = false;
             this.pictureBox6.Click += new System.EventHandler(this.pictureBox4_Click);
             // 
             // pictureBox13
             // 
-            this.pictureBox13.Image = global::CrystalReport.Properties.Resources.service;
+            this.pictureBox13.Image = global::CrystalReport.Properties.Resources.add_group;
             this.pictureBox13.Location = new System.Drawing.Point(5, 229);
             this.pictureBox13.Name = "pictureBox13";
             this.pictureBox13.Size = new System.Drawing.Size(41, 31);
-            this.pictureBox13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox13.TabIndex = 0;
             this.pictureBox13.TabStop = false;
             this.pictureBox13.Click += new System.EventHandler(this.pictureBox4_Click);
@@ -841,8 +842,8 @@ namespace CrystalReport
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
@@ -887,7 +888,6 @@ namespace CrystalReport
         private Panel panel1;
         private PictureBox pictureBox3;
         private Label lis;
-        private PictureBox pictureBox1;
         private Label lices;
         private Guna.UI.WinForms.GunaButton gunaButton1;
         private Guna.UI.WinForms.GunaButton gunaButton3;
@@ -907,12 +907,13 @@ namespace CrystalReport
         private Label label6;
         private Label label7;
         private Label bill;
-        private Label label3;
         private Label label18;
         private Label label1;
         private Guna.UI.WinForms.GunaButton gunaButton4;
         private Guna.UI.WinForms.GunaButton gunaButton5;
         private Label label4;
         private PictureBox pictureBox2;
+        private Label label3;
+        private PictureBox pictureBox1;
     }
 }

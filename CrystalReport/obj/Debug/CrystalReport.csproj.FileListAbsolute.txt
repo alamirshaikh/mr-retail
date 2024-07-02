@@ -1222,12 +1222,16 @@ E:\data0\prs\CrystalReport\CrystalReport\bin\Debug\DailyReport.rpt
 E:\data0\prs\CrystalReport\CrystalReport\bin\Debug\DailyReport.cs
 D:\New folder (2)\mr-retail\CrystalReport\bin\Debug\Backup\Test.txt
 D:\New folder (2)\mr-retail\CrystalReport\bin\Debug\Backup\sercret.json
+D:\New folder (2)\mr-retail\CrystalReport\bin\Debug\Barcodelabels.rpt
+D:\New folder (2)\mr-retail\CrystalReport\bin\Debug\Barcodelable.rpt
 D:\New folder (2)\mr-retail\CrystalReport\bin\Debug\CustomerCreditBill.rpt
 D:\New folder (2)\mr-retail\CrystalReport\bin\Debug\DailyReport.rpt
 D:\New folder (2)\mr-retail\CrystalReport\bin\Debug\CustomerLedger.rpt
 D:\New folder (2)\mr-retail\CrystalReport\bin\Debug\Ledger.rpt
 D:\New folder (2)\mr-retail\CrystalReport\bin\Debug\NewTirupat.rpt
 D:\New folder (2)\mr-retail\CrystalReport\bin\Debug\SalesReport.rpt
+D:\New folder (2)\mr-retail\CrystalReport\bin\Debug\Barcodelabels.cs
+D:\New folder (2)\mr-retail\CrystalReport\bin\Debug\Barcodelable.cs
 D:\New folder (2)\mr-retail\CrystalReport\bin\Debug\CustomerCreditBill.cs
 D:\New folder (2)\mr-retail\CrystalReport\bin\Debug\DailyReport.cs
 D:\New folder (2)\mr-retail\CrystalReport\bin\Debug\CustomerLedger.cs
@@ -1365,6 +1369,7 @@ D:\New folder (2)\mr-retail\CrystalReport\bin\Debug\Google.Apis.Core.pdb
 D:\New folder (2)\mr-retail\CrystalReport\bin\Debug\Google.Apis.Core.xml
 D:\New folder (2)\mr-retail\CrystalReport\obj\Debug\CrystalReport.csproj.AssemblyReference.cache
 D:\New folder (2)\mr-retail\CrystalReport\obj\Debug\CrystalReport.Components.AddItem.resources
+D:\New folder (2)\mr-retail\CrystalReport\obj\Debug\CrystalReport.Components.Backup.resources
 D:\New folder (2)\mr-retail\CrystalReport\obj\Debug\CrystalReport.Components.Barcode.resources
 D:\New folder (2)\mr-retail\CrystalReport\obj\Debug\CrystalReport.Components.Bill.resources
 D:\New folder (2)\mr-retail\CrystalReport\obj\Debug\CrystalReport.Components.Company.resources
@@ -1395,6 +1400,7 @@ D:\New folder (2)\mr-retail\CrystalReport\obj\Debug\CrystalReport.Form1.resource
 D:\New folder (2)\mr-retail\CrystalReport\obj\Debug\CrystalReport.LoadPro.resources
 D:\New folder (2)\mr-retail\CrystalReport\obj\Debug\CrystalReport.Login.resources
 D:\New folder (2)\mr-retail\CrystalReport\obj\Debug\CrystalReport.PasswordManager.resources
+D:\New folder (2)\mr-retail\CrystalReport\obj\Debug\CrystalReport.ReportBarcode.resources
 D:\New folder (2)\mr-retail\CrystalReport\obj\Debug\CrystalReport.ReportStd.resources
 D:\New folder (2)\mr-retail\CrystalReport\obj\Debug\CrystalReport.Properties.Resources.resources
 D:\New folder (2)\mr-retail\CrystalReport\obj\Debug\CrystalReport.Sale_History.resources
@@ -1406,4 +1412,14 @@ D:\New folder (2)\mr-retail\CrystalReport\obj\Debug\Mr.Retail.application
 D:\New folder (2)\mr-retail\CrystalReport\obj\Debug\CrystalReport.csproj.CopyComplete
 D:\New folder (2)\mr-retail\CrystalReport\obj\Debug\Mr.Retail.exe
 D:\New folder (2)\mr-retail\CrystalReport\obj\Debug\Mr.Retail.pdb
-D:\New folder (2)\mr-retail\CrystalReport\obj\Debug\CrystalReport.Components.Backup.resources
+D:\New folder (2)\mr-retail\CrystalReport\bin\Debug\Syncfusion.Chart.Base.dll
+D:\New folder (2)\mr-retail\CrystalReport\bin\Debug\Syncfusion.Chart.Windows.dll
+D:\New folder (2)\mr-retail\CrystalReport\bin\Debug\Syncfusion.Grouping.Base.dll
+D:\New folder (2)\mr-retail\CrystalReport\bin\Debug\Syncfusion.Licensing.dll
+D:\New folder (2)\mr-retail\CrystalReport\bin\Debug\Syncfusion.Shared.Base.dll
+D:\New folder (2)\mr-retail\CrystalReport\bin\Debug\Syncfusion.Chart.Base.xml
+D:\New folder (2)\mr-retail\CrystalReport\bin\Debug\Syncfusion.Chart.Windows.xml
+D:\New folder (2)\mr-retail\CrystalReport\bin\Debug\Syncfusion.Grouping.Base.xml
+D:\New folder (2)\mr-retail\CrystalReport\bin\Debug\Syncfusion.Shared.Base.xml
+D:\New folder (2)\mr-retail\CrystalReport\obj\Debug\CrystalReport.Barcode_Types.Garment1.resources
+D:\New folder (2)\mr-retail\CrystalReport\obj\Debug\CrystalReport.Password.resources

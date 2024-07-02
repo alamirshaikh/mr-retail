@@ -49,8 +49,13 @@ namespace CrystalReport.Components
             this.city = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.custname = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cust_p = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cust_add = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.citys = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dat_c = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bcs = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button2 = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel20 = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.totalamt = new System.Windows.Forms.TextBox();
@@ -62,17 +67,10 @@ namespace CrystalReport.Components
             this.panel12 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.custname = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cust_p = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cust_add = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.citys = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dat_c = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bcs = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel20.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel13.SuspendLayout();
@@ -106,7 +104,7 @@ namespace CrystalReport.Components
             // 
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel2.BackColor = System.Drawing.SystemColors.Control;
+            this.panel2.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.checkBox2);
             this.panel2.Controls.Add(this.button1);
@@ -126,6 +124,7 @@ namespace CrystalReport.Components
             // 
             this.checkBox2.AutoSize = true;
             this.checkBox2.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.checkBox2.Location = new System.Drawing.Point(552, 87);
             this.checkBox2.Name = "checkBox2";
             this.checkBox2.Size = new System.Drawing.Size(61, 17);
@@ -135,9 +134,10 @@ namespace CrystalReport.Components
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.Gold;
+            this.button1.BackColor = System.Drawing.SystemColors.HotTrack;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.White;
             this.button1.Location = new System.Drawing.Point(371, 63);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 28);
@@ -150,6 +150,7 @@ namespace CrystalReport.Components
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label4.Location = new System.Drawing.Point(555, 8);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(97, 13);
@@ -174,7 +175,7 @@ namespace CrystalReport.Components
             // 
             this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(37, 32);
+            this.dateTimePicker1.Location = new System.Drawing.Point(42, 31);
             this.dateTimePicker1.MinDate = new System.DateTime(1800, 12, 31, 0, 0, 0, 0);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(149, 24);
@@ -184,7 +185,7 @@ namespace CrystalReport.Components
             // 
             this.dateTimePicker2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker2.Location = new System.Drawing.Point(219, 32);
+            this.dateTimePicker2.Location = new System.Drawing.Point(224, 32);
             this.dateTimePicker2.MinDate = new System.DateTime(1800, 12, 31, 0, 0, 0, 0);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(149, 24);
@@ -196,8 +197,8 @@ namespace CrystalReport.Components
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label6.AutoSize = true;
             this.label6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label6.ForeColor = System.Drawing.Color.DarkBlue;
-            this.label6.Location = new System.Drawing.Point(190, 38);
+            this.label6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label6.Location = new System.Drawing.Point(198, 38);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(23, 13);
             this.label6.TabIndex = 10;
@@ -210,7 +211,7 @@ namespace CrystalReport.Components
             this.label5.AutoSize = true;
             this.label5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label5.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.DarkBlue;
+            this.label5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label5.Location = new System.Drawing.Point(1, 37);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(39, 13);
@@ -220,11 +221,11 @@ namespace CrystalReport.Components
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox1.ForeColor = System.Drawing.Color.Crimson;
-            this.checkBox1.Location = new System.Drawing.Point(371, 25);
+            this.checkBox1.Font = new System.Drawing.Font("Yu Gothic UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox1.ForeColor = System.Drawing.Color.DarkKhaki;
+            this.checkBox1.Location = new System.Drawing.Point(371, 21);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(96, 17);
+            this.checkBox1.Size = new System.Drawing.Size(111, 21);
             this.checkBox1.TabIndex = 7;
             this.checkBox1.Text = "All Customers";
             this.checkBox1.UseVisualStyleBackColor = true;
@@ -235,7 +236,7 @@ namespace CrystalReport.Components
             this.area.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.area.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.area.FormattingEnabled = true;
-            this.area.Location = new System.Drawing.Point(48, 65);
+            this.area.Location = new System.Drawing.Point(48, 63);
             this.area.Name = "area";
             this.area.Size = new System.Drawing.Size(316, 26);
             this.area.TabIndex = 6;
@@ -245,10 +246,11 @@ namespace CrystalReport.Components
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Yu Gothic UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label3.Location = new System.Drawing.Point(3, 68);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(30, 13);
+            this.label3.Size = new System.Drawing.Size(36, 17);
             this.label3.TabIndex = 1;
             this.label3.Text = "Area";
             // 
@@ -258,7 +260,7 @@ namespace CrystalReport.Components
             this.city.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.city.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.city.FormattingEnabled = true;
-            this.city.Location = new System.Drawing.Point(48, 21);
+            this.city.Location = new System.Drawing.Point(48, 19);
             this.city.Name = "city";
             this.city.Size = new System.Drawing.Size(316, 26);
             this.city.TabIndex = 5;
@@ -267,10 +269,11 @@ namespace CrystalReport.Components
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Yu Gothic UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label2.Location = new System.Drawing.Point(4, 22);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(30, 13);
+            this.label2.Size = new System.Drawing.Size(34, 17);
             this.label2.TabIndex = 0;
             this.label2.Text = "City:";
             // 
@@ -285,7 +288,6 @@ namespace CrystalReport.Components
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dataGridView1.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
             this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
@@ -304,7 +306,7 @@ namespace CrystalReport.Components
             this.dat_c,
             this.bcs});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.AliceBlue;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Yu Gothic UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
@@ -317,30 +319,64 @@ namespace CrystalReport.Components
             this.dataGridView1.Size = new System.Drawing.Size(946, 448);
             this.dataGridView1.TabIndex = 5;
             // 
+            // custname
+            // 
+            this.custname.FillWeight = 121.8274F;
+            this.custname.HeaderText = "Cust Name";
+            this.custname.MinimumWidth = 9;
+            this.custname.Name = "custname";
+            // 
+            // cust_p
+            // 
+            this.cust_p.FillWeight = 95.6345F;
+            this.cust_p.HeaderText = "Cust Phone";
+            this.cust_p.MinimumWidth = 9;
+            this.cust_p.Name = "cust_p";
+            // 
+            // cust_add
+            // 
+            this.cust_add.FillWeight = 95.6345F;
+            this.cust_add.HeaderText = "Cust_Address";
+            this.cust_add.MinimumWidth = 9;
+            this.cust_add.Name = "cust_add";
+            // 
+            // citys
+            // 
+            this.citys.FillWeight = 95.6345F;
+            this.citys.HeaderText = "City";
+            this.citys.MinimumWidth = 9;
+            this.citys.Name = "citys";
+            // 
+            // dat_c
+            // 
+            this.dat_c.FillWeight = 95.6345F;
+            this.dat_c.HeaderText = "Date";
+            this.dat_c.MinimumWidth = 9;
+            this.dat_c.Name = "dat_c";
+            // 
+            // bcs
+            // 
+            this.bcs.FillWeight = 95.6345F;
+            this.bcs.HeaderText = "Balance";
+            this.bcs.MinimumWidth = 9;
+            this.bcs.Name = "bcs";
+            // 
             // button2
             // 
             this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.button2.BackColor = System.Drawing.Color.Azure;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(74, 11);
+            this.button2.Image = global::CrystalReport.Properties.Resources.printer_sec;
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.Location = new System.Drawing.Point(5, 11);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(140, 64);
+            this.button2.Size = new System.Drawing.Size(129, 64);
             this.button2.TabIndex = 6;
             this.button2.Text = "Print or View";
+            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.pictureBox1.Image = global::CrystalReport.Properties.Resources.prnt;
-            this.pictureBox1.Location = new System.Drawing.Point(3, 13);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(65, 62);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 7;
-            this.pictureBox1.TabStop = false;
             // 
             // panel20
             // 
@@ -396,11 +432,12 @@ namespace CrystalReport.Components
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label18.ForeColor = System.Drawing.Color.Cornsilk;
-            this.label18.Location = new System.Drawing.Point(8, 4);
+            this.label18.Location = new System.Drawing.Point(23, 4);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(100, 18);
+            this.label18.Size = new System.Drawing.Size(141, 18);
             this.label18.TabIndex = 122204;
-            this.label18.Text = "T.Customer";
+            this.label18.Text = "Total Customers";
+            this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // sumqty
             // 
@@ -411,7 +448,7 @@ namespace CrystalReport.Components
             this.sumqty.Location = new System.Drawing.Point(3, 10);
             this.sumqty.Name = "sumqty";
             this.sumqty.ReadOnly = true;
-            this.sumqty.Size = new System.Drawing.Size(118, 22);
+            this.sumqty.Size = new System.Drawing.Size(178, 22);
             this.sumqty.TabIndex = 20000;
             this.sumqty.Text = "0";
             this.sumqty.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -422,9 +459,9 @@ namespace CrystalReport.Components
             this.panel13.BackColor = System.Drawing.Color.Cornsilk;
             this.panel13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel13.Controls.Add(this.sumqty);
-            this.panel13.Location = new System.Drawing.Point(554, 36);
+            this.panel13.Location = new System.Drawing.Point(494, 36);
             this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(126, 41);
+            this.panel13.Size = new System.Drawing.Size(186, 41);
             this.panel13.TabIndex = 122214;
             // 
             // panel11
@@ -433,9 +470,9 @@ namespace CrystalReport.Components
             this.panel11.BackColor = System.Drawing.SystemColors.Highlight;
             this.panel11.Controls.Add(this.label18);
             this.panel11.Controls.Add(this.panel12);
-            this.panel11.Location = new System.Drawing.Point(554, 9);
+            this.panel11.Location = new System.Drawing.Point(494, 9);
             this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(126, 29);
+            this.panel11.Size = new System.Drawing.Size(186, 29);
             this.panel11.TabIndex = 122213;
             // 
             // panel12
@@ -466,55 +503,12 @@ namespace CrystalReport.Components
             this.panel5.Controls.Add(this.button2);
             this.panel5.Controls.Add(this.panel4);
             this.panel5.Controls.Add(this.panel20);
-            this.panel5.Controls.Add(this.pictureBox1);
             this.panel5.Controls.Add(this.panel13);
             this.panel5.Controls.Add(this.panel11);
             this.panel5.Location = new System.Drawing.Point(5, 631);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(941, 86);
             this.panel5.TabIndex = 122216;
-            // 
-            // custname
-            // 
-            this.custname.FillWeight = 121.8274F;
-            this.custname.HeaderText = "Cust Name";
-            this.custname.MinimumWidth = 9;
-            this.custname.Name = "custname";
-            // 
-            // cust_p
-            // 
-            this.cust_p.FillWeight = 95.6345F;
-            this.cust_p.HeaderText = "Cust Phone";
-            this.cust_p.MinimumWidth = 9;
-            this.cust_p.Name = "cust_p";
-            // 
-            // cust_add
-            // 
-            this.cust_add.FillWeight = 95.6345F;
-            this.cust_add.HeaderText = "Cust_Address";
-            this.cust_add.MinimumWidth = 9;
-            this.cust_add.Name = "cust_add";
-            // 
-            // citys
-            // 
-            this.citys.FillWeight = 95.6345F;
-            this.citys.HeaderText = "City";
-            this.citys.MinimumWidth = 9;
-            this.citys.Name = "citys";
-            // 
-            // dat_c
-            // 
-            this.dat_c.FillWeight = 95.6345F;
-            this.dat_c.HeaderText = "Date";
-            this.dat_c.MinimumWidth = 9;
-            this.dat_c.Name = "dat_c";
-            // 
-            // bcs
-            // 
-            this.bcs.FillWeight = 95.6345F;
-            this.bcs.HeaderText = "Balance";
-            this.bcs.MinimumWidth = 9;
-            this.bcs.Name = "bcs";
             // 
             // LoadRotray
             // 
@@ -535,7 +529,6 @@ namespace CrystalReport.Components
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel20.ResumeLayout(false);
             this.panel20.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -568,7 +561,6 @@ namespace CrystalReport.Components
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.CheckBox checkBox2;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel20;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.TextBox totalamt;

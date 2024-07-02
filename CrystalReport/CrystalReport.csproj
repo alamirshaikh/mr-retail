@@ -271,6 +271,21 @@
       <HintPath>..\packages\CrystalReports.ShockwaveFlashObjects.13.0.4003\lib\net40\ShockwaveFlashObjects.dll</HintPath>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
+    <Reference Include="Syncfusion.Chart.Base, Version=19.1451.0.65, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.Chart.Base.19.1.0.65\lib\net451\Syncfusion.Chart.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Chart.Windows, Version=19.1451.0.65, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.Chart.Windows.19.1.0.65\lib\net451\Syncfusion.Chart.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Grouping.Base, Version=19.1451.0.65, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.Grouping.Base.19.1.0.65\lib\net451\Syncfusion.Grouping.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Licensing, Version=19.1451.0.65, Culture=neutral, PublicKeyToken=632609b4d040f6b4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.Licensing.19.1.0.65\lib\net451\Syncfusion.Licensing.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Shared.Base, Version=19.1451.0.65, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.Shared.Base.19.1.0.65\lib\net451\Syncfusion.Shared.Base.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
@@ -378,6 +393,7 @@
     </Reference>
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -395,6 +411,32 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Barcodelabels.cs">
+      <DependentUpon>Barcodelabels.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Barcodelable.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Barcodelable.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Barcode_Types\Garment1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Barcode_Types\Garment1.Designer.cs">
+      <DependentUpon>Garment1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cloths.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Cloths.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Components\AddItem.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -578,6 +620,14 @@
       <SubType>Component</SubType>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
+    <Compile Include="datasetbarcode.cs">
+      <DependentUpon>datasetbarcode.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="datasetbarcode.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>datasetbarcode.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -618,6 +668,12 @@
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="Password.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Password.Designer.cs">
+      <DependentUpon>Password.cs</DependentUpon>
+    </Compile>
     <Compile Include="PasswordManager.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -635,6 +691,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RawBarcode.rpt</DependentUpon>
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ReportBarcode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportBarcode.Designer.cs">
+      <DependentUpon>ReportBarcode.cs</DependentUpon>
     </Compile>
     <Compile Include="ReportStd.cs">
       <SubType>Form</SubType>
@@ -664,6 +726,12 @@
     <Compile Include="Sale_History.Designer.cs">
       <DependentUpon>Sale_History.cs</DependentUpon>
     </Compile>
+    <Compile Include="singlebarcode.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>singlebarcode.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="StockReport.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -682,6 +750,23 @@
     <Compile Include="View.Designer.cs">
       <DependentUpon>View.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Barcodelabels.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Barcodelabels.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Barcodelable.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Barcodelable.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Barcode_Types\Garment1.resx">
+      <DependentUpon>Garment1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cloths.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Cloths.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Components\AddItem.resx">
       <DependentUpon>AddItem.cs</DependentUpon>
     </EmbeddedResource>
@@ -799,12 +884,18 @@
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Password.resx">
+      <DependentUpon>Password.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PasswordManager.resx">
       <DependentUpon>PasswordManager.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RawBarcode.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>RawBarcode.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportBarcode.resx">
+      <DependentUpon>ReportBarcode.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ReportStd.resx">
       <DependentUpon>ReportStd.cs</DependentUpon>
@@ -827,6 +918,10 @@
     <EmbeddedResource Include="Sale_History.resx">
       <DependentUpon>Sale_History.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="singlebarcode.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>singlebarcode.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="StockReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>StockReport.cs</LastGenOutput>
@@ -839,6 +934,17 @@
       <DependentUpon>View.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="CrystalReport_TemporaryKey.pfx" />
+    <None Include="datasetbarcode.xsc">
+      <DependentUpon>datasetbarcode.xsd</DependentUpon>
+    </None>
+    <None Include="datasetbarcode.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>datasetbarcode.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="datasetbarcode.xss">
+      <DependentUpon>datasetbarcode.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -976,6 +1082,53 @@
     <None Include="Resources\download-PhotoRoom.png-PhotoRoom.png" />
     <None Include="Resources\cashback.png" />
     <None Include="Resources\download-PhotoRoom.png-PhotoRoom1.png" />
+    <None Include="Resources\left-arrow.png" />
+    <None Include="Resources\right-arrow.png" />
+    <None Include="Resources\right-arrow1.png" />
+    <None Include="Resources\arrow.png" />
+    <None Include="Resources\left-arrow1.png" />
+    <None Include="Resources\right-arrow2.png" />
+    <None Include="Resources\right-arrow3.png" />
+    <None Include="Resources\left-arrow2.png" />
+    <None Include="Resources\right-arrow4.png" />
+    <None Include="Resources\left-arrow3.png" />
+    <None Include="Resources\right-arrow5.png" />
+    <None Include="Resources\up-arrow1.png" />
+    <None Include="Resources\down-arrow1.png" />
+    <None Include="Resources\printer sec.png" />
+    <None Include="Resources\view 1.png" />
+    <None Include="Resources\icons8-import-csv-60.png" />
+    <None Include="Resources\dashboard real.png" />
+    <None Include="Resources\add enw.png" />
+    <None Include="Resources\product list.png" />
+    <None Include="Resources\stock.png" />
+    <None Include="Resources\add-group.png" />
+    <None Include="Resources\POINT OF SALE.png" />
+    <None Include="Resources\barcode-product1.png" />
+    <None Include="Resources\shopping-cart.png" />
+    <None Include="Resources\supplier.png" />
+    <None Include="Resources\supplier list.png" />
+    <None Include="Resources\paymnet.png" />
+    <None Include="Resources\import export.png" />
+    <None Include="Resources\bill1.png" />
+    <None Include="Resources\account.png" />
+    <None Include="Resources\expenses.png" />
+    <None Include="Resources\close.png" />
+    <None Include="Resources\maximize2.png" />
+    <None Include="Resources\max1.png" />
+    <None Include="Resources\whatsapp.png" />
+    <None Include="Resources\gmail.png" />
+    <None Include="Resources\SL-121021-47240-13.jpg" />
+    <None Include="Resources\6746675.jpg" />
+    <None Include="Resources\POINT OF SALE1.png" />
+    <None Include="Resources\shopping-cart1.png" />
+    <None Include="Resources\supplier list1.png" />
+    <None Include="Resources\supplier1.png" />
+    <None Include="Resources\paymnet1.png" />
+    <None Include="Resources\gst.png" />
+    <None Include="Resources\view 11.png" />
+    <None Include="Resources\printer sec1.png" />
+    <None Include="Resources\diskette2.png" />
     <Content Include="tr.ico" />
   </ItemGroup>
   <ItemGroup>

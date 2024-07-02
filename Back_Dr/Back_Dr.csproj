@@ -170,6 +170,7 @@
     <Compile Include="Class1.cs" />
     <Compile Include="Inventory\ProductAdd.cs" />
     <Compile Include="MainEngine,.cs" />
+    <Compile Include="Models\BarcodeSingle.cs" />
     <Compile Include="Models\CustomerModel.cs" />
     <Compile Include="Models\FBarcodeModel.cs" />
     <Compile Include="Models\InvoiceModels.cs" />
@@ -177,6 +178,7 @@
     <Compile Include="Models\MechanicModel.cs" />
     <Compile Include="Models\PartiNameLIst.cs" />
     <Compile Include="Models\PaymentModel.cs" />
+    <Compile Include="Models\POSModels.cs" />
     <Compile Include="Models\ProductM.cs" />
     <Compile Include="Models\SalesBillModel.cs" />
     <Compile Include="Models\StockModels.cs" />

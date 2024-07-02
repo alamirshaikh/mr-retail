@@ -37,10 +37,10 @@ namespace Back_Dr.Sale
             }
 
         }
-        
 
-
-
-
+        public object SubTotal(decimal r)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

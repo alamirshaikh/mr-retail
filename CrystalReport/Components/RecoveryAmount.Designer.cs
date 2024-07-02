@@ -196,7 +196,7 @@ namespace CrystalReport.Components
             // 
             // panel4
             // 
-            this.panel4.BackColor = System.Drawing.Color.DarkSalmon;
+            this.panel4.BackColor = System.Drawing.Color.DarkSlateBlue;
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel4.Location = new System.Drawing.Point(8, 49);
             this.panel4.Name = "panel4";
@@ -266,7 +266,7 @@ namespace CrystalReport.Components
             this.datacust.DefaultCellStyle = dataGridViewCellStyle3;
             this.datacust.Location = new System.Drawing.Point(4, 36);
             this.datacust.Name = "datacust";
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Yu Gothic UI", 9F);
             this.datacust.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.datacust.Size = new System.Drawing.Size(946, 377);
@@ -530,7 +530,7 @@ namespace CrystalReport.Components
             // 
             this.panel6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel6.BackColor = System.Drawing.Color.DarkSalmon;
+            this.panel6.BackColor = System.Drawing.Color.DarkSlateBlue;
             this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel6.Location = new System.Drawing.Point(408, 50);
             this.panel6.Name = "panel6";

@@ -101,7 +101,7 @@ namespace CrystalReport.Components
             // 
             // panel5
             // 
-            this.panel5.BackColor = System.Drawing.Color.DarkSalmon;
+            this.panel5.BackColor = System.Drawing.Color.DarkSlateBlue;
             this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel5.Controls.Add(this.label7);
             this.panel5.Location = new System.Drawing.Point(0, -1);
@@ -278,7 +278,7 @@ namespace CrystalReport.Components
             // 
             this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel4.BackColor = System.Drawing.Color.DarkSalmon;
+            this.panel4.BackColor = System.Drawing.Color.DarkSlateBlue;
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel4.Controls.Add(this.label8);
             this.panel4.Location = new System.Drawing.Point(0, 0);

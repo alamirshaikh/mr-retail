@@ -2,7 +2,9 @@
 using Dapper;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -29,6 +31,64 @@ namespace Dr.Sale.Components
             return result;
         }
 
+        public static decimal GST(decimal amount, int percent)
+        {
+            decimal gstAmount = (amount * percent) / 100;
+            decimal totalAmount = amount + gstAmount;
+            return totalAmount;
+        }
+
+
+
+
+        public static Color IdentifyBackgroundColor(Bitmap bitmap)
+        {
+            // This method assumes the background color is uniform and uses the corner pixels
+            int sampleSize = 10; // Number of pixels to sample from each corner
+            Color[] corners = new Color[4];
+            corners[0] = bitmap.GetPixel(0, 0); // Top-left
+            corners[1] = bitmap.GetPixel(bitmap.Width - 1, 0); // Top-right
+            corners[2] = bitmap.GetPixel(0, bitmap.Height - 1); // Bottom-left
+            corners[3] = bitmap.GetPixel(bitmap.Width - 1, bitmap.Height - 1); // Bottom-right
+
+            // Calculate the average color
+            int r = 0, g = 0, b = 0;
+            foreach (Color color in corners)
+            {
+                r += color.R;
+                g += color.G;
+                b += color.B;
+            }
+            r /= corners.Length;
+            g /= corners.Length;
+            b /= corners.Length;
+
+            return Color.FromArgb(r, g, b);
+        }
+
+        public static DataTable GetTable(string sql)
+        {
+            DataTable table = new DataTable();
+
+            // Assuming you have a valid connection string
+
+
+            using (SqlConnection conn = new SqlConnection(MainEngine_.SERVER_PATH))
+            {
+                conn.Open();
+
+                using (SqlCommand cmd = new SqlCommand(sql, conn))
+                {
+                    using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
+                    {
+                        adapter.Fill(table);
+                    }
+                }
+            }
+
+            return table;
+        }
+
         public static string OwnerName()
         {
             return MainEngine_.GetDataScript<string>("select OwnerName from OwnerInformation").FirstOrDefault();
@@ -37,6 +97,25 @@ namespace Dr.Sale.Components
 
         public StoreRoom()
         {
+
+        }
+
+
+
+
+        public static decimal GetValueMonth(int m)
+        {
+
+          return  MainEngine_.GetDataScript<decimal>($"SELECT SUM(TotalBill) as total FROM SInvoice where MONTH(invdate) = {m} GROUP BY MONTH(invdate); ").FirstOrDefault();
+
+
+        }
+
+        public static string getpassword()
+        {
+
+            return MainEngine_.GetDataScript<string>($"SELECT password from UserAccount where userId = 'bill'").FirstOrDefault();
+
 
         }
 
@@ -71,6 +150,12 @@ namespace Dr.Sale.Components
 
 
 
+
+
+
+
+
+
         public decimal Balance(string name)
         {
            
@@ -97,6 +182,20 @@ namespace Dr.Sale.Components
         }
 
 
+        public static string TotalBill(string invoice)
+        {
+            return MainEngine_.GetDataScript<string>("SELECT TotalBill FROM SInvoice WHERE InvoiceID = '"+invoice+"'").FirstOrDefault();
+
+        }
+
+
+        
+
+             public static string TotalTax(string invoice)
+        {
+            return MainEngine_.GetDataScript<string>("SELECT other FROM SInvoice WHERE InvoiceID = '" + invoice + "'").FirstOrDefault();
+
+        }
 
 
 
@@ -119,11 +218,32 @@ namespace Dr.Sale.Components
 
         }
 
+
+
+        public static decimal CustomerBalace(string cust_name)
+        {
+            return MainEngine_.GetDataScript<decimal>("Select Balance from Customer where cust_name = '" + cust_name + "'").FirstOrDefault();
+
+        }
+
+
+
+
+
         public static string ShopNames()
         {
             return MainEngine_.GetDataScript<string>("select ShopName from OwnerInformation").FirstOrDefault();
 
         }
+
+
+
+        public static decimal TotalPaid(string invoice)
+        {
+            return MainEngine_.GetDataScript<decimal>("select SUM(PAID) from CustomerTransactions  where InvoiceId = '"+invoice+"'").FirstOrDefault();
+
+        }
+
 
         public static string MonthSales()
         {
@@ -197,14 +317,7 @@ namespace Dr.Sale.Components
                 }
                 else
                 {
-                    try
-                    {
-
-                    }
-                    catch (Exception ess)
-                    {
-
-                    }
+                   
                 }
                 
             }
@@ -241,9 +354,9 @@ namespace Dr.Sale.Components
                 }
 
             }
-            catch (Exception ex)
+            catch (Exception exxxx)
             {
-
+                //
             }
         }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
     }

@@ -88,6 +88,7 @@ namespace CrystalReport.Components
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
+            this.button5 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -153,6 +154,7 @@ namespace CrystalReport.Components
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(486, 421);
             this.panel3.TabIndex = 9;
+            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
             // label25
             // 
@@ -604,7 +606,7 @@ namespace CrystalReport.Components
             // 
             this.button3.BackColor = System.Drawing.Color.YellowGreen;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button3.Location = new System.Drawing.Point(583, 326);
+            this.button3.Location = new System.Drawing.Point(722, 326);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(84, 23);
             this.button3.TabIndex = 21;
@@ -861,7 +863,7 @@ namespace CrystalReport.Components
             // 
             // panel5
             // 
-            this.panel5.BackColor = System.Drawing.Color.DarkSalmon;
+            this.panel5.BackColor = System.Drawing.Color.DarkSlateBlue;
             this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel5.Controls.Add(this.label9);
             this.panel5.Location = new System.Drawing.Point(2, 41);
@@ -873,7 +875,7 @@ namespace CrystalReport.Components
             // 
             this.panel9.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel9.BackColor = System.Drawing.Color.DarkSalmon;
+            this.panel9.BackColor = System.Drawing.Color.DarkSlateBlue;
             this.panel9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel9.Controls.Add(this.label10);
             this.panel9.Location = new System.Drawing.Point(493, 41);
@@ -885,7 +887,7 @@ namespace CrystalReport.Components
             // 
             this.panel7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel7.BackColor = System.Drawing.Color.DarkSalmon;
+            this.panel7.BackColor = System.Drawing.Color.DarkSlateBlue;
             this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel7.Controls.Add(this.label11);
             this.panel7.Location = new System.Drawing.Point(2, 499);
@@ -893,11 +895,24 @@ namespace CrystalReport.Components
             this.panel7.Size = new System.Drawing.Size(956, 31);
             this.panel7.TabIndex = 17;
             // 
+            // button5
+            // 
+            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button5.Location = new System.Drawing.Point(583, 326);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(133, 23);
+            this.button5.TabIndex = 23;
+            this.button5.Text = "Change Password";
+            this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
             // Company
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.panel7);
             this.Controls.Add(this.button3);
@@ -992,5 +1007,6 @@ namespace CrystalReport.Components
         private PictureBox pictureBox1;
         private Label label21;
         private Label label25;
+        private Button button5;
     }
 }

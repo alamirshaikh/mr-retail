@@ -273,7 +273,7 @@ namespace CrystalReport.Components
             // 
             // panel3
             // 
-            this.panel3.BackColor = System.Drawing.Color.White;
+            this.panel3.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel3.Controls.Add(this.partiname);
             this.panel3.Controls.Add(this.address);
@@ -295,8 +295,9 @@ namespace CrystalReport.Components
             // 
             // partiname
             // 
-            this.partiname.BackColor = System.Drawing.Color.AntiqueWhite;
+            this.partiname.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.partiname.Font = new System.Drawing.Font("Verdana", 12F);
+            this.partiname.ForeColor = System.Drawing.Color.Black;
             this.partiname.FormattingEnabled = true;
             this.partiname.Location = new System.Drawing.Point(137, 24);
             this.partiname.Name = "partiname";
@@ -305,8 +306,9 @@ namespace CrystalReport.Components
             // 
             // address
             // 
-            this.address.BackColor = System.Drawing.Color.White;
+            this.address.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.address.Font = new System.Drawing.Font("Verdana", 12F);
+            this.address.ForeColor = System.Drawing.Color.Black;
             this.address.Location = new System.Drawing.Point(136, 170);
             this.address.Name = "address";
             this.address.Size = new System.Drawing.Size(295, 73);
@@ -327,8 +329,9 @@ namespace CrystalReport.Components
             // 
             this.state.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.state.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.state.BackColor = System.Drawing.Color.AntiqueWhite;
+            this.state.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.state.Font = new System.Drawing.Font("Verdana", 12F);
+            this.state.ForeColor = System.Drawing.Color.Black;
             this.state.FormattingEnabled = true;
             this.state.Items.AddRange(new object[] {
             "Andhra Pradesh",
@@ -430,8 +433,9 @@ namespace CrystalReport.Components
             // 
             // company
             // 
-            this.company.BackColor = System.Drawing.Color.AntiqueWhite;
+            this.company.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.company.Font = new System.Drawing.Font("Verdana", 12F);
+            this.company.ForeColor = System.Drawing.Color.Black;
             this.company.Location = new System.Drawing.Point(137, 58);
             this.company.Name = "company";
             this.company.Size = new System.Drawing.Size(295, 27);
@@ -449,8 +453,9 @@ namespace CrystalReport.Components
             // 
             // textBox2
             // 
-            this.textBox2.BackColor = System.Drawing.Color.AntiqueWhite;
+            this.textBox2.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.textBox2.Font = new System.Drawing.Font("Verdana", 12F);
+            this.textBox2.ForeColor = System.Drawing.Color.Black;
             this.textBox2.Location = new System.Drawing.Point(136, 130);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(103, 27);
@@ -460,7 +465,7 @@ namespace CrystalReport.Components
             // 
             this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel4.BackColor = System.Drawing.Color.White;
+            this.panel4.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel4.Controls.Add(this.gstin);
             this.panel4.Controls.Add(this.label9);
@@ -484,8 +489,9 @@ namespace CrystalReport.Components
             // 
             this.gstin.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.gstin.BackColor = System.Drawing.Color.AntiqueWhite;
+            this.gstin.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.gstin.Font = new System.Drawing.Font("Verdana", 12F);
+            this.gstin.ForeColor = System.Drawing.Color.Black;
             this.gstin.Location = new System.Drawing.Point(136, 216);
             this.gstin.Name = "gstin";
             this.gstin.Size = new System.Drawing.Size(310, 27);
@@ -515,8 +521,9 @@ namespace CrystalReport.Components
             // 
             this.ifc.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.ifc.BackColor = System.Drawing.Color.AntiqueWhite;
+            this.ifc.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.ifc.Font = new System.Drawing.Font("Verdana", 12F);
+            this.ifc.ForeColor = System.Drawing.Color.Black;
             this.ifc.Location = new System.Drawing.Point(136, 183);
             this.ifc.Name = "ifc";
             this.ifc.Size = new System.Drawing.Size(310, 27);
@@ -536,8 +543,9 @@ namespace CrystalReport.Components
             // 
             this.acnumber.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.acnumber.BackColor = System.Drawing.Color.AntiqueWhite;
+            this.acnumber.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.acnumber.Font = new System.Drawing.Font("Verdana", 12F);
+            this.acnumber.ForeColor = System.Drawing.Color.Black;
             this.acnumber.Location = new System.Drawing.Point(136, 147);
             this.acnumber.Name = "acnumber";
             this.acnumber.Size = new System.Drawing.Size(310, 27);
@@ -557,8 +565,9 @@ namespace CrystalReport.Components
             // 
             this.acname.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.acname.BackColor = System.Drawing.Color.AntiqueWhite;
+            this.acname.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.acname.Font = new System.Drawing.Font("Verdana", 12F);
+            this.acname.ForeColor = System.Drawing.Color.Black;
             this.acname.Location = new System.Drawing.Point(136, 108);
             this.acname.Name = "acname";
             this.acname.Size = new System.Drawing.Size(310, 27);
@@ -578,8 +587,9 @@ namespace CrystalReport.Components
             // 
             this.bankname.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.bankname.BackColor = System.Drawing.Color.AntiqueWhite;
+            this.bankname.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.bankname.Font = new System.Drawing.Font("Verdana", 12F);
+            this.bankname.ForeColor = System.Drawing.Color.Black;
             this.bankname.Location = new System.Drawing.Point(136, 69);
             this.bankname.Name = "bankname";
             this.bankname.Size = new System.Drawing.Size(310, 27);
@@ -589,8 +599,9 @@ namespace CrystalReport.Components
             // 
             this.pan.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.pan.BackColor = System.Drawing.Color.AntiqueWhite;
+            this.pan.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.pan.Font = new System.Drawing.Font("Verdana", 12F);
+            this.pan.ForeColor = System.Drawing.Color.Black;
             this.pan.Location = new System.Drawing.Point(136, 28);
             this.pan.Name = "pan";
             this.pan.Size = new System.Drawing.Size(310, 27);
@@ -608,7 +619,7 @@ namespace CrystalReport.Components
             // 
             // panel5
             // 
-            this.panel5.BackColor = System.Drawing.Color.DarkSalmon;
+            this.panel5.BackColor = System.Drawing.Color.DarkSlateBlue;
             this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel5.Controls.Add(this.label10);
             this.panel5.Location = new System.Drawing.Point(5, 40);
@@ -620,7 +631,7 @@ namespace CrystalReport.Components
             // 
             this.panel9.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel9.BackColor = System.Drawing.Color.DarkSalmon;
+            this.panel9.BackColor = System.Drawing.Color.DarkSlateBlue;
             this.panel9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel9.Controls.Add(this.label11);
             this.panel9.Location = new System.Drawing.Point(449, 40);

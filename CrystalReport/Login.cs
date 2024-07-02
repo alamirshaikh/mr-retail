@@ -8,6 +8,7 @@ using System.Text;
 using Back_Dr.Backup;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Dr.Sale.Components;
 
 namespace CrystalReport
 {
@@ -24,7 +25,7 @@ namespace CrystalReport
         {
             try
             {
-                 if(textBox1.Text == "bill" && textBox2.Text == "bill123")
+                 if(textBox1.Text == "bill" && textBox2.Text == StoreRoom.getpassword())
                 {
 
                     Form1 f = new Form1();
@@ -42,6 +43,10 @@ namespace CrystalReport
 
         private async  void Login_Load(object sender, EventArgs e)
         {
+
+            comboBox1.Text = StoreRoom.ShopNames();
+
+
         }
 
         private void Login_KeyUp(object sender, KeyEventArgs e)
@@ -81,6 +86,19 @@ namespace CrystalReport
         private void Login_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             Environment.Exit(0);
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            try
+            {
+                Password pas = new Password();
+                pas.Show();
+            }
+            catch (Exception ex)
+            {
+                 
+            }
         }
     }
 }

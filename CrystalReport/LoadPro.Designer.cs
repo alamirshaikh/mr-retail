@@ -48,7 +48,7 @@ namespace CrystalReport
             label1.AutoSize = true;
             label1.BackColor = System.Drawing.Color.Transparent;
             label1.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            label1.ForeColor = System.Drawing.SystemColors.ActiveBorder;
             label1.Location = new System.Drawing.Point(572, 213);
             label1.Name = "label1";
             label1.Size = new System.Drawing.Size(118, 29);
@@ -60,7 +60,7 @@ namespace CrystalReport
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Transparent;
+            this.label3.ForeColor = System.Drawing.SystemColors.ActiveBorder;
             this.label3.Location = new System.Drawing.Point(1, 213);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(108, 29);
@@ -72,7 +72,7 @@ namespace CrystalReport
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Yu Gothic UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
+            this.label2.ForeColor = System.Drawing.SystemColors.Info;
             this.label2.Location = new System.Drawing.Point(2, 387);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(72, 20);
@@ -99,11 +99,11 @@ namespace CrystalReport
             // LICTO
             // 
             this.LICTO.AutoSize = true;
-            this.LICTO.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LICTO.ForeColor = System.Drawing.Color.LightGoldenrodYellow;
+            this.LICTO.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LICTO.ForeColor = System.Drawing.Color.White;
             this.LICTO.Location = new System.Drawing.Point(4, 247);
             this.LICTO.Name = "LICTO";
-            this.LICTO.Size = new System.Drawing.Size(0, 20);
+            this.LICTO.Size = new System.Drawing.Size(0, 23);
             this.LICTO.TabIndex = 14;
             // 
             // label4
@@ -111,7 +111,7 @@ namespace CrystalReport
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Bahnschrift Condensed", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.Transparent;
+            this.label4.ForeColor = System.Drawing.Color.AliceBlue;
             this.label4.Location = new System.Drawing.Point(527, 245);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(183, 45);
@@ -124,7 +124,7 @@ namespace CrystalReport
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(67)))));
             this.pictureBox1.Image = global::CrystalReport.Properties.Resources.logo_no_background2;
             this.pictureBox1.Location = new System.Drawing.Point(137, 12);
             this.pictureBox1.Name = "pictureBox1";
@@ -137,7 +137,7 @@ namespace CrystalReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(67)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(711, 431);
             this.Controls.Add(this.LICTO);

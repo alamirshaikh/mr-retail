@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -20,6 +21,8 @@ namespace CrystalReport.Components
     public partial class Company : UserControl
     {
         private string getshopimage;
+        private string imagePath;
+        private string savePath;
 
         public byte ProductCode { get; private set; }
 
@@ -68,7 +71,16 @@ namespace CrystalReport.Components
                 return false;
             }
         }
-
+        private static Image ResizeImage(Image image, int newWidth, int newHeight)
+        {
+            Bitmap resizedImage = new Bitmap(newWidth, newHeight);
+            using (Graphics graphics = Graphics.FromImage(resizedImage))
+            {
+                graphics.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.HighQualityBicubic;
+                graphics.DrawImage(image, 0, 0, newWidth, newHeight);
+            }
+            return resizedImage;
+        }
         private async void button1_Click(object sender, EventArgs e)
         {
             if (CheackKey(lic.Text) == true)
@@ -76,7 +88,61 @@ namespace CrystalReport.Components
                 try
                 {
 
+                    string savePath = Path.Combine(Directory.GetCurrentDirectory(), "company.png");
+                    
+      
+                    if(File.Exists(savePath))
+                    {
+                        File.Delete(savePath);
 
+                    }
+
+
+
+                    if (!string.IsNullOrEmpty(imagePath))
+                    {
+                        string extension = Path.GetExtension(imagePath).ToLower();
+
+                        if (extension != ".png")
+                        {
+                            using (Image image = Image.FromFile(imagePath))
+                            {
+                                // Get the original width and height
+                                int originalWidth = image.Width;
+                                int originalHeight = image.Height;
+
+                                // Set the desired width and height
+                                int newWidth = 220; // Example: New width
+                                int newHeight = 192; // Example: New height
+
+                                // Resize the image
+                                using (Image resizedImage = ResizeImage(image, newWidth, newHeight))
+                                {
+                                    // Save as JPEG
+                                    resizedImage.Save(savePath, ImageFormat.Png);
+
+                                }
+                            }
+                        }
+                        else
+                        {
+                            int newWidth = 224; // Example: New width
+                            int newHeight = 192; // Example: New height
+                            using (Image image = Image.FromFile(imagePath))
+                            {
+                                using (Image resizedImage = ResizeImage(image, newWidth, newHeight))
+                            {
+                                // Save as JPEG
+                                  savePath = Path.Combine(Directory.GetCurrentDirectory(), "company.png");
+                                resizedImage.Save(savePath, ImageFormat.Png);
+
+                            }
+                            File.Copy(imagePath, savePath, true);
+                        }
+                        }
+
+
+                    }
 
 
                     var para = new
@@ -101,7 +167,7 @@ namespace CrystalReport.Components
                         accountNumber = acnumber.Text,
                         ifsc = ifc.Text,
                         licence = lic.Text,
-                        logo = getshopimage
+                        logo = savePath
                     };
 
                     int c = MainEngine_.GetDataScript<int>("select Count(OwnerID) from OwnerInformation").FirstOrDefault();
@@ -278,16 +344,28 @@ namespace CrystalReport.Components
                         sgst.Text = taxData.SGST.ToString(); // Convert decimal to string
                         cgst.Text = taxData.CGST.ToString(); // Convert decimal to string
 
-                        string imageData = ownerData.logo;
-
-                        // Check if the byte array is not empty
-                        byte[] imageDatas = Convert.FromBase64String(imageData);
-
+                        
                         // Convert byte array to Image
-                        using (MemoryStream ms = new MemoryStream(imageDatas))
+                        string path = Application.StartupPath;
+                        string[] files = Directory.GetFiles(path, "company.png");
+
+                        if (files.Length > 0)
                         {
-                            pictureBox1.Image = Image.FromStream(ms);
+                            try
+                            {
+                                pictureBox1.Image = Image.FromFile(files[0]);
+                            }
+                            catch (Exception ex)
+                            {
+                                MessageBox.Show("Error loading image: " + ex.Message);
+                            }
                         }
+                        else
+                        {
+                           
+                        }
+
+
                     }
                 }
                 catch (Exception ex)
@@ -326,10 +404,17 @@ namespace CrystalReport.Components
             {
                 OpenFileDialog open = new OpenFileDialog();
                 // image filters
+
+
+                
+
                 open.Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp)|*.jpg; *.jpeg; *.gif; *.bmp";
                 if (open.ShowDialog() == DialogResult.OK)
                 {
 
+
+
+                    string path = Application.StartupPath;
 
                     pictureBox1.Image = new Bitmap(open.FileName);
 
@@ -342,6 +427,8 @@ namespace CrystalReport.Components
                     string base64Image = Convert.ToBase64String(imageBytes);
 
                     // Store the base64 string in getshopimage
+
+                    imagePath = open.FileName;
                     getshopimage = base64Image;
                 }
 
@@ -349,6 +436,25 @@ namespace CrystalReport.Components
             catch (Exception ex)
             {
                  
+            }
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Password pas = new Password();
+                pas.Show();
+            }
+            catch (Exception ex)
+            {
+
+                throw;
             }
         }
     }

@@ -17,7 +17,11 @@ namespace CrystalReport
             {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+ 
+ 
+
             Application.Run(new LoadPro());
+
         }
     }
 }

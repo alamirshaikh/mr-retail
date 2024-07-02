@@ -34,3 +34,15 @@ E:\data0\prs\CrystalReport\Mr.RetailGenerator\obj\Debug\Mr.RetailGenerator.cspro
 E:\data0\prs\CrystalReport\Mr.RetailGenerator\obj\Debug\Mr.RetailGenerator.csproj.CopyComplete
 E:\data0\prs\CrystalReport\Mr.RetailGenerator\obj\Debug\Mr.RetailGenerator.exe
 E:\data0\prs\CrystalReport\Mr.RetailGenerator\obj\Debug\Mr.RetailGenerator.pdb
+D:\New folder (2)\mr-retail\Mr.RetailGenerator\bin\Debug\Mr.RetailGenerator.exe.config
+D:\New folder (2)\mr-retail\Mr.RetailGenerator\bin\Debug\Mr.RetailGenerator.exe
+D:\New folder (2)\mr-retail\Mr.RetailGenerator\bin\Debug\Mr.RetailGenerator.pdb
+D:\New folder (2)\mr-retail\Mr.RetailGenerator\bin\Debug\FoxLearn.License.dll
+D:\New folder (2)\mr-retail\Mr.RetailGenerator\obj\Debug\Mr.RetailGenerator.csproj.AssemblyReference.cache
+D:\New folder (2)\mr-retail\Mr.RetailGenerator\obj\Debug\Mr.RetailGenerator.Form1.resources
+D:\New folder (2)\mr-retail\Mr.RetailGenerator\obj\Debug\Mr.RetailGenerator.Properties.Resources.resources
+D:\New folder (2)\mr-retail\Mr.RetailGenerator\obj\Debug\Mr.RetailGenerator.csproj.GenerateResource.cache
+D:\New folder (2)\mr-retail\Mr.RetailGenerator\obj\Debug\Mr.RetailGenerator.csproj.CoreCompileInputs.cache
+D:\New folder (2)\mr-retail\Mr.RetailGenerator\obj\Debug\Mr.RetailGenerator.csproj.CopyComplete
+D:\New folder (2)\mr-retail\Mr.RetailGenerator\obj\Debug\Mr.RetailGenerator.exe
+D:\New folder (2)\mr-retail\Mr.RetailGenerator\obj\Debug\Mr.RetailGenerator.pdb

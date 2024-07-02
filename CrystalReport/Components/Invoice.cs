@@ -22,13 +22,17 @@ using System.Web.UI.WebControls;
 using System.Windows.Forms;
 using Timer = System.Threading.Timer;
 
+
+
 namespace CrystalReport.Components
 {
     public partial class Invoice : UserControl
     {
 
+        private decimal Taxes = 0;
+         private decimal senddiscount = 0;
+        private bool enterKeyPressed = false;
 
-        private decimal senddiscount = 0;
         public Calculation cal = new Calculation();
         private int CustCount = 0;
         public Invoice(string inv = "")
@@ -92,7 +96,9 @@ namespace CrystalReport.Components
 
                     // Access the row's data, for example:
                     string cellValue1 = selectedRow.Cells[0].Value.ToString(); // Assuming column 1 contains strings
-                    string cellValue2 = selectedRow.Cells[1].Value.ToString(); // Assuming column 3 contains strings
+                    string cellValue2 = selectedRow.Cells[2].Value.ToString(); // Assuming column 3 contains strings
+                    string gst = selectedRow.Cells[3].Value.ToString(); // Assuming column 3 contains strings
+
 
                     // Do something with the values or the selected row
                     // Example: Display the values in a message box
@@ -103,6 +109,7 @@ namespace CrystalReport.Components
                     r = Convert.ToDecimal(cellValue2);
                     rete.Text = Convert.ToString(r);
                     amt.Text = Convert.ToString(amst);
+                    gsttext.Text = gst;
                     v = amst;
                     q.Text = "1";
                     disc.Text = "0";
@@ -117,6 +124,8 @@ namespace CrystalReport.Components
                     // Access the row's data, for example:
                     string cellValue1 = selectedRow.Cells[0].Value.ToString(); // Assuming column 1 contains strings
                     string cellValue2 = selectedRow.Cells[2].Value.ToString(); // Assuming column 3 contains strings
+                    string gst = selectedRow.Cells[3].Value.ToString(); // Assuming column 3 contains strings
+
 
                     // Do something with the values or the selected row
                     // Example: Display the values in a message box
@@ -129,6 +138,7 @@ namespace CrystalReport.Components
                     amt.Text = Convert.ToString(amst);
                     v = amst;
                     q.Text = "1";
+                    gsttext.Text = gst;
                     disc.Text = "0";
                     desc.Focus();
                     dgview.Visible = false;
@@ -138,13 +148,31 @@ namespace CrystalReport.Components
 
 
         //Two Column
-        void Search(int LX, int LY, int DW, int DH, string ColName, String ColSize)
+        void Search(int LX, int LY, int DW, int DH, string ColName, string ColSize)
         {
             this.dgview.Location = new System.Drawing.Point(LX, LY);
             this.dgview.Size = new System.Drawing.Size(DW, DH);
 
             string[] ClSize = ColSize.Split(',');
-            //Size
+            string[] ClName = ColName.Split(',');
+
+            // Ensure the DataGridView has the right number of columns
+            if (dgview.Columns.Count < ClName.Length)
+            {
+                while (dgview.Columns.Count < ClName.Length)
+                {
+                    dgview.Columns.Add(new DataGridViewTextBoxColumn());
+                }
+            }
+            else if (dgview.Columns.Count > ClName.Length)
+            {
+                while (dgview.Columns.Count > ClName.Length)
+                {
+                    dgview.Columns.RemoveAt(dgview.Columns.Count - 1);
+                }
+            }
+
+            // Set column sizes
             for (int i = 0; i < ClSize.Length; i++)
             {
                 if (int.Parse(ClSize[i]) != 0)
@@ -156,20 +184,21 @@ namespace CrystalReport.Components
                     dgview.Columns[i].AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
                 }
             }
-            //Name 
-            string[] ClName = ColName.Split(',');
 
+            // Set column names
             for (int i = 0; i < ClName.Length; i++)
             {
                 this.dgview.Columns[i].HeaderText = ClName[i];
                 this.dgview.Columns[i].Visible = true;
             }
         }
-    
 
-    private string GenerateInvoice()
+
+
+        private string GenerateInvoice()
         {
             string inv = "";
+            string newinv = "";
             try
             {
                 var sql = "select * from SInvoice";
@@ -179,16 +208,19 @@ namespace CrystalReport.Components
                 srn = srn + 1;
                 custsr = custsr + 1;
 
-                inv =  $"INV{DateTime.Now.ToString("yy")}{DateTime.Now.ToString("MM")}{DateTime.Now.ToString("dd")}{custsr}{srn}";
+                inv =  $"INV{DateTime.Now.ToString("yy")}{DateTime.Now.ToString("MM")}{DateTime.Now.ToString("dd")}{custsr}{srn+10}";
 
+
+              
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
+
             return inv;
 
-            
+
         }
 
 
@@ -332,10 +364,11 @@ namespace CrystalReport.Components
 
 
                         desc.Text = dgview.Rows[0].Cells[0].Value.ToString();
-                        amst = Convert.ToDecimal(dgview.Rows[0].Cells[1].Value.ToString());
-                        r = Convert.ToDecimal(dgview.Rows[0].Cells[1].Value.ToString());
+                        amst = Convert.ToDecimal(dgview.Rows[0].Cells[2].Value.ToString());
+                        r = Convert.ToDecimal(dgview.Rows[0].Cells[2].Value.ToString());
                         rete.Text = Convert.ToString(r);
                         amt.Text = Convert.ToString(amst);
+                        gsttext.Text = dgview.Rows[0].Cells[3].Value.ToString();
                         v = amst;
 
                         q.Text = "1";
@@ -352,6 +385,7 @@ namespace CrystalReport.Components
                         r = Convert.ToDecimal(dgview.Rows[rowindex].Cells[2].Value.ToString());
                         rete.Text = Convert.ToString(r);
                         amt.Text = Convert.ToString(amst);
+                       gsttext.Text =  dgview.Rows[0].Cells[3].Value.ToString();
                         v = amst;
 
                         q.Text = "1";
@@ -408,6 +442,11 @@ namespace CrystalReport.Components
             {
                  
             }
+
+    
+
+          
+
            invnum.Text =  GenerateInvoice();
 
             if(_inv !="")
@@ -428,18 +467,44 @@ namespace CrystalReport.Components
             try
             {
                 string phone = MainEngine_.GetDataScript<string>("select cust_phone from Customer Where cust_name = '" + cust_name.Text + "'").FirstOrDefault();
-
                 mobile_num.Text = phone;
                 string sec = MainEngine_.GetDataScript<string>("select place from Customer Where cust_name = '" + cust_name.Text + "'").FirstOrDefault();
-                
                 string ciyu = MainEngine_.GetDataScript<string>("select pcity from Customer Where cust_name = '" + cust_name.Text + "'").FirstOrDefault();
 
                 city.Text = ciyu.ToString();
 
-                prc = MainEngine_.GetDataScript<decimal>("Select Balance from Customer where cust_name = '" + cust_name.Text + "'").FirstOrDefault();
+
+                if (invnum.Text == MainEngine_.GetDataScript<string>("select InvoiceID from SInvoice where InvoiceId = '" + invnum.Text + "'").FirstOrDefault()) 
+                {
 
 
-                prs.Text = (prc.ToString() ?? "0").ToString();
+                    decimal pss = StoreRoom.CustomerBalace(cust_name.Text);
+
+
+                    decimal totalBill = Convert.ToDecimal(StoreRoom.TotalBill(invnum.Text));
+                    decimal totalPaid = Convert.ToDecimal(StoreRoom.TotalPaid(invnum.Text)); // Ensure TotalPaid returns a nullable decimal or handle null appropriately
+
+                    decimal total = totalPaid - totalPaid;
+                    prs.Text = (total+pss).ToString();
+
+                    string cals = cal.SubTotal(totalBill.ToString()).ToString();
+
+                 
+                    blc.Text = StoreRoom.TotalBill(invnum.Text);
+
+
+                }
+                else
+                {
+                    prc = StoreRoom.CustomerBalace(cust_name.Text);
+                    prs.Text = (prc.ToString() ?? "0").ToString();
+
+
+                }
+
+
+
+
                 label31.Text = (prc.ToString() ?? "0").ToString();
 
 
@@ -469,195 +534,113 @@ namespace CrystalReport.Components
         private bool isDownKeyPressed = false;
 
         private CancellationTokenSource _cancellationTokenSource;
-        private   void desc_TextChanged(object sender, EventArgs e)
+        private void desc_TextChanged(object sender, EventArgs e)
         {
-
             try
             {
+                if (desc.Text.Length <= 0)
+                {
+                    dgview.Visible = false;
+                    return;
+                }
+
+                if (isDownKeyPressed)
+                {
+                    isDownKeyPressed = false;
+                    return;
+                }
 
                 if (checkBox1.Checked)
                 {
-
-
-                    if (desc.Text.Length <= 0)
-                    {
-                        dgview.Visible = false;
-                    }
-
-                    if (isDownKeyPressed == false)
-                    {
-
-
-                        if (desc.Text.Length > 0)
-                        {
-
-                            var searchTerm = desc.Text.Trim();
-
-                            if (!string.IsNullOrWhiteSpace(searchTerm))
-                            {
-                                this.dgview.Visible = true;
-                                dgview.BringToFront();
-                                Search(9, 250, 430, 200, "Item Name,Price", "100,0");
-
-                                // Assuming MainEngine_.SERVER_PATH contains the connection string
-                                using (SqlConnection con = new SqlConnection(MainEngine_.SERVER_PATH))
-                                {
-                                    con.Open();
-                                    string query = "SELECT TOP(40) Item_Name,Item_price FROM Mechanic WHERE Mechanic_Name = '"+cust_name.Text+ "' AND Item_Name LIKE @SearchTerm + '%'";
-                                    using (SqlCommand cmd = new SqlCommand(query, con))
-                                    {
-                                        cmd.Parameters.AddWithValue("@SearchTerm", desc.Text);
-
-                                        using (SqlDataAdapter sda = new SqlDataAdapter(cmd))
-                                        {
-                                            DataTable dt = new DataTable();
-                                            sda.Fill(dt);
-                                            dgview.Rows.Clear();
-
-                                            if (dt.Rows.Count > 0)
-                                            {
-
-
-                                                foreach (DataRow row in dt.Rows)
-                                                {
-                                                    int n = dgview.Rows.Add();
-                                                    dgview.Rows[n].Cells[0].Value = row["Item_Name"].ToString();
-
-                                                    dgview.Rows[n].Cells[1].Value = row["Item_price"].ToString();
-
-                                                }
-                                            }
-                                            else
-                                            {
-                                                con.Close();
-                                                checkBox1.Checked = false;
-
-                                                con.Open();
-                                                string query1 = "SELECT TOP(40) ITEM_NAME,sSALE_PRICE FROM Product_Item WHERE ITEM_NAME LIKE @SearchTerm + '%'";
-                                                using (SqlCommand cmd1 = new SqlCommand(query1, con))
-                                                {
-                                                    cmd.Parameters.AddWithValue("@SearchTerm", desc.Text);
-
-                                                    using (SqlDataAdapter sda1 = new SqlDataAdapter(cmd))
-                                                    {
-                                                        DataTable dt1 = new DataTable();
-                                                        sda1.Fill(dt);
-                                                        dgview.Rows.Clear();
-
-                                                        foreach (DataRow row in dt.Rows)
-                                                        {
-                                                            int n = dgview.Rows.Add();
-                                                            dgview.Rows[n].Cells[0].Value = row["ITEM_NAME"].ToString();
-                                                         
-                                                            dgview.Rows[n].Cells[2].Value = row["SALE_PRICE"].ToString();
-
-                                                        }
-
-
-                                                    }
-                                                }
-                                                con.Close();
-                                            }
-
-                                        }
-                                    }
-                                }
-
-                            }
-                            else
-                            {
-
-
-                            }
-                        }
-
-                    }
-                    else
-                    {
-                        isDownKeyPressed = false;
-
-                    }
+                    HandleMechanicSearch();
                 }
                 else
                 {
-
-                    
-
-                    
-                    if (desc.Text.Length <= 0)
-                    {
-                        dgview.Visible = false;
-                    }
-
-                    if (isDownKeyPressed == false)
-                    {
-
-
-                        if (desc.Text.Length > 0)
-                        {
-
-                            var searchTerm = desc.Text.Trim();
-
-                            if (!string.IsNullOrWhiteSpace(searchTerm))
-                            {
-                                this.dgview.Visible = true;
-                                dgview.BringToFront();
-                                Search(9, 250, 430, 200, "Item Name,Stock,Price", "100,0");
-
-                                // Assuming MainEngine_.SERVER_PATH contains the connection string
-                                using (SqlConnection con = new SqlConnection(MainEngine_.SERVER_PATH))
-                                {
-                                    con.Open();
-                                    string query = "SELECT TOP(40) ITEM_NAME,STOCK,SALE_PRICE FROM Product_Item WHERE ITEM_NAME LIKE @SearchTerm + '%'";
-                                    using (SqlCommand cmd = new SqlCommand(query, con))
-                                    {
-                                        cmd.Parameters.AddWithValue("@SearchTerm", desc.Text);
-
-                                        using (SqlDataAdapter sda = new SqlDataAdapter(cmd))
-                                        {
-                                            DataTable dt = new DataTable();
-                                            sda.Fill(dt);
-                                            dgview.Rows.Clear();
-
-                                            foreach (DataRow row in dt.Rows)
-                                            {
-                                                int n = dgview.Rows.Add();
-                                                dgview.Rows[n].Cells[0].Value = row["ITEM_NAME"].ToString();
-                                                dgview.Rows[n].Cells[1].Value = row["STOCK"].ToString();
-                                                dgview.Rows[n].Cells[2].Value = row["SALE_PRICE"].ToString();
-
-                                            }
-
-
-                                        }
-                                    }
-                                    con.Close();
-                                }
-                                
-                            }
-                            else
-                            {
-
-
-                            }
-                        }
-
-                    }
-                    else
-                    {
-                        isDownKeyPressed = false;
-
-                    }
+                    HandleProductSearch();
                 }
             }
             catch (Exception ex)
             {
+                // Log the exception and display a user-friendly message
+                MessageBox.Show("An error occurred: " + ex.Message);
             }
-
-
         }
 
-        private void proCode_MouseDoubleClick(object sender, MouseEventArgs e)
+        private void HandleMechanicSearch()
+        {
+            var searchTerm = desc.Text.Trim();
+            if (string.IsNullOrWhiteSpace(searchTerm))
+            {
+                return;
+            }
+
+            dgview.Visible = true;
+            dgview.BringToFront();
+            Search(9, 250, 430, 200, "Item Name,Stock,Price,GST", "100,100,100,100");
+
+
+            using (SqlConnection con = new SqlConnection(MainEngine_.SERVER_PATH))
+            {
+                con.Open();
+                string query = "SELECT TOP(40) Item_Name, Item_price, GST FROM Mechanic WHERE Mechanic_Name = @CustName AND Item_Name LIKE @SearchTerm + '%'";
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    cmd.Parameters.AddWithValue("@CustName", cust_name.Text);
+                    cmd.Parameters.AddWithValue("@SearchTerm", searchTerm);
+
+                    FillDataGridView(cmd);
+                }
+            }
+        }
+
+        private void HandleProductSearch()
+        {
+            var searchTerm = desc.Text.Trim();
+            if (string.IsNullOrWhiteSpace(searchTerm))
+            {
+                return;
+            }
+
+            dgview.Visible = true;
+            dgview.BringToFront();
+            Search(9, 250, 430, 200, "Item Name,Stock,Price,GST", "100,100,100,100");
+
+
+            using (SqlConnection con = new SqlConnection(MainEngine_.SERVER_PATH))
+            {
+                con.Open();
+                string query = "SELECT TOP(40) ITEM_NAME, STOCK, SALE_PRICE, GST FROM Product_Item WHERE ITEM_NAME LIKE @SearchTerm + '%'";
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    cmd.Parameters.AddWithValue("@SearchTerm", searchTerm);
+
+                    FillDataGridView(cmd);
+                }
+            }
+        }
+
+        private void FillDataGridView(SqlCommand cmd)
+        {
+            using (SqlDataAdapter sda = new SqlDataAdapter(cmd))
+            {
+                DataTable dt = new DataTable();
+                sda.Fill(dt);
+                dgview.Rows.Clear();
+
+                foreach (DataRow row in dt.Rows)
+                {
+                    int n = dgview.Rows.Add();
+                    dgview.Rows[n].Cells[0].Value = row[0].ToString(); //item name 0
+                    dgview.Rows[n].Cells[1].Value = row[1].ToString(); //stock 1 
+                    dgview.Rows[n].Cells[2].Value = row[2].ToString();  // price 2 
+                    dgview.Rows[n].Cells[3].Value = row[3].ToString(); // GST column 3
+                   
+                }
+            }
+        }
+
+
+        private void proCode_MouseDoubleClick(object sender, MouseEventArgs e) 
         {
             throw new NotImplementedException();
         }
@@ -668,6 +651,7 @@ namespace CrystalReport.Components
         private decimal cals;
         private decimal same;
         private string _inv;
+        private decimal okdiscount;
 
         private void q_TextChanged(object sender, EventArgs e)
         {
@@ -705,6 +689,7 @@ namespace CrystalReport.Components
 
                     decimal discountedAmount = originalAmount - (discountPercentage / 100m * originalAmount);
 
+                    okdiscount = (discountPercentage / 100m * originalAmount);
 
                     amt.Text = discountedAmount.ToString();
                 }
@@ -716,7 +701,7 @@ namespace CrystalReport.Components
                     decimal originalAmount = decimal.Parse(amt.Text);
 
                     decimal discountedAmount = originalAmount - discountPercentage;
-
+                    okdiscount = discountPercentage;
 
                     amt.Text = discountedAmount.ToString();
                 }
@@ -780,6 +765,7 @@ namespace CrystalReport.Components
         private async void button1_Click(object sender, EventArgs e)
         {
             srs = 0;
+            
             try
             {
 
@@ -819,8 +805,6 @@ namespace CrystalReport.Components
                         {
                             cashred = "cash";
                             to = Convert.ToDecimal(totalamt.Text);
-
-
 
                         }
                         else
@@ -893,34 +877,13 @@ namespace CrystalReport.Components
 
 
 
-
-                        for (int i = 0; i < dataGridView1.Rows.Count - 1; i++)
-                        {
-
-                            var dynamic = new
-                            {
-
-                                sr_no = dataGridView1.Rows[i].Cells[0].Value.ToString(),
-                                description = dataGridView1.Rows[i].Cells[1].Value.ToString(),
-                                qty = Convert.ToInt32(dataGridView1.Rows[i].Cells[2].Value.ToString()),
-                                rate = Convert.ToDecimal(dataGridView1.Rows[i].Cells[3].Value.ToString()),
-                                discount = Convert.ToDecimal(dataGridView1.Rows[i].Cells[4].Value.ToString()),
-                                amount = Convert.ToDecimal(dataGridView1.Rows[i].Cells[5].Value.ToString()),
-
-                                Invoice = invnum.Text
-                            };
-
-
-                            await MainEngine_.Add(dynamic, "sp_addsaleitem");
-
-                        }
-
-
-
+                            
 
                         decimal td = 0;
                         inv = GenerateInvoice();
                         decimal sub = Convert.ToDecimal(totalamt.Text) - Convert.ToDecimal(discount_.Text);
+  
+
                         var smodel = new
                         {
                             invoiceID = invnum.Text,
@@ -933,6 +896,7 @@ namespace CrystalReport.Components
                             TotalBill = Convert.ToDecimal(totalamt.Text),
                             invdate = DateTime.Now,
                             place = textBox1.Text
+ 
 
 
 
@@ -998,18 +962,11 @@ namespace CrystalReport.Components
 
 
 
-                        try
-
-                        {
-
+                  
                             StoreRoom tr = new StoreRoom();
-                            tr.NewData(cust_name.Text, textBox1.Text, mobile_num.Text, city.Text);
+                              tr.NewData(cust_name.Text, textBox1.Text, mobile_num.Text, city.Text);
 
-                        }
-                        catch (Exception ex12)
-                        {
-
-                        }
+                       
                         string cashred;
 
                         decimal to = 0;
@@ -1105,10 +1062,13 @@ namespace CrystalReport.Components
                                 description = dataGridView1.Rows[i].Cells[1].Value.ToString(),
                                 qty = Convert.ToInt32(dataGridView1.Rows[i].Cells[2].Value.ToString()),
                                 rate = Convert.ToDecimal(dataGridView1.Rows[i].Cells[3].Value.ToString()),
-                                discount = Convert.ToDecimal(dataGridView1.Rows[i].Cells[4].Value.ToString()),
-                                amount = Convert.ToDecimal(dataGridView1.Rows[i].Cells[5].Value.ToString()),
+                                discount = Convert.ToDecimal(dataGridView1.Rows[i].Cells[5].Value.ToString()),
+                                amount = Convert.ToDecimal(dataGridView1.Rows[i].Cells[6].Value.ToString()),
 
-                                Invoice = invnum.Text
+                                Invoice = invnum.Text,
+                                GST = Convert.ToDecimal(dataGridView1.Rows[i].Cells[5].Value.ToString()),
+                                GSTV = (Convert.ToInt32(dataGridView1.Rows[i].Cells[2].Value.ToString()) * Convert.ToDecimal(dataGridView1.Rows[i].Cells[3].Value.ToString()) * Convert.ToDecimal(dataGridView1.Rows[i].Cells[5].Value.ToString())/100)
+
                             };
 
 
@@ -1203,9 +1163,10 @@ namespace CrystalReport.Components
             {
                // MessageBox.Show(ex.Message);
             }
-     
 
 
+            Taxes = 0; //reset taxs
+            tax.Text = Taxes.ToString();
 
         }
 
@@ -1259,7 +1220,7 @@ namespace CrystalReport.Components
         private async void button3_Click(object sender, EventArgs e)
         {
 
-
+            decimal originalAmount = decimal.Parse(rete.Text) * decimal.Parse(q.Text);
             if (MainEngine_.GetDataScript<dynamic>("select ITEM_NAME from Product_Item where  ITEM_NAME = '" + desc.Text + "'").Count > 0)
             {
                  
@@ -1267,9 +1228,12 @@ namespace CrystalReport.Components
              
 
                 decimal discountPercentage = string.IsNullOrEmpty(disc.Text) ? 0m : decimal.Parse(disc.Text);
-                decimal originalAmount = decimal.Parse(rete.Text) * decimal.Parse(q.Text);
+              
 
                 decimal discount = originalAmount * (discountPercentage / 100);
+
+              
+               
 
                 senddiscount = senddiscount + discount;
                 if (Convert.ToInt32(q.Text) < MainEngine_.GetDataScript<int>("select Stock from Product_Item where ITEM_NAME = '" + desc.Text + "' ").FirstOrDefault())
@@ -1291,11 +1255,24 @@ namespace CrystalReport.Components
 
                             srs = srs + 1;
 
-                            dataGridView1.Rows.Add(srs, desc.Text, q.Text, rete.Text, disc.Text, amt.Text);
+                            decimal finalAmount = (originalAmount + (originalAmount * Convert.ToDecimal(gsttext.Text)/100))- discount;
+                            amt.Text = finalAmount.ToString();
+
+                            dataGridView1.Rows.Add(srs, desc.Text, q.Text, rete.Text,gsttext.Text, disc.Text, amt.Text);
 
                             TotalQty();
                             ItemsCount();
                             discountsu();
+                            decimal gstPercentage;
+                            if (decimal.TryParse(gsttext.Text, out gstPercentage))
+                            {
+                                // Assuming originalAmount and tax are already defined and are decimals
+                                Taxes += originalAmount * gstPercentage / 100;
+                                tax.Text = Taxes.ToString();
+
+                          
+                               
+                            }
 
 
                             string cals = cal.SubTotal(amt.Text).ToString();
@@ -1305,8 +1282,7 @@ namespace CrystalReport.Components
 
                             blc.Text = (decimal.Parse(cals)).ToString();
                             prs.Text = (prc - decimal.Parse(cals)).ToString();
-                            if (tax.Text != "") { totalamt.Text = (decimal.Parse(totalamt.Text) + decimal.Parse(tax.Text)).ToString(); }
-
+                            
                             //cal.total = decimal.Parse(totalamt.Text);
                             StoreRoom.ClearData(panel3.Controls);
                             amt.Text = "";
@@ -1324,20 +1300,29 @@ namespace CrystalReport.Components
                             if (cr.isDuplicate(dataGridView1, desc.Text) == false)
                             {
                                 srs = srs + 1;
-
-                                dataGridView1.Rows.Add(srs, desc.Text, q.Text, rete.Text, disc.Text, amt.Text);
+                                decimal finalAmount = (originalAmount + (originalAmount * Convert.ToDecimal(gsttext.Text) / 100)) - discount;
+                                amt.Text = finalAmount.ToString();
+                                dataGridView1.Rows.Add(srs, desc.Text, q.Text, rete.Text,gsttext.Text, disc.Text, amt.Text);
 
                                 TotalQty();
                                 ItemsCount();
                                 discountsu();
+                                decimal gstPercentage;
+                                if (decimal.TryParse(gsttext.Text, out gstPercentage))
+                                {
+                                    // Assuming originalAmount and tax are already defined and are decimals
+                                    Taxes += originalAmount * gstPercentage / 100;
+                                    tax.Text = Taxes.ToString();
 
+
+                                }
 
                                 string cals = cal.SubTotal(amt.Text).ToString();
                                 totalamt.Text = (decimal.Parse(cals)).ToString();
                                 blc.Text = (decimal.Parse(cals)).ToString();
                                 prs.Text = (prc - decimal.Parse(cals)).ToString();
 
-                                if (tax.Text != "") { totalamt.Text = (decimal.Parse(totalamt.Text) + decimal.Parse(tax.Text)).ToString(); }
+                               
 
                                 //cal.total = decimal.Parse(totalamt.Text);
                                 StoreRoom.ClearData(panel3.Controls);
@@ -1393,20 +1378,28 @@ namespace CrystalReport.Components
 
                             srs = srs + 1;
 
-                            dataGridView1.Rows.Add(srs, desc.Text, q.Text, rete.Text, disc.Text, amt.Text);
+                            dataGridView1.Rows.Add(srs, desc.Text, q.Text, rete.Text, gsttext.Text, disc.Text, amt.Text);
 
                             TotalQty();
                             ItemsCount();
                             discountsu();
 
+                            decimal gstPercentage;
+                            if (decimal.TryParse(gsttext.Text, out gstPercentage))
+                            {
+                                // Assuming originalAmount and tax are already defined and are decimals
+                                Taxes += originalAmount * gstPercentage / 100;
 
+                                tax.Text = Taxes.ToString();
+
+                            }
                             string cals = cal.SubTotal(amt.Text).ToString();
                             totalamt.Text = (decimal.Parse(cals)).ToString();
 
 
                             blc.Text = (decimal.Parse(cals)).ToString();
                             prs.Text = (prc - decimal.Parse(cals)).ToString();
-                            if (tax.Text != "") { totalamt.Text = (decimal.Parse(totalamt.Text) + decimal.Parse(tax.Text)).ToString(); }
+                           
 
                             //cal.total = decimal.Parse(totalamt.Text);
                             StoreRoom.ClearData(panel3.Controls);
@@ -1426,19 +1419,27 @@ namespace CrystalReport.Components
                             {
                                 srs = srs + 1;
 
-                                dataGridView1.Rows.Add(srs, desc.Text, q.Text, rete.Text, disc.Text, amt.Text);
+                                dataGridView1.Rows.Add(srs, desc.Text, q.Text, rete.Text,gsttext.Text, disc.Text, amt.Text);
 
                                 TotalQty();
                                 ItemsCount();
                                 discountsu();
+                                decimal gstPercentage;
+                                if (decimal.TryParse(gsttext.Text, out gstPercentage))
+                                {
+                                    // Assuming originalAmount and tax are already defined and are decimals
+                                    Taxes += originalAmount * gstPercentage / 100;
+                                    tax.Text = Taxes.ToString();
 
+
+                                }
 
                                 string cals = cal.SubTotal(amt.Text).ToString();
                                 totalamt.Text = (decimal.Parse(cals)).ToString();
                                 blc.Text = (decimal.Parse(cals)).ToString();
                                 prs.Text = (prc - decimal.Parse(cals)).ToString();
 
-                                if (tax.Text != "") { totalamt.Text = (decimal.Parse(totalamt.Text) + decimal.Parse(tax.Text)).ToString(); }
+                               
 
                                 //cal.total = decimal.Parse(totalamt.Text);
                                 StoreRoom.ClearData(panel3.Controls);
@@ -1522,12 +1523,20 @@ namespace CrystalReport.Components
 
                         srs = srs + 1;
 
-                        dataGridView1.Rows.Add(srs, desc.Text, q.Text, rete.Text, disc.Text, amt.Text);
+                        dataGridView1.Rows.Add(srs, desc.Text, q.Text, rete.Text, gsttext.Text,disc.Text, amt.Text);
 
                         TotalQty();
                         ItemsCount();
                         discountsu();
+                        decimal gstPercentage;
+                        if (decimal.TryParse(gsttext.Text, out gstPercentage))
+                        {
+                            // Assuming originalAmount and tax are already defined and are decimals
+                            Taxes += originalAmount * gstPercentage / 100;
+                            tax.Text = Taxes.ToString();
 
+
+                        }
 
                         string cals = cal.SubTotal(amt.Text).ToString();
                         totalamt.Text = (decimal.Parse(cals)).ToString();
@@ -1535,7 +1544,7 @@ namespace CrystalReport.Components
 
                         blc.Text = (decimal.Parse(cals)).ToString();
                         prs.Text = (prc - decimal.Parse(cals)).ToString();
-                        if (tax.Text != "") { totalamt.Text = (decimal.Parse(totalamt.Text) + decimal.Parse(tax.Text)).ToString(); }
+                       
 
                         //cal.total = decimal.Parse(totalamt.Text);
                         StoreRoom.ClearData(panel3.Controls);
@@ -1555,19 +1564,27 @@ namespace CrystalReport.Components
                         {
                             srs = srs + 1;
 
-                            dataGridView1.Rows.Add(srs, desc.Text, q.Text, rete.Text, disc.Text, amt.Text);
+                            dataGridView1.Rows.Add(srs, desc.Text, q.Text, rete.Text,gsttext.Text, disc.Text, amt.Text);
 
                             TotalQty();
                             ItemsCount();
                             discountsu();
 
+                            decimal gstPercentage;
+                            if (decimal.TryParse(gsttext.Text, out gstPercentage))
+                            {
+                                // Assuming originalAmount and tax are already defined and are decimals
+                                Taxes += originalAmount * gstPercentage / 100;
+                                tax.Text = Taxes.ToString();
 
+
+                            }
                             string cals = cal.SubTotal(amt.Text).ToString();
                             totalamt.Text = (decimal.Parse(cals)).ToString();
                             blc.Text = (decimal.Parse(cals)).ToString();
                             prs.Text = (prc - decimal.Parse(cals)).ToString();
 
-                            if (tax.Text != "") { totalamt.Text = (decimal.Parse(totalamt.Text) + decimal.Parse(tax.Text)).ToString(); }
+                           
 
                             //cal.total = decimal.Parse(totalamt.Text);
                             StoreRoom.ClearData(panel3.Controls);
@@ -1654,7 +1671,7 @@ namespace CrystalReport.Components
                     if (decimal.TryParse(totalamt.Text, out total))
                     {
                         decimal amountCellValue;
-                        if (decimal.TryParse(dataGridView1.Rows[e.RowIndex].Cells[5].Value.ToString(), out amountCellValue))
+                        if (decimal.TryParse(dataGridView1.Rows[e.RowIndex].Cells[6].Value.ToString(), out amountCellValue))
                         {
 
                             totalamt.Text = (total - amountCellValue).ToString();
@@ -1666,8 +1683,11 @@ namespace CrystalReport.Components
                         }
                     }
                 }
-                decimal discountPercentage = string.IsNullOrEmpty(dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString()) ? 0m : decimal.Parse(dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString());
-                decimal originalAmount = decimal.Parse(dataGridView1.Rows[e.RowIndex].Cells[5].Value.ToString());
+                decimal discountPercentage = string.IsNullOrEmpty(dataGridView1.Rows[e.RowIndex].Cells[5].Value.ToString()) ? 0m : decimal.Parse(dataGridView1.Rows[e.RowIndex].Cells[5].Value.ToString());
+                decimal originalAmount = decimal.Parse(dataGridView1.Rows[e.RowIndex].Cells[6].Value.ToString());
+
+                decimal originalAmounts = decimal.Parse(dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString()) * decimal.Parse(dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString());
+
 
                 decimal discount = originalAmount * (discountPercentage / 100);
                 senddiscount -= discount;
@@ -1681,10 +1701,18 @@ namespace CrystalReport.Components
                 ItemsCount();
                 discountsu();
 
+                decimal gstPercentage;
+                if (decimal.TryParse(gsttext.Text, out gstPercentage))
+                {
+                    // Assuming originalAmount and tax are already defined and are decimals
+                    Taxes -= originalAmounts * gstPercentage / 100;
+                    tax.Text = Taxes.ToString();
+
+
+                }
 
 
 
- 
 
                 for (int i = 0; i < dataGridView1.Rows.Count; i++)
                 {
@@ -1780,10 +1808,11 @@ namespace CrystalReport.Components
                         if (dgview.Rows[nextIndex].Cells[0].Value != null)
                         {
                             desc.Text = dgview.Rows[nextIndex].Cells[0].Value.ToString();
-                            amst = Convert.ToDecimal(dgview.Rows[nextIndex].Cells[1].Value.ToString());
-                            r = Convert.ToDecimal(dgview.Rows[nextIndex].Cells[1].Value.ToString());
+                            amst = Convert.ToDecimal(dgview.Rows[nextIndex].Cells[2].Value.ToString());
+                            r = Convert.ToDecimal(dgview.Rows[nextIndex].Cells[2].Value.ToString());
                             rete.Text = Convert.ToString(r);
                             amt.Text = Convert.ToString(amst);
+                            gsttext.Text = Convert.ToString(dgview.Rows[nextIndex].Cells[3].Value.ToString());
                             v = amst;
                             q.Text = "1";
                             disc.Text = "0";
@@ -1792,10 +1821,12 @@ namespace CrystalReport.Components
                     else
                     {
                         desc.Text = dgview.Rows[0].Cells[0].Value.ToString();
-                        amst = Convert.ToDecimal(dgview.Rows[0].Cells[1].Value.ToString());
-                        r = Convert.ToDecimal(dgview.Rows[0].Cells[1].Value.ToString());
+                        amst = Convert.ToDecimal(dgview.Rows[0].Cells[2].Value.ToString());
+                        r = Convert.ToDecimal(dgview.Rows[0].Cells[2].Value.ToString());
                         rete.Text = Convert.ToString(r);
                         amt.Text = Convert.ToString(amst);
+
+                        gsttext.Text = Convert.ToString(dgview.Rows[0].Cells[3].Value.ToString());
                         v = amst;
 
                         q.Text = "1";
@@ -1826,6 +1857,7 @@ namespace CrystalReport.Components
                             amst = Convert.ToDecimal(dgview.Rows[nextIndex].Cells[2].Value.ToString());
                             r = Convert.ToDecimal(dgview.Rows[nextIndex].Cells[2].Value.ToString());
                             rete.Text = Convert.ToString(r);
+                            gsttext.Text = Convert.ToString(dgview.Rows[nextIndex].Cells[3].Value.ToString());
                             amt.Text = Convert.ToString(amst);
                             v = amst;
                             q.Text = "1";
@@ -1840,6 +1872,7 @@ namespace CrystalReport.Components
                         rete.Text = Convert.ToString(r);
                         amt.Text = Convert.ToString(amst);
                         v = amst;
+                        gsttext.Text = Convert.ToString(dgview.Rows[0].Cells[3].Value.ToString());
 
                         q.Text = "1";
                         disc.Text = "0";
@@ -1850,10 +1883,11 @@ namespace CrystalReport.Components
                 if(checkBox1.Checked && dgview.Rows.Count> 0)
                 {
                     desc.Text = dgview.Rows[0].Cells[0].Value.ToString();
-                    amst = Convert.ToDecimal(dgview.Rows[0].Cells[1].Value.ToString());
-                    r = Convert.ToDecimal(dgview.Rows[0].Cells[1].Value.ToString());
+                    amst = Convert.ToDecimal(dgview.Rows[0].Cells[2].Value.ToString());
+                    r = Convert.ToDecimal(dgview.Rows[0].Cells[2].Value.ToString());
                     
                     rete.Text = Convert.ToString(r);
+                    gsttext.Text = Convert.ToString(dgview.Rows[3].Cells[2].Value.ToString());
                     amt.Text = Convert.ToString(amst);
                     v = amst;
 
@@ -1868,6 +1902,7 @@ namespace CrystalReport.Components
                     amst = Convert.ToDecimal(dgview.Rows[0].Cells[2].Value.ToString());
                     r = Convert.ToDecimal(dgview.Rows[0].Cells[2].Value.ToString());
                     rete.Text = Convert.ToString(r);
+                    gsttext.Text = Convert.ToString(dgview.Rows[0].Cells[3].Value.ToString());
                     amt.Text = Convert.ToString(amst);
                     v = amst;
 
@@ -2062,7 +2097,7 @@ namespace CrystalReport.Components
             try
             {
                 dataGridView1.Rows.Clear();
-                List<dynamic> fet=   MainEngine_.GetDataScript<dynamic>("select  sr_no,description,qty,rate,discount,amount from Sale_Items where Invoice = '" + invnum.Text+"' ").ToList();
+                List<dynamic> fet=   MainEngine_.GetDataScript<dynamic>("select  sr_no,description,qty,rate,GST,discount,amount from Sale_Items where Invoice = '" + invnum.Text+"' ").ToList();
                 // Suspend the layout to optimize the update process
                 dataGridView1.SuspendLayout();
 
@@ -2070,7 +2105,7 @@ namespace CrystalReport.Components
                 // Add rows to DataGridView in bulk
                 foreach (var item in fet)
                 {
-                    dataGridView1.Rows.Add(item.sr_no, item.description, item.qty, item.rate, item.discount, item.amount);
+                    dataGridView1.Rows.Add(item.sr_no, item.description, item.qty, item.rate,item.GST, item.discount, item.amount);
                 }
 
                 // Resume the layout to reflect changes
@@ -2085,16 +2120,17 @@ namespace CrystalReport.Components
 
                 var dynamic = new
                 {
-                    id = _inv,
+                    id = invnum.Text,
                     name = "paid"
 
                 };
                 var dynamic1 = new
                 {
-                    id = _inv,
+                    id = invnum.Text,
                     name = "online"
 
                 };
+
 
 
                var p =  MainEngine_.GetData<dynamic>("Get_Amount_PAID", dynamic).FirstOrDefault();
@@ -2103,6 +2139,13 @@ namespace CrystalReport.Components
   
                 onlinep.Text = $"{online.PAID}";
                 comboBox3.SelectedIndex = 3;
+
+
+                totalamt.Text = StoreRoom.TotalBill(invnum.Text);
+                tax.Text = StoreRoom.TotalTax(invnum.Text);
+                Taxes = Convert.ToDecimal(StoreRoom.TotalTax(invnum.Text));
+
+
 
             }
             catch (Exception ex)
@@ -2113,21 +2156,25 @@ namespace CrystalReport.Components
 
         private void dataGridView1_CellEnter(object sender, DataGridViewCellEventArgs e)
         {
+            
+
             try
             {
                 // Extract values from DataGridView cells
                 decimal quantity = Convert.ToDecimal(dataGridView1.Rows[e.RowIndex].Cells[2].Value);
                 decimal unitPrice = Convert.ToDecimal(dataGridView1.Rows[e.RowIndex].Cells[3].Value);
-                decimal discountPercentage = Convert.ToDecimal(dataGridView1.Rows[e.RowIndex].Cells[4].Value);
-                decimal actualamount = Convert.ToDecimal(dataGridView1.Rows[e.RowIndex].Cells[5].Value);
+                decimal gst = Convert.ToDecimal(dataGridView1.Rows[e.RowIndex].Cells[4].Value);
+
+                decimal discountPercentage = Convert.ToDecimal(dataGridView1.Rows[e.RowIndex].Cells[5].Value);
+                decimal actualamount = Convert.ToDecimal(dataGridView1.Rows[e.RowIndex].Cells[6].Value);
                 // Calculate the total price before discount
                 decimal totalPrice = quantity * unitPrice;
 
                 // Calculate the discount amount
                 decimal discountAmount = totalPrice * (discountPercentage / 100);
 
-                // Calculate the final price after applying the discount
-                decimal finalPrice = totalPrice - discountAmount;
+                decimal finalPrice = (StoreRoom.GST(totalPrice, Convert.ToInt32(gst)) - discountAmount);
+
                 // Assign the final calculated value to the corresponding cell
 
 
@@ -2135,15 +2182,31 @@ namespace CrystalReport.Components
 
                 cal.SubTotal(act.ToString());
 
-                dataGridView1.Rows[e.RowIndex].Cells[5].Value = finalPrice;
+                dataGridView1.Rows[e.RowIndex].Cells[6].Value = finalPrice;
 
 
-string cals = cal.SubTotal(finalPrice.ToString()).ToString();
+                string cals = cal.SubTotal(finalPrice.ToString()).ToString();
                 totalamt.Text = (decimal.Parse(cals)).ToString();
                 blc.Text = (decimal.Parse(cals)).ToString();
                 prs.Text = (prc - decimal.Parse(cals)).ToString();
 
-                if (tax.Text != "") { totalamt.Text = (decimal.Parse(totalamt.Text) + decimal.Parse(tax.Text)).ToString(); }
+                decimal gstPercentage;
+    
+                
+                    // Assuming originalAmount and tax are already defined and are decimals
+                    Taxes -= totalPrice * gst / 100;
+
+                    Taxes += totalPrice * gst / 100;
+
+
+
+
+                tax.Text = Taxes.ToString();
+
+
+
+
+
             }
             catch (Exception ex)
             {
@@ -2151,11 +2214,142 @@ string cals = cal.SubTotal(finalPrice.ToString()).ToString();
                 MessageBox.Show("An error occurred: " + ex.Message);
             }
 
-        }
+        
+   }
 
         private void panel8_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+            // Temporarily remove the event handler to prevent re-entrancy
+            textBox3.TextChanged -= textBox3_TextChanged;
+
+            try
+            {
+                if (string.IsNullOrWhiteSpace(textBox3.Text))
+                {
+                    return; // If the text box is empty, do nothing
+                }
+
+                // Fetch item details in one query to avoid redundant calls and improve performance.
+                string query = $"SELECT ITEM_NAME, SALE_PRICE,GST FROM Product_Item WHERE BARCODE = '{textBox3.Text.Replace("'", "''")}'";
+
+                var itemDetails = MainEngine_.GetDataScript<dynamic>(query).FirstOrDefault();
+                int gstvalueS = itemDetails.GST;
+
+                if (itemDetails != null && !string.IsNullOrWhiteSpace(itemDetails.ITEM_NAME))
+                {
+                    string itemName = itemDetails.ITEM_NAME;
+                    decimal salePrice = itemDetails.SALE_PRICE;
+                    int gstvalue = itemDetails.GST;
+
+
+                    // Check for duplicate items
+                    Crys cr = new Crys();
+                    if (cr.isDuplicate(dataGridView1, itemName))
+                    {
+                        // If the item is a duplicate, update the quantity in the existing row
+                        foreach (DataGridViewRow row in dataGridView1.Rows)
+                        {
+                            if (row.Cells["dsf"].Value != null && row.Cells["dsf"].Value.ToString() == itemName)
+                            {
+                                int currentQty = int.Parse(row.Cells["Qtyssss"].Value.ToString());
+                                currentQty++;
+                                row.Cells["Qtyssss"].Value = currentQty;
+                                row.Cells["GST"].Value = gstvalue;
+                                row.Cells["Amountsss"].Value = (currentQty * salePrice * (gstvalue /100)).ToString();
+
+
+                                // Update totals and counts
+                                TotalQty();
+                                ItemsCount();
+                                discountsu();
+                                UpdateTotalAmount();
+                                break;
+                            }
+                        }
+                    }
+                    else
+                    {
+                        // Increment the serial number for the new item
+                        srs++;
+
+                        // Add a new row to the DataGridView
+                        dataGridView1.Rows.Add(srs, itemName, 1, salePrice.ToString(), gstvalue,0, salePrice + (salePrice * (gstvalueS / 100)));
+
+                        // Update totals and counts
+                        TotalQty();
+                        ItemsCount();
+                        discountsu();
+                        UpdateTotalAmount();
+                    }
+
+                    // Clear the controls in the panel
+                    StoreRoom.ClearData(panel3.Controls);
+                }
+            }
+            catch (Exception ex)
+            {
+                // Log the error or inform the user
+                MessageBox.Show("An error occurred: " + ex.Message);
+            }
+            finally
+            {
+                // Reattach the event handler
+                textBox3.TextChanged += textBox3_TextChanged;
+            }
+        }
+
+        private void UpdateTotalAmount()
+        {
+            decimal subtotal = 0;
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+            {
+                if (row.Cells["Amountsss"].Value != null)
+                {
+                    subtotal += decimal.Parse(row.Cells["Amountsss"].Value.ToString());
+                }
+            }
+
+            totalamt.Text = subtotal.ToString();
+            blc.Text = subtotal.ToString();
+            prs.Text = (prc - subtotal).ToString();
+
+            if (!string.IsNullOrEmpty(tax.Text))
+            {
+                totalamt.Text = (subtotal + decimal.Parse(tax.Text)).ToString();
+            }
+        }
+
+        private void gsttext_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+
+
+                
+                    amt.Text = (StoreRoom.GST(Convert.ToDecimal(rete.Text),Convert.ToInt32(gsttext.Text))- okdiscount).ToString();
+
+
+
+
+
+            }
+            catch (Exception ex)
+            {
+                 
+            }
+        }
+
+        private void dataGridView1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                enterKeyPressed = true;
+            }
         }
 
         private void desc_SelectedIndexChanged(object sender, EventArgs e)

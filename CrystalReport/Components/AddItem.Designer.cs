@@ -45,6 +45,11 @@ namespace CrystalReport.Components
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.color = new System.Windows.Forms.TextBox();
+            this.size = new System.Windows.Forms.TextBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
@@ -74,9 +79,12 @@ namespace CrystalReport.Components
             this.label17 = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
+            this.label21 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
+            this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel5.SuspendLayout();
@@ -314,6 +322,9 @@ namespace CrystalReport.Components
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel4.BackColor = System.Drawing.Color.White;
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel4.Controls.Add(this.comboBox1);
+            this.panel4.Controls.Add(this.label21);
+            this.panel4.Controls.Add(this.panel6);
             this.panel4.Controls.Add(this.label18);
             this.panel4.Controls.Add(this.textBox3);
             this.panel4.Controls.Add(this.label15);
@@ -334,9 +345,67 @@ namespace CrystalReport.Components
             this.panel4.Controls.Add(this.stock);
             this.panel4.Location = new System.Drawing.Point(4, 87);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(939, 273);
+            this.panel4.Size = new System.Drawing.Size(939, 324);
             this.panel4.TabIndex = 13;
             this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
+            // 
+            // panel6
+            // 
+            this.panel6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel6.Controls.Add(this.color);
+            this.panel6.Controls.Add(this.size);
+            this.panel6.Controls.Add(this.label20);
+            this.panel6.Controls.Add(this.label19);
+            this.panel6.Location = new System.Drawing.Point(549, 108);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(384, 94);
+            this.panel6.TabIndex = 27;
+            // 
+            // color
+            // 
+            this.color.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.color.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.color.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.color.Location = new System.Drawing.Point(76, 57);
+            this.color.Name = "color";
+            this.color.Size = new System.Drawing.Size(288, 26);
+            this.color.TabIndex = 28;
+            // 
+            // size
+            // 
+            this.size.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.size.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.size.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.size.Location = new System.Drawing.Point(76, 15);
+            this.size.Name = "size";
+            this.size.Size = new System.Drawing.Size(288, 26);
+            this.size.TabIndex = 28;
+            // 
+            // label20
+            // 
+            this.label20.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label20.AutoSize = true;
+            this.label20.BackColor = System.Drawing.SystemColors.Window;
+            this.label20.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.ForeColor = System.Drawing.Color.Black;
+            this.label20.Location = new System.Drawing.Point(13, 61);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(51, 21);
+            this.label20.TabIndex = 28;
+            this.label20.Text = "Color:";
+            // 
+            // label19
+            // 
+            this.label19.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label19.AutoSize = true;
+            this.label19.BackColor = System.Drawing.SystemColors.Window;
+            this.label19.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.ForeColor = System.Drawing.Color.Black;
+            this.label19.Location = new System.Drawing.Point(13, 20);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(41, 21);
+            this.label19.TabIndex = 28;
+            this.label19.Text = "Size:";
             // 
             // label18
             // 
@@ -418,7 +487,7 @@ namespace CrystalReport.Components
             // pictureBox2
             // 
             this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox2.Location = new System.Drawing.Point(662, 78);
+            this.pictureBox2.Location = new System.Drawing.Point(662, 15);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(233, 76);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -563,7 +632,7 @@ namespace CrystalReport.Components
             // 
             this.panel5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel5.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.panel5.BackColor = System.Drawing.Color.DarkSlateBlue;
             this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel5.Controls.Add(this.label9);
             this.panel5.Location = new System.Drawing.Point(3, 52);
@@ -595,20 +664,20 @@ namespace CrystalReport.Components
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.panel2.BackColor = System.Drawing.Color.DarkSlateBlue;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.label16);
-            this.panel2.Location = new System.Drawing.Point(6, 379);
+            this.panel2.Location = new System.Drawing.Point(6, 429);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(500, 31);
             this.panel2.TabIndex = 17;
             // 
             // panel7
             // 
-            this.panel7.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.panel7.BackColor = System.Drawing.Color.DarkSlateBlue;
             this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel7.Controls.Add(this.label17);
-            this.panel7.Location = new System.Drawing.Point(523, 378);
+            this.panel7.Location = new System.Drawing.Point(523, 428);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(420, 31);
             this.panel7.TabIndex = 18;
@@ -616,6 +685,7 @@ namespace CrystalReport.Components
             // label17
             // 
             this.label17.AutoSize = true;
+            this.label17.BackColor = System.Drawing.Color.DarkSlateBlue;
             this.label17.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.label17.ForeColor = System.Drawing.Color.White;
             this.label17.Location = new System.Drawing.Point(3, 4);
@@ -633,7 +703,7 @@ namespace CrystalReport.Components
             this.panel8.Controls.Add(this.label8);
             this.panel8.Controls.Add(this.label7);
             this.panel8.Controls.Add(this.label5);
-            this.panel8.Location = new System.Drawing.Point(6, 417);
+            this.panel8.Location = new System.Drawing.Point(6, 467);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(498, 186);
             this.panel8.TabIndex = 19;
@@ -647,10 +717,36 @@ namespace CrystalReport.Components
             this.panel9.Controls.Add(this.acc);
             this.panel9.Controls.Add(this.label10);
             this.panel9.Controls.Add(this.label14);
-            this.panel9.Location = new System.Drawing.Point(523, 417);
+            this.panel9.Location = new System.Drawing.Point(523, 467);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(420, 186);
             this.panel9.TabIndex = 20;
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.Location = new System.Drawing.Point(4, 282);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(38, 21);
+            this.label21.TabIndex = 28;
+            this.label21.Text = "GST";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "0%",
+            "2.5%",
+            "5%",
+            "12%",
+            "18%",
+            "28%"});
+            this.comboBox1.Location = new System.Drawing.Point(164, 276);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(233, 28);
+            this.comboBox1.TabIndex = 29;
             // 
             // AddItem
             // 
@@ -676,6 +772,8 @@ namespace CrystalReport.Components
             this.panel3.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel5.ResumeLayout(false);
@@ -741,5 +839,12 @@ namespace CrystalReport.Components
         private Label label15;
         private Label label18;
         private TextBox textBox3;
+        private Panel panel6;
+        private Label label20;
+        private Label label19;
+        private TextBox color;
+        private TextBox size;
+        private ComboBox comboBox1;
+        private Label label21;
     }
 }
