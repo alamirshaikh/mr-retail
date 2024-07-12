@@ -112,7 +112,8 @@ namespace CrystalReport.Components
                         BankName = bankname.Text,
                         ACName = acname.Text,
                         ACNumber = acnumber.Text,
-                        IFCCODE = ifc.Text
+                        IFCCODE = ifc.Text,
+                        GSTN = gstin.Text
                     };
 
                     if (pa.city != "" && pa.partimobile != "" || pa.partiphone != "")

@@ -1,11 +1,14 @@
-﻿using Back_Dr.Sale;
+﻿using Back_Dr.Models;
+using Back_Dr.Sale;
 using CrystalDecisions.CrystalReports.Engine;
 using CrystalDecisions.ReportAppServer.DataDefModel;
 using CrystalDecisions.Shared;
+using Dr.Sale.Components;
 using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Drawing.Printing;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
@@ -27,10 +30,11 @@ namespace CrystalReport
         private string _from;
         private string _to;
         private string _total;
+        private List<WithoutSaveModels> _models;
         private string path;
         private DataTable table1;
 
-        public ReportStd(string invoice, string place, string areas = "", string citys = "", string credit = "", string from = "", string to = "", string total = "")
+        public ReportStd(string invoice, string place, string areas = "", string citys = "", string credit = "", string from = "", string to = "", string total = "",List<WithoutSaveModels> models = null)
         {
             inv = invoice;
             pl = place;
@@ -40,6 +44,7 @@ namespace CrystalReport
             _from = from;
             _to = to;
             _total = total;
+            _models = models;
             InitializeComponent();
         }
 
@@ -192,9 +197,73 @@ namespace CrystalReport
 
 
 
+        public DataTable ConvertToDataTable(List<WithoutSaveModels> models)
+        {
+            DataTable table = new DataTable();
 
-    
- 
+            // Define columns
+            table.Columns.Add("Sr", typeof(int));
+            table.Columns.Add("ITEM_NAME", typeof(string));
+            table.Columns.Add("Qty", typeof(int));
+            table.Columns.Add("SALE_PRICE", typeof(decimal));
+            table.Columns.Add("discount", typeof(decimal));
+            table.Columns.Add("Amount", typeof(decimal));
+            table.Columns.Add("invoiceID", typeof(string));
+            table.Columns.Add("invdate", typeof(DateTime));
+            table.Columns.Add("TotalBill", typeof(decimal));
+            table.Columns.Add("cust_Name", typeof(string));
+
+            // Populate rows
+            foreach (var model in models)
+            {
+                table.Rows.Add(model.Sr, model.ITEM_NAME, model.Qty, model.SALE_PRICE, model.discount, model.Amount, model.invoiceID, model.invdate, model.TotalBill, model.cust_Name);
+            }
+
+            return table;
+        }
+
+        private void WithoutSave()
+        {
+
+            ReportDocument report = new ReportDocument();
+            
+                path = Application.StartupPath + "/WithoutSaveBil.rpt";
+            
+            
+            report.Load(path);
+            // Set database login information for the report
+            ConnectionInfo connectionInfo = new ConnectionInfo();
+            connectionInfo.ServerName = @"mrsales"; // Replace with your server name
+            connectionInfo.DatabaseName = "drsale";
+            connectionInfo.UserID = "mrsales"; // Replace with your database username
+            connectionInfo.Password = "mrsale@123"; // Replace with your database password
+
+
+            Tables tables = report.Database.Tables;
+            foreach (Table table in tables)
+            {
+                TableLogOnInfo tableLogOnInfo = table.LogOnInfo;
+                tableLogOnInfo.ConnectionInfo = connectionInfo;
+                table.ApplyLogOnInfo(tableLogOnInfo);
+            }
+
+
+
+            DataTable dataTable = ConvertToDataTable(_models);
+
+
+            report.Database.Tables["DataTable1"].SetDataSource(dataTable);
+            //report.SetParameterValue("place",Address);
+
+
+            // Verify the report's database
+            report.VerifyDatabase();
+
+          
+
+            crystalReportViewer1.ReportSource = report;
+
+        }
 
 
 
@@ -208,7 +277,104 @@ namespace CrystalReport
 
 
 
+        public  void Print(string inv)
+        {
+            ReportDocument report = new ReportDocument();
+            try
+            {
+                string path = Application.StartupPath + $"/{StoreRoom.Template()}.rpt";
 
+                if (File.Exists(path))
+                {
+                    report.Load(path);
+
+                    // Set database connection information
+                    ConnectionInfo connectionInfo = new ConnectionInfo();
+                    connectionInfo.ServerName = @"mrsales";
+                    connectionInfo.DatabaseName = "drsale";
+                    connectionInfo.UserID = "mrsales";
+                    connectionInfo.Password = "mrsale@123";
+
+                    Tables tables = report.Database.Tables;
+                    foreach (Table table in tables)
+                    {
+                        TableLogOnInfo tableLogOnInfo = table.LogOnInfo;
+                        tableLogOnInfo.ConnectionInfo = connectionInfo;
+                        table.ApplyLogOnInfo(tableLogOnInfo);
+                    }
+
+                    // Set up parameter fields
+                    ParameterFields pfield = new ParameterFields();
+                    string cust_s = MainEngine_.GetDataScript<string>("select cust_name from SInvoice where items='" + inv + "'").FirstOrDefault().ToString();
+
+                    // Example for parameter values
+                    decimal current = MainEngine_.GetDataScript<decimal>("select TotalBill from SInvoice where items = '" + inv + "'").FirstOrDefault();
+                    IEnumerable<decimal> paids = MainEngine_.GetDataScript<decimal>("select Paid from CustomerTransactions where InvoiceId = '" + inv + "'").ToList();
+                    decimal paid = paids.Sum();
+                    decimal bal = MainEngine_.GetDataScript<decimal>($"SELECT Balance FROM Customer WHERE cust_name = '" + cust_s + "'").FirstOrDefault();
+                    bal = Math.Abs(bal);
+                    decimal pss = (bal + paid) - current;
+
+                    // Create parameter fields and set values
+                    ParameterField tdebit = new ParameterField();
+                    ParameterField rcd = new ParameterField();
+                    ParameterField old = new ParameterField();
+
+                    ParameterDiscreteValue tdebitval = new ParameterDiscreteValue();
+                    tdebit.ParameterFieldName = "blc";
+                    tdebitval.Value = $"₹{bal}";
+                    tdebit.CurrentValues.Add(tdebitval);
+
+                    ParameterDiscreteValue rcdval = new ParameterDiscreteValue();
+                    rcd.ParameterFieldName = "rcd";
+                    rcdval.Value = $"₹{paid}";
+                    rcd.CurrentValues.Add(rcdval);
+
+                    ParameterDiscreteValue oldval = new ParameterDiscreteValue();
+                    old.ParameterFieldName = "prc";
+                    oldval.Value = $"₹{pss}";
+                    old.CurrentValues.Add(oldval);
+
+                    pfield.Add(tdebit);
+                    pfield.Add(rcd);
+                    pfield.Add(old);
+
+                    // Set report data source and parameters
+                    DataTable table1 = GetTable("SELECT * FROM SInvoice INNER JOIN Sale_Items ON SInvoice.InvoiceID = Sale_Items.Invoice WHERE SInvoice.InvoiceID = '" + inv + "'; ");
+                    report.SetDataSource(table1);
+
+                    // Directly print the report without previewing
+
+                    // Set up printer options (optional)
+                    PrinterSettings printerSettings = new PrinterSettings();
+                    printerSettings.PrinterName = StoreRoom.Printer_Name(); // Set your printer name here
+
+                    // Set paper orientation and other settings if needed
+                    PageSettings pageSettings = new PageSettings();
+                    pageSettings.Landscape = true; // Example for landscape orientation
+
+                    // Apply printer and page settings to the report
+                    report.PrintOptions.PrinterName = printerSettings.PrinterName;
+
+                    report.PrintToPrinter(1, false, 1, 1); // Adjust parameters as needed
+
+                }
+                else
+                {
+                    Console.WriteLine("Report file not found.");
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error printing report: " + ex.Message);
+            }
+            finally
+            {
+                // Clean up resources
+                report.Close();
+                report.Dispose();
+            }
+        }
 
 
 
@@ -225,7 +391,10 @@ namespace CrystalReport
             if (type == "test")
             {
 
-                  path = Application.StartupPath + "/NewTirupat.rpt";
+               //   path = Application.StartupPath + "/NewTirupat.rpt";
+
+                path = Application.StartupPath + $"/{StoreRoom.Template()}.rpt";
+
             }
             else
             {
@@ -378,7 +547,6 @@ namespace CrystalReport
 
 
 
- 
 
 
 
@@ -386,6 +554,61 @@ namespace CrystalReport
 
 
 
+        private void Exp()
+        {
+
+            try
+            {
+
+
+                ReportDocument report = new ReportDocument();
+
+                //   path = Application.StartupPath + "/NewTirupat.rpt";
+
+                path = Application.StartupPath + $"/Exp_v.rpt";
+
+
+                report.Load(path);
+                // Set database login information for the report
+                ConnectionInfo connectionInfo = new ConnectionInfo();
+                connectionInfo.ServerName = @"mrsales"; // Replace with your server name
+                connectionInfo.DatabaseName = "drsale";
+                connectionInfo.UserID = "mrsales"; // Replace with your database username
+                connectionInfo.Password = "mrsale@123"; // Replace with your database password
+
+
+                Tables tables = report.Database.Tables;
+                foreach (Table table in tables)
+                {
+                    TableLogOnInfo tableLogOnInfo = table.LogOnInfo;
+                    tableLogOnInfo.ConnectionInfo = connectionInfo;
+                    table.ApplyLogOnInfo(tableLogOnInfo);
+                }
+
+
+
+
+
+
+                table1 = GetTable("SELECT * FROM Kharcha where ID =" + inv + " ");
+
+                report.SetDataSource(table1);
+                //report.SetParameterValue("place",Address);
+
+
+                // Verify the report's database
+                report.VerifyDatabase();
+
+                crystalReportViewer1.ReportSource = report;
+
+            }
+            catch (Exception ex)
+            {
+
+
+
+            }
+        }
 
 
 
@@ -412,12 +635,26 @@ namespace CrystalReport
                 {
                     GetReport("nion");
                 }
+               else if(pl == "wsave")
+                {
 
-                if (pl == "AMIRSHAKH1234")
+                    WithoutSave();
+
+                }
+
+                 if (pl == "AMIRSHAKH1234")
                 {
                     DayBook();
                 }
-                if (pl != "AMIRSHAKH1234" || pl!= "AMIRSHAKH123")
+
+                if (pl == "Exp")
+                {
+                    Exp();
+                }
+
+
+
+               else  if (pl != "AMIRSHAKH1234" || pl!= "AMIRSHAKH123")
                 {
                     Crys crs = new Crys();
 
@@ -425,6 +662,7 @@ namespace CrystalReport
 
                 }
 
+               
 
 
 

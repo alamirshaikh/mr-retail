@@ -13,9 +13,9 @@ using System.Windows.Forms;
 namespace Dr.Sale.Components
 {
 
-    
 
-    public class StoreRoom 
+
+    public class StoreRoom
     {
         private int count;
 
@@ -23,19 +23,61 @@ namespace Dr.Sale.Components
         public decimal SupplierName { get; set; }
 
         public static string ShopName { get; set; }
-        
-        public static DialogResult Dialog(string message,string title)
+
+        public static DialogResult Dialog(string message, string title)
         {
-            DialogResult result = MessageBox.Show(message,title,MessageBoxButtons.YesNo,MessageBoxIcon.Question);
+            DialogResult result = MessageBox.Show(message, title, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             return result;
         }
+
+
+
+        public static string GetStyle()
+        {
+            return MainEngine_.GetDataScript<string>("select SettingValue from SYSTEM_SETTINGS where SettingKey = 'Style-form'").FirstOrDefault();
+        }
+
+
+
+
+        public static string GetState()
+        {
+            return MainEngine_.GetDataScript<string>("select State from OwnerInformation").FirstOrDefault();
+        }
+
+
+        public static string GetSupplierBlc()
+        {
+            return MainEngine_.GetDataScript<string>("select *  Parties  ").FirstOrDefault();
+        }
+
+
+
+
+
+
 
         public static decimal GST(decimal amount, int percent)
         {
             decimal gstAmount = (amount * percent) / 100;
             decimal totalAmount = amount + gstAmount;
             return totalAmount;
+        }
+
+
+
+
+
+        public static string Printer_Name()
+        {
+            return MainEngine_.GetDataScript<string>("select Printer_Name from Printer_setings").FirstOrDefault();
+        }
+
+
+        public static string Template()
+        {
+            return MainEngine_.GetDataScript<string>("select Template_Name from Printer_setings").FirstOrDefault();
         }
 
 
@@ -106,7 +148,7 @@ namespace Dr.Sale.Components
         public static decimal GetValueMonth(int m)
         {
 
-          return  MainEngine_.GetDataScript<decimal>($"SELECT SUM(TotalBill) as total FROM SInvoice where MONTH(invdate) = {m} GROUP BY MONTH(invdate); ").FirstOrDefault();
+            return MainEngine_.GetDataScript<decimal>($"SELECT SUM(TotalBill) as total FROM SInvoice where MONTH(invdate) = {m} GROUP BY MONTH(invdate); ").FirstOrDefault();
 
 
         }
@@ -127,22 +169,22 @@ namespace Dr.Sale.Components
 
         public async Task<int> DoesDatabaseExistAsync(string databaseName)
         {
-          
-
-                using (var connection = new SqlConnection(@"Data Source=localhost\sqlexpress;Initial Catalog=master;Integrated Security=True;"))
-                {
-                    await connection.OpenAsync().ConfigureAwait(false);
-
-                    string query = "SELECT COUNT(*) FROM sys.databases WHERE name = @DatabaseName";
-                    count = await connection.ExecuteScalarAsync<int>(query, new { DatabaseName = databaseName }).ConfigureAwait(false);
 
 
+            using (var connection = new SqlConnection(@"Data Source=localhost\sqlexpress;Initial Catalog=master;Integrated Security=True;"))
+            {
+                await connection.OpenAsync().ConfigureAwait(false);
+
+                string query = "SELECT COUNT(*) FROM sys.databases WHERE name = @DatabaseName";
+                count = await connection.ExecuteScalarAsync<int>(query, new { DatabaseName = databaseName }).ConfigureAwait(false);
 
 
-                }
-            
 
- 
+
+            }
+
+
+
             return count;
         }
 
@@ -158,15 +200,15 @@ namespace Dr.Sale.Components
 
         public decimal Balance(string name)
         {
-           
-            decimal dem=  MainEngine_.GetDataScript<decimal>("exec GetBalance '"+name+"'").FirstOrDefault();
-            if(dem <=0)
+
+            decimal dem = MainEngine_.GetDataScript<decimal>("exec GetBalance '" + name + "'").FirstOrDefault();
+            if (dem <= 0)
             {
                 return 0;
             }
             else
             {
-            return dem;
+                return dem;
 
             }
 
@@ -184,14 +226,14 @@ namespace Dr.Sale.Components
 
         public static string TotalBill(string invoice)
         {
-            return MainEngine_.GetDataScript<string>("SELECT TotalBill FROM SInvoice WHERE InvoiceID = '"+invoice+"'").FirstOrDefault();
+            return MainEngine_.GetDataScript<string>("SELECT TotalBill FROM SInvoice WHERE InvoiceID = '" + invoice + "'").FirstOrDefault();
 
         }
 
 
-        
 
-             public static string TotalTax(string invoice)
+
+        public static string TotalTax(string invoice)
         {
             return MainEngine_.GetDataScript<string>("SELECT other FROM SInvoice WHERE InvoiceID = '" + invoice + "'").FirstOrDefault();
 
@@ -240,7 +282,7 @@ namespace Dr.Sale.Components
 
         public static decimal TotalPaid(string invoice)
         {
-            return MainEngine_.GetDataScript<decimal>("select SUM(PAID) from CustomerTransactions  where InvoiceId = '"+invoice+"'").FirstOrDefault();
+            return MainEngine_.GetDataScript<decimal>("select SUM(PAID) from CustomerTransactions  where InvoiceId = '" + invoice + "'").FirstOrDefault();
 
         }
 
@@ -257,7 +299,7 @@ namespace Dr.Sale.Components
 
         }
 
-        public void SearchRecords(string searchTerm,DataGridView dataGridView1)
+        public void SearchRecords(string searchTerm, DataGridView dataGridView1)
         {
             // Assuming your DataGridView is named dataGridView1
             if (!string.IsNullOrEmpty(searchTerm))
@@ -288,15 +330,15 @@ namespace Dr.Sale.Components
         }
 
 
-        public async void NewData(string key, string address, string phone,string City)
+        public async Task NewData(string key, string address, string phone, string city)
         {
             try
             {
+                string query = "SELECT cust_name FROM Customer WHERE cust_name = '" + key + "'";
+                var parameters = new { CustName = key };
+                string ch = MainEngine_.GetDataScript<string>(query).FirstOrDefault();
 
-               
-                    string ch = MainEngine_.GetDataScript<string>("select cust_name from Customer where cust_name = '" + key + "'").FirstOrDefault();
-                
-                if (ch == "" || String.IsNullOrEmpty(ch))
+                if (string.IsNullOrEmpty(ch))
                 {
                     var customer = new
                     {
@@ -305,59 +347,51 @@ namespace Dr.Sale.Components
                         cust_address = address,
                         cust_service = "customer",
                         cust_date = DateTime.Now,
-                        pcity = City,
-                        pstate ="Maharashtra",
-                            Place = address
-
+                        pcity = city,
+                        pstate = StoreRoom.GetState(),
+                        Place = address
                     };
 
                     await MainEngine_.Add(customer, "sp_Customer");
-                    
-
                 }
-                else
-                {
-                   
-                }
-                
             }
-            catch (Exception exx)
+            catch (Exception ex)
             {
-               
-            
+                // Log the exception or handle it accordingly
+                MessageBox.Show($"An error occurred: {ex.Message}");
             }
-
-
         }
+
 
 
         public static void ClearData(Control.ControlCollection ctrlCollection)
         {
-
             try
             {
-
                 foreach (Control ctrl in ctrlCollection)
                 {
-                    if (ctrl is TextBoxBase || ctrl is ComboBox cmbx)
+                    switch (ctrl)
                     {
-
-
-                        ctrl.Text = String.Empty;
-
+                        case TextBoxBase textBox:
+                            textBox.Text = string.Empty;
+                            break;
+                        case ComboBox comboBox:
+                            comboBox.SelectedIndex = 0; // Clear selection
+                         //   comboBox.Text = string.Empty; // Clear text
+                            break;
+                        default:
+                            if (ctrl.HasChildren)
+                            {
+                                ClearData(ctrl.Controls);
+                            }
+                            break;
                     }
-                    else
-                    {
-                        ClearData(ctrl.Controls);
-                    }
-
                 }
+            }
+            catch (Exception ex)
+            { 
+            }
+        }
 
-            }
-            catch (Exception exxxx)
-            {
-                //
-            }
-        }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
     }
 }

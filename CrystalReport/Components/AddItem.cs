@@ -160,26 +160,41 @@ namespace CrystalReport.Components
                     {
                         barcodeget = ste.ToString();
                     }
+                    string gstText = gst.Text.Trim('%'); // Remove the percentage symbol
+
+
                     var product = new
-                        {
-                            PR_CODE = "PR_001",
-                            ITEM_NAME = name_item.Text.ToString(),
-                            TYPE_TAX = tax,
-                            STOCK = Convert.ToInt32(stock.Text),
-                            UNIT = unit.Text,
-                            BARCODE = barcodeget,
-                            SALE_PRICE = saleprice,
-                            COST_PRICE = cost_price,
-                            pr_ACCOUNT = acc.Text,
-                            pr_DESCRIPTION = dss.Text,
-                            pr_COSTPRICE = pr_cost_price,
-                            IDATE = DateTime.Now.ToString(),
-                            DESCRIPTION = ds.Text,
-                            ACCOUNT = ac.Text,
-                            USER_N = "Amir Feroz",
-                            pic = pics
-                        
-                         };
+                    {
+                        PR_CODE = "PR_001",
+                        ITEM_NAME = name_item.Text.ToString(),
+                        TYPE_TAX = Convert.ToInt32(gstText),
+                        STOCK = Convert.ToInt32(stock.Text),
+                        UNIT = unit.Text,
+                        BARCODE = barcodeget,
+                        SALE_PRICE = saleprice,
+                        COST_PRICE = cost_price,
+                        pr_ACCOUNT = acc.Text,
+                        pr_DESCRIPTION = dss.Text,
+                        pr_COSTPRICE = pr_cost_price,
+                        IDATE = DateTime.Now.ToString(),
+                        DESCRIPTION = ds.Text,
+                        ACCOUNT = ac.Text,
+                        USER_N = "Amir Feroz",
+                        pic = pics,
+                        MRP = decimal.Parse(MRP.Text),
+                        CGST = decimal.Parse(cgst.Text),
+                        SGST = decimal.Parse(sgst.Text),
+                        IGST = decimal.Parse(igst.Text),
+                        HSN = hsn.Text,
+                        Msg = msgdate.Value.ToString("yyyy/MM/dd"),
+                        Exp = expdate.Value.ToString("yyyy/MM/dd"),
+                        Color = Colors.Text,
+                        Size = size.Text,
+
+
+
+
+                    };
 
 
                         ProductAdd prd = new ProductAdd();
@@ -367,6 +382,62 @@ namespace CrystalReport.Components
                 MessageBox.Show("Call key");
                 button1.PerformClick();
 
+            }
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                Unit s = new Unit();
+                s.Show();
+
+            }
+            catch (Exception ex)
+            {
+                 
+            }
+        }
+
+        private void gst_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                string gstText = gst.Text.Trim('%'); // Remove the percentage symbol
+                decimal ts = Convert.ToDecimal(gstText); // Convert to decimal
+
+
+                ts = ts / 2;
+
+                cgst.Text = ts.ToString();
+                sgst.Text = ts.ToString();
+
+            }
+            catch (Exception ex)
+            {
+                 
+            }
+        }
+
+        private void checkBox1_CheckedChanged_1(object sender, EventArgs e)
+        {
+            try
+            {
+                if(checkBox1.Checked)
+                {
+                    panel10.Visible = true;
+
+                }
+                else
+                {
+                    panel10.Visible = false;
+
+                }
+
+            }
+            catch (Exception ex)
+            { 
             }
         }
     }

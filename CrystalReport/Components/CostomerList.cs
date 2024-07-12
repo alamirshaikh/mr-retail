@@ -209,11 +209,37 @@ namespace CrystalReport.Components
 
         private void button1_Click(object sender, EventArgs e)
         {
-            int selectedIndex = data.SelectedRows[0].Index;
+            if (data.SelectedRows.Count > 0)
+            {
+                int selectedIndex = data.SelectedRows[0].Index;
 
-            MainEngine_.GetDataScript<dynamic>("delete from SInvoice where items='"+data.Rows[selectedIndex].Cells[1].Value.ToString()+"'");
-            data.Rows.RemoveAt(selectedIndex);
+                // Get the Id and Name from the selected row
+                var invoiceId = data.Rows[selectedIndex].Cells[1].Value.ToString();
+                var names = data.Rows[selectedIndex].Cells[2].Value.ToString();
 
+                // Ask for confirmation before deleting
+                DialogResult result = MessageBox.Show($"Are you sure you want to delete invoice '{invoiceId}'?", "Confirm Deletion", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (result == DialogResult.Yes)
+                {
+                    var parameters = new
+                    {
+                        Id = invoiceId,
+                        name = names
+                    };
+
+                    // Call the stored procedure to delete the invoice
+                    MainEngine_.GetData<dynamic>("Delete_Invoices", parameters);
+
+                    // Remove the row from the DataGridView
+                    data.Rows.RemoveAt(selectedIndex);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please select a row to delete.");
+            }
         }
+
     }
 }

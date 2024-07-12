@@ -303,6 +303,16 @@ namespace CrystalReport.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap companyyy {
+            get {
+                object obj = ResourceManager.GetObject("companyyy", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap customer_review {
             get {
                 object obj = ResourceManager.GetObject("customer-review", resourceCulture);
@@ -333,9 +343,49 @@ namespace CrystalReport.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap dashboard_real1 {
+            get {
+                object obj = ResourceManager.GetObject("dashboard real1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap dashboard1 {
             get {
                 object obj = ResourceManager.GetObject("dashboard1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap dashboard2 {
+            get {
+                object obj = ResourceManager.GetObject("dashboard2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap dashboard3 {
+            get {
+                object obj = ResourceManager.GetObject("dashboard3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap dashboard4 {
+            get {
+                object obj = ResourceManager.GetObject("dashboard4", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -453,6 +503,16 @@ namespace CrystalReport.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap excell {
+            get {
+                object obj = ResourceManager.GetObject("excell", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap expenses {
             get {
                 object obj = ResourceManager.GetObject("expenses", resourceCulture);
@@ -483,9 +543,69 @@ namespace CrystalReport.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap icons8_bill_64 {
+        public static System.Drawing.Bitmap GST_T {
             get {
-                object obj = ResourceManager.GetObject("icons8_bill_64", resourceCulture);
+                object obj = ResourceManager.GetObject("GST_T", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap icons8_bill_641 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-bill-641", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap icons8_bill_642 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-bill-642", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap icons8_customer_64 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-customer-64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap icons8_customer_64__1_ {
+            get {
+                object obj = ResourceManager.GetObject("icons8-customer-64 (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap icons8_customer_64__1_1 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-customer-64 (1)1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap icons8_customer_641 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-customer-641", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -506,6 +626,66 @@ namespace CrystalReport.Properties {
         public static System.Drawing.Bitmap icons8_inventory_64 {
             get {
                 object obj = ResourceManager.GetObject("icons8_inventory_64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap icons8_new_copy_50 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-new-copy-50", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap icons8_payment_64 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-payment-64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap icons8_payment_641 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-payment-641", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap icons8_payment_642 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-payment-642", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap icons8_rupee_50 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-rupee-50", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap icons8_rupee_501 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-rupee-501", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -783,6 +963,16 @@ namespace CrystalReport.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap owner {
+            get {
+                object obj = ResourceManager.GetObject("owner", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap paymnet {
             get {
                 object obj = ResourceManager.GetObject("paymnet", resourceCulture);
@@ -833,6 +1023,26 @@ namespace CrystalReport.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap POS {
+            get {
+                object obj = ResourceManager.GetObject("POS", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap POS1 {
+            get {
+                object obj = ResourceManager.GetObject("POS1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap printer {
             get {
                 object obj = ResourceManager.GetObject("printer", resourceCulture);
@@ -856,6 +1066,16 @@ namespace CrystalReport.Properties {
         public static System.Drawing.Bitmap printer_sec1 {
             get {
                 object obj = ResourceManager.GetObject("printer sec1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap printer_sec2 {
+            get {
+                object obj = ResourceManager.GetObject("printer sec2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -906,6 +1126,26 @@ namespace CrystalReport.Properties {
         public static System.Drawing.Bitmap purches1 {
             get {
                 object obj = ResourceManager.GetObject("purches1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap purches2 {
+            get {
+                object obj = ResourceManager.GetObject("purches2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap purches3 {
+            get {
+                object obj = ResourceManager.GetObject("purches3", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1033,6 +1273,16 @@ namespace CrystalReport.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap settings_64 {
+            get {
+                object obj = ResourceManager.GetObject("settings-64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap shopping_cart {
             get {
                 object obj = ResourceManager.GetObject("shopping-cart", resourceCulture);
@@ -1076,6 +1326,26 @@ namespace CrystalReport.Properties {
         public static System.Drawing.Bitmap stock {
             get {
                 object obj = ResourceManager.GetObject("stock", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap stockk {
+            get {
+                object obj = ResourceManager.GetObject("stockk", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap stockssssss {
+            get {
+                object obj = ResourceManager.GetObject("stockssssss", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1196,6 +1466,16 @@ namespace CrystalReport.Properties {
         public static System.Drawing.Bitmap view_11 {
             get {
                 object obj = ResourceManager.GetObject("view 11", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap voicher_white {
+            get {
+                object obj = ResourceManager.GetObject("voicher-white", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -1423,3 +1423,17 @@ D:\New folder (2)\mr-retail\CrystalReport\bin\Debug\Syncfusion.Grouping.Base.xml
 D:\New folder (2)\mr-retail\CrystalReport\bin\Debug\Syncfusion.Shared.Base.xml
 D:\New folder (2)\mr-retail\CrystalReport\obj\Debug\CrystalReport.Barcode_Types.Garment1.resources
 D:\New folder (2)\mr-retail\CrystalReport\obj\Debug\CrystalReport.Password.resources
+D:\New folder (2)\mr-retail\CrystalReport\bin\Debug\WithoutSaveBil.rpt
+D:\New folder (2)\mr-retail\CrystalReport\bin\Debug\WithoutSaveBil.cs
+D:\New folder (2)\mr-retail\CrystalReport\bin\Debug\HInvoice.rpt
+D:\New folder (2)\mr-retail\CrystalReport\bin\Debug\HInvoice.cs
+D:\New folder (2)\mr-retail\CrystalReport\bin\Debug\Interop.CrystalActiveXReportViewerLib13.dll
+D:\New folder (2)\mr-retail\CrystalReport\bin\Debug\AxInterop.CrystalActiveXReportViewerLib13.dll
+D:\New folder (2)\mr-retail\CrystalReport\obj\Debug\Interop.CrystalActiveXReportViewerLib13.dll
+D:\New folder (2)\mr-retail\CrystalReport\obj\Debug\AxInterop.CrystalActiveXReportViewerLib13.dll
+D:\New folder (2)\mr-retail\CrystalReport\obj\Debug\CrystalReport.csproj.ResolveComReference.cache
+D:\New folder (2)\mr-retail\CrystalReport\obj\Debug\CrystalReport.Components.Settings.resources
+D:\New folder (2)\mr-retail\CrystalReport\obj\Debug\CrystalReport.ComView.resources
+D:\New folder (2)\mr-retail\CrystalReport\obj\Debug\CrystalReport.UI_MASTER.resources
+D:\New folder (2)\mr-retail\CrystalReport\bin\Debug\Exp_V.rpt
+D:\New folder (2)\mr-retail\CrystalReport\bin\Debug\Exp_V.cs

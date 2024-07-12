@@ -60,11 +60,12 @@ namespace CrystalReport.Components
             this.textBox1 = new Guna.UI.WinForms.GunaTextBox();
             this.panel7 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Phones = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Citys = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.State = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -106,7 +107,7 @@ namespace CrystalReport.Components
             // 
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel2.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.panel4);
             this.panel2.Controls.Add(this.panel3);
@@ -121,7 +122,7 @@ namespace CrystalReport.Components
             // 
             // panel4
             // 
-            this.panel4.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.panel4.BackColor = System.Drawing.Color.White;
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel4.Controls.Add(this.cust_address);
             this.panel4.Controls.Add(this.label4);
@@ -196,7 +197,7 @@ namespace CrystalReport.Components
             // 
             this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel3.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.panel3.BackColor = System.Drawing.Color.White;
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel3.Controls.Add(this.pstate);
             this.panel3.Controls.Add(this.pcity);
@@ -481,14 +482,25 @@ namespace CrystalReport.Components
             this.ID,
             this.Name,
             this.Phones,
-            this.Citys});
+            this.Citys,
+            this.State});
             this.dataGridView1.Location = new System.Drawing.Point(-1, -1);
             this.dataGridView1.Name = "dataGridView1";
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridView1.Size = new System.Drawing.Size(955, 293);
+            this.dataGridView1.Size = new System.Drawing.Size(952, 293);
             this.dataGridView1.TabIndex = 0;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::CrystalReport.Properties.Resources.search;
+            this.pictureBox1.Location = new System.Drawing.Point(437, 254);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(33, 28);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 23;
+            this.pictureBox1.TabStop = false;
             // 
             // ID
             // 
@@ -514,15 +526,10 @@ namespace CrystalReport.Components
             this.Citys.HeaderText = "City";
             this.Citys.Name = "Citys";
             // 
-            // pictureBox1
+            // State
             // 
-            this.pictureBox1.Image = global::CrystalReport.Properties.Resources.search;
-            this.pictureBox1.Location = new System.Drawing.Point(437, 254);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(33, 28);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 23;
-            this.pictureBox1.TabStop = false;
+            this.State.HeaderText = "State";
+            this.State.Name = "State";
             // 
             // Customer
             // 
@@ -537,8 +544,7 @@ namespace CrystalReport.Components
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-   
-            this.Size = new System.Drawing.Size(961, 721);
+       this.Size = new System.Drawing.Size(961, 721);
             this.Load += new System.EventHandler(this.Customer_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -590,10 +596,11 @@ namespace CrystalReport.Components
         private Guna.UI.WinForms.GunaTextBox textBox1;
         private Panel panel7;
         private DataGridView dataGridView1;
+        private PictureBox pictureBox1;
         private DataGridViewTextBoxColumn ID;
         private DataGridViewTextBoxColumn Name;
         private DataGridViewTextBoxColumn Phones;
         private DataGridViewTextBoxColumn Citys;
-        private PictureBox pictureBox1;
+        private DataGridViewTextBoxColumn State;
     }
 }

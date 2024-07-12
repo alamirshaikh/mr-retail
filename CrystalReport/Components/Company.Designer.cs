@@ -629,7 +629,7 @@ namespace CrystalReport.Components
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.label5.Location = new System.Drawing.Point(21, 23);
+            this.label5.Location = new System.Drawing.Point(7, 23);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(114, 19);
             this.label5.TabIndex = 3;
@@ -650,7 +650,7 @@ namespace CrystalReport.Components
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.label12.Location = new System.Drawing.Point(20, 69);
+            this.label12.Location = new System.Drawing.Point(6, 69);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(82, 19);
             this.label12.TabIndex = 5;
@@ -671,7 +671,7 @@ namespace CrystalReport.Components
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.label13.Location = new System.Drawing.Point(22, 113);
+            this.label13.Location = new System.Drawing.Point(8, 113);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(120, 19);
             this.label13.TabIndex = 7;
@@ -692,7 +692,7 @@ namespace CrystalReport.Components
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.label14.Location = new System.Drawing.Point(22, 158);
+            this.label14.Location = new System.Drawing.Point(8, 158);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(120, 19);
             this.label14.TabIndex = 9;
@@ -713,7 +713,7 @@ namespace CrystalReport.Components
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.label15.Location = new System.Drawing.Point(23, 198);
+            this.label15.Location = new System.Drawing.Point(9, 198);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(68, 19);
             this.label15.TabIndex = 11;

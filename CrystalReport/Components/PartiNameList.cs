@@ -124,7 +124,7 @@ namespace CrystalReport.Components
             try
             {
                 
-                IDSupp?.Invoke(this,StoreRoom.GetData = data.Rows[e.RowIndex].Cells[2].Value.ToString());
+                IDSupp?.Invoke(this,StoreRoom.GetData = data.Rows[e.RowIndex].Cells[1].Value.ToString());
                 HideOR?.Invoke(this, true);
 
             }

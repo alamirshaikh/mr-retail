@@ -11,8 +11,8 @@ namespace Back_Dr.Sale.Models
 	public int id { get; set; }
 	public string cust_name { get; set; }
 	public string cust_phone { get; set; }
- 
-	public string pcity { get; set; }
+        public string pstate { get; set; }
+        public string pcity { get; set; }
 }
 
 }

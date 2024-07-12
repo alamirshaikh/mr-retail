@@ -152,5 +152,52 @@ namespace CrystalReport.Components
                 MessageBox.Show(ex.Message,"Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
         }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+
+                
+                List<dynamic> cust_list = MainEngine_.GetDataScript<dynamic>("select * from Customer where Balance < 0 AND cust_name = '"+comboBox1.Text+"'");
+
+                datacust.Rows.Clear();
+
+                foreach (var item in cust_list)
+                {
+                    datacust.Rows.Add(item.id, item.cust_name, item.cust_phone, item.cust_addres, item.cust_date, item.pcity, item.Balance);
+                }
+
+
+                double totalSum = datacust.Rows.Cast<DataGridViewRow>()
+              .Sum(row => Convert.ToDouble(row.Cells[6].Value ?? 0));
+
+                totalamt.Text = totalSum.ToString();
+
+
+
+            }
+            catch (Exception ex)
+            {
+            }
+        }
+
+        private void comboBox1_TextChanged(object sender, EventArgs e)
+        {
+            var test = new { cust_name = comboBox1.Text };
+
+            List<dynamic> list = MainEngine_.GetData<dynamic>("sp_getCustomer", test).ToList();
+
+            foreach (var item in list.Take(10))
+            {
+                comboBox1.Items.Add(item.cust_name);
+
+            }
+        }
     }
 }

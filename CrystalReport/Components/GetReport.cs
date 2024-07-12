@@ -103,50 +103,74 @@ namespace CrystalReport.Components
             
             if (type =="sup")
             {
-                
 
-                // Apply SQL command to the report using a parameterized query
-                string invoiceId = textBox1.Text; // Retrieve the invoice ID from the textbox
-                DataTable table1 = GetTable($"SELECT * FROM Ledger_Supplier where SupplierName =  '{textBox1.Text}'  AND Date >= '{dateTimePicker1.Text} 00:00:00' AND  date <= '{dateTimePicker2.Text} 23:59:59' ");
 
-                report.SetDataSource(table1);
+                string invoiceId = textBox1.Text;
+                string startDate = $"{dateTimePicker1.Value.Date.ToString("yyyy-MM-dd")} 00:00:00";
+                string endDate = $"{dateTimePicker2.Value.Date.ToString("yyyy-MM-dd")} 23:59:59";
+
+                // Calculate balance
+                decimal? balanceValue = MainEngine_.GetDataScript<decimal?>($@"
+    SELECT SUM(CAST(Credit AS DECIMAL(18, 2))) - SUM(CAST(Debit AS DECIMAL(18, 2))) AS CreditMinusDebit 
+    FROM Ledger_Supplier 
+    WHERE SupplierID = {invoiceId} AND Date >= '{startDate}' AND Date <= '{endDate}'
+").FirstOrDefault();
+
+                // Ensure balance is non-negative or default to 0 if null
+                decimal blcvlc = balanceValue.HasValue ? Math.Max(balanceValue.Value, 0) : 0;
+
+                // Calculate total credit
+                decimal? totalCredit = MainEngine_.GetDataScript<decimal?>($@"
+    SELECT SUM(CAST(Credit AS DECIMAL(18, 2))) AS TotalCredit 
+    FROM Ledger_Supplier 
+    WHERE SupplierID = {invoiceId} AND Date >= '{startDate}' AND Date <= '{endDate}'
+").FirstOrDefault();
+
+                // Ensure total credit is non-negative or default to 0 if null
+                decimal totalcreditvlc = totalCredit.HasValue ? Math.Max(totalCredit.Value, 0) : 0;
+
+                // Calculate total debit
+                decimal? totalDebit = MainEngine_.GetDataScript<decimal?>($@"
+    SELECT SUM(CAST(Debit AS DECIMAL(18, 2))) AS TotalDebit 
+    FROM Ledger_Supplier 
+    WHERE SupplierID = {invoiceId} AND Date >= '{startDate}' AND Date <= '{endDate}'
+").FirstOrDefault();
+
+                // Ensure total debit is non-negative or default to 0 if null
+                decimal totaldevitvlc = totalDebit.HasValue ? Math.Max(totalDebit.Value, 0) : 0;
+
+                // Set up parameters for the report
                 ParameterFields pfield = new ParameterFields();
+
                 ParameterField balance = new ParameterField();
-                ParameterDiscreteValue balanceval = new ParameterDiscreteValue();
                 balance.ParameterFieldName = "balance";
-                balanceval.Value = $"{MainEngine_.GetDataScript<decimal>($"SELECT SUM(CAST(Credit AS DECIMAL(18, 2))) - SUM(CAST(Debit AS DECIMAL(18, 2))) AS CreditMinusDebit FROM Ledger_Supplier where SupplierName  ='{textBox1.Text}' and  Date >= '{dateTimePicker1.Text} 00:00:00' AND  date <= '{dateTimePicker2.Text} 23:59:59' ; ").FirstOrDefault().ToString()}";
-                balance.CurrentValues.Add(balanceval);
+                balance.CurrentValues.Add(new ParameterDiscreteValue { Value = blcvlc });
 
                 ParameterField tcredit = new ParameterField();
-                ParameterDiscreteValue tcreditval = new ParameterDiscreteValue();
                 tcredit.ParameterFieldName = "tcredit";
-                tcreditval.Value = $"{MainEngine_.GetDataScript<decimal>($"SELECT SUM(CAST(Credit AS DECIMAL(18, 2))) AS CreditMinusDebit FROM Ledger_Supplier where SupplierName  ='{textBox1.Text}' and Date >= '{dateTimePicker1.Text} 00:00:00' AND  date <= '{dateTimePicker2.Text} 23:59:59' ; ").FirstOrDefault().ToString()}";
-                tcredit.CurrentValues.Add(tcreditval);
-
+                tcredit.CurrentValues.Add(new ParameterDiscreteValue { Value = totalcreditvlc });
 
                 ParameterField tdebit = new ParameterField();
-                ParameterDiscreteValue tdebitval = new ParameterDiscreteValue();
                 tdebit.ParameterFieldName = "tdebit";
-                tdebitval.Value = $"{MainEngine_.GetDataScript<decimal>($"SELECT SUM(CAST(Debit AS DECIMAL(18, 2))) AS CreditMinusDebit FROM Ledger_Supplier  where SupplierName  ='{textBox1.Text}' and  Date >= '{dateTimePicker1.Text} 00:00:00' AND  date <= '{dateTimePicker2.Text} 23:59:59' ; ").FirstOrDefault().ToString()}";
-                tdebit.CurrentValues.Add(tdebitval);
+                tdebit.CurrentValues.Add(new ParameterDiscreteValue { Value = totaldevitvlc });
 
+                ParameterField dateRange = new ParameterField();
+                dateRange.ParameterFieldName = "ddate";
+                dateRange.CurrentValues.Add(new ParameterDiscreteValue { Value = $"FROM {dateTimePicker1.Value.ToString("yyyy-MM-dd")} TO {dateTimePicker2.Value.ToString("yyyy-MM-dd")}" });
 
-
-                ParameterField date = new ParameterField();
-                ParameterDiscreteValue dateval = new ParameterDiscreteValue();
-                date.ParameterFieldName = "ddate";
-                dateval.Value = $"(FROM {dateTimePicker1.Text}  TO - {dateTimePicker2.Text})";
-                date.CurrentValues.Add(dateval);
-
-                pfield.Add(date);
+                pfield.Add(dateRange);
                 pfield.Add(balance);
                 pfield.Add(tcredit);
                 pfield.Add(tdebit);
 
-                report.VerifyDatabase();
+                // Set parameters to Crystal Report Viewer
+                crystalReportViewer1.ParameterFieldInfo = pfield;
+
+                // Retrieve data table
+                DataTable table1 = GetTable($"SELECT * FROM Ledger_Supplier WHERE SupplierID = {invoiceId} AND Date >= '{startDate}' AND Date <= '{endDate}'");
+                report.SetDataSource(table1);
 
                 // Set the report source for the CrystalReportViewer
-                crystalReportViewer1.ParameterFieldInfo = pfield;
                 crystalReportViewer1.ReportSource = report;
                 crystalReportViewer1.Refresh();
                 crystalReportViewer1.Zoom(2);
@@ -155,49 +179,89 @@ namespace CrystalReport.Components
             }
             else
             {
-                ParameterField date = new ParameterField();
-                ParameterDiscreteValue dateval = new ParameterDiscreteValue();
+                // Retrieve inputs
+                string invoiceId = textBox1.Text;
+                DateTime startDate = dateTimePicker1.Value.Date;
+                DateTime endDate = dateTimePicker2.Value.Date;
 
+                // Retrieve data table
+                DataTable table1 = GetTable($@"
+    SELECT * 
+    FROM Ledger_Customer 
+    WHERE CustomerID = '{invoiceId}' 
+    AND Date >= '{startDate:yyyy-MM-dd} 00:00:00' 
+    AND Date <= '{endDate:yyyy-MM-dd} 23:59:59'
+");
 
-                // Apply SQL command to the report using a parameterized query
-                string invoiceId = textBox1.Text; // Retrieve the invoice ID from the textbox
-                DataTable table1 = GetTable($"SELECT * FROM Ledger_Customer where Cust_name =  '{textBox1.Text}'  AND Date >= '{dateTimePicker1.Text} 00:00:00' AND  date <= '{dateTimePicker2.Text} 23:59:59' ");
-
+                // Set the retrieved data table as the report data source
                 report.SetDataSource(table1);
+
+                // Define parameter fields for additional data (balance, total credit, total debit, date range)
                 ParameterFields pfield = new ParameterFields();
+
+                // Balance parameter field
                 ParameterField balance = new ParameterField();
-                ParameterDiscreteValue balanceval = new ParameterDiscreteValue();
+                ParameterDiscreteValue balanceVal = new ParameterDiscreteValue();
                 balance.ParameterFieldName = "balance";
-                balanceval.Value = $"{MainEngine_.GetDataScript<decimal>($"SELECT SUM(CAST(Credit AS DECIMAL(18, 2))) - SUM(CAST(Debit AS DECIMAL(18, 2))) AS CreditMinusDebit FROM Ledger_Customer where Cust_name  ='{textBox1.Text}' and  Date >= '{dateTimePicker1.Text} 00:00:00' AND  date <= '{dateTimePicker2.Text} 23:59:59' ; ").FirstOrDefault().ToString()}";
-                balance.CurrentValues.Add(balanceval);
 
+                // Calculate balance
+                decimal? balanceResult = MainEngine_.GetDataScript<decimal?>($@"
+    SELECT SUM(CAST(Credit AS DECIMAL(18, 2))) - SUM(CAST(Debit AS DECIMAL(18, 2))) AS CreditMinusDebit 
+    FROM Ledger_Customer 
+    WHERE CustomerID = {invoiceId} 
+    AND Date >= '{startDate:yyyy-MM-dd} 00:00:00' 
+    AND Date <= '{endDate:yyyy-MM-dd} 23:59:59'
+").FirstOrDefault();
 
-
-                ParameterField tcredit = new ParameterField();
-                ParameterDiscreteValue tcreditval = new ParameterDiscreteValue();
-                tcredit.ParameterFieldName = "tcredit";
-                tcreditval.Value = $"{MainEngine_.GetDataScript<decimal>($"SELECT SUM(CAST(Credit AS DECIMAL(18, 2))) AS CreditMinusDebit FROM Ledger_Customer where Cust_name  ='{textBox1.Text}' and Date >= '{dateTimePicker1.Text} 00:00:00' AND  date <= '{dateTimePicker2.Text} 23:59:59' ; ").FirstOrDefault().ToString()}";
-                tcredit.CurrentValues.Add(tcreditval);
-
-
-                ParameterField tdebit = new ParameterField();
-                ParameterDiscreteValue tdebitval = new ParameterDiscreteValue();
-                tdebit.ParameterFieldName = "tdebit";
-                tdebitval.Value = $"{MainEngine_.GetDataScript<decimal>($"SELECT SUM(CAST(Debit AS DECIMAL(18, 2))) AS CreditMinusDebit FROM Ledger_Customer  where Cust_name  ='{textBox1.Text}' and  Date >= '{dateTimePicker1.Text} 00:00:00' AND  date <= '{dateTimePicker2.Text} 23:59:59' ; ").FirstOrDefault().ToString()}";
-                tdebit.CurrentValues.Add(tdebitval);
-
-
-
-                date.ParameterFieldName = "ddate";
-                dateval.Value = $"(FROM {dateTimePicker1.Text}  TO - {dateTimePicker2.Text})";
-                date.CurrentValues.Add(dateval);
-
-                pfield.Add(date);
+                balanceVal.Value = balanceResult ?? 0.00m;
+                balance.CurrentValues.Add(balanceVal);
                 pfield.Add(balance);
+
+                // Total credit parameter field
+                ParameterField tcredit = new ParameterField();
+                ParameterDiscreteValue tcreditVal = new ParameterDiscreteValue();
+                tcredit.ParameterFieldName = "tcredit";
+
+                // Calculate total credit
+                decimal? totalCreditResult = MainEngine_.GetDataScript<decimal?>($@"
+    SELECT SUM(CAST(Credit AS DECIMAL(18, 2))) AS TotalCredit 
+    FROM Ledger_Customer 
+    WHERE CustomerID = {invoiceId} 
+    AND Date >= '{startDate:yyyy-MM-dd} 00:00:00' 
+    AND Date <= '{endDate:yyyy-MM-dd} 23:59:59'
+").FirstOrDefault();
+
+                tcreditVal.Value = totalCreditResult ?? 0.00m;
+                tcredit.CurrentValues.Add(tcreditVal);
                 pfield.Add(tcredit);
+
+                // Total debit parameter field
+                ParameterField tdebit = new ParameterField();
+                ParameterDiscreteValue tdebitVal = new ParameterDiscreteValue();
+                tdebit.ParameterFieldName = "tdebit";
+
+                // Calculate total debit
+                decimal? totalDebitResult = MainEngine_.GetDataScript<decimal?>($@"
+    SELECT SUM(CAST(Debit AS DECIMAL(18, 2))) AS TotalDebit 
+    FROM Ledger_Customer 
+    WHERE CustomerID = {invoiceId} 
+    AND Date >= '{startDate:yyyy-MM-dd} 00:00:00' 
+    AND Date <= '{endDate:yyyy-MM-dd} 23:59:59'
+").FirstOrDefault();
+
+                tdebitVal.Value = totalDebitResult ?? 0.00m;
+                tdebit.CurrentValues.Add(tdebitVal);
                 pfield.Add(tdebit);
 
+                // Date parameter field
+                ParameterField date = new ParameterField();
+                ParameterDiscreteValue dateVal = new ParameterDiscreteValue();
+                date.ParameterFieldName = "ddate";
+                dateVal.Value = $"(FROM {startDate:yyyy-MM-dd} TO {endDate:yyyy-MM-dd})";
+                date.CurrentValues.Add(dateVal);
+                pfield.Add(date);
 
+                // Verify and set report parameters
                 report.VerifyDatabase();
 
                 // Set the report source for the CrystalReportViewer
@@ -205,8 +269,6 @@ namespace CrystalReport.Components
                 crystalReportViewer1.ReportSource = report;
                 crystalReportViewer1.Refresh();
                 crystalReportViewer1.Zoom(2);
-
-
 
             }
 

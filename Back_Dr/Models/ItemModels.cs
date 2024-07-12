@@ -13,8 +13,13 @@ namespace Back_Dr.Models
 
         public decimal COST_PRICE { get; set; }
         public decimal SALE_PRICE { get; set; }
+        public decimal MRP { get; set; }
+        public decimal CGST { get; set; }
+        public decimal SGST { get; set; }
+        public decimal IGST { get; set; }
+         
 
-		public int STOCK { get; set; }
+        public int STOCK { get; set; }
 		public string UNIT { get; set; }
 		public string BARCODE { get; set; }
 		public string DESCRIPTION { get; set; }

@@ -43,6 +43,18 @@
     </dependentAssembly>
   </dependency>
   <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="AxInterop.CrystalActiveXReportViewerLib13.dll" size="39424">
+      <assemblyIdentity name="AxInterop.CrystalActiveXReportViewerLib13" version="13.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>1xAblEsVGYXTGWgAPFQlqM03I5mH2Ivfk/VbQWh7ahs=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
     <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="AxShockwaveFlashObjects.dll" size="18432">
       <assemblyIdentity name="AxShockwaveFlashObjects" version="1.0.0.0" publicKeyToken="692FBEA5521E1304" language="neutral" processorArchitecture="msil" />
       <hash>
@@ -55,14 +67,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Back_Dr.dll" size="31744">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Back_Dr.dll" size="33792">
       <assemblyIdentity name="Back_Dr" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>pNiNGgAxejyRwEtZIHYJufe+hrEXS1Lg8ljKMhmrfJI=</dsig:DigestValue>
+        <dsig:DigestValue>4dfbPKP9fGQAS/RcY+MdrhS8O89D5PRQIryZI0jBXmg=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -315,6 +327,18 @@
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
         <dsig:DigestValue>V20t4snvW8Hqm91zro9AgAQmADfDtyIn7tJ+mVFmJ20=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Interop.CrystalActiveXReportViewerLib13.dll" size="62464">
+      <assemblyIdentity name="Interop.CrystalActiveXReportViewerLib13" version="13.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>6gVDdNzj2t9pb40sSJ2gvDO5wMGLaHYMRLns/QOIRpg=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -703,14 +727,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Mr.Retail.exe" size="4893704">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Mr.Retail.exe" size="5345800">
       <assemblyIdentity name="Mr.Retail" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>ioLcg0U6lji++zRTxpvDbqKvnJfyk7E4tL+0hBej3D8=</dsig:DigestValue>
+        <dsig:DigestValue>2CkbdWi49vr3/kdAAZjvSJ9t1w5l+ToIBNXqoaDODXQ=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

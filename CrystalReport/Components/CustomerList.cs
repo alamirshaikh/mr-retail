@@ -182,16 +182,27 @@ namespace CrystalReport.Components
         {
             try
             {
-                OnDataTransferred(dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString());
-                HideOR?.Invoke(this, true);
-                this.Hide();
+                // Check if the RowIndex is valid
+                if (e.RowIndex >= 0 && e.RowIndex < dataGridView1.Rows.Count)
+                {
+                    var cellValue = dataGridView1.Rows[e.RowIndex].Cells[1].Value?.ToString();
+                    if (cellValue != null)
+                    {
+                        OnDataTransferred(cellValue);
+                        HideOR?.Invoke(this, true);
+             
+                        this.FindForm()?.Hide();
 
+                    }
+                }
             }
             catch (Exception ex)
             {
-                 
+                // Handle or log the exception
+                MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {

@@ -455,6 +455,12 @@
     <Compile Include="Components\Barcode.Designer.cs">
       <DependentUpon>Barcode.cs</DependentUpon>
     </Compile>
+    <Compile Include="Components\Purches_Order.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Components\Purches_Order.Designer.cs">
+      <DependentUpon>Purches_Order.cs</DependentUpon>
+    </Compile>
     <Compile Include="Components\Bill.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -581,6 +587,12 @@
     <Compile Include="Components\RecoveryAmount.Designer.cs">
       <DependentUpon>RecoveryAmount.cs</DependentUpon>
     </Compile>
+    <Compile Include="Components\Settings.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Components\Settings.Designer.cs">
+      <DependentUpon>Settings.cs</DependentUpon>
+    </Compile>
     <Compile Include="Components\Stock.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -599,6 +611,12 @@
     </Compile>
     <Compile Include="Components\Unit.Designer.cs">
       <DependentUpon>Unit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ComView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ComView.Designer.cs">
+      <DependentUpon>ComView.cs</DependentUpon>
     </Compile>
     <Compile Include="Createaccount.cs">
       <SubType>Form</SubType>
@@ -628,6 +646,13 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>datasetbarcode.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Exp_V.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Exp_V.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -640,6 +665,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>HInvoice.rpt</DependentUpon>
       <SubType>Component</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
     <Compile Include="Language.cs" />
     <Compile Include="CustomerLedger.cs">
@@ -667,6 +693,31 @@
     </Compile>
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Purches_Order_Report.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Purches_Order_Report.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Thermal.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Thermal.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI_MASTER.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI_MASTER.Designer.cs">
+      <DependentUpon>UI_MASTER.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WithoutSaveBil.cs">
+      <DependentUpon>WithoutSaveBil.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="Password.cs">
       <SubType>Form</SubType>
@@ -776,6 +827,9 @@
     <EmbeddedResource Include="Components\Barcode.resx">
       <DependentUpon>Barcode.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Components\Purches_Order.resx">
+      <DependentUpon>Purches_Order.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Components\Bill.resx">
       <DependentUpon>Bill.cs</DependentUpon>
     </EmbeddedResource>
@@ -839,6 +893,9 @@
     <EmbeddedResource Include="Components\RecoveryAmount.resx">
       <DependentUpon>RecoveryAmount.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Components\Settings.resx">
+      <DependentUpon>Settings.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Components\Stock.resx">
       <DependentUpon>Stock.cs</DependentUpon>
     </EmbeddedResource>
@@ -847,6 +904,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Components\Unit.resx">
       <DependentUpon>Unit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ComView.resx">
+      <DependentUpon>ComView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Createaccount.resx">
       <DependentUpon>Createaccount.cs</DependentUpon>
@@ -861,12 +921,18 @@
       <LastGenOutput>DailyReport.cs</LastGenOutput>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
+    <EmbeddedResource Include="Exp_V.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Exp_V.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HInvoice.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>HInvoice.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="CustomerLedger.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -883,6 +949,22 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Purches_Order_Report.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Purches_Order_Report.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Thermal.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Thermal.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI_MASTER.resx">
+      <DependentUpon>UI_MASTER.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WithoutSaveBil.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>WithoutSaveBil.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="Password.resx">
       <DependentUpon>Password.cs</DependentUpon>
@@ -1129,6 +1211,31 @@
     <None Include="Resources\view 11.png" />
     <None Include="Resources\printer sec1.png" />
     <None Include="Resources\diskette2.png" />
+    <None Include="Resources\dashboard real1.png" />
+    <None Include="Resources\dashboard2.png" />
+    <None Include="Resources\dashboard3.png" />
+    <None Include="Resources\dashboard4.png" />
+    <None Include="Resources\icons8-new-copy-50.png" />
+    <None Include="Resources\purches1.png" />
+    <None Include="Resources\stockk.png" />
+    <None Include="Resources\icons8-customer-641.png" />
+    <None Include="Resources\icons8-customer-64 %281%291.png" />
+    <None Include="Resources\icons8-payment-641.png" />
+    <None Include="Resources\icons8-rupee-501.png" />
+    <None Include="Resources\icons8-bill-642.png" />
+    <None Include="Resources\excell.png" />
+    <None Include="Resources\companyyy.png" />
+    <None Include="Resources\POS.png" />
+    <None Include="Resources\stockssssss.png" />
+    <None Include="Resources\owner.png" />
+    <None Include="Resources\settings-64.png" />
+    <None Include="Resources\icons8-bill-643.png" />
+    <None Include="Resources\POS1.png" />
+    <None Include="Resources\icons8-payment-642.png" />
+    <None Include="Resources\printer sec2.png" />
+    <None Include="Resources\GST_T.jpg" />
+    <None Include="Resources\purches2.png" />
+    <None Include="Resources\voicher-white.png" />
     <Content Include="tr.ico" />
   </ItemGroup>
   <ItemGroup>
@@ -1145,6 +1252,25 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AxCrystalActiveXReportViewerLib13">
+      <Guid>{B816E96D-D151-4000-BADB-53A2D8F3FC65}</Guid>
+      <VersionMajor>13</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="CrystalActiveXReportViewerLib13">
+      <Guid>{B816E96D-D151-4000-BADB-53A2D8F3FC65}</Guid>
+      <VersionMajor>13</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Microsoft.Data.SqlClient.SNI.5.1.0\build\net462\Microsoft.Data.SqlClient.SNI.targets" Condition="Exists('..\packages\Microsoft.Data.SqlClient.SNI.5.1.0\build\net462\Microsoft.Data.SqlClient.SNI.targets')" />

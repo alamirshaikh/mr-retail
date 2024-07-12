@@ -25,16 +25,37 @@ namespace CrystalReport.Components
 
                 var dem = new
                 {
+                id = Convert.ToInt64(textBox4.Text),
                 Kharcha = textBox1.Text,
                 Amount = decimal.Parse(textBox2.Text),
-                date = dateTimePicker3.Text
+                date = dateTimePicker3.Text,
+                 Name = name.Text,
+                 Note = note.Text
                 };
 
 
                 await MainEngine_.Add<dynamic>(dem, "MeraKharcha");
 
-                LoadInitialData();
+                LoadInvoice();
 
+                textBox1.Text = "";
+                textBox2.Text = "";
+                note.Text = "";
+
+
+
+
+
+                if (dataGridView1.Rows.Count > 0)
+                {
+                    double totalSum = dataGridView1.Rows.Cast<DataGridViewRow>()
+                .Sum(row => Convert.ToDouble(row.Cells[2].Value ?? 0));
+                    totalamt.Text = totalSum.ToString();
+
+                }
+
+
+                
             }
             catch (Exception ex)
             {
@@ -43,6 +64,26 @@ namespace CrystalReport.Components
             }
               
         }
+
+
+
+        private async void LoadInvoice()
+        {
+
+            dataGridView1.Rows.Clear();
+
+            // Fetch initial set of data
+            fetchedData = await Task.Run(() => MainEngine_.GetDataScript<dynamic>("select * from Kharcha where ID = '" +textBox4.Text+ "'"));
+
+            // Show the initial set of records in the DataGridView
+            DisplayRecords(0, 100); // Display the first 100 records as an example
+
+        }
+
+
+
+
+
 
         List<dynamic> fetchedData = new List<dynamic>();
         private async void LoadInitialData()
@@ -75,19 +116,48 @@ namespace CrystalReport.Components
 
             DisplayRecords(startIndex, recordsToLoad);
         }
+        private string GenerateInvoice()
+        {
+            string inv = "";
+            string newinv = "";
+            try
+            {
+                var sql = "select * from Kharcha";
+                var sql1 = $"select * from Exp_name";
+                int custsr = MainEngine_.GetDataScript<int>(sql).Count();
+                int srn = MainEngine_.GetDataScript<int>(sql).Count();
+                srn = srn + 1;
+                custsr = custsr + 1;
+
+                inv = $"{DateTime.Now.ToString("yy")}{DateTime.Now.ToString("dd")}{custsr}{srn + 10}";
+
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+            return inv;
+
+
+        }
         private void Expenses_Load(object sender, EventArgs e)
         {
             try
             {
-                LoadInitialData();
 
-                if(dataGridView1.Rows.Count > 0 )
-                {
-                    double totalSum = dataGridView1.Rows.Cast<DataGridViewRow>()
-                .Sum(row => Convert.ToDouble(row.Cells[2].Value ?? 0));
-                    totalamt.Text = totalSum.ToString();
 
-                }
+
+
+                textBox1.Items.AddRange(MainEngine_.GetDataScript<string>("select Name from Exp_name").ToArray());
+
+
+
+               // LoadInitialData();
+                textBox4.Text = GenerateInvoice();
+
 
 
 
@@ -124,6 +194,68 @@ namespace CrystalReport.Components
             {
                  
             }
+        }
+
+        private void richTextBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (checkBox1.Checked)
+                {
+                    LoadInitialData();
+                    if (dataGridView1.Rows.Count > 0)
+                    {
+                        double totalSum = dataGridView1.Rows.Cast<DataGridViewRow>()
+                    .Sum(row => Convert.ToDouble(row.Cells[2].Value ?? 0));
+                        totalamt.Text = totalSum.ToString();
+
+                    }
+
+                }
+                else
+                {
+                    LoadInvoice();
+                    if (dataGridView1.Rows.Count > 0)
+                    {
+                        double totalSum = dataGridView1.Rows.Cast<DataGridViewRow>()
+                    .Sum(row => Convert.ToDouble(row.Cells[2].Value ?? 0));
+                        totalamt.Text = totalSum.ToString();
+
+                    }
+                }
+               
+
+            }
+            catch (Exception ex)
+            {
+                 
+            }
+        }
+
+        private void name_MouseEnter(object sender, EventArgs e)
+        {
+            textBox4.Text = GenerateInvoice();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            try
+            {
+              
+                    ReportStd std = new ReportStd(textBox4.Text, "Exp");
+                    std.Show();
+
+
+            }
+            catch (Exception ex)
+            {
+                 
+            } 
         }
     }
 }

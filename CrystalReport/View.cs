@@ -106,6 +106,8 @@ namespace CrystalReport
                     panel1.Controls.Add(item);
 
                 }
+
+ 
             }
             catch (Exception ex)
             {

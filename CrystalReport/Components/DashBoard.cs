@@ -25,6 +25,7 @@ namespace CrystalReport.Components
 
         private void GetCurrent()
         {
+            /*
             int currentYear = DateTime.Now.Year;
 
             // Set chart properties
@@ -81,18 +82,18 @@ namespace CrystalReport.Components
             }
 
             // Add the series to the chart
-            chart1.Series.Clear();
-            chart1.Series.Add(series);
+          //  chart1.Series.Clear();
+            //chart1.Series.Add(series);
 
             // Customize the chart appearance
-            chart1.ChartAreas[0].AxisX.Title = "Month";
-            chart1.ChartAreas[0].AxisY.Title = "Value";
-            chart1.ChartAreas[0].AxisX.Interval = 1;
-            chart1.ChartAreas[0].AxisX.LabelStyle.Angle = -45;
-            chart1.ChartAreas[0].AxisX.MajorGrid.LineColor = System.Drawing.Color.LightGray;
-            chart1.ChartAreas[0].AxisY.MajorGrid.LineColor = System.Drawing.Color.LightGray;
-            chart1.ChartAreas[0].AxisX.MajorGrid.LineDashStyle = ChartDashStyle.Dash;
-            chart1.ChartAreas[0].AxisY.MajorGrid.LineDashStyle = ChartDashStyle.Dash;
+         //   chart1.ChartAreas[0].AxisX.Title = "Month";
+            //chart1.ChartAreas[0].AxisY.Title = "Value";
+           // chart1.ChartAreas[0].AxisX.Interval = 1;
+           // chart1.ChartAreas[0].AxisX.LabelStyle.Angle = -45;
+           // chart1.ChartAreas[0].AxisX.MajorGrid.LineColor = System.Drawing.Color.LightGray;
+           // chart1.ChartAreas[0].AxisY.MajorGrid.LineColor = System.Drawing.Color.LightGray;
+           // chart1.ChartAreas[0].AxisX.MajorGrid.LineDashStyle = ChartDashStyle.Dash;
+            //chart1.ChartAreas[0].AxisY.MajorGrid.LineDashStyle = ChartDashStyle.Dash;
 
             // Enable tooltips
             chart1.Series[0].ToolTip = "Value: #VALY";
@@ -107,6 +108,8 @@ namespace CrystalReport.Components
             chart1.Series[0].MarkerSize = 10;
             chart1.Series[0].MarkerColor = System.Drawing.Color.Red;
 
+            */
+
         }
 
         private void DashBoard_Load(object sender, EventArgs e)
@@ -120,7 +123,7 @@ namespace CrystalReport.Components
 
 
 
-            GetCurrent();
+          //  GetCurrent();
 
 
             string colorpath = Application.StartupPath + "/company.png";
@@ -164,5 +167,80 @@ namespace CrystalReport.Components
             }
 
         }
+
+        private void panelssssss_MouseEnter(object sender, EventArgs e)
+        {
+            panelssssss.BackColor = Color.Chocolate;
+        }
+
+        private void panelssssss_MouseLeave(object sender, EventArgs e)
+        {
+    
+            panelssssss.BackColor = Color.FromArgb(34, 36, 50);
+
+        }
+
+        private void panelssssss_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                ComView cm = new ComView("Invoice");
+                cm.Show();
+            }
+            catch (Exception ex)
+            {
+                 
+            }
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+            ComView cm = new ComView("Invoice");
+            cm.Show();
+        }
+
+        private void panel1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                ComView cm = new ComView("Expenses");
+                cm.Show();
+
+
+            }
+            catch (Exception ex)
+            {
+                 
+            }
+        }
+
+        private void panelssssss_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label11_Click(object sender, EventArgs e)
+        {
+
+            ComView cm = new ComView("Payment");
+            cm.Show();
+        }
+
+        private void panel12_Click(object sender, EventArgs e)
+        {
+
+            ComView cm = new ComView("Payment");
+            cm.Show();
+        }
+
+        private void label19_Click(object sender, EventArgs e)
+        {
+
+            ComView cm = new ComView("Expenses");
+            cm.Show();
+        }
     }
-}
+    }
+

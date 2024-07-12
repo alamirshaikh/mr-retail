@@ -44,7 +44,7 @@ namespace CrystalReport.Components
         {
             for (int i = startIndex; i < Math.Min(startIndex + count, fetchedData.Count); i++)
             {
-                dataGridView1.Rows.Add(fetchedData[i].id,fetchedData[i].cust_name, fetchedData[i].cust_phone, fetchedData[i].pcity);
+                dataGridView1.Rows.Add(fetchedData[i].id,fetchedData[i].cust_name, fetchedData[i].cust_phone, fetchedData[i].pcity,fetchedData[i].pstate);
             }
         }
 
@@ -88,7 +88,7 @@ namespace CrystalReport.Components
             dataGridView1.Rows.Clear();
             foreach (var item in data)
             { 
-                dataGridView1.Rows.Add(item.id, item.cust_name, item.cust_phone, item.pcity);
+                dataGridView1.Rows.Add(item.id, item.cust_name, item.cust_phone, item.pcity,item.pstate);
             }
              
         }

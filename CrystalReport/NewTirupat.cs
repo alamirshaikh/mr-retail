@@ -98,7 +98,7 @@ namespace CrystalReport {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_blc {
+        public CrystalDecisions.Shared.IParameterField Parameter_prc {
             get {
                 return this.DataDefinition.ParameterFields[1];
             }
@@ -114,7 +114,7 @@ namespace CrystalReport {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_prc {
+        public CrystalDecisions.Shared.IParameterField Parameter_blc {
             get {
                 return this.DataDefinition.ParameterFields[3];
             }

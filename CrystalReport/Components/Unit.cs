@@ -52,7 +52,7 @@ namespace Dr.Sale.Components
 
                 };
 
-                await MainEngine_.Add(dynami,"spUnit");
+                await MainEngine_.Add(dynami, "spUnit");
                 MessageBox.Show("Succefully Add Unit!", "Add Unit", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 listBox1.Items.Add(textBox1.Text);
                 StoreRoom.ClearData(this.Controls);
@@ -67,6 +67,16 @@ namespace Dr.Sale.Components
 
         private async void button2_Click(object sender, EventArgs e)
         {
+            
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+        }
+
+        private async void button2_Click_1(object sender, EventArgs e)
+        {
+
             try
             {
                 var dynami = new
@@ -76,10 +86,10 @@ namespace Dr.Sale.Components
 
                 };
 
-                await MainEngine_.Add(dynami,"spUnit");
+                await MainEngine_.Add(dynami, "spUnit");
                 MessageBox.Show("Delete Unit!", "Delete Unit", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 listBox1.Items.RemoveAt(listBox1.SelectedIndex);
-                 
+
 
             }
             catch (Exception ex)

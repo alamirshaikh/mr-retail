@@ -7,14 +7,14 @@
     <framework targetVersion="4.5.1" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="Mr.Retail.exe.manifest" size="63312">
+    <dependentAssembly dependencyType="install" codebase="Mr.Retail.exe.manifest" size="64710">
       <assemblyIdentity name="Mr.Retail.exe" version="1.0.0.1" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>vo2HwlBKVVgqHiRCWY6km+hA2kns6VoiCHjYHv2U0vc=</dsig:DigestValue>
+        <dsig:DigestValue>GTeG4zSsnnXH4YuXSQ86dNushpLJwC+Fo4FRQK+CiDE=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

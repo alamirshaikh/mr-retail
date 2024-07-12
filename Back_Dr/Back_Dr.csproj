@@ -179,10 +179,12 @@
     <Compile Include="Models\PartiNameLIst.cs" />
     <Compile Include="Models\PaymentModel.cs" />
     <Compile Include="Models\POSModels.cs" />
+    <Compile Include="Models\PrinterModels.cs" />
     <Compile Include="Models\ProductM.cs" />
     <Compile Include="Models\SalesBillModel.cs" />
     <Compile Include="Models\StockModels.cs" />
     <Compile Include="Models\SupplyerModel.cs" />
+    <Compile Include="Models\WithoutSaveModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

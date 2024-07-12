@@ -41,14 +41,19 @@ namespace CrystalReport.Components
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new Guna.UI.WinForms.GunaDataGridView();
+            this.label4 = new System.Windows.Forms.TextBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.sr = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.prname = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Unit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mrp = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.saleprice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cgst = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SGST = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IGST = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Stock = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.label4 = new System.Windows.Forms.TextBox();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -116,7 +121,7 @@ namespace CrystalReport.Components
             // 
             // dataGridView1
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(224)))), ((int)(((byte)(244)))));
             this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
@@ -125,8 +130,7 @@ namespace CrystalReport.Components
             this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10.5F);
@@ -135,16 +139,20 @@ namespace CrystalReport.Components
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridView1.ColumnHeadersHeight = 27;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.sr,
             this.prname,
             this.Unit,
+            this.mrp,
             this.saleprice,
+            this.cgst,
+            this.SGST,
+            this.IGST,
             this.Stock,
             this.Delete});
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(234)))), ((int)(((byte)(247)))));
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 12F);
             dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(186)))), ((int)(((byte)(231)))));
@@ -164,12 +172,14 @@ namespace CrystalReport.Components
             dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridView1.RowHeadersVisible = false;
+            this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle6.Font = new System.Drawing.Font("Yu Gothic UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(933, 560);
             this.dataGridView1.TabIndex = 19;
+            this.dataGridView1.TabStop = false;
             this.dataGridView1.Theme = Guna.UI.WinForms.GunaDataGridViewPresetThemes.FeterRiver;
             this.dataGridView1.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(224)))), ((int)(((byte)(244)))));
             this.dataGridView1.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -179,11 +189,11 @@ namespace CrystalReport.Components
             this.dataGridView1.ThemeStyle.BackColor = System.Drawing.Color.White;
             this.dataGridView1.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(220)))), ((int)(((byte)(242)))));
             this.dataGridView1.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
-            this.dataGridView1.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dataGridView1.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.dataGridView1.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
             this.dataGridView1.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
-            this.dataGridView1.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.dataGridView1.ThemeStyle.HeaderStyle.Height = 27;
+            this.dataGridView1.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.ThemeStyle.HeaderStyle.Height = 42;
             this.dataGridView1.ThemeStyle.ReadOnly = false;
             this.dataGridView1.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(234)))), ((int)(((byte)(247)))));
             this.dataGridView1.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
@@ -195,50 +205,6 @@ namespace CrystalReport.Components
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick1);
             this.dataGridView1.Scroll += new System.Windows.Forms.ScrollEventHandler(this.dataGridView1_Scroll);
             this.dataGridView1.Click += new System.EventHandler(this.dataGridView1_CellClick);
-            // 
-            // sr
-            // 
-            this.sr.FillWeight = 45.68528F;
-            this.sr.HeaderText = "Sr";
-            this.sr.Name = "sr";
-            // 
-            // prname
-            // 
-            this.prname.FillWeight = 121.4279F;
-            this.prname.HeaderText = "Product Name";
-            this.prname.Name = "prname";
-            // 
-            // Unit
-            // 
-            this.Unit.FillWeight = 121.4279F;
-            this.Unit.HeaderText = "Unit";
-            this.Unit.Name = "Unit";
-            // 
-            // saleprice
-            // 
-            this.saleprice.FillWeight = 121.4279F;
-            this.saleprice.HeaderText = "Sale Price";
-            this.saleprice.Name = "saleprice";
-            // 
-            // Stock
-            // 
-            this.Stock.FillWeight = 121.4279F;
-            this.Stock.HeaderText = "Stock";
-            this.Stock.Name = "Stock";
-            // 
-            // Delete
-            // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.NullValue = "Delete";
-            this.Delete.DefaultCellStyle = dataGridViewCellStyle3;
-            this.Delete.FillWeight = 68.60331F;
-            this.Delete.HeaderText = "Delete";
-            this.Delete.Name = "Delete";
-            this.Delete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Delete.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // label4
             // 
@@ -263,11 +229,86 @@ namespace CrystalReport.Components
             this.panel2.TabIndex = 21;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(7, 43);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(80, 17);
+            this.checkBox1.TabIndex = 22;
+            this.checkBox1.Text = "GST DATA";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // sr
+            // 
+            this.sr.FillWeight = 45.68528F;
+            this.sr.HeaderText = "Sr";
+            this.sr.Name = "sr";
+            // 
+            // prname
+            // 
+            this.prname.FillWeight = 121.4279F;
+            this.prname.HeaderText = "Product Name";
+            this.prname.Name = "prname";
+            // 
+            // Unit
+            // 
+            this.Unit.FillWeight = 121.4279F;
+            this.Unit.HeaderText = "Unit";
+            this.Unit.Name = "Unit";
+            // 
+            // mrp
+            // 
+            this.mrp.HeaderText = "MRP";
+            this.mrp.Name = "mrp";
+            // 
+            // saleprice
+            // 
+            this.saleprice.FillWeight = 121.4279F;
+            this.saleprice.HeaderText = "Sale Price";
+            this.saleprice.Name = "saleprice";
+            // 
+            // cgst
+            // 
+            this.cgst.HeaderText = "CGST";
+            this.cgst.Name = "cgst";
+            // 
+            // SGST
+            // 
+            this.SGST.HeaderText = "SGST";
+            this.SGST.Name = "SGST";
+            // 
+            // IGST
+            // 
+            this.IGST.HeaderText = "IGST";
+            this.IGST.Name = "IGST";
+            // 
+            // Stock
+            // 
+            this.Stock.FillWeight = 121.4279F;
+            this.Stock.HeaderText = "Stock";
+            this.Stock.Name = "Stock";
+            // 
+            // Delete
+            // 
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.NullValue = "Delete";
+            this.Delete.DefaultCellStyle = dataGridViewCellStyle3;
+            this.Delete.FillWeight = 68.60331F;
+            this.Delete.HeaderText = "Delete";
+            this.Delete.Name = "Delete";
+            this.Delete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Delete.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
             // Itemlist
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.pictureBox1);
@@ -296,10 +337,15 @@ namespace CrystalReport.Components
         private Guna.UI.WinForms.GunaDataGridView dataGridView1;
         private TextBox label4;
         private Panel panel2;
+        private CheckBox checkBox1;
         private DataGridViewTextBoxColumn sr;
         private DataGridViewTextBoxColumn prname;
         private DataGridViewTextBoxColumn Unit;
+        private DataGridViewTextBoxColumn mrp;
         private DataGridViewTextBoxColumn saleprice;
+        private DataGridViewTextBoxColumn cgst;
+        private DataGridViewTextBoxColumn SGST;
+        private DataGridViewTextBoxColumn IGST;
         private DataGridViewTextBoxColumn Stock;
         private DataGridViewButtonColumn Delete;
     }

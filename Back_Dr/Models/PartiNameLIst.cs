@@ -7,8 +7,10 @@ using System.Threading.Tasks;
 namespace Back_Dr.Models
 {
     public class PartiNameLIst
-    { 
-		public string pname { get; set; }
+    {
+
+        public int ID { get; set; }
+        public string pname { get; set; }
 		public string company { get; set; }
 		public string partiphone { get; set; }
 		public string partimobile { get; set; }
