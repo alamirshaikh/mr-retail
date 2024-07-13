@@ -241,6 +241,32 @@ namespace CrystalReport.Components
             ComView cm = new ComView("Expenses");
             cm.Show();
         }
+
+        private void panel16_Click(object sender, EventArgs e)
+        {
+            ComView cm = new ComView("Purches_Order");
+            cm.Show();
+        }
+
+        private void label15_Click(object sender, EventArgs e)
+        {
+
+            ComView cm = new ComView("Purches_Order");
+            cm.Show();
+        }
+
+        private void panel15_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ComView cm = new ComView("ViewPurches_Orders");
+                cm.Show();
+            }
+            catch (Exception ex)
+            {
+                 
+            }
+        }
     }
     }
 

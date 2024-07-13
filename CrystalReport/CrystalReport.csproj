@@ -612,6 +612,12 @@
     <Compile Include="Components\Unit.Designer.cs">
       <DependentUpon>Unit.cs</DependentUpon>
     </Compile>
+    <Compile Include="Components\ViewPurches_Orders.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Components\ViewPurches_Orders.Designer.cs">
+      <DependentUpon>ViewPurches_Orders.cs</DependentUpon>
+    </Compile>
     <Compile Include="ComView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -699,6 +705,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Purches_Order_Report.rpt</DependentUpon>
       <SubType>Component</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
     <Compile Include="Thermal.cs">
       <AutoGen>True</AutoGen>
@@ -905,6 +912,9 @@
     <EmbeddedResource Include="Components\Unit.resx">
       <DependentUpon>Unit.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Components\ViewPurches_Orders.resx">
+      <DependentUpon>ViewPurches_Orders.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ComView.resx">
       <DependentUpon>ComView.cs</DependentUpon>
     </EmbeddedResource>
@@ -953,6 +963,7 @@
     <EmbeddedResource Include="Purches_Order_Report.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>Purches_Order_Report.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="Thermal.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

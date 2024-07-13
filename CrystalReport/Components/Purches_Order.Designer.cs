@@ -29,16 +29,18 @@ namespace CrystalReport.Components
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label28 = new System.Windows.Forms.Label();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.supid = new System.Windows.Forms.TextBox();
             this.label22 = new System.Windows.Forms.Label();
             this.ID = new System.Windows.Forms.Label();
@@ -69,6 +71,8 @@ namespace CrystalReport.Components
             this.cust_name = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.stock = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
             this.label32 = new System.Windows.Forms.Label();
             this.gsttext = new System.Windows.Forms.TextBox();
             this.label37 = new System.Windows.Forms.Label();
@@ -95,6 +99,19 @@ namespace CrystalReport.Components
             this.q = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.dataGridView1 = new Guna.UI.WinForms.GunaDataGridView();
+            this.sr = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hhhds = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dsf = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Qtyssss = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.per = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Ratesss = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CGSTS = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ssss = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IGSTSSS = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Discountsssss = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Amountsss = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IDs = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Deletesss = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panel9 = new System.Windows.Forms.Panel();
             this.items = new System.Windows.Forms.TextBox();
             this.panel11 = new System.Windows.Forms.Panel();
@@ -134,23 +151,6 @@ namespace CrystalReport.Components
             this.panel23 = new System.Windows.Forms.Panel();
             this.label31 = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
-            this.label24 = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.label28 = new System.Windows.Forms.Label();
-            this.sr = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hhhds = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dsf = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Qtyssss = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.per = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Ratesss = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CGSTS = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ssss = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IGSTSSS = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Discountsssss = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Amountsss = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IDs = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Deletesss = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel2.SuspendLayout();
@@ -252,6 +252,25 @@ namespace CrystalReport.Components
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(938, 175);
             this.panel2.TabIndex = 2;
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Font = new System.Drawing.Font("Yu Gothic UI", 9F, System.Drawing.FontStyle.Bold);
+            this.label28.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label28.Location = new System.Drawing.Point(487, 49);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(102, 15);
+            this.label28.TabIndex = 61;
+            this.label28.Text = "Terms / Condition";
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.Location = new System.Drawing.Point(486, 72);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(207, 90);
+            this.richTextBox1.TabIndex = 60;
+            this.richTextBox1.Text = "";
             // 
             // supid
             // 
@@ -573,7 +592,7 @@ namespace CrystalReport.Components
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.BackColor = System.Drawing.Color.White;
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel3.Controls.Add(this.label26);
+            this.panel3.Controls.Add(this.stock);
             this.panel3.Controls.Add(this.label24);
             this.panel3.Controls.Add(this.label32);
             this.panel3.Controls.Add(this.gsttext);
@@ -606,6 +625,31 @@ namespace CrystalReport.Components
             this.panel3.Size = new System.Drawing.Size(938, 101);
             this.panel3.TabIndex = 10;
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
+            // 
+            // stock
+            // 
+            this.stock.AutoSize = true;
+            this.stock.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.stock.ForeColor = System.Drawing.Color.Firebrick;
+            this.stock.Location = new System.Drawing.Point(865, 27);
+            this.stock.Name = "stock";
+            this.stock.Size = new System.Drawing.Size(13, 15);
+            this.stock.TabIndex = 41;
+            this.stock.Text = "0";
+            this.stock.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.stock.UseWaitCursor = true;
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.label24.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.label24.Location = new System.Drawing.Point(792, 6);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(92, 15);
+            this.label24.TabIndex = 40;
+            this.label24.Text = "Available Stocks";
+            this.label24.UseWaitCursor = true;
             // 
             // label32
             // 
@@ -902,23 +946,25 @@ namespace CrystalReport.Components
             // 
             // dataGridView1
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
+            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
             this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.sr,
             this.hhhds,
@@ -933,31 +979,31 @@ namespace CrystalReport.Components
             this.Amountsss,
             this.IDs,
             this.Deletesss});
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle10;
             this.dataGridView1.EnableHeadersVisualStyles = false;
             this.dataGridView1.GridColor = System.Drawing.Color.Silver;
             this.dataGridView1.Location = new System.Drawing.Point(6, 333);
             this.dataGridView1.Name = "dataGridView1";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Yu Gothic UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Yu Gothic UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle11;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 72;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Yu Gothic UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Yu Gothic UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle12;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(940, 249);
             this.dataGridView1.TabIndex = 15115555;
@@ -984,6 +1030,93 @@ namespace CrystalReport.Components
             this.dataGridView1.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dataGridView1.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClickAsync);
+            // 
+            // sr
+            // 
+            this.sr.FillWeight = 75.13794F;
+            this.sr.HeaderText = "Sr.No";
+            this.sr.MinimumWidth = 9;
+            this.sr.Name = "sr";
+            // 
+            // hhhds
+            // 
+            this.hhhds.HeaderText = "hsn";
+            this.hhhds.Name = "hhhds";
+            // 
+            // dsf
+            // 
+            this.dsf.FillWeight = 150.2056F;
+            this.dsf.HeaderText = "Description";
+            this.dsf.MinimumWidth = 9;
+            this.dsf.Name = "dsf";
+            // 
+            // Qtyssss
+            // 
+            this.Qtyssss.FillWeight = 71.10511F;
+            this.Qtyssss.HeaderText = "Qty";
+            this.Qtyssss.MinimumWidth = 9;
+            this.Qtyssss.Name = "Qtyssss";
+            // 
+            // per
+            // 
+            this.per.HeaderText = "per";
+            this.per.Name = "per";
+            // 
+            // Ratesss
+            // 
+            this.Ratesss.FillWeight = 110.8285F;
+            this.Ratesss.HeaderText = "Rate";
+            this.Ratesss.MinimumWidth = 9;
+            this.Ratesss.Name = "Ratesss";
+            // 
+            // CGSTS
+            // 
+            this.CGSTS.HeaderText = "CGST";
+            this.CGSTS.Name = "CGSTS";
+            // 
+            // ssss
+            // 
+            this.ssss.HeaderText = "SGST";
+            this.ssss.Name = "ssss";
+            // 
+            // IGSTSSS
+            // 
+            this.IGSTSSS.HeaderText = "IGST";
+            this.IGSTSSS.Name = "IGSTSSS";
+            // 
+            // Discountsssss
+            // 
+            this.Discountsssss.FillWeight = 110.8285F;
+            this.Discountsssss.HeaderText = "Discount";
+            this.Discountsssss.MinimumWidth = 9;
+            this.Discountsssss.Name = "Discountsssss";
+            // 
+            // Amountsss
+            // 
+            this.Amountsss.FillWeight = 110.8285F;
+            this.Amountsss.HeaderText = "Amount";
+            this.Amountsss.MinimumWidth = 9;
+            this.Amountsss.Name = "Amountsss";
+            // 
+            // IDs
+            // 
+            this.IDs.HeaderText = "ID";
+            this.IDs.Name = "IDs";
+            this.IDs.Visible = false;
+            // 
+            // Deletesss
+            // 
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.NullValue = "Remove";
+            this.Deletesss.DefaultCellStyle = dataGridViewCellStyle9;
+            this.Deletesss.FillWeight = 71.06599F;
+            this.Deletesss.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.Deletesss.HeaderText = "Delete";
+            this.Deletesss.MinimumWidth = 9;
+            this.Deletesss.Name = "Deletesss";
+            this.Deletesss.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Deletesss.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Deletesss.Text = "Remove";
             // 
             // panel9
             // 
@@ -1293,6 +1426,7 @@ namespace CrystalReport.Components
             this.button1.Text = "Recipt";
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // panel5
             // 
@@ -1459,137 +1593,6 @@ namespace CrystalReport.Components
             this.panel8.TabIndex = 122203;
             this.panel8.Paint += new System.Windows.Forms.PaintEventHandler(this.panel8_Paint);
             // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.label24.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.label24.Location = new System.Drawing.Point(792, 6);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(92, 15);
-            this.label24.TabIndex = 40;
-            this.label24.Text = "Available Stocks";
-            this.label24.UseWaitCursor = true;
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.label26.ForeColor = System.Drawing.Color.Firebrick;
-            this.label26.Location = new System.Drawing.Point(865, 27);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(13, 15);
-            this.label26.TabIndex = 41;
-            this.label26.Text = "0";
-            this.label26.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label26.UseWaitCursor = true;
-            // 
-            // richTextBox1
-            // 
-            this.richTextBox1.Location = new System.Drawing.Point(486, 72);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(207, 90);
-            this.richTextBox1.TabIndex = 60;
-            this.richTextBox1.Text = "";
-            // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.Font = new System.Drawing.Font("Yu Gothic UI", 9F, System.Drawing.FontStyle.Bold);
-            this.label28.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label28.Location = new System.Drawing.Point(487, 49);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(102, 15);
-            this.label28.TabIndex = 61;
-            this.label28.Text = "Terms / Condition";
-            // 
-            // sr
-            // 
-            this.sr.FillWeight = 75.13794F;
-            this.sr.HeaderText = "Sr.No";
-            this.sr.MinimumWidth = 9;
-            this.sr.Name = "sr";
-            // 
-            // hhhds
-            // 
-            this.hhhds.HeaderText = "hsn";
-            this.hhhds.Name = "hhhds";
-            // 
-            // dsf
-            // 
-            this.dsf.FillWeight = 150.2056F;
-            this.dsf.HeaderText = "Description";
-            this.dsf.MinimumWidth = 9;
-            this.dsf.Name = "dsf";
-            // 
-            // Qtyssss
-            // 
-            this.Qtyssss.FillWeight = 71.10511F;
-            this.Qtyssss.HeaderText = "Qty";
-            this.Qtyssss.MinimumWidth = 9;
-            this.Qtyssss.Name = "Qtyssss";
-            // 
-            // per
-            // 
-            this.per.HeaderText = "per";
-            this.per.Name = "per";
-            // 
-            // Ratesss
-            // 
-            this.Ratesss.FillWeight = 110.8285F;
-            this.Ratesss.HeaderText = "Rate";
-            this.Ratesss.MinimumWidth = 9;
-            this.Ratesss.Name = "Ratesss";
-            // 
-            // CGSTS
-            // 
-            this.CGSTS.HeaderText = "CGST";
-            this.CGSTS.Name = "CGSTS";
-            // 
-            // ssss
-            // 
-            this.ssss.HeaderText = "SGST";
-            this.ssss.Name = "ssss";
-            // 
-            // IGSTSSS
-            // 
-            this.IGSTSSS.HeaderText = "IGST";
-            this.IGSTSSS.Name = "IGSTSSS";
-            // 
-            // Discountsssss
-            // 
-            this.Discountsssss.FillWeight = 110.8285F;
-            this.Discountsssss.HeaderText = "Discount";
-            this.Discountsssss.MinimumWidth = 9;
-            this.Discountsssss.Name = "Discountsssss";
-            // 
-            // Amountsss
-            // 
-            this.Amountsss.FillWeight = 110.8285F;
-            this.Amountsss.HeaderText = "Amount";
-            this.Amountsss.MinimumWidth = 9;
-            this.Amountsss.Name = "Amountsss";
-            // 
-            // IDs
-            // 
-            this.IDs.HeaderText = "ID";
-            this.IDs.Name = "IDs";
-            this.IDs.Visible = false;
-            // 
-            // Deletesss
-            // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.NullValue = "Remove";
-            this.Deletesss.DefaultCellStyle = dataGridViewCellStyle3;
-            this.Deletesss.FillWeight = 71.06599F;
-            this.Deletesss.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.Deletesss.HeaderText = "Delete";
-            this.Deletesss.MinimumWidth = 9;
-            this.Deletesss.Name = "Deletesss";
-            this.Deletesss.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Deletesss.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.Deletesss.Text = "Remove";
-            // 
             // Purches_Order
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1753,7 +1756,7 @@ namespace CrystalReport.Components
         private Label ID;
         private TextBox supid;
         private Label label22;
-        private Label label26;
+        private Label stock;
         private Label label24;
         private Label label28;
         private RichTextBox richTextBox1;

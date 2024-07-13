@@ -34,7 +34,7 @@ namespace CrystalReport
         private string path;
         private DataTable table1;
 
-        public ReportStd(string invoice, string place, string areas = "", string citys = "", string credit = "", string from = "", string to = "", string total = "",List<WithoutSaveModels> models = null)
+        public ReportStd(string invoice, string place, string areas = "", string citys = "", string credit = "", string from = "", string to = "", string total = "", List<WithoutSaveModels> models = null)
         {
             inv = invoice;
             pl = place;
@@ -226,10 +226,10 @@ namespace CrystalReport
         {
 
             ReportDocument report = new ReportDocument();
-            
-                path = Application.StartupPath + "/WithoutSaveBil.rpt";
-            
-            
+
+            path = Application.StartupPath + "/WithoutSaveBil.rpt";
+
+
             report.Load(path);
             // Set database login information for the report
             ConnectionInfo connectionInfo = new ConnectionInfo();
@@ -259,7 +259,7 @@ namespace CrystalReport
             // Verify the report's database
             report.VerifyDatabase();
 
-          
+
 
             crystalReportViewer1.ReportSource = report;
 
@@ -277,7 +277,7 @@ namespace CrystalReport
 
 
 
-        public  void Print(string inv)
+        public void Print(string inv)
         {
             ReportDocument report = new ReportDocument();
             try
@@ -386,19 +386,19 @@ namespace CrystalReport
 
         public void GetReport(string type)
         {
-             
+
             ReportDocument report = new ReportDocument();
             if (type == "test")
             {
 
-               //   path = Application.StartupPath + "/NewTirupat.rpt";
+                //   path = Application.StartupPath + "/NewTirupat.rpt";
 
                 path = Application.StartupPath + $"/{StoreRoom.Template()}.rpt";
 
             }
             else
             {
-                  path = Application.StartupPath + "/CustomerCreditBill.rpt";
+                path = Application.StartupPath + "/CustomerCreditBill.rpt";
 
             }
             report.Load(path);
@@ -432,14 +432,14 @@ namespace CrystalReport
 
             ParameterFields pfield = new ParameterFields();
 
-            if (type=="test")
+            if (type == "test")
             {
 
-                  table1 = GetTable("SELECT * FROM SInvoice INNER JOIN Sale_Items ON SInvoice.InvoiceID = Sale_Items.Invoice WHERE SInvoice.InvoiceID = '" + inv + "'; ");
+                table1 = GetTable("SELECT * FROM SInvoice INNER JOIN Sale_Items ON SInvoice.InvoiceID = Sale_Items.Invoice WHERE SInvoice.InvoiceID = '" + inv + "'; ");
                 string cust_s = MainEngine_.GetDataScript<string>("select cust_name from SInvoice where items='" + inv + "'").FirstOrDefault().ToString();
-                decimal current = MainEngine_.GetDataScript<decimal>("select TotalBill from SInvoice where items = '"+inv+"'").FirstOrDefault();
+                decimal current = MainEngine_.GetDataScript<decimal>("select TotalBill from SInvoice where items = '" + inv + "'").FirstOrDefault();
 
-                IEnumerable<decimal> paids = MainEngine_.GetDataScript<decimal>("select Paid from CustomerTransactions where InvoiceId = '" + inv+"'").ToList();
+                IEnumerable<decimal> paids = MainEngine_.GetDataScript<decimal>("select Paid from CustomerTransactions where InvoiceId = '" + inv + "'").ToList();
                 decimal bal = MainEngine_.GetDataScript<decimal>($"SELECT Balance FROM Customer WHERE cust_name = '" + cust_s + "'").FirstOrDefault();
                 decimal paid = paids.Sum();
 
@@ -454,12 +454,12 @@ namespace CrystalReport
 
                 tdebit.ParameterFieldName = "blc";// Assuming tdebitval is a Crystal Report field
 
-                if (MainEngine_.GetDataScript<int>("select COUNT(id) from CustomerTransactions where Cust_Name = '"+cust_s+"'").FirstOrDefault() > 0)
+                if (MainEngine_.GetDataScript<int>("select COUNT(id) from CustomerTransactions where Cust_Name = '" + cust_s + "'").FirstOrDefault() > 0)
                 {
-                    
-                        tdebitval.Value = $"₹{bal}";
 
-                   
+                    tdebitval.Value = $"₹{bal}";
+
+
                 }
                 else
                 {
@@ -493,9 +493,9 @@ namespace CrystalReport
                 ParameterDiscreteValue cityval = new ParameterDiscreteValue();
                 ParameterDiscreteValue totalblcval = new ParameterDiscreteValue();
 
-                List<dynamic> getbal = MainEngine_.GetDataScript<dynamic>(inv).ToList() ;
+                List<dynamic> getbal = MainEngine_.GetDataScript<dynamic>(inv).ToList();
 
-                 
+
 
                 decimal s = 0;
                 foreach (var item in getbal)
@@ -527,12 +527,12 @@ namespace CrystalReport
             report.SetDataSource(table1);
             //report.SetParameterValue("place",Address);
 
- 
+
             // Verify the report's database
             report.VerifyDatabase();
 
             crystalReportViewer1.ParameterFieldInfo = pfield;
-            
+
             crystalReportViewer1.ReportSource = report;
 
 
@@ -550,7 +550,62 @@ namespace CrystalReport
 
 
 
+        private void GetPurches_Order()
+        {
+            try
+            {
 
+
+                ReportDocument report = new ReportDocument();
+
+                //   path = Application.StartupPath + "/NewTirupat.rpt";
+
+                path = Application.StartupPath + $"/Purches_Order_Report.rpt";
+
+
+                report.Load(path);
+                // Set database login information for the report
+                ConnectionInfo connectionInfo = new ConnectionInfo();
+                connectionInfo.ServerName = @"mrsales"; // Replace with your server name
+                connectionInfo.DatabaseName = "drsale";
+                connectionInfo.UserID = "mrsales"; // Replace with your database username
+                connectionInfo.Password = "mrsale@123"; // Replace with your database password
+
+
+                Tables tables = report.Database.Tables;
+                foreach (Table table in tables)
+                {
+                    TableLogOnInfo tableLogOnInfo = table.LogOnInfo;
+                    tableLogOnInfo.ConnectionInfo = connectionInfo;
+                    table.ApplyLogOnInfo(tableLogOnInfo);
+                }
+
+
+
+
+
+
+                table1 = GetTable("SELECT * FROM Purches_Order o INNER JOIN purches_Items_orders p ON p.Bill = o.BillID where p.Bill = '" + inv + "' ");
+
+                report.SetDataSource(table1);
+                //report.SetParameterValue("place",Address);
+
+
+                // Verify the report's database
+                report.VerifyDatabase();
+
+                crystalReportViewer1.ReportSource = report;
+
+            }
+            catch (Exception ex)
+            {
+
+
+
+            }
+
+        }
+    
 
 
 
@@ -642,19 +697,28 @@ namespace CrystalReport
 
                 }
 
-                 if (pl == "AMIRSHAKH1234")
+              else  if(pl== "Purches_Order")
+                {
+
+
+                    GetPurches_Order();
+
+                }
+
+
+                else if (pl == "AMIRSHAKH1234")
                 {
                     DayBook();
                 }
 
-                if (pl == "Exp")
+                else if (pl == "Exp")
                 {
                     Exp();
                 }
 
 
 
-               else  if (pl != "AMIRSHAKH1234" || pl!= "AMIRSHAKH123")
+               else
                 {
                     Crys crs = new Crys();
 

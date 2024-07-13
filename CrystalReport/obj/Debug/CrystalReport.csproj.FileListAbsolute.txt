@@ -1437,3 +1437,7 @@ D:\New folder (2)\mr-retail\CrystalReport\obj\Debug\CrystalReport.ComView.resour
 D:\New folder (2)\mr-retail\CrystalReport\obj\Debug\CrystalReport.UI_MASTER.resources
 D:\New folder (2)\mr-retail\CrystalReport\bin\Debug\Exp_V.rpt
 D:\New folder (2)\mr-retail\CrystalReport\bin\Debug\Exp_V.cs
+D:\New folder (2)\mr-retail\CrystalReport\obj\Debug\CrystalReport.Components.Purches_Order.resources
+D:\New folder (2)\mr-retail\CrystalReport\bin\Debug\Purches_Order_Report.rpt
+D:\New folder (2)\mr-retail\CrystalReport\bin\Debug\Purches_Order_Report.cs
+D:\New folder (2)\mr-retail\CrystalReport\obj\Debug\CrystalReport.Components.ViewPurches_Orders.resources

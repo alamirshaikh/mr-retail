@@ -727,14 +727,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Mr.Retail.exe" size="5345800">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Mr.Retail.exe" size="5442056">
       <assemblyIdentity name="Mr.Retail" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>2CkbdWi49vr3/kdAAZjvSJ9t1w5l+ToIBNXqoaDODXQ=</dsig:DigestValue>
+        <dsig:DigestValue>mYdd/WR6Zg5rZqPJ1MjFVkeEoX6tPpBbcsd8STAKczA=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

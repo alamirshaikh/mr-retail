@@ -226,7 +226,7 @@ namespace CrystalReport.Components
         private async void button2_ClickAsync(object sender, EventArgs e)
         {
 
-            DialogResult result = MessageBox.Show("IF you want to save bill ?", "Bill Save", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult result = MessageBox.Show("IF you want to save Order ?", "Order Save", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             if (result == DialogResult.Yes)
             {
@@ -281,7 +281,7 @@ namespace CrystalReport.Components
                         BillID = inv,
                         partiname = cust_name.Text,
                         items = inv,
-                        sub_total = Convert.ToDecimal(totalamt.Text) - Convert.ToDecimal(tax.Text),
+                        sub_total = Convert.ToDecimal(totalamt.Text) - Convert.ToDecimal(tax.Text) - Convert.ToDecimal(discount_.Text),
                         perdis = Convert.ToDecimal(discount_.Text),
                         discount = Convert.ToDecimal(discount_.Text),
                         other = Convert.ToDecimal(tax.Text),
@@ -291,8 +291,9 @@ namespace CrystalReport.Components
                         CGST = Convert.ToDecimal(cgsto.Text),
                         SGST = Convert.ToDecimal(sgsto.Text),
                         IGST = Convert.ToDecimal(igsto.Text),
-                        terms = richTextBox1.Text
-                         
+                        terms = richTextBox1.Text.Trim(),
+                        supid = Convert.ToInt64(supid.Text)
+
                     };
 
 
@@ -302,7 +303,9 @@ namespace CrystalReport.Components
 
                     MessageBox.Show("Your Order has been saved!", "Order", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+                    /*
                     dataGridView1.Rows.Clear();
+                
                     StoreRoom.ClearData(this.Controls);
                     amt.Text = "";
 
@@ -312,7 +315,7 @@ namespace CrystalReport.Components
                     sumqty.Text = "0";
                     items.Text = "0";
                     invnum.Text = GenerateInvoice();
-
+                */
                 }
                 catch (Exception ex)
                  {
@@ -358,9 +361,11 @@ namespace CrystalReport.Components
                         rete.Text = Convert.ToString(r);
                         amt.Text = Convert.ToString(amst);
                         gsttext.Text = dgview.Rows[0].Cells[4].Value.ToString();
-                       // barcode.Text = dgview.Rows[0].Cells[6].Value.ToString();
-       
-                       // MRP.Text = dgview.Rows[0].Cells[5].Value.ToString();
+                        stock.Text = dgview.Rows[0].Cells[2].Value.ToString();
+
+                        // barcode.Text = dgview.Rows[0].Cells[6].Value.ToString();
+
+                        // MRP.Text = dgview.Rows[0].Cells[5].Value.ToString();
                         v = amst;
                         q.Text = "1";
                         disc.Text = "0";
@@ -374,9 +379,10 @@ namespace CrystalReport.Components
                         desc.Text = dgview.Rows[rowindex].Cells[1].Value.ToString();
                         amst = Convert.ToDecimal(dgview.Rows[rowindex].Cells[3].Value.ToString());
                         r = Convert.ToDecimal(dgview.Rows[rowindex].Cells[3].Value.ToString());
-                        rete.Text = Convert.ToString(r);
+                            rete.Text = Convert.ToString(r);
                         amt.Text = Convert.ToString(amst);
-                        gsttext.Text = dgview.Rows[0].Cells[4].Value.ToString();
+                        gsttext.Text = dgview.Rows[rowindex].Cells[4].Value.ToString();
+                        stock.Text = dgview.Rows[rowindex].Cells[2].Value.ToString();
                         v = amst;
                        // barcode.Text = dgview.Rows[0].Cells[6].Value.ToString();
 
@@ -797,8 +803,6 @@ namespace CrystalReport.Components
 
               
                 decimal discountPercentage = string.IsNullOrEmpty(disc.Text) ? 0m : decimal.Parse(disc.Text);
-
-
                 decimal discount = originalAmount * (discountPercentage / 100);
 
 
@@ -845,8 +849,8 @@ namespace CrystalReport.Components
                                 IGSTm += igstAmount;
 
                                 // Update the text properties
-                              //  cgsto.Text = CGSTm.ToString(); // Formatting to two decimal places
-                                //sgsto.Text = SGSTm.ToString(); // Formatting to two decimal places
+                               cgsto.Text = CGSTm.ToString(); // Formatting to two decimal places
+                               sgsto.Text = SGSTm.ToString(); // Formatting to two decimal places
                                 igsto.Text = IGSTm.ToString(); // Formatting to two decimal places
 
 
@@ -910,10 +914,10 @@ namespace CrystalReport.Components
                                     SGSTm += sgstAmount;
                                     IGSTm += igstAmount;
 
-                                    // Update the text properties
-                                    //cgsto.Text = CGSTm.ToString(); // Formatting to two decimal places
-                                    //sgsto.Text = SGSTm.ToString(); // Formatting to two decimal places
-                                    //igsto.Text = IGSTm.ToString(); // Formatting to two decimal places
+                                // Update the text properties
+                                cgsto.Text = CGSTm.ToString(); // Formatting to two decimal places
+                                sgsto.Text = SGSTm.ToString(); // Formatting to two decimal places
+                                igsto.Text = IGSTm.ToString(); // Formatting to two decimal places
 
 
                                     tax.Text = Taxes.ToString();
@@ -1150,7 +1154,7 @@ namespace CrystalReport.Components
 
                 string cellValue2 = selectedRow.Cells[3].Value.ToString(); // Assuming column 3 contains strings
                 string barcode = selectedRow.Cells[6].Value.ToString(); // Assuming column scontains strings
-                string mrp = selectedRow.Cells[5].Value.ToString(); // Assuming column scontains strings
+                string stocks = selectedRow.Cells[2].Value.ToString(); // Assuming column scontains strings
 
                 // Do something with the values or the selected row
                 // Example: Display the values in a message box
@@ -1162,8 +1166,8 @@ namespace CrystalReport.Components
                 rete.Text = Convert.ToString(r);
                 amt.Text = Convert.ToString(amst);
                 v = amst;
-          
-        
+                stock.Text = stocks;
+
                 gsttext.Text = selectedRow.Cells[4].Value.ToString();
                 q.Text = "1";
                 disc.Text = "0";
@@ -1253,6 +1257,8 @@ namespace CrystalReport.Components
                             rete.Text = Convert.ToString(r);
                             amt.Text = Convert.ToString(amst);
                             gsttext.Text = Convert.ToString(dgview.Rows[nextIndex].Cells[4].Value.ToString());
+                            stock.Text = Convert.ToString(dgview.Rows[nextIndex].Cells[2].Value.ToString());
+
                             v = amst;
                             q.Text = "1";
                             disc.Text = "0";
@@ -1268,6 +1274,7 @@ namespace CrystalReport.Components
                         amt.Text = Convert.ToString(amst);
 
                         gsttext.Text = Convert.ToString(dgview.Rows[0].Cells[4].Value.ToString());
+                        stock.Text = dgview.Rows[0].Cells[2].Value.ToString();
                         v = amst;
 
                         q.Text = "1";
@@ -1300,6 +1307,8 @@ namespace CrystalReport.Components
                             r = Convert.ToDecimal(dgview.Rows[nextIndex].Cells[3].Value.ToString());
                             rete.Text = Convert.ToString(r);
                             gsttext.Text = Convert.ToString(dgview.Rows[nextIndex].Cells[4].Value.ToString());
+                            stock.Text = Convert.ToString(dgview.Rows[nextIndex].Cells[2].Value.ToString());
+
                             amt.Text = Convert.ToString(amst);
                             v = amst;
                             q.Text = "1";
@@ -1312,6 +1321,8 @@ namespace CrystalReport.Components
                         ID.Text = dgview.Rows[0].Cells[0].Value.ToString();
                         amst = Convert.ToDecimal(dgview.Rows[0].Cells[3].Value.ToString());
                         r = Convert.ToDecimal(dgview.Rows[0].Cells[3].Value.ToString());
+                        stock.Text = Convert.ToString(dgview.Rows[0].Cells[1].Value.ToString());
+
                         rete.Text = Convert.ToString(r);
                         amt.Text = Convert.ToString(amst);
                         v = amst;
@@ -1333,6 +1344,8 @@ namespace CrystalReport.Components
 
                     rete.Text = Convert.ToString(r);
                     gsttext.Text = Convert.ToString(dgview.Rows[0].Cells[4].Value.ToString());
+                    stock.Text = Convert.ToString(dgview.Rows[0].Cells[1].Value.ToString());
+
                     amt.Text = Convert.ToString(amst);
                     v = amst;
 
@@ -1481,6 +1494,9 @@ namespace CrystalReport.Components
             try
             {
 
+                invnum.Text = GenerateInvoice();
+
+
             string add = MainEngine_.GetDataScript<string>("select address from Parties Where ID = " + supid.Text + "").FirstOrDefault();
             
             string name = MainEngine_.GetDataScript<string>("select company from Parties Where ID = " + supid.Text + "").FirstOrDefault();
@@ -1526,6 +1542,21 @@ namespace CrystalReport.Components
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
             }
 
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+
+                ReportStd std = new ReportStd(textBox2.Text,"Purches_Order");
+                std.Show();
+
+            }
+            catch (Exception ex)
+            {
+                 
+            }
         }
     }
 }
