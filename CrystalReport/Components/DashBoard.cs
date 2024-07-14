@@ -267,6 +267,18 @@ namespace CrystalReport.Components
                  
             }
         }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+     
+            ComView cm = new ComView("Purches_Retern");
+
+            cm.Show();
+
+ 
+
+           
+        }
     }
     }
 

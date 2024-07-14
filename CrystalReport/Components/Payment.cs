@@ -33,7 +33,7 @@ namespace CrystalReport.Components
                 View VIEW = new View("Payment","Nothing");
                 VIEW.Show();
 
-                dataGridView1.Rows.Clear();
+ 
 
             }
             catch (Exception ex)

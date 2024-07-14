@@ -455,6 +455,12 @@
     <Compile Include="Components\Barcode.Designer.cs">
       <DependentUpon>Barcode.cs</DependentUpon>
     </Compile>
+    <Compile Include="Components\Purches_Retern.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Components\Purches_Retern.Designer.cs">
+      <DependentUpon>Purches_Retern.cs</DependentUpon>
+    </Compile>
     <Compile Include="Components\Purches_Order.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -700,6 +706,13 @@
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="Purches_Return_Report.cs">
+      <DependentUpon>Purches_Return_Report.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Purches_Order_Report.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -834,6 +847,9 @@
     <EmbeddedResource Include="Components\Barcode.resx">
       <DependentUpon>Barcode.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Components\Purches_Retern.resx">
+      <DependentUpon>Purches_Retern.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Components\Purches_Order.resx">
       <DependentUpon>Purches_Order.cs</DependentUpon>
     </EmbeddedResource>
@@ -959,6 +975,11 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Purches_Return_Report.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Purches_Return_Report.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="Purches_Order_Report.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

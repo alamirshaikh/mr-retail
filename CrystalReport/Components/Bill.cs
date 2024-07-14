@@ -252,13 +252,15 @@ namespace CrystalReport.Components
                                 description = dataGridView1.Rows[i].Cells[1].Value.ToString(),
                                 qty = Convert.ToInt32(dataGridView1.Rows[i].Cells[2].Value.ToString()),
                                 rate = Convert.ToDecimal(dataGridView1.Rows[i].Cells[3].Value.ToString()),
-                                discount = Convert.ToDecimal(dataGridView1.Rows[i].Cells[7].Value.ToString()),
-                                amount = Convert.ToDecimal(dataGridView1.Rows[i].Cells[8].Value.ToString()),
+                          
                                 Bill = inv,
                                 CGST = Convert.ToDecimal(dataGridView1.Rows[i].Cells[4].Value.ToString()),
                                 SGST = Convert.ToDecimal(dataGridView1.Rows[i].Cells[5].Value.ToString()),
-                                IGST = Convert.ToDecimal(dataGridView1.Rows[i].Cells[6].Value.ToString()),  
+                                IGST = Convert.ToDecimal(dataGridView1.Rows[i].Cells[6].Value.ToString()),
+                                discount = Convert.ToDecimal(dataGridView1.Rows[i].Cells[7].Value.ToString()),
+                                amount = Convert.ToDecimal(dataGridView1.Rows[i].Cells[8].Value.ToString()),
                                 per = dataGridView1.Rows[i].Cells[9].Value.ToString(),
+                                HSN = dataGridView1.Rows[i].Cells[10].Value.ToString(),
                                 Color = dataGridView1.Rows[i].Cells[11].Value.ToString(),
                                 Size = dataGridView1.Rows[i].Cells[12].Value.ToString(),
                                 Msg = dataGridView1.Rows[i].Cells[13].Value.ToString(),
@@ -266,7 +268,7 @@ namespace CrystalReport.Components
                                 MRP = Convert.ToDecimal(dataGridView1.Rows[i].Cells[15].Value.ToString()),
                                 Sale = Convert.ToDecimal(dataGridView1.Rows[i].Cells[16].Value.ToString()),
                                 ID = Convert.ToInt32(dataGridView1.Rows[i].Cells[17].Value.ToString()),
-                                HSN = dataGridView1.Rows[i].Cells[10].Value.ToString()
+                              
 
 
                             };
@@ -284,16 +286,19 @@ namespace CrystalReport.Components
                         BillID = inv,
                         partiname = cust_name.Text,
                         items = inv,
-                        sub_total = Convert.ToDecimal(totalamt.Text) - Convert.ToDecimal(tax.Text),
+                        sub_total = Convert.ToDecimal(totalamt.Text) - Convert.ToDecimal(tax.Text)-Convert.ToDecimal(discount_.Text),
                         perdis = Convert.ToDecimal(discount_.Text),
                         discount = Convert.ToDecimal(discount_.Text),
                         other = Convert.ToDecimal(tax.Text),
+
                         TotalBill = Convert.ToDecimal(totalamt.Text),
                         billdate = DateTime.Now,
                         GSTIN = textBox1.Text,
                         CGST = Convert.ToDecimal(cgsto.Text),
                         SGST = Convert.ToDecimal(sgsto.Text),
-                        IGST = Convert.ToDecimal(igsto.Text)
+                        IGST = Convert.ToDecimal(igsto.Text),
+                        TAX = TAX_TYPE.Text,
+                        spid = Convert.ToInt64(supid.Text)
                          
                     };
 
@@ -326,6 +331,8 @@ namespace CrystalReport.Components
                 cal.discounts = 0;
                 cal.sub_amount = 0;
                 cal.total = 0;
+
+                textBox2.Text = GenerateInvoice();
             }
             else
             {
@@ -359,9 +366,19 @@ namespace CrystalReport.Components
                         r = Convert.ToDecimal(dgview.Rows[0].Cells[3].Value.ToString());
                         rete.Text = Convert.ToString(r);
                         amt.Text = Convert.ToString(amst);
-                        gsttext.Text = dgview.Rows[0].Cells[4].Value.ToString();
+                        if (TAX_TYPE.SelectedIndex == 0 || TAX_TYPE.Text == "GST")
+                        {
+                            gsttext.Text = Convert.ToString(dgview.Rows[0].Cells[4].Value.ToString());
+
+                        }
+                        else
+                        {
+                            gsttext.Text = "0";
+                        }
                         barcode.Text = dgview.Rows[0].Cells[6].Value.ToString();
-       
+                        sale_price.Text = dgview.Rows[0].Cells[7].Value.ToString();
+
+
                         MRP.Text = dgview.Rows[0].Cells[5].Value.ToString();
                         v = amst;
                         q.Text = "1";
@@ -378,12 +395,20 @@ namespace CrystalReport.Components
                         r = Convert.ToDecimal(dgview.Rows[rowindex].Cells[3].Value.ToString());
                         rete.Text = Convert.ToString(r);
                         amt.Text = Convert.ToString(amst);
-                        gsttext.Text = dgview.Rows[0].Cells[4].Value.ToString();
+                        if (TAX_TYPE.SelectedIndex == 0 || TAX_TYPE.Text == "GST")
+                        {
+                            gsttext.Text = Convert.ToString(dgview.Rows[rowindex].Cells[4].Value.ToString());
+
+                        }
+                        else
+                        {
+                            gsttext.Text = "0";
+                        }
                         v = amst;
-                        barcode.Text = dgview.Rows[0].Cells[6].Value.ToString();
+                        barcode.Text = dgview.Rows[rowindex].Cells[6].Value.ToString();
 
-                        MRP.Text = dgview.Rows[0].Cells[5].Value.ToString();
-
+                        MRP.Text = dgview.Rows[rowindex].Cells[5].Value.ToString();
+                        sale_price.Text = dgview.Rows[rowindex].Cells[7].Value.ToString();
                         q.Text = "1";
                         disc.Text = "0";
 
@@ -473,23 +498,23 @@ namespace CrystalReport.Components
             string[] ClName = ColName.Split(',');
 
             // Ensure the DataGridView has exactly 6 columns
-            if (dgview.Columns.Count < 7)
+            if (dgview.Columns.Count < 8)
             {
-                while (dgview.Columns.Count < 7)
+                while (dgview.Columns.Count < 8)
                 {
                     dgview.Columns.Add(new DataGridViewTextBoxColumn());
                 }
             }
-            else if (dgview.Columns.Count > 7)
+            else if (dgview.Columns.Count > 8)
             {
-                while (dgview.Columns.Count > 7)
+                while (dgview.Columns.Count > 8)
                 {
                     dgview.Columns.RemoveAt(dgview.Columns.Count - 1);
                 }
             }
 
             // Set column sizes
-            for (int i = 0; i < 7; i++)
+            for (int i = 0; i < 8; i++)
             {
                 if (i < ClSize.Length && int.Parse(ClSize[i]) != 0)
                 {
@@ -502,7 +527,7 @@ namespace CrystalReport.Components
             }
 
             // Set column names and visibility
-            for (int i = 0; i < 7; i++)
+            for (int i = 0; i < 8; i++)
             {
                 if (i < ClName.Length)
                 {
@@ -584,7 +609,7 @@ namespace CrystalReport.Components
 
             dgview.Visible = true;
             dgview.BringToFront();
-            Search(9, 250, 430, 200, "ID,Item Name,Stock,Price,GST,MRP,Barcode", "100,100,100,100,100,100,100");
+            Search(9, 250, 430, 200, "ID,Item Name,Stock,Price,GST,MRP,Barcode,Sale_Price", "100,100,100,100,100,100,100,100");
 
 
             using (SqlConnection con = new SqlConnection(MainEngine_.SERVER_PATH))
@@ -611,13 +636,13 @@ namespace CrystalReport.Components
 
             dgview.Visible = true;
             dgview.BringToFront();
-            Search(9, 250, 430, 200, "ID,Item Name,Stock,Price,GST,MRP,Barcode", "100,100,100,100,100,100,100");
+            Search(9, 250, 430, 200, "ID,Item Name,Stock,Price,GST,MRP,Barcode,Sale_Price", "100,100,100,100,100,100,100,100");
 
 
             using (SqlConnection con = new SqlConnection(MainEngine_.SERVER_PATH))
             {
                 con.Open();
-                string query = "SELECT TOP(40) ID,ITEM_NAME, STOCK, COST_PRICE, GST,MRP,BARCODE FROM Product_Item WHERE ITEM_NAME LIKE @SearchTerm + '%'";
+                string query = "SELECT TOP(40) ID,ITEM_NAME, STOCK, COST_PRICE, GST,MRP,BARCODE,SALE_PRICE FROM Product_Item WHERE ITEM_NAME LIKE @SearchTerm + '%'";
                 using (SqlCommand cmd = new SqlCommand(query, con))
                 {
                     cmd.Parameters.AddWithValue("@SearchTerm", searchTerm);
@@ -648,6 +673,8 @@ namespace CrystalReport.Components
 
                     dgview.Rows[n].Cells[5].Value = row[5].ToString(); // GST column 3
                     dgview.Rows[n].Cells[6].Value = row[6].ToString(); // GST column 3
+                    dgview.Rows[n].Cells[7].Value = row[7].ToString(); // GST column 3
+
 
 
 
@@ -899,8 +926,8 @@ namespace CrystalReport.Components
                                 IGSTm += igstAmount;
 
                                 // Update the text properties
-                              //  cgsto.Text = CGSTm.ToString(); // Formatting to two decimal places
-                                //sgsto.Text = SGSTm.ToString(); // Formatting to two decimal places
+                                cgsto.Text = CGSTm.ToString(); // Formatting to two decimal places
+                                sgsto.Text = SGSTm.ToString(); // Formatting to two decimal places
                                 igsto.Text = IGSTm.ToString(); // Formatting to two decimal places
 
 
@@ -965,9 +992,9 @@ namespace CrystalReport.Components
                                     IGSTm += igstAmount;
 
                                     // Update the text properties
-                                    //cgsto.Text = CGSTm.ToString(); // Formatting to two decimal places
-                                    //sgsto.Text = SGSTm.ToString(); // Formatting to two decimal places
-                                    //igsto.Text = IGSTm.ToString(); // Formatting to two decimal places
+                                   cgsto.Text = CGSTm.ToString(); // Formatting to two decimal places
+                                   sgsto.Text = SGSTm.ToString(); // Formatting to two decimal places
+                                    igsto.Text = IGSTm.ToString(); // Formatting to two decimal places
 
 
                                     tax.Text = Taxes.ToString();
@@ -1203,6 +1230,8 @@ namespace CrystalReport.Components
                 string cellValue2 = selectedRow.Cells[3].Value.ToString(); // Assuming column 3 contains strings
                 string barcode = selectedRow.Cells[6].Value.ToString(); // Assuming column scontains strings
                 string mrp = selectedRow.Cells[5].Value.ToString(); // Assuming column scontains strings
+                string sale_prices= Convert.ToString(selectedRow.Cells[7].Value.ToString());
+
 
                 // Do something with the values or the selected row
                 // Example: Display the values in a message box
@@ -1213,10 +1242,19 @@ namespace CrystalReport.Components
                 r = Convert.ToDecimal(cellValue2);
                 rete.Text = Convert.ToString(r);
                 amt.Text = Convert.ToString(amst);
+                sale_price.Text = sale_prices;
                 v = amst;
                 this.barcode.Text = barcode;
                 MRP.Text = mrp;
-                gsttext.Text = selectedRow.Cells[4].Value.ToString();
+                if (TAX_TYPE.SelectedIndex == 0 || TAX_TYPE.Text == "GST")
+                {
+                    gsttext.Text = selectedRow.Cells[4].Value.ToString();
+
+                }
+                else
+                {
+                    gsttext.Text = "0";
+                }
                 q.Text = "1";
                 disc.Text = "0";
                 desc.Focus();
@@ -1304,7 +1342,17 @@ namespace CrystalReport.Components
                             r = Convert.ToDecimal(dgview.Rows[nextIndex].Cells[3].Value.ToString());
                             rete.Text = Convert.ToString(r);
                             amt.Text = Convert.ToString(amst);
-                            gsttext.Text = Convert.ToString(dgview.Rows[nextIndex].Cells[4].Value.ToString());
+                            if(TAX_TYPE.SelectedIndex == 0 || TAX_TYPE.Text == "GST")
+                            {
+                                gsttext.Text = Convert.ToString(dgview.Rows[nextIndex].Cells[4].Value.ToString());
+
+                            }
+                            else
+                            {
+                                gsttext.Text = "0";
+                            }
+                            sale_price.Text = dgview.Rows[nextIndex].Cells[7].Value.ToString();
+
                             v = amst;
                             q.Text = "1";
                             disc.Text = "0";
@@ -1319,8 +1367,17 @@ namespace CrystalReport.Components
                         rete.Text = Convert.ToString(r);
                         amt.Text = Convert.ToString(amst);
 
-                        gsttext.Text = Convert.ToString(dgview.Rows[0].Cells[4].Value.ToString());
+                        if (TAX_TYPE.SelectedIndex == 0 || TAX_TYPE.Text == "GST")
+                        {
+                            gsttext.Text = Convert.ToString(dgview.Rows[0].Cells[4].Value.ToString());
+
+                        }
+                        else
+                        {
+                            gsttext.Text = "0";
+                        }
                         v = amst;
+                        sale_price.Text = dgview.Rows[0].Cells[7].Value.ToString();
 
                         q.Text = "1";
                         disc.Text = "0";
@@ -1351,9 +1408,18 @@ namespace CrystalReport.Components
                             amst = Convert.ToDecimal(dgview.Rows[nextIndex].Cells[3].Value.ToString());
                             r = Convert.ToDecimal(dgview.Rows[nextIndex].Cells[3].Value.ToString());
                             rete.Text = Convert.ToString(r);
-                            gsttext.Text = Convert.ToString(dgview.Rows[nextIndex].Cells[4].Value.ToString());
+                            if (TAX_TYPE.SelectedIndex == 0 || TAX_TYPE.Text == "GST")
+                            {
+                                gsttext.Text = Convert.ToString(dgview.Rows[0].Cells[4].Value.ToString());
+
+                            }
+                            else
+                            {
+                                gsttext.Text = "0";
+                            }
                             amt.Text = Convert.ToString(amst);
                             v = amst;
+                            sale_price.Text = dgview.Rows[nextIndex].Cells[7].Value.ToString();
                             q.Text = "1";
                             disc.Text = "0";
                         }
@@ -1367,8 +1433,16 @@ namespace CrystalReport.Components
                         rete.Text = Convert.ToString(r);
                         amt.Text = Convert.ToString(amst);
                         v = amst;
-                        gsttext.Text = Convert.ToString(dgview.Rows[0].Cells[4].Value.ToString());
+                        if (TAX_TYPE.SelectedIndex == 0 || TAX_TYPE.Text == "GST")
+                        {
+                            gsttext.Text = Convert.ToString(dgview.Rows[0].Cells[4].Value.ToString());
 
+                        }
+                        else
+                        {
+                            gsttext.Text = "0";
+                        }
+                        sale_price.Text = dgview.Rows[0].Cells[7].Value.ToString();
                         q.Text = "1";
                         disc.Text = "0";
                     }
@@ -1384,7 +1458,16 @@ namespace CrystalReport.Components
                     r = Convert.ToDecimal(dgview.Rows[0].Cells[3].Value.ToString());
 
                     rete.Text = Convert.ToString(r);
-                    gsttext.Text = Convert.ToString(dgview.Rows[0].Cells[4].Value.ToString());
+                    if (TAX_TYPE.SelectedIndex == 0 || TAX_TYPE.Text == "GST")
+                    {
+                        gsttext.Text = Convert.ToString(dgview.Rows[0].Cells[4].Value.ToString());
+
+                    }
+                    else
+                    {
+                        gsttext.Text = "0";
+                    }
+                    sale_price.Text = Convert.ToString(dgview.Rows[0].Cells[7].Value.ToString());
                     amt.Text = Convert.ToString(amst);
                     v = amst;
 
@@ -1400,8 +1483,17 @@ namespace CrystalReport.Components
                     amst = Convert.ToDecimal(dgview.Rows[0].Cells[3].Value.ToString());
                     r = Convert.ToDecimal(dgview.Rows[0].Cells[3].Value.ToString());
                     rete.Text = Convert.ToString(r);
-                    gsttext.Text = Convert.ToString(dgview.Rows[0].Cells[4].Value.ToString());
+                    if (TAX_TYPE.SelectedIndex == 0 || TAX_TYPE.Text == "GST")
+                    {
+                        gsttext.Text = Convert.ToString(dgview.Rows[0].Cells[4].Value.ToString());
+
+                    }
+                    else
+                    {
+                        gsttext.Text = "0";
+                    }
                     amt.Text = Convert.ToString(amst);
+                    sale_price.Text = dgview.Rows[0].Cells[7].Value.ToString();
                     v = amst;
 
                     q.Text = "1";

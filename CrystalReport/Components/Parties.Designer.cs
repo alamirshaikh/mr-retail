@@ -31,11 +31,6 @@ namespace CrystalReport.Components
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Parties));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -45,9 +40,6 @@ namespace CrystalReport.Components
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label18 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -80,17 +72,12 @@ namespace CrystalReport.Components
             this.label5 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new Guna.UI.WinForms.GunaDataGridView();
             this.panel1.SuspendLayout();
             this.panel6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel9.SuspendLayout();
-            this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -202,38 +189,6 @@ namespace CrystalReport.Components
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // textBox3
-            // 
-            this.textBox3.Font = new System.Drawing.Font("Verdana", 12F);
-            this.textBox3.Location = new System.Drawing.Point(6, 419);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(289, 27);
-            this.textBox3.TabIndex = 13;
-            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.dateTimePicker1.CalendarFont = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.dateTimePicker1.CalendarForeColor = System.Drawing.Color.Crimson;
-            this.dateTimePicker1.CalendarTrailingForeColor = System.Drawing.SystemColors.HighlightText;
-            this.dateTimePicker1.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(831, 422);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(109, 25);
-            this.dateTimePicker1.TabIndex = 14;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::CrystalReport.Properties.Resources.search;
-            this.pictureBox1.Location = new System.Drawing.Point(301, 421);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(45, 23);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 16;
-            this.pictureBox1.TabStop = false;
-            // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.SystemColors.HighlightText;
@@ -254,16 +209,16 @@ namespace CrystalReport.Components
             this.panel3.Controls.Add(this.company);
             this.panel3.Controls.Add(this.label7);
             this.panel3.Controls.Add(this.textBox2);
-            this.panel3.Location = new System.Drawing.Point(5, 74);
+            this.panel3.Location = new System.Drawing.Point(6, 71);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(440, 339);
+            this.panel3.Size = new System.Drawing.Size(440, 343);
             this.panel3.TabIndex = 7;
             // 
             // label18
             // 
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Yu Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(346, 302);
+            this.label18.Location = new System.Drawing.Point(327, 302);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(30, 19);
             this.label18.TabIndex = 9;
@@ -273,7 +228,7 @@ namespace CrystalReport.Components
             // 
             this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.textBox1.Font = new System.Drawing.Font("Verdana", 12F);
-            this.textBox1.Location = new System.Drawing.Point(135, 299);
+            this.textBox1.Location = new System.Drawing.Point(116, 299);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(205, 27);
             this.textBox1.TabIndex = 8;
@@ -283,10 +238,10 @@ namespace CrystalReport.Components
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 9F, System.Drawing.FontStyle.Bold);
             this.label17.Location = new System.Drawing.Point(9, 303);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(110, 17);
+            this.label17.Size = new System.Drawing.Size(97, 15);
             this.label17.TabIndex = 7;
             this.label17.Text = "Opening Balance";
             // 
@@ -296,7 +251,7 @@ namespace CrystalReport.Components
             this.partiname.Font = new System.Drawing.Font("Verdana", 12F);
             this.partiname.ForeColor = System.Drawing.Color.Black;
             this.partiname.FormattingEnabled = true;
-            this.partiname.Location = new System.Drawing.Point(137, 24);
+            this.partiname.Location = new System.Drawing.Point(118, 24);
             this.partiname.Name = "partiname";
             this.partiname.Size = new System.Drawing.Size(295, 26);
             this.partiname.TabIndex = 0;
@@ -306,7 +261,7 @@ namespace CrystalReport.Components
             this.address.BackColor = System.Drawing.Color.White;
             this.address.Font = new System.Drawing.Font("Verdana", 12F);
             this.address.ForeColor = System.Drawing.Color.Black;
-            this.address.Location = new System.Drawing.Point(135, 210);
+            this.address.Location = new System.Drawing.Point(116, 210);
             this.address.Name = "address";
             this.address.Size = new System.Drawing.Size(295, 73);
             this.address.TabIndex = 6;
@@ -315,10 +270,10 @@ namespace CrystalReport.Components
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 9F, System.Drawing.FontStyle.Bold);
             this.label2.Location = new System.Drawing.Point(9, 25);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(100, 17);
+            this.label2.Size = new System.Drawing.Size(89, 15);
             this.label2.TabIndex = 3;
             this.label2.Text = "Supplier Name:";
             // 
@@ -365,7 +320,7 @@ namespace CrystalReport.Components
             "Lakshadweep",
             "Delhi",
             "Puducherry"});
-            this.state.Location = new System.Drawing.Point(135, 163);
+            this.state.Location = new System.Drawing.Point(116, 163);
             this.state.Name = "state";
             this.state.Size = new System.Drawing.Size(295, 26);
             this.state.TabIndex = 5;
@@ -373,20 +328,20 @@ namespace CrystalReport.Components
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 9F, System.Drawing.FontStyle.Bold);
             this.label3.Location = new System.Drawing.Point(9, 59);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(106, 17);
+            this.label3.Size = new System.Drawing.Size(93, 15);
             this.label3.TabIndex = 3;
             this.label3.Text = "Company Name";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 9F, System.Drawing.FontStyle.Bold);
             this.label4.Location = new System.Drawing.Point(9, 98);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(100, 17);
+            this.label4.Size = new System.Drawing.Size(88, 15);
             this.label4.TabIndex = 3;
             this.label4.Text = "Supplier Phone";
             // 
@@ -394,7 +349,7 @@ namespace CrystalReport.Components
             // 
             this.mobile.BackColor = System.Drawing.Color.White;
             this.mobile.Font = new System.Drawing.Font("Verdana", 12F);
-            this.mobile.Location = new System.Drawing.Point(252, 93);
+            this.mobile.Location = new System.Drawing.Point(233, 93);
             this.mobile.Name = "mobile";
             this.mobile.Size = new System.Drawing.Size(179, 27);
             this.mobile.TabIndex = 3;
@@ -402,10 +357,10 @@ namespace CrystalReport.Components
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 9F, System.Drawing.FontStyle.Bold);
             this.label6.Location = new System.Drawing.Point(9, 134);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(34, 17);
+            this.label6.Size = new System.Drawing.Size(30, 15);
             this.label6.TabIndex = 3;
             this.label6.Text = "City:";
             // 
@@ -413,7 +368,7 @@ namespace CrystalReport.Components
             // 
             this.workphone.BackColor = System.Drawing.Color.White;
             this.workphone.Font = new System.Drawing.Font("Verdana", 12F);
-            this.workphone.Location = new System.Drawing.Point(138, 92);
+            this.workphone.Location = new System.Drawing.Point(119, 92);
             this.workphone.Name = "workphone";
             this.workphone.Size = new System.Drawing.Size(107, 27);
             this.workphone.TabIndex = 2;
@@ -421,10 +376,10 @@ namespace CrystalReport.Components
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 9F, System.Drawing.FontStyle.Bold);
             this.label8.Location = new System.Drawing.Point(8, 210);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(60, 17);
+            this.label8.Size = new System.Drawing.Size(52, 15);
             this.label8.TabIndex = 3;
             this.label8.Text = "Address:";
             // 
@@ -433,7 +388,7 @@ namespace CrystalReport.Components
             this.company.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.company.Font = new System.Drawing.Font("Verdana", 12F);
             this.company.ForeColor = System.Drawing.Color.Black;
-            this.company.Location = new System.Drawing.Point(137, 58);
+            this.company.Location = new System.Drawing.Point(118, 58);
             this.company.Name = "company";
             this.company.Size = new System.Drawing.Size(295, 27);
             this.company.TabIndex = 1;
@@ -441,10 +396,10 @@ namespace CrystalReport.Components
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.label7.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 9F, System.Drawing.FontStyle.Bold);
             this.label7.Location = new System.Drawing.Point(9, 167);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(42, 17);
+            this.label7.Size = new System.Drawing.Size(37, 15);
             this.label7.TabIndex = 3;
             this.label7.Text = "State:";
             // 
@@ -453,7 +408,7 @@ namespace CrystalReport.Components
             this.textBox2.BackColor = System.Drawing.Color.White;
             this.textBox2.Font = new System.Drawing.Font("Verdana", 12F);
             this.textBox2.ForeColor = System.Drawing.Color.Black;
-            this.textBox2.Location = new System.Drawing.Point(136, 130);
+            this.textBox2.Location = new System.Drawing.Point(117, 130);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(294, 27);
             this.textBox2.TabIndex = 4;
@@ -479,7 +434,7 @@ namespace CrystalReport.Components
             this.panel4.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel4.Location = new System.Drawing.Point(449, 74);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(488, 339);
+            this.panel4.Size = new System.Drawing.Size(488, 340);
             this.panel4.TabIndex = 8;
             // 
             // gstin
@@ -489,7 +444,7 @@ namespace CrystalReport.Components
             this.gstin.BackColor = System.Drawing.Color.White;
             this.gstin.Font = new System.Drawing.Font("Verdana", 12F);
             this.gstin.ForeColor = System.Drawing.Color.Black;
-            this.gstin.Location = new System.Drawing.Point(136, 216);
+            this.gstin.Location = new System.Drawing.Point(136, 299);
             this.gstin.Name = "gstin";
             this.gstin.Size = new System.Drawing.Size(310, 27);
             this.gstin.TabIndex = 8;
@@ -497,20 +452,20 @@ namespace CrystalReport.Components
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(9, 220);
+            this.label9.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(9, 303);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(45, 17);
+            this.label9.Size = new System.Drawing.Size(42, 15);
             this.label9.TabIndex = 7;
             this.label9.Text = "GSTIN";
             // 
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(10, 186);
+            this.label15.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(10, 269);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(65, 17);
+            this.label15.Size = new System.Drawing.Size(57, 15);
             this.label15.TabIndex = 11;
             this.label15.Text = "IFC Code:";
             // 
@@ -521,7 +476,7 @@ namespace CrystalReport.Components
             this.ifc.BackColor = System.Drawing.Color.White;
             this.ifc.Font = new System.Drawing.Font("Verdana", 12F);
             this.ifc.ForeColor = System.Drawing.Color.Black;
-            this.ifc.Location = new System.Drawing.Point(136, 183);
+            this.ifc.Location = new System.Drawing.Point(136, 266);
             this.ifc.Name = "ifc";
             this.ifc.Size = new System.Drawing.Size(310, 27);
             this.ifc.TabIndex = 11;
@@ -529,10 +484,10 @@ namespace CrystalReport.Components
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(10, 151);
+            this.label14.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(10, 234);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(119, 17);
+            this.label14.Size = new System.Drawing.Size(105, 15);
             this.label14.TabIndex = 9;
             this.label14.Text = "Account Number :";
             // 
@@ -543,7 +498,7 @@ namespace CrystalReport.Components
             this.acnumber.BackColor = System.Drawing.Color.White;
             this.acnumber.Font = new System.Drawing.Font("Verdana", 12F);
             this.acnumber.ForeColor = System.Drawing.Color.Black;
-            this.acnumber.Location = new System.Drawing.Point(136, 147);
+            this.acnumber.Location = new System.Drawing.Point(136, 230);
             this.acnumber.Name = "acnumber";
             this.acnumber.Size = new System.Drawing.Size(310, 27);
             this.acnumber.TabIndex = 10;
@@ -551,10 +506,10 @@ namespace CrystalReport.Components
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(10, 112);
+            this.label13.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(10, 195);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(118, 17);
+            this.label13.Size = new System.Drawing.Size(104, 15);
             this.label13.TabIndex = 7;
             this.label13.Text = "A/C Holder Name:";
             // 
@@ -565,7 +520,7 @@ namespace CrystalReport.Components
             this.acname.BackColor = System.Drawing.Color.White;
             this.acname.Font = new System.Drawing.Font("Verdana", 12F);
             this.acname.ForeColor = System.Drawing.Color.Black;
-            this.acname.Location = new System.Drawing.Point(136, 108);
+            this.acname.Location = new System.Drawing.Point(136, 191);
             this.acname.Name = "acname";
             this.acname.Size = new System.Drawing.Size(310, 27);
             this.acname.TabIndex = 9;
@@ -573,10 +528,10 @@ namespace CrystalReport.Components
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(10, 73);
+            this.label12.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(10, 156);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(81, 17);
+            this.label12.Size = new System.Drawing.Size(71, 15);
             this.label12.TabIndex = 5;
             this.label12.Text = "Bank Name:";
             // 
@@ -587,7 +542,7 @@ namespace CrystalReport.Components
             this.bankname.BackColor = System.Drawing.Color.White;
             this.bankname.Font = new System.Drawing.Font("Verdana", 12F);
             this.bankname.ForeColor = System.Drawing.Color.Black;
-            this.bankname.Location = new System.Drawing.Point(136, 69);
+            this.bankname.Location = new System.Drawing.Point(136, 152);
             this.bankname.Name = "bankname";
             this.bankname.Size = new System.Drawing.Size(310, 27);
             this.bankname.TabIndex = 8;
@@ -599,7 +554,7 @@ namespace CrystalReport.Components
             this.pan.BackColor = System.Drawing.Color.White;
             this.pan.Font = new System.Drawing.Font("Verdana", 12F);
             this.pan.ForeColor = System.Drawing.Color.Black;
-            this.pan.Location = new System.Drawing.Point(136, 28);
+            this.pan.Location = new System.Drawing.Point(136, 16);
             this.pan.Name = "pan";
             this.pan.Size = new System.Drawing.Size(310, 27);
             this.pan.TabIndex = 7;
@@ -607,10 +562,10 @@ namespace CrystalReport.Components
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(9, 31);
+            this.label5.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(9, 19);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(114, 17);
+            this.label5.Size = new System.Drawing.Size(101, 15);
             this.label5.TabIndex = 3;
             this.label5.Text = "PAN Information:";
             // 
@@ -636,102 +591,15 @@ namespace CrystalReport.Components
             this.panel9.Size = new System.Drawing.Size(488, 31);
             this.panel9.TabIndex = 18;
             // 
-            // panel2
-            // 
-            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.dataGridView1);
-            this.panel2.Location = new System.Drawing.Point(4, 452);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(938, 222);
-            this.panel2.TabIndex = 19;
-            // 
-            // dataGridView1
-            // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
-            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 12F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dataGridView1.EnableHeadersVisualStyles = false;
-            this.dataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dataGridView1.Location = new System.Drawing.Point(3, 5);
-            this.dataGridView1.Name = "dataGridView1";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.dataGridView1.RowHeadersVisible = false;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
-            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle5;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(929, 212);
-            this.dataGridView1.TabIndex = 15115557;
-            this.dataGridView1.TabStop = false;
-            this.dataGridView1.Theme = Guna.UI.WinForms.GunaDataGridViewPresetThemes.Guna;
-            this.dataGridView1.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
-            this.dataGridView1.ThemeStyle.AlternatingRowsStyle.Font = null;
-            this.dataGridView1.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
-            this.dataGridView1.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
-            this.dataGridView1.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
-            this.dataGridView1.ThemeStyle.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.dataGridView1.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dataGridView1.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.dataGridView1.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dataGridView1.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.dataGridView1.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
-            this.dataGridView1.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.dataGridView1.ThemeStyle.HeaderStyle.Height = 23;
-            this.dataGridView1.ThemeStyle.ReadOnly = false;
-            this.dataGridView1.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
-            this.dataGridView1.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.dataGridView1.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            this.dataGridView1.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.dataGridView1.ThemeStyle.RowsStyle.Height = 22;
-            this.dataGridView1.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dataGridView1.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            // 
             // Parties
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel9);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel1);
             this.Name = "Parties";
@@ -741,7 +609,6 @@ namespace CrystalReport.Components
             this.panel1.PerformLayout();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel4.ResumeLayout(false);
@@ -750,10 +617,7 @@ namespace CrystalReport.Components
             this.panel5.PerformLayout();
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -764,13 +628,10 @@ namespace CrystalReport.Components
         private Panel panel6;
         private Button button2;
         private Button button1;
-        private TextBox textBox3;
-        private DateTimePicker dateTimePicker1;
         private Label label10;
         private Label label11;
         private Label label16;
         private Button button3;
-        private PictureBox pictureBox1;
         private Panel panel3;
         private ComboBox partiname;
         private RichTextBox address;
@@ -803,7 +664,5 @@ namespace CrystalReport.Components
         private TextBox textBox1;
         private Label label17;
         private Label label18;
-        private Panel panel2;
-        private Guna.UI.WinForms.GunaDataGridView dataGridView1;
     }
 }

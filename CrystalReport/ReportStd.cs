@@ -545,8 +545,63 @@ namespace CrystalReport
 
 
 
+        
+
+  private void GetPurches_Return()
+        {
+            try
+            {
 
 
+                ReportDocument report = new ReportDocument();
+
+                //   path = Application.StartupPath + "/NewTirupat.rpt";
+
+                path = Application.StartupPath + $"/Purches_Return_Report.rpt";
+
+
+                report.Load(path);
+                // Set database login information for the report
+                ConnectionInfo connectionInfo = new ConnectionInfo();
+                connectionInfo.ServerName = @"mrsales"; // Replace with your server name
+                connectionInfo.DatabaseName = "drsale";
+                connectionInfo.UserID = "mrsales"; // Replace with your database username
+                connectionInfo.Password = "mrsale@123"; // Replace with your database password
+
+
+                Tables tables = report.Database.Tables;
+                foreach (Table table in tables)
+                {
+                    TableLogOnInfo tableLogOnInfo = table.LogOnInfo;
+                    tableLogOnInfo.ConnectionInfo = connectionInfo;
+                    table.ApplyLogOnInfo(tableLogOnInfo);
+                }
+
+
+
+
+
+
+                table1 = GetTable("SELECT * FROM Purches_Return o INNER JOIN purches_Items_return p ON p.Bill = o.BillID where p.Bill = '" + inv + "' ");
+
+                report.SetDataSource(table1);
+                //report.SetParameterValue("place",Address);
+
+
+                // Verify the report's database
+                report.VerifyDatabase();
+
+                crystalReportViewer1.ReportSource = report;
+
+            }
+            catch (Exception ex)
+            {
+
+
+
+            }
+
+        }
 
 
 
@@ -705,6 +760,11 @@ namespace CrystalReport
 
                 }
 
+
+                else if(pl == "Purches_Return")
+                {
+                    GetPurches_Return();
+                }
 
                 else if (pl == "AMIRSHAKH1234")
                 {

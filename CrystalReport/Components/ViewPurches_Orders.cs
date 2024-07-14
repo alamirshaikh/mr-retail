@@ -66,7 +66,7 @@ namespace CrystalReport.Components
             else
             {
                 return MainEngine_.GetDataScript<dynamic>($"SELECT * FROM Purches_Order WHERE partiname LIKE '%{searchTerm}%' ORDER BY ID OFFSET {pageNumber * size} ROWS FETCH NEXT {size} ROWS ONLY");
-            }
+            }   
         }
 
         private async Task LoadData(string searchTerm)
@@ -125,5 +125,17 @@ namespace CrystalReport.Components
                  
             }
         }
-    }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex] is DataGridViewButtonCell)
+            {
+
+                ReportStd std = new ReportStd(dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString(), "Purches_Order");
+                std.Show();
+
+            }
+
+            }
+        }
 }

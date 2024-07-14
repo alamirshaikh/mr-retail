@@ -23,6 +23,20 @@ namespace CrystalReport
             CostomerList.HideOR += CostomerList_HideOR;
             PartiNameList.HideOR += PartiNameList_HideOR;
             PartiList.isOff += PartiList_isOff;
+            Purches_View.isOff += Purches_View_isOff;
+           
+        }
+
+        private void Purches_View_isOff(object sender, bool e)
+        {
+
+            if (e == true)
+            {
+                this.Hide();
+            }
+            else
+            {
+            }
         }
 
         private void PartiList_isOff(object sender, bool e)
@@ -70,6 +84,18 @@ namespace CrystalReport
                         item.Dock = DockStyle.Fill;
                     panel1.Controls.Add(item);
                    
+                }
+
+
+                else if (getForm == "View_Purches")
+                {
+
+                    panel1.Controls.Clear();
+                    Purches_View item = new Purches_View();
+                    item.Dock = DockStyle.Fill;
+                    panel1.Controls.Add(item);
+
+
                 }
 
 

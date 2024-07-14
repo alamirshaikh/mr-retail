@@ -106,19 +106,26 @@ namespace CrystalReport.Components
                     // Access the row's data, for example:
                     string cellValue1 = selectedRow.Cells[0].Value.ToString(); // Assuming column 1 contains strings
                     string cellValue2 = selectedRow.Cells[2].Value.ToString(); // Assuming column 3 contains strings
-                    string gst = selectedRow.Cells[3].Value.ToString(); // Assuming column 3 contains strings
-
+                    
 
                     // Do something with the values or the selected row
                     // Example: Display the values in a message box
+                    if (comboBox1.SelectedIndex == 0 || comboBox1.Text == "GST")
+                    {
+                        gsttext.Text = selectedRow.Cells[3].Value.ToString();
 
+                    }
+                    else
+                    {
+                        gsttext.Text = "0";
+                    }
 
                     desc.Text = cellValue1;
                     amst = Convert.ToDecimal(cellValue2);
                     r = Convert.ToDecimal(cellValue2);
                     rete.Text = Convert.ToString(r);
                     amt.Text = Convert.ToString(amst);
-                    gsttext.Text = gst;
+                
                     v = amst;
                     q.Text = "1";
                     disc.Text = "0";
@@ -406,7 +413,15 @@ namespace CrystalReport.Components
                         r = Convert.ToDecimal(dgview.Rows[0].Cells[2].Value.ToString());
                         rete.Text = Convert.ToString(r);
                         amt.Text = Convert.ToString(amst);
-                        gsttext.Text = dgview.Rows[0].Cells[3].Value.ToString();
+                        if (comboBox1.SelectedIndex == 0 || comboBox1.Text == "GST")
+                        {
+                            gsttext.Text = Convert.ToString(dgview.Rows[0].Cells[3].Value.ToString());
+
+                        }
+                        else
+                        {
+                            gsttext.Text = "0";
+                        }
                         v = amst;
 
                         q.Text = "1";
@@ -423,7 +438,15 @@ namespace CrystalReport.Components
                         r = Convert.ToDecimal(dgview.Rows[rowindex].Cells[2].Value.ToString());
                         rete.Text = Convert.ToString(r);
                         amt.Text = Convert.ToString(amst);
-                       gsttext.Text =  dgview.Rows[0].Cells[3].Value.ToString();
+                        if (comboBox1.SelectedIndex == 0 || comboBox1.Text == "GST")
+                        {
+                            gsttext.Text = Convert.ToString(dgview.Rows[0].Cells[3].Value.ToString());
+
+                        }
+                        else
+                        {
+                            gsttext.Text = "0";
+                        }
                         v = amst;
 
                         q.Text = "1";
@@ -1036,7 +1059,8 @@ namespace CrystalReport.Components
                 place = textBox1.Text,
                 sCGST = Convert.ToDecimal(cgsto.Text),
                 sSGST = Convert.ToDecimal(sgsti.Text),
-                sIGST = Convert.ToDecimal(igsto.Text)
+                sIGST = Convert.ToDecimal(igsto.Text),
+                TAX = comboBox1.Text
 
             };
 
@@ -2392,7 +2416,15 @@ namespace CrystalReport.Components
                             r = Convert.ToDecimal(dgview.Rows[nextIndex].Cells[2].Value.ToString());
                             rete.Text = Convert.ToString(r);
                             amt.Text = Convert.ToString(amst);
-                            gsttext.Text = Convert.ToString(dgview.Rows[nextIndex].Cells[3].Value.ToString());
+                            if (comboBox1.SelectedIndex == 0 || comboBox1.Text == "GST")
+                            {
+                                gsttext.Text = Convert.ToString(dgview.Rows[nextIndex].Cells[3].Value.ToString());
+
+                            }
+                            else
+                            {
+                                gsttext.Text = "0";
+                            }
                             v = amst;
                             q.Text = "1";
                             disc.Text = "0";
@@ -2406,7 +2438,15 @@ namespace CrystalReport.Components
                         rete.Text = Convert.ToString(r);
                         amt.Text = Convert.ToString(amst);
 
-                        gsttext.Text = Convert.ToString(dgview.Rows[0].Cells[3].Value.ToString());
+                        if (comboBox1.SelectedIndex == 0 || comboBox1.Text == "GST")
+                        {
+                            gsttext.Text = Convert.ToString(dgview.Rows[0].Cells[3].Value.ToString());
+
+                        }
+                        else
+                        {
+                            gsttext.Text = "0";
+                        }
                         v = amst;
 
                         q.Text = "1";
@@ -2437,7 +2477,15 @@ namespace CrystalReport.Components
                             amst = Convert.ToDecimal(dgview.Rows[nextIndex].Cells[2].Value.ToString());
                             r = Convert.ToDecimal(dgview.Rows[nextIndex].Cells[2].Value.ToString());
                             rete.Text = Convert.ToString(r);
-                            gsttext.Text = Convert.ToString(dgview.Rows[nextIndex].Cells[3].Value.ToString());
+                            if (comboBox1.SelectedIndex == 0 || comboBox1.Text == "GST")
+                            {
+                                gsttext.Text = Convert.ToString(dgview.Rows[nextIndex].Cells[3].Value.ToString());
+
+                            }
+                            else
+                            {
+                                gsttext.Text = "0";
+                            }
                             amt.Text = Convert.ToString(amst);
                             v = amst;
                             q.Text = "1";
@@ -2452,7 +2500,15 @@ namespace CrystalReport.Components
                         rete.Text = Convert.ToString(r);
                         amt.Text = Convert.ToString(amst);
                         v = amst;
-                        gsttext.Text = Convert.ToString(dgview.Rows[0].Cells[3].Value.ToString());
+                        if (comboBox1.SelectedIndex == 0 || comboBox1.Text == "GST")
+                        {
+                            gsttext.Text = Convert.ToString(dgview.Rows[0].Cells[3].Value.ToString());
+
+                        }
+                        else
+                        {
+                            gsttext.Text = "0";
+                        }
 
                         q.Text = "1";
                         disc.Text = "0";
@@ -2467,7 +2523,15 @@ namespace CrystalReport.Components
                     r = Convert.ToDecimal(dgview.Rows[0].Cells[2].Value.ToString());
                     
                     rete.Text = Convert.ToString(r);
-                    gsttext.Text = Convert.ToString(dgview.Rows[3].Cells[2].Value.ToString());
+                    if (comboBox1.SelectedIndex == 0 || comboBox1.Text == "GST")
+                    {
+                        gsttext.Text = Convert.ToString(dgview.Rows[3].Cells[2].Value.ToString());
+
+                    }
+                    else
+                    {
+                        gsttext.Text = "0";
+                    }
                     amt.Text = Convert.ToString(amst);
                     v = amst;
 
@@ -2482,7 +2546,15 @@ namespace CrystalReport.Components
                     amst = Convert.ToDecimal(dgview.Rows[0].Cells[2].Value.ToString());
                     r = Convert.ToDecimal(dgview.Rows[0].Cells[2].Value.ToString());
                     rete.Text = Convert.ToString(r);
-                    gsttext.Text = Convert.ToString(dgview.Rows[0].Cells[3].Value.ToString());
+                    if (comboBox1.SelectedIndex == 0 || comboBox1.Text == "GST")
+                    {
+                        gsttext.Text = Convert.ToString(dgview.Rows[0].Cells[3].Value.ToString());
+
+                    }
+                    else
+                    {
+                        gsttext.Text = "0";
+                    }
                     amt.Text = Convert.ToString(amst);
                     v = amst;
 

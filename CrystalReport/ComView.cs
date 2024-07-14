@@ -24,7 +24,10 @@ namespace CrystalReport
 
         private void ComView_Load(object sender, EventArgs e)
         {
+            try
+            {
 
+            
             panel1.Controls.Clear();
 
 
@@ -77,7 +80,11 @@ namespace CrystalReport
 
             }
 
+            }
+            catch (Exception ex)
+            {
 
+            }
         }
     }
 }
