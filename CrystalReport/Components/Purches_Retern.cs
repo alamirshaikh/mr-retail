@@ -233,7 +233,7 @@ namespace CrystalReport.Components
         private async void button2_ClickAsync(object sender, EventArgs e)
         {
 
-            DialogResult result = MessageBox.Show("IF you want to save Order ?", "Order Save", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult result = MessageBox.Show("IF you want to Return ?", "Purches Return", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             if (result == DialogResult.Yes)
             {
@@ -312,6 +312,12 @@ namespace CrystalReport.Components
 
                     MessageBox.Show("Your Purches  has been Return Successfully!", "Purches Return", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+
+                    button2.Enabled = false;
+                    button1.Enabled = true;
+
+
+
                     /*
                     dataGridView1.Rows.Clear();
                 
@@ -339,6 +345,7 @@ namespace CrystalReport.Components
             }
             else
             {
+                MessageBox.Show("No Items Return?", "Purches Return", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
             }
         }
@@ -727,7 +734,7 @@ namespace CrystalReport.Components
 
             // Update the DataGridView
             srs++;
-            dataGridView1.Rows.Add(srs, hsn.Text, desc.Text, q.Text, unit.Text, rete.Text, cgst.Text, sgst.Text, igst.Text, disc.Text, amt.Text, idst.Text);
+            dataGridView1.Rows.Add(srs, hsn.Text, desc.Text, textBox3.Text, unit.Text, rete.Text, cgst.Text, sgst.Text, igst.Text, disc.Text, amt.Text, idst.Text);
 
             // Update other UI elements and calculations
             TotalQty();
@@ -1038,11 +1045,18 @@ namespace CrystalReport.Components
             string mob = MainEngine_.GetDataScript<string>("select partimobile from Parties Where ID = " + supid.Text + "").FirstOrDefault();
 
                 supplier_name.Text = name;
- 
- 
 
-  
-            StoreRoom sr = new StoreRoom();
+                string state = MainEngine_.GetDataScript<string>("select state from Parties where ID = "+supid.Text+" ").FirstOrDefault();
+
+                if(state == "Maharashtra")
+                {
+                    isState = true;
+                }
+                else
+                {
+                    isState = false;
+                }
+                           StoreRoom sr = new StoreRoom();
 
                 // Retrieve the customer name from the textbox
                 string customerName = supplier_name.Text;
@@ -1073,6 +1087,10 @@ namespace CrystalReport.Components
 
                 ReportStd std = new ReportStd(textBox1.Text,"Purches_Return");
                 std.Show();
+
+
+                button2.Enabled = true;
+                button1.Enabled = false;
 
             }
             catch (Exception ex)

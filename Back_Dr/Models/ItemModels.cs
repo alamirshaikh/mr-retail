@@ -19,7 +19,7 @@ namespace Back_Dr.Models
         public decimal IGST { get; set; }
          
 
-        public int STOCK { get; set; }
+        public decimal STOCK { get; set; }
 		public string UNIT { get; set; }
 		public string BARCODE { get; set; }
 		public string DESCRIPTION { get; set; }

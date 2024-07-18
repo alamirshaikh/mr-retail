@@ -250,7 +250,7 @@ namespace CrystalReport.Components
 
                                 sr_no = Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value.ToString()),
                                 description = dataGridView1.Rows[i].Cells[1].Value.ToString(),
-                                qty = Convert.ToInt32(dataGridView1.Rows[i].Cells[2].Value.ToString()),
+                                qty = Convert.ToDecimal(dataGridView1.Rows[i].Cells[2].Value.ToString()),
                                 rate = Convert.ToDecimal(dataGridView1.Rows[i].Cells[3].Value.ToString()),
                           
                                 Bill = inv,
@@ -310,7 +310,7 @@ namespace CrystalReport.Components
                     MessageBox.Show("Bill has been saved!", "Bill", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     dataGridView1.Rows.Clear();
-                    StoreRoom.ClearData(this.Controls);
+   
                     amt.Text = "";
 
                     discount_.Text = "0";
@@ -322,8 +322,7 @@ namespace CrystalReport.Components
 
                 }
                 catch (Exception ex)
-                 {
-                    MessageBox.Show(ex.Message);
+                 { 
                 }
 
 
@@ -817,9 +816,10 @@ namespace CrystalReport.Components
 
 
 
-            string exist = MainEngine_.GetDataScript<string>("select ITEM_NAME from Product_Item where ITEM_NAME = '" + desc.Text + "'").FirstOrDefault();
+            
+            string exist = MainEngine_.GetDataScript<int>("select ID from Product_Item where ID = " + ID.Text + "").FirstOrDefault().ToString();
 
-            if (exist != "")
+            if (exist == "")
             {
                 try
                 {
@@ -857,7 +857,8 @@ namespace CrystalReport.Components
                         IGST = igst.Text,
                         HSN = hsn.Text,
                         Color = Colors.Text,
-                        Size = size.Text
+                        Size = size.Text,
+                        TAX_TYPE = TAX_TYPE.Text
 
 
                     };
@@ -873,7 +874,7 @@ namespace CrystalReport.Components
             }
 
             decimal originalAmount = decimal.Parse(rete.Text) * decimal.Parse(q.Text);
-            if (MainEngine_.GetDataScript<dynamic>("select ITEM_NAME from Product_Item where  ITEM_NAME = '" + desc.Text + "'").Count > 0)
+            if (MainEngine_.GetDataScript<dynamic>("select ID from Product_Item where  ID = " + ID.Text + "").Count > 0)
             {
 
               
@@ -886,7 +887,7 @@ namespace CrystalReport.Components
 
 
                 senddiscount = senddiscount + discount;
-                if (Convert.ToInt32(q.Text) < MainEngine_.GetDataScript<int>("select Stock from Product_Item where ITEM_NAME = '" + desc.Text + "' ").FirstOrDefault())
+                if (Convert.ToDecimal(q.Text) < MainEngine_.GetDataScript<int>("select Stock from Product_Item where ID = " + ID.Text + " ").FirstOrDefault())
                 { 
 
 
@@ -1180,6 +1181,7 @@ namespace CrystalReport.Components
 
 
                     desc.Focus();
+                    ID.Text = "";
                 }
             }
 

@@ -74,7 +74,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>4dfbPKP9fGQAS/RcY+MdrhS8O89D5PRQIryZI0jBXmg=</dsig:DigestValue>
+        <dsig:DigestValue>q4eBMfVO1B0xO+IamuiOnfaY6v/nluoIpx1WRL4vBk0=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -338,7 +338,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>6gVDdNzj2t9pb40sSJ2gvDO5wMGLaHYMRLns/QOIRpg=</dsig:DigestValue>
+        <dsig:DigestValue>A8P0mL+4uNXEArykN39tiOX5S/YqVbgjs5vTenxq9Ss=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -727,14 +727,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Mr.Retail.exe" size="5501448">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Mr.Retail.exe" size="5535240">
       <assemblyIdentity name="Mr.Retail" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>7VZnGut/F0L8wWWw2HMu6V30OFWwBCGErTLJNb/jdVU=</dsig:DigestValue>
+        <dsig:DigestValue>D7daubnu1zVthMg/Age+0B6JyqQOzir4xwDff562ATE=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

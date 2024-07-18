@@ -1081,16 +1081,20 @@ namespace CrystalReport.Components
                 {
                     sr_no = dataGridView1.Rows[i].Cells[0].Value.ToString(),
                     description = dataGridView1.Rows[i].Cells[1].Value.ToString(),
-                    qty = Convert.ToInt32(dataGridView1.Rows[i].Cells[2].Value.ToString()),
-                    rate = Convert.ToDecimal(dataGridView1.Rows[i].Cells[3].Value.ToString()),
-                    discount = Convert.ToDecimal(dataGridView1.Rows[i].Cells[5].Value.ToString()),
-                    amount = Convert.ToDecimal(dataGridView1.Rows[i].Cells[6].Value.ToString()),
+                    qty = Convert.ToDecimal(dataGridView1.Rows[i].Cells[2].Value.ToString()),
+                    per = dataGridView1.Rows[i].Cells[3].Value.ToString(),
+                   
+                    rate = Convert.ToDecimal(dataGridView1.Rows[i].Cells[4].Value.ToString()),
+                    GST = Convert.ToInt32(dataGridView1.Rows[i].Cells[5].Value.ToString()),
+                    discount = Convert.ToDecimal(dataGridView1.Rows[i].Cells[6].Value.ToString()),
+                    amount = Convert.ToDecimal(dataGridView1.Rows[i].Cells[7].Value.ToString()),
                     Invoice = invnum.Text,
-                    GST = Convert.ToInt32(dataGridView1.Rows[i].Cells[4].Value.ToString()),
-                    GSTV = ((Convert.ToInt32(dataGridView1.Rows[i].Cells[2].Value.ToString()) * Convert.ToDecimal(dataGridView1.Rows[i].Cells[3].Value.ToString())) * Convert.ToDecimal(dataGridView1.Rows[i].Cells[4].Value.ToString()) / 100),
-                    CGST = Convert.ToDecimal(dataGridView1.Rows[i].Cells[7].Value.ToString()),
-                    SGST = Convert.ToDecimal(dataGridView1.Rows[i].Cells[8].Value.ToString()),
-                    IGST = Convert.ToDecimal(dataGridView1.Rows[i].Cells[9].Value.ToString())
+                  
+                    GSTV = ((Convert.ToDecimal(dataGridView1.Rows[i].Cells[2].Value.ToString()) * Convert.ToDecimal(dataGridView1.Rows[i].Cells[4].Value.ToString())) * Convert.ToDecimal(dataGridView1.Rows[i].Cells[5].Value.ToString()) / 100),
+                    CGST = Convert.ToDecimal(dataGridView1.Rows[i].Cells[8].Value.ToString()),
+                    SGST = Convert.ToDecimal(dataGridView1.Rows[i].Cells[9].Value.ToString()),
+                    IGST = Convert.ToDecimal(dataGridView1.Rows[i].Cells[10].Value.ToString()),
+                
 
                 };
 
@@ -1690,7 +1694,7 @@ namespace CrystalReport.Components
                
 
                 senddiscount = senddiscount + discount;
-                if (Convert.ToInt32(q.Text) < MainEngine_.GetDataScript<int>("select Stock from Product_Item where ITEM_NAME = '" + desc.Text + "' ").FirstOrDefault())
+                if (Convert.ToDecimal(q.Text) < MainEngine_.GetDataScript<int>("select Stock from Product_Item where ITEM_NAME = '" + desc.Text + "' ").FirstOrDefault())
                 {
                     label24.Text = "No Message";
 
@@ -1712,7 +1716,7 @@ namespace CrystalReport.Components
                             decimal finalAmount = (originalAmount + (originalAmount * Convert.ToDecimal(gsttext.Text)/100))- discount;
                             amt.Text = finalAmount.ToString();
 
-                            dataGridView1.Rows.Add(srs, desc.Text, q.Text, rete.Text,gsttext.Text, disc.Text, amt.Text,cgst.Text,sgst.Text,igst.Text);
+                            dataGridView1.Rows.Add(srs, desc.Text, q.Text,comboBox5.Text, rete.Text,gsttext.Text, disc.Text, amt.Text,cgst.Text,sgst.Text,igst.Text);
 
                             TotalQty();
                             ItemsCount();
@@ -1780,9 +1784,9 @@ namespace CrystalReport.Components
                                 srs = srs + 1;
                                 decimal finalAmount = (originalAmount + (originalAmount * Convert.ToDecimal(gsttext.Text) / 100)) - discount;
                                 amt.Text = finalAmount.ToString();
-                                dataGridView1.Rows.Add(srs, desc.Text, q.Text, rete.Text, gsttext.Text, disc.Text, amt.Text, cgst.Text, sgst.Text, igst.Text);
+                            dataGridView1.Rows.Add(srs, desc.Text, q.Text, comboBox5.Text, rete.Text, gsttext.Text, disc.Text, amt.Text, cgst.Text, sgst.Text, igst.Text);
 
-                                TotalQty();
+                            TotalQty();
                                 ItemsCount();
                                 discountsu();
                                 decimal gstPercentage;
@@ -1877,7 +1881,7 @@ namespace CrystalReport.Components
 
                             srs = srs + 1;
 
-                            dataGridView1.Rows.Add(srs, desc.Text, q.Text, rete.Text, gsttext.Text, disc.Text, amt.Text, cgst.Text, sgst.Text, igst.Text);
+                            dataGridView1.Rows.Add(srs, desc.Text, q.Text, comboBox5.Text, rete.Text, gsttext.Text, disc.Text, amt.Text, cgst.Text, sgst.Text, igst.Text);
 
                             TotalQty();
                             ItemsCount();
@@ -1937,7 +1941,7 @@ namespace CrystalReport.Components
                             {
                                 srs = srs + 1;
 
-                                dataGridView1.Rows.Add(srs, desc.Text, q.Text, rete.Text, gsttext.Text, disc.Text, amt.Text, cgst.Text, sgst.Text, igst.Text);
+                                dataGridView1.Rows.Add(srs, desc.Text, q.Text, comboBox5.Text, rete.Text, gsttext.Text, disc.Text, amt.Text, cgst.Text, sgst.Text, igst.Text);
 
                                 TotalQty();
                                 ItemsCount();
@@ -2070,7 +2074,7 @@ namespace CrystalReport.Components
 
                         srs = srs + 1;
 
-                        dataGridView1.Rows.Add(srs, desc.Text, q.Text, rete.Text, gsttext.Text, disc.Text, amt.Text, cgst.Text, sgst.Text, igst.Text);
+                        dataGridView1.Rows.Add(srs, desc.Text, q.Text, comboBox5.Text, rete.Text, gsttext.Text, disc.Text, amt.Text, cgst.Text, sgst.Text, igst.Text);
 
                         TotalQty();
                         ItemsCount();
@@ -2131,7 +2135,7 @@ namespace CrystalReport.Components
                         {
                             srs = srs + 1;
 
-                            dataGridView1.Rows.Add(srs, desc.Text, q.Text, rete.Text, gsttext.Text, disc.Text, amt.Text, cgst.Text, sgst.Text, igst.Text);
+                            dataGridView1.Rows.Add(srs, desc.Text, q.Text,comboBox5.Text, rete.Text, gsttext.Text, disc.Text, amt.Text, cgst.Text, sgst.Text, igst.Text);
 
                             TotalQty();
                             ItemsCount();
@@ -2334,11 +2338,7 @@ namespace CrystalReport.Components
         private void q_KeyPress(object sender, KeyPressEventArgs e)
         {
 
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
-            {
-                // If the entered character is not a digit or a control character, ignore it
-                e.Handled = true;
-            }
+            
         }
 
         private void button1_TabStopChanged(object sender, EventArgs e)

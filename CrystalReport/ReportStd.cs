@@ -582,7 +582,7 @@ namespace CrystalReport
 
 
 
-                table1 = GetTable("SELECT * FROM Purches_Return o INNER JOIN purches_Items_return p ON p.Bill = o.BillID where p.Bill = '" + inv + "' ");
+                table1 = GetTable("SELECT * FROM Purches_Return o INNER JOIN purches_Items_return p ON p.Bill = o.BillID where p.prb_bill = '" + inv + "' ");
 
                 report.SetDataSource(table1);
                 //report.SetParameterValue("place",Address);
