@@ -455,6 +455,12 @@
     <Compile Include="Components\Barcode.Designer.cs">
       <DependentUpon>Barcode.cs</DependentUpon>
     </Compile>
+    <Compile Include="Components\Customer_pay.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Components\Customer_pay.Designer.cs">
+      <DependentUpon>Customer_pay.cs</DependentUpon>
+    </Compile>
     <Compile Include="Components\Purches_Retern.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -641,6 +647,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CustomerCreditBill.rpt</DependentUpon>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CUST_RECIPT.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CUST_RECIPT.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="DailyReport.cs">
@@ -847,6 +859,9 @@
     <EmbeddedResource Include="Components\Barcode.resx">
       <DependentUpon>Barcode.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Components\Customer_pay.resx">
+      <DependentUpon>Customer_pay.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Components\Purches_Retern.resx">
       <DependentUpon>Purches_Retern.cs</DependentUpon>
     </EmbeddedResource>
@@ -941,6 +956,10 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CustomerCreditBill.cs</LastGenOutput>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CUST_RECIPT.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CUST_RECIPT.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="DailyReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

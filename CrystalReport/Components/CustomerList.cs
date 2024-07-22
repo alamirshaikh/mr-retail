@@ -29,8 +29,6 @@ namespace CrystalReport.Components
         public static event EventHandler<bool> HideOR;
 
 
-
-
         private List<CustomerModel> fetchedData; // Declare as a class variable
 
         private async void LoadInitialData()
@@ -47,7 +45,7 @@ namespace CrystalReport.Components
 
             dataGridView1.Rows.Clear();
             // Fetch initial set of data
-            fetchedData = await Task.Run(() => MainEngine_.GetDataScript<CustomerModel>("select * from Customer where cust_name = '"+search+"' OR cust_phone='"+search+"' "));
+            fetchedData = await Task.Run(() => MainEngine_.GetDataScript<CustomerModel>("select * from Customer where cust_name LIKE '%"+search+"%' OR cust_phone LIKE '%"+search+"%' "));
 
             // Show the initial set of records in the DataGridView
             DisplayRecords(0, 100); // Display the first 100 records as an example
@@ -185,7 +183,7 @@ namespace CrystalReport.Components
                 // Check if the RowIndex is valid
                 if (e.RowIndex >= 0 && e.RowIndex < dataGridView1.Rows.Count)
                 {
-                    var cellValue = dataGridView1.Rows[e.RowIndex].Cells[1].Value?.ToString();
+                    var cellValue = dataGridView1.Rows[e.RowIndex].Cells[0].Value?.ToString();
                     if (cellValue != null)
                     {
                         OnDataTransferred(cellValue);

@@ -1444,3 +1444,4 @@ D:\New folder (2)\mr-retail\CrystalReport\obj\Debug\CrystalReport.Components.Vie
 D:\New folder (2)\mr-retail\CrystalReport\obj\Debug\CrystalReport.Components.Purches_Retern.resources
 D:\New folder (2)\mr-retail\CrystalReport\bin\Debug\Purches_Return_Report.rpt
 D:\New folder (2)\mr-retail\CrystalReport\bin\Debug\Purches_Return_Report.cs
+D:\New folder (2)\mr-retail\CrystalReport\obj\Debug\CrystalReport.Components.Customer_pay.resources

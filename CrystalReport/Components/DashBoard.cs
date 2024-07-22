@@ -279,6 +279,40 @@ namespace CrystalReport.Components
 
            
         }
+
+        private void label24_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                ComView cm = new ComView("Customer_pay");
+
+                cm.Show();
+
+
+            }
+            catch (Exception ex)
+            {
+                 
+            }
+        }
+
+        private void panel2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                ComView cm = new ComView("Customer_pay");
+
+                cm.Show();
+
+
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
     }
     }
 

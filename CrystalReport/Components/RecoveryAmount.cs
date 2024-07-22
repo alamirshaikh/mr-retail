@@ -23,7 +23,7 @@ namespace CrystalReport.Components
         {
             try
             {
-                city.Items.AddRange(MainEngine_.GetDataScript<string>("select DISTINCT pcity from Customer").ToArray());
+                city.Items.AddRange(MainEngine_.GetDataScript<string>("select DISTINCT pcity from Customer where pcity IS not  null ").ToArray());
 
 
 
