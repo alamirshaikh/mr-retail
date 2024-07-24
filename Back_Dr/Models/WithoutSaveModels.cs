@@ -15,7 +15,8 @@ namespace Back_Dr.Models
 
         public int Sr { get; set; }
         public string invoiceID { get; set; }
-		public string cust_Name { get; set; }
+        public string per { get; set; }
+        public string cust_Name { get; set; }
 
         public string ITEM_NAME { get; set; }
 

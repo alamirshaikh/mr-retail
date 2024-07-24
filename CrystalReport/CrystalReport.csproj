@@ -461,6 +461,25 @@
     <Compile Include="Components\Customer_pay.Designer.cs">
       <DependentUpon>Customer_pay.cs</DependentUpon>
     </Compile>
+    <Compile Include="Components\DefaultMaster.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Components\DefaultMaster.Designer.cs">
+      <DependentUpon>DefaultMaster.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Components\GetReportLib.cs" />
+    <Compile Include="Components\GST_MASTER.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Components\GST_MASTER.Designer.cs">
+      <DependentUpon>GST_MASTER.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Components\Profit.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Components\Profit.Designer.cs">
+      <DependentUpon>Profit.cs</DependentUpon>
+    </Compile>
     <Compile Include="Components\Purches_Retern.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -599,6 +618,18 @@
     <Compile Include="Components\RecoveryAmount.Designer.cs">
       <DependentUpon>RecoveryAmount.cs</DependentUpon>
     </Compile>
+    <Compile Include="Components\Report_Bill.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Components\Report_Bill.Designer.cs">
+      <DependentUpon>Report_Bill.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Components\Report_Com.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Components\Report_Com.Designer.cs">
+      <DependentUpon>Report_Com.cs</DependentUpon>
+    </Compile>
     <Compile Include="Components\Settings.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -654,6 +685,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CUST_RECIPT.rpt</DependentUpon>
       <SubType>Component</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
     <Compile Include="DailyReport.cs">
       <AutoGen>True</AutoGen>
@@ -862,6 +894,15 @@
     <EmbeddedResource Include="Components\Customer_pay.resx">
       <DependentUpon>Customer_pay.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Components\DefaultMaster.resx">
+      <DependentUpon>DefaultMaster.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Components\GST_MASTER.resx">
+      <DependentUpon>GST_MASTER.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Components\Profit.resx">
+      <DependentUpon>Profit.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Components\Purches_Retern.resx">
       <DependentUpon>Purches_Retern.cs</DependentUpon>
     </EmbeddedResource>
@@ -931,6 +972,12 @@
     <EmbeddedResource Include="Components\RecoveryAmount.resx">
       <DependentUpon>RecoveryAmount.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Components\Report_Bill.resx">
+      <DependentUpon>Report_Bill.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Components\Report_Com.resx">
+      <DependentUpon>Report_Com.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Components\Settings.resx">
       <DependentUpon>Settings.cs</DependentUpon>
     </EmbeddedResource>
@@ -960,6 +1007,7 @@
     <EmbeddedResource Include="CUST_RECIPT.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CUST_RECIPT.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="DailyReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -1287,6 +1335,13 @@
     <None Include="Resources\GST_T.jpg" />
     <None Include="Resources\purches2.png" />
     <None Include="Resources\voicher-white.png" />
+    <None Include="Resources\icons8-customer-642.png" />
+    <None Include="Resources\purches3.png" />
+    <None Include="Resources\add-document.png" />
+    <None Include="Resources\master.png" />
+    <None Include="Resources\transactions.png" />
+    <None Include="Resources\profile.png" />
+    <None Include="Resources\8671043.jpg" />
     <Content Include="tr.ico" />
   </ItemGroup>
   <ItemGroup>

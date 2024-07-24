@@ -74,7 +74,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>q4eBMfVO1B0xO+IamuiOnfaY6v/nluoIpx1WRL4vBk0=</dsig:DigestValue>
+        <dsig:DigestValue>JVF1Vk5hTEHJ/aOekVW3s0t2diKLIMGlJW4evBMqD/A=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -727,14 +727,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Mr.Retail.exe" size="5564424">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Mr.Retail.exe" size="6452744">
       <assemblyIdentity name="Mr.Retail" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>pS0SFLhRMbO6cp3sUpjPRPeX1MxxmzcXWY5UtJYaRKo=</dsig:DigestValue>
+        <dsig:DigestValue>zTzOsbtr3Brf2YSpeIaW3Mse78WyNwQ1vnlx1uUhTFs=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

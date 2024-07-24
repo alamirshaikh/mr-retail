@@ -52,6 +52,8 @@ namespace CrystalReport.Components
                 View c = new View("Customer Statment", "GetReport");
                 c.Show();
                 GetInvoice();
+                button2.Enabled = true;
+                issave = false;
 
 
             }
@@ -99,7 +101,9 @@ namespace CrystalReport.Components
 
                 }
 
-                
+
+                GetInvoice();
+
 
             }
             catch (Exception ex)
@@ -127,14 +131,20 @@ namespace CrystalReport.Components
         private void button2_Click(object sender, EventArgs e)
         {
 
-            if (issave == false)
+            if (issave == false && amount.Text !="" && id.Text !="")
             {
 
+                DialogResult resul = MessageBox.Show("If you want to save Payment","payment",MessageBoxButtons.YesNo,MessageBoxIcon.Question);
 
-                 
-                GetInvoice();
-                issave = true;
-                button2.Enabled = false;
+                if (resul == DialogResult.Yes)
+                {
+
+                    SavePayment();
+                    issave = true;
+                    button2.Enabled = false;
+                } 
+
+ 
 
             }
             else
@@ -144,19 +154,64 @@ namespace CrystalReport.Components
            
         }
 
+        private void SavePayment()
+        {
+
+
+            MainEngine_.GetDataScript<dynamic>("update Customer set Balance = " + Convert.ToDecimal(blc.Text) + " where id = " + Convert.ToInt32(id.Text) + " ");
+            string sql = "INSERT INTO CustomerTransactions (Cust_ID, Cust_Name, Last_Date, PayMode, Paid,InvoiceId,Amount,Quantity) " +
+           $"VALUES ({Convert.ToInt32(id.Text)}, '{name.Text}', '{trdate.Value.ToString()}', '{paymode.Text}', {Convert.ToDecimal(amount.Text)},'{trno.Text}',{0},{0})";
+
+            MainEngine_.GetDataScript<dynamic>(sql);
+
+            MessageBox.Show("Balance Update Succesfully!", "Balance Qur", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            
+            
+
+
+
+
+
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
             try
             {
 
+                if(issave == true)
+                {
+                    ReportStd std = new ReportStd(trno.Text, "Cust_Pay");
+                    std.Show();
+                    GetInvoice();
 
-
+                }
+                else
+                {
+                    MessageBox.Show("You Not ! save Payment ,please save","Save ?",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                }
+                
 
             }
             catch (Exception ex)
             {
                  
             }
+        }
+
+        private void amount_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                decimal balance = MainEngine_.GetDataScript<decimal>("select Balance from Customer where id = " + Convert.ToInt32(id.Text) + "").FirstOrDefault();
+                blc.Text = (balance + Convert.ToDecimal(amount.Text)).ToString();
+            }
+            catch (Exception ex)
+            {
+                 
+            }
+            
         }
     }
 }

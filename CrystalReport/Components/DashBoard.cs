@@ -1,4 +1,5 @@
-﻿using Dr.Sale.Components;
+﻿using Back_Dr.Sale;
+using Dr.Sale.Components;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -114,16 +115,20 @@ namespace CrystalReport.Components
 
         private void DashBoard_Load(object sender, EventArgs e)
         {
-            textBox1.Text = StoreRoom.TodaysSales();
-            textBox2.Text = StoreRoom.MonthSales();
-            textBox3.Text = StoreRoom.CustomerCount();
-            textBox4.Text = StoreRoom.Balance();
+            textBox1.Text = string.Format("₹{0:N2}", StoreRoom.TodaysSales());
+            textBox2.Text = string.Format("₹{0:N2}", StoreRoom.MonthSales());
+            textBox3.Text = StoreRoom.CustomerCount().ToString(); // Assuming CustomerCount is a count and not an amount
+            textBox4.Text = string.Format("₹{0:N2}", StoreRoom.Balance());
 
 
 
+            state.Text = MainEngine_.GetDataScript<string>("Select State from OwnerInformation").FirstOrDefault();
+            num.Text = MainEngine_.GetDataScript<string>("Select ShopMobile from OwnerInformation").FirstOrDefault();
+            address.Text = MainEngine_.GetDataScript<string>("Select BusinessAddress from OwnerInformation").FirstOrDefault();
+            gst.Text = MainEngine_.GetDataScript<string>("Select GSTIN from Tax").FirstOrDefault();
+             
 
-
-          //  GetCurrent();
+            //  GetCurrent();
 
 
             string colorpath = Application.StartupPath + "/company.png";
@@ -133,8 +138,8 @@ namespace CrystalReport.Components
 
             image = new Bitmap(colorpath);
             // Identify the background color
-            Color backgroundColor = StoreRoom.IdentifyBackgroundColor(image);
-            panel5.BackColor = backgroundColor;
+            //Color backgroundColor = StoreRoom.IdentifyBackgroundColor(image);
+            //panel5.BackColor = backgroundColor;
              
             if (files.Length > 0)
             {

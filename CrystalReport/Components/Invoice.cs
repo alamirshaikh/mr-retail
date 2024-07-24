@@ -110,7 +110,7 @@ namespace CrystalReport.Components
 
                     // Do something with the values or the selected row
                     // Example: Display the values in a message box
-                    if (comboBox1.SelectedIndex == 0 || comboBox1.Text == "GST")
+                    if (comboBox1.SelectedIndex == 1 || comboBox1.Text == "GST")
                     {
                         gsttext.Text = selectedRow.Cells[3].Value.ToString();
 
@@ -135,26 +135,34 @@ namespace CrystalReport.Components
                 else
                 {
                     // Retrieve the clicked row
+
                     DataGridViewRow selectedRow = dgview.Rows[e.RowIndex];
 
                     // Access the row's data, for example:
                     string cellValue1 = selectedRow.Cells[0].Value.ToString(); // Assuming column 1 contains strings
                     string cellValue2 = selectedRow.Cells[2].Value.ToString(); // Assuming column 3 contains strings
-                    string gst = selectedRow.Cells[3].Value.ToString(); // Assuming column 3 contains strings
 
 
                     // Do something with the values or the selected row
                     // Example: Display the values in a message box
+                    if (comboBox1.SelectedIndex == 1 || comboBox1.Text == "GST")
+                    {
+                        gsttext.Text = selectedRow.Cells[3].Value.ToString();
 
+                    }
+                    else
+                    {
+                        gsttext.Text = "0";
+                    }
 
                     desc.Text = cellValue1;
                     amst = Convert.ToDecimal(cellValue2);
                     r = Convert.ToDecimal(cellValue2);
                     rete.Text = Convert.ToString(r);
                     amt.Text = Convert.ToString(amst);
+
                     v = amst;
                     q.Text = "1";
-                    gsttext.Text = gst;
                     disc.Text = "0";
                     desc.Focus();
                     dgview.Visible = false;
@@ -413,7 +421,7 @@ namespace CrystalReport.Components
                         r = Convert.ToDecimal(dgview.Rows[0].Cells[2].Value.ToString());
                         rete.Text = Convert.ToString(r);
                         amt.Text = Convert.ToString(amst);
-                        if (comboBox1.SelectedIndex == 0 || comboBox1.Text == "GST")
+                        if (comboBox1.SelectedIndex == 1 || comboBox1.Text == "GST")
                         {
                             gsttext.Text = Convert.ToString(dgview.Rows[0].Cells[3].Value.ToString());
 
@@ -438,7 +446,7 @@ namespace CrystalReport.Components
                         r = Convert.ToDecimal(dgview.Rows[rowindex].Cells[2].Value.ToString());
                         rete.Text = Convert.ToString(r);
                         amt.Text = Convert.ToString(amst);
-                        if (comboBox1.SelectedIndex == 0 || comboBox1.Text == "GST")
+                        if (comboBox1.SelectedIndex == 1 || comboBox1.Text == "GST")
                         {
                             gsttext.Text = Convert.ToString(dgview.Rows[0].Cells[3].Value.ToString());
 
@@ -1115,8 +1123,11 @@ namespace CrystalReport.Components
                 Quantity = decimal.Parse(sumqty.Text)
             };
 
+
+
+
             await MainEngine_.Add(TransCustomer, "InsertCustomerTransaction");
-            MainEngine_.GetDataScript<dynamic>($"INSERT INTO Transactions (AccountID, Amount, Type, Date_, Description, REFRANCE_ID,Particular,voucher_t) values(1,{amount},'Saving','{invdate.Text}','Sale/Recovery','{invnum.Text}','{cust_name.Text}','{payMode}')");
+            MainEngine_.GetDataScript<dynamic>($"INSERT INTO Transactions (AccountID, Amount, Type, Date_, Description, REFRANCE_ID,Particular,voucher_t) values(1,{amount},'{comboBox1.Text.Trim()}','{invdate.Text}','Sale/Recovery','{invnum.Text}','{cust_name.Text}','{payMode}')");
         }
 
         private void ClearForm()
@@ -1588,10 +1599,11 @@ namespace CrystalReport.Components
                     model.Sr = int.Parse(dataGridView1.Rows[i].Cells[0].Value.ToString());
                     model.ITEM_NAME = dataGridView1.Rows[i].Cells[1].Value.ToString();
                     model.Qty = Convert.ToInt32(dataGridView1.Rows[i].Cells[2].Value.ToString());
-                    model.SALE_PRICE = Convert.ToDecimal(dataGridView1.Rows[i].Cells[3].Value.ToString());
-                    model.discount = Convert.ToDecimal(dataGridView1.Rows[i].Cells[5].Value.ToString());
-                    model.Amount = Convert.ToDecimal(dataGridView1.Rows[i].Cells[6].Value.ToString());
+                    model.SALE_PRICE = Convert.ToDecimal(dataGridView1.Rows[i].Cells[4].Value.ToString());
+                    model.discount = Convert.ToDecimal(dataGridView1.Rows[i].Cells[6].Value.ToString());
+                    model.Amount = Convert.ToDecimal(dataGridView1.Rows[i].Cells[7].Value.ToString());
                     model.invoiceID = invnum.Text;
+                    model.per = dataGridView1.Rows[i].Cells[3].Value.ToString();
                     model.invdate = invdate.Value;
                     model.TotalBill = Convert.ToDecimal(totalamt.Text);
                     model.cust_Name = cust_name.Text;
@@ -1713,8 +1725,8 @@ namespace CrystalReport.Components
 
                             srs = srs + 1;
 
-                            decimal finalAmount = (originalAmount + (originalAmount * Convert.ToDecimal(gsttext.Text)/100))- discount;
-                            amt.Text = finalAmount.ToString();
+                         /*   decimal finalAmount = (originalAmount + (originalAmount * Convert.ToDecimal(gsttext.Text)/100))- discount;
+                            amt.Text = finalAmount.ToString();*/
 
                             dataGridView1.Rows.Add(srs, desc.Text, q.Text,comboBox5.Text, rete.Text,gsttext.Text, disc.Text, amt.Text,cgst.Text,sgst.Text,igst.Text);
 
@@ -1782,8 +1794,10 @@ namespace CrystalReport.Components
                         {
                              
                                 srs = srs + 1;
-                                decimal finalAmount = (originalAmount + (originalAmount * Convert.ToDecimal(gsttext.Text) / 100)) - discount;
-                                amt.Text = finalAmount.ToString();
+                              /*  decimal finalAmount = (originalAmount + (originalAmount * Convert.ToDecimal(gsttext.Text) / 100)) - discount;
+                                amt.Text = finalAmount.ToString();*/
+
+
                             dataGridView1.Rows.Add(srs, desc.Text, q.Text, comboBox5.Text, rete.Text, gsttext.Text, disc.Text, amt.Text, cgst.Text, sgst.Text, igst.Text);
 
                             TotalQty();
@@ -2416,7 +2430,7 @@ namespace CrystalReport.Components
                             r = Convert.ToDecimal(dgview.Rows[nextIndex].Cells[2].Value.ToString());
                             rete.Text = Convert.ToString(r);
                             amt.Text = Convert.ToString(amst);
-                            if (comboBox1.SelectedIndex == 0 || comboBox1.Text == "GST")
+                            if (comboBox1.SelectedIndex == 1 || comboBox1.Text == "GST")
                             {
                                 gsttext.Text = Convert.ToString(dgview.Rows[nextIndex].Cells[3].Value.ToString());
 
@@ -2438,7 +2452,7 @@ namespace CrystalReport.Components
                         rete.Text = Convert.ToString(r);
                         amt.Text = Convert.ToString(amst);
 
-                        if (comboBox1.SelectedIndex == 0 || comboBox1.Text == "GST")
+                        if (comboBox1.SelectedIndex == 1 || comboBox1.Text == "GST")
                         {
                             gsttext.Text = Convert.ToString(dgview.Rows[0].Cells[3].Value.ToString());
 
@@ -2477,7 +2491,7 @@ namespace CrystalReport.Components
                             amst = Convert.ToDecimal(dgview.Rows[nextIndex].Cells[2].Value.ToString());
                             r = Convert.ToDecimal(dgview.Rows[nextIndex].Cells[2].Value.ToString());
                             rete.Text = Convert.ToString(r);
-                            if (comboBox1.SelectedIndex == 0 || comboBox1.Text == "GST")
+                            if (comboBox1.SelectedIndex == 1 || comboBox1.Text == "GST")
                             {
                                 gsttext.Text = Convert.ToString(dgview.Rows[nextIndex].Cells[3].Value.ToString());
 
@@ -2500,7 +2514,7 @@ namespace CrystalReport.Components
                         rete.Text = Convert.ToString(r);
                         amt.Text = Convert.ToString(amst);
                         v = amst;
-                        if (comboBox1.SelectedIndex == 0 || comboBox1.Text == "GST")
+                        if (comboBox1.SelectedIndex == 1 || comboBox1.Text == "GST")
                         {
                             gsttext.Text = Convert.ToString(dgview.Rows[0].Cells[3].Value.ToString());
 
@@ -2523,7 +2537,7 @@ namespace CrystalReport.Components
                     r = Convert.ToDecimal(dgview.Rows[0].Cells[2].Value.ToString());
                     
                     rete.Text = Convert.ToString(r);
-                    if (comboBox1.SelectedIndex == 0 || comboBox1.Text == "GST")
+                    if (comboBox1.SelectedIndex == 1 || comboBox1.Text == "GST")
                     {
                         gsttext.Text = Convert.ToString(dgview.Rows[3].Cells[2].Value.ToString());
 
@@ -2546,7 +2560,7 @@ namespace CrystalReport.Components
                     amst = Convert.ToDecimal(dgview.Rows[0].Cells[2].Value.ToString());
                     r = Convert.ToDecimal(dgview.Rows[0].Cells[2].Value.ToString());
                     rete.Text = Convert.ToString(r);
-                    if (comboBox1.SelectedIndex == 0 || comboBox1.Text == "GST")
+                    if (comboBox1.SelectedIndex == 1 || comboBox1.Text == "GST")
                     {
                         gsttext.Text = Convert.ToString(dgview.Rows[0].Cells[3].Value.ToString());
 
@@ -3031,9 +3045,19 @@ namespace CrystalReport.Components
 
         private void gunaButton1_Click(object sender, EventArgs e)
         {
-            temp_cust = textBox1.Text;
-            temp_invoice = invnum.Text;
-            SaveAndPrint("F1");
+            if(dataGridView1.Rows.Count-1 > 0)
+            {
+                temp_cust = textBox1.Text;
+                temp_invoice = invnum.Text;
+                SaveAndPrint("F1");
+
+            }
+            else
+            {
+                MessageBox.Show("NO Data shows?","Datas",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+            }
+
+
         }
 
         private void Invoice_KeyDown(object sender, KeyEventArgs e)

@@ -103,9 +103,22 @@ namespace CrystalReport.Components
         {
             try
             {
-
-                StoreRoom st = new StoreRoom();
+                /*
+                /*StoreRoom st = new StoreRoom();
                 st.SearchRecords(textBox1.Text, data);
+                
+                if (textBox1.Text == "")
+                {
+                    data.Rows.Clear();
+                    LoadInitialData();
+                }
+                else
+                {
+                    LoadSearch(textBox1.Text);
+                }
+
+                */
+
             }
             catch (Exception ex)
             {
@@ -118,13 +131,38 @@ namespace CrystalReport.Components
         {
 
         }
+        private async void LoadSearch(string search)
+        {
+
+           /* data.Rows.Clear();
+            // Fetch initial set of data
+            fetchedData = await Task.Run(() => MainEngine_.GetDataScript<PartiNameLIst>("select * from Customer where cust_name LIKE '%" + search + "%' OR cust_phone LIKE '%" + search + "%' "));
+
+            // Show the initial set of records in the DataGridView
+            DisplayRecords(0, 100); // Display the first 100 records as an example
+        */
+            }
+
+
+
+
 
         private void data_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+         
+        }
+
+        private void data_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void data_CellClick_1(object sender, DataGridViewCellEventArgs e)
+        {
             try
             {
-                
-                IDSupp?.Invoke(this,StoreRoom.GetData = data.Rows[e.RowIndex].Cells[1].Value.ToString());
+
+                IDSupp?.Invoke(this, StoreRoom.GetData = data.Rows[e.RowIndex].Cells[1].Value.ToString());
                 HideOR?.Invoke(this, true);
 
             }
@@ -132,6 +170,7 @@ namespace CrystalReport.Components
             {
 
             }
+
         }
     }
 }

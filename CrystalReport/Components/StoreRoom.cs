@@ -20,8 +20,16 @@ namespace Dr.Sale.Components
         private int count;
 
         public static string GetData { get; set; }
-        public decimal SupplierName { get; set; }
 
+        public static string SendReport { get; set; }
+
+
+        public static DateTime dateTimePicker1 { get; set; }
+        public static DateTime dateTimePicker2 { get; set; }
+
+
+        public decimal SupplierName { get; set; }
+        
         public static string ShopName { get; set; }
 
         public static DialogResult Dialog(string message, string title)

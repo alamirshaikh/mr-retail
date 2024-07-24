@@ -39,7 +39,6 @@ namespace CrystalReport.Components
             this.label16 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label18 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -72,6 +71,7 @@ namespace CrystalReport.Components
             this.label5 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
+            this.gunaButton1 = new Guna.UI.WinForms.GunaButton();
             this.panel1.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -129,8 +129,6 @@ namespace CrystalReport.Components
             this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel6.Controls.Add(this.label16);
             this.panel6.Controls.Add(this.button3);
-            this.panel6.Controls.Add(this.button2);
-            this.panel6.Controls.Add(this.button1);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel6.Location = new System.Drawing.Point(0, 683);
             this.panel6.Name = "panel6";
@@ -163,31 +161,19 @@ namespace CrystalReport.Components
             // 
             // button2
             // 
-            this.button2.BackColor = System.Drawing.Color.White;
+            this.button2.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.button2.ForeColor = System.Drawing.Color.Black;
             this.button2.Image = global::CrystalReport.Properties.Resources.eraser;
             this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(168, 3);
+            this.button2.Location = new System.Drawing.Point(655, 362);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(124, 31);
+            this.button2.Size = new System.Drawing.Size(119, 52);
             this.button2.TabIndex = 14;
             this.button2.Text = "Clear";
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // button1
-            // 
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Image = global::CrystalReport.Properties.Resources.add642;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(3, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(159, 31);
-            this.button1.TabIndex = 13;
-            this.button1.Text = "Add Supplyer";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // panel3
             // 
@@ -434,7 +420,7 @@ namespace CrystalReport.Components
             this.panel4.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel4.Location = new System.Drawing.Point(449, 74);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(488, 340);
+            this.panel4.Size = new System.Drawing.Size(488, 274);
             this.panel4.TabIndex = 8;
             // 
             // gstin
@@ -444,7 +430,7 @@ namespace CrystalReport.Components
             this.gstin.BackColor = System.Drawing.Color.White;
             this.gstin.Font = new System.Drawing.Font("Verdana", 12F);
             this.gstin.ForeColor = System.Drawing.Color.Black;
-            this.gstin.Location = new System.Drawing.Point(136, 299);
+            this.gstin.Location = new System.Drawing.Point(136, 202);
             this.gstin.Name = "gstin";
             this.gstin.Size = new System.Drawing.Size(310, 27);
             this.gstin.TabIndex = 8;
@@ -453,7 +439,7 @@ namespace CrystalReport.Components
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(9, 303);
+            this.label9.Location = new System.Drawing.Point(9, 206);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(42, 15);
             this.label9.TabIndex = 7;
@@ -463,7 +449,7 @@ namespace CrystalReport.Components
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(10, 269);
+            this.label15.Location = new System.Drawing.Point(10, 172);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(57, 15);
             this.label15.TabIndex = 11;
@@ -476,7 +462,7 @@ namespace CrystalReport.Components
             this.ifc.BackColor = System.Drawing.Color.White;
             this.ifc.Font = new System.Drawing.Font("Verdana", 12F);
             this.ifc.ForeColor = System.Drawing.Color.Black;
-            this.ifc.Location = new System.Drawing.Point(136, 266);
+            this.ifc.Location = new System.Drawing.Point(136, 169);
             this.ifc.Name = "ifc";
             this.ifc.Size = new System.Drawing.Size(310, 27);
             this.ifc.TabIndex = 11;
@@ -485,7 +471,7 @@ namespace CrystalReport.Components
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(10, 234);
+            this.label14.Location = new System.Drawing.Point(10, 137);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(105, 15);
             this.label14.TabIndex = 9;
@@ -498,7 +484,7 @@ namespace CrystalReport.Components
             this.acnumber.BackColor = System.Drawing.Color.White;
             this.acnumber.Font = new System.Drawing.Font("Verdana", 12F);
             this.acnumber.ForeColor = System.Drawing.Color.Black;
-            this.acnumber.Location = new System.Drawing.Point(136, 230);
+            this.acnumber.Location = new System.Drawing.Point(136, 133);
             this.acnumber.Name = "acnumber";
             this.acnumber.Size = new System.Drawing.Size(310, 27);
             this.acnumber.TabIndex = 10;
@@ -507,7 +493,7 @@ namespace CrystalReport.Components
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(10, 195);
+            this.label13.Location = new System.Drawing.Point(10, 98);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(104, 15);
             this.label13.TabIndex = 7;
@@ -520,7 +506,7 @@ namespace CrystalReport.Components
             this.acname.BackColor = System.Drawing.Color.White;
             this.acname.Font = new System.Drawing.Font("Verdana", 12F);
             this.acname.ForeColor = System.Drawing.Color.Black;
-            this.acname.Location = new System.Drawing.Point(136, 191);
+            this.acname.Location = new System.Drawing.Point(136, 94);
             this.acname.Name = "acname";
             this.acname.Size = new System.Drawing.Size(310, 27);
             this.acname.TabIndex = 9;
@@ -529,7 +515,7 @@ namespace CrystalReport.Components
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(10, 156);
+            this.label12.Location = new System.Drawing.Point(10, 59);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(71, 15);
             this.label12.TabIndex = 5;
@@ -542,7 +528,7 @@ namespace CrystalReport.Components
             this.bankname.BackColor = System.Drawing.Color.White;
             this.bankname.Font = new System.Drawing.Font("Verdana", 12F);
             this.bankname.ForeColor = System.Drawing.Color.Black;
-            this.bankname.Location = new System.Drawing.Point(136, 152);
+            this.bankname.Location = new System.Drawing.Point(136, 55);
             this.bankname.Name = "bankname";
             this.bankname.Size = new System.Drawing.Size(310, 27);
             this.bankname.TabIndex = 8;
@@ -591,13 +577,42 @@ namespace CrystalReport.Components
             this.panel9.Size = new System.Drawing.Size(488, 31);
             this.panel9.TabIndex = 18;
             // 
+            // gunaButton1
+            // 
+            this.gunaButton1.AnimationHoverSpeed = 0.07F;
+            this.gunaButton1.AnimationSpeed = 0.03F;
+            this.gunaButton1.BackColor = System.Drawing.Color.DarkSalmon;
+            this.gunaButton1.BaseColor = System.Drawing.Color.DodgerBlue;
+            this.gunaButton1.BorderColor = System.Drawing.Color.Black;
+            this.gunaButton1.BorderSize = 1;
+            this.gunaButton1.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.gunaButton1.FocusedColor = System.Drawing.Color.Empty;
+            this.gunaButton1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaButton1.ForeColor = System.Drawing.Color.White;
+            this.gunaButton1.Image = global::CrystalReport.Properties.Resources.account;
+            this.gunaButton1.ImageSize = new System.Drawing.Size(20, 20);
+            this.gunaButton1.Location = new System.Drawing.Point(449, 362);
+            this.gunaButton1.Name = "gunaButton1";
+            this.gunaButton1.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.gunaButton1.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.gunaButton1.OnHoverForeColor = System.Drawing.Color.White;
+            this.gunaButton1.OnHoverImage = null;
+            this.gunaButton1.OnPressedColor = System.Drawing.Color.Black;
+            this.gunaButton1.Size = new System.Drawing.Size(200, 52);
+            this.gunaButton1.TabIndex = 12000001;
+            this.gunaButton1.TabStop = false;
+            this.gunaButton1.Text = "Add Customer";
+            this.gunaButton1.Click += new System.EventHandler(this.gunaButton1_Click);
+            // 
             // Parties
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.gunaButton1);
             this.Controls.Add(this.panel9);
             this.Controls.Add(this.panel5);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel6);
@@ -627,7 +642,6 @@ namespace CrystalReport.Components
         private Label label1;
         private Panel panel6;
         private Button button2;
-        private Button button1;
         private Label label10;
         private Label label11;
         private Label label16;
@@ -664,5 +678,6 @@ namespace CrystalReport.Components
         private TextBox textBox1;
         private Label label17;
         private Label label18;
+        private Guna.UI.WinForms.GunaButton gunaButton1;
     }
 }

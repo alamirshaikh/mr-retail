@@ -73,6 +73,16 @@ namespace CrystalReport.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap _8671043 {
+            get {
+                object obj = ResourceManager.GetObject("8671043", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap account {
             get {
                 object obj = ResourceManager.GetObject("account", resourceCulture);
@@ -86,6 +96,16 @@ namespace CrystalReport.Properties {
         public static System.Drawing.Bitmap add {
             get {
                 object obj = ResourceManager.GetObject("add", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap add_document {
+            get {
+                object obj = ResourceManager.GetObject("add-document", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -613,6 +633,16 @@ namespace CrystalReport.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap icons8_customer_642 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-customer-642", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap icons8_import_csv_60 {
             get {
                 object obj = ResourceManager.GetObject("icons8-import-csv-60", resourceCulture);
@@ -893,6 +923,16 @@ namespace CrystalReport.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap master {
+            get {
+                object obj = ResourceManager.GetObject("master", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap material_management {
             get {
                 object obj = ResourceManager.GetObject("material_management", resourceCulture);
@@ -1103,6 +1143,16 @@ namespace CrystalReport.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap profile {
+            get {
+                object obj = ResourceManager.GetObject("profile", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap profit {
             get {
                 object obj = ResourceManager.GetObject("profit", resourceCulture);
@@ -1146,6 +1196,16 @@ namespace CrystalReport.Properties {
         public static System.Drawing.Bitmap purches3 {
             get {
                 object obj = ResourceManager.GetObject("purches3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap purches4 {
+            get {
+                object obj = ResourceManager.GetObject("purches4", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1416,6 +1476,16 @@ namespace CrystalReport.Properties {
         public static System.Drawing.Bitmap tirupati1 {
             get {
                 object obj = ResourceManager.GetObject("tirupati1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap transactions {
+            get {
+                object obj = ResourceManager.GetObject("transactions", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

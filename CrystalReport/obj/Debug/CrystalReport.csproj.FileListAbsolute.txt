@@ -1445,3 +1445,10 @@ D:\New folder (2)\mr-retail\CrystalReport\obj\Debug\CrystalReport.Components.Pur
 D:\New folder (2)\mr-retail\CrystalReport\bin\Debug\Purches_Return_Report.rpt
 D:\New folder (2)\mr-retail\CrystalReport\bin\Debug\Purches_Return_Report.cs
 D:\New folder (2)\mr-retail\CrystalReport\obj\Debug\CrystalReport.Components.Customer_pay.resources
+D:\New folder (2)\mr-retail\CrystalReport\bin\Debug\CUST_RECIPT.rpt
+D:\New folder (2)\mr-retail\CrystalReport\bin\Debug\CUST_RECIPT.cs
+D:\New folder (2)\mr-retail\CrystalReport\obj\Debug\CrystalReport.Components.DefaultMaster.resources
+D:\New folder (2)\mr-retail\CrystalReport\obj\Debug\CrystalReport.Components.GST_MASTER.resources
+D:\New folder (2)\mr-retail\CrystalReport\obj\Debug\CrystalReport.Components.Report_Bill.resources
+D:\New folder (2)\mr-retail\CrystalReport\obj\Debug\CrystalReport.Components.Report_Com.resources
+D:\New folder (2)\mr-retail\CrystalReport\obj\Debug\CrystalReport.Components.Profit.resources

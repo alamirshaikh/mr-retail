@@ -37,13 +37,15 @@ namespace CrystalReport.Components
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new Guna.UI.WinForms.GunaDataGridView();
+            this.textBox1 = new Guna.UI.WinForms.GunaTextBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.custid = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nname = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Phone = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.City = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.textBox1 = new Guna.UI.WinForms.GunaTextBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.State = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Blalace = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -99,7 +101,9 @@ namespace CrystalReport.Components
             this.custid,
             this.nname,
             this.Phone,
-            this.City});
+            this.City,
+            this.State,
+            this.Blalace});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.5F);
@@ -153,30 +157,6 @@ namespace CrystalReport.Components
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.Scroll += new System.Windows.Forms.ScrollEventHandler(this.dataGridView1_Scroll);
             // 
-            // custid
-            // 
-            this.custid.FillWeight = 50.76142F;
-            this.custid.HeaderText = "ID";
-            this.custid.Name = "custid";
-            // 
-            // nname
-            // 
-            this.nname.FillWeight = 116.4129F;
-            this.nname.HeaderText = "Name";
-            this.nname.Name = "nname";
-            // 
-            // Phone
-            // 
-            this.Phone.FillWeight = 116.4129F;
-            this.Phone.HeaderText = "Phone";
-            this.Phone.Name = "Phone";
-            // 
-            // City
-            // 
-            this.City.FillWeight = 116.4129F;
-            this.City.HeaderText = "City";
-            this.City.Name = "City";
-            // 
             // textBox1
             // 
             this.textBox1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
@@ -220,6 +200,40 @@ namespace CrystalReport.Components
             this.panel2.Size = new System.Drawing.Size(955, 619);
             this.panel2.TabIndex = 25;
             // 
+            // custid
+            // 
+            this.custid.FillWeight = 50.76142F;
+            this.custid.HeaderText = "ID";
+            this.custid.Name = "custid";
+            // 
+            // nname
+            // 
+            this.nname.FillWeight = 116.4129F;
+            this.nname.HeaderText = "Name";
+            this.nname.Name = "nname";
+            // 
+            // Phone
+            // 
+            this.Phone.FillWeight = 116.4129F;
+            this.Phone.HeaderText = "Phone";
+            this.Phone.Name = "Phone";
+            // 
+            // City
+            // 
+            this.City.FillWeight = 116.4129F;
+            this.City.HeaderText = "City";
+            this.City.Name = "City";
+            // 
+            // State
+            // 
+            this.State.HeaderText = "State";
+            this.State.Name = "State";
+            // 
+            // Blalace
+            // 
+            this.Blalace.HeaderText = "Balance";
+            this.Blalace.Name = "Blalace";
+            // 
             // CustomerList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -246,12 +260,14 @@ namespace CrystalReport.Components
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private Guna.UI.WinForms.GunaDataGridView dataGridView1;
+        private Guna.UI.WinForms.GunaTextBox textBox1;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.DataGridViewTextBoxColumn custid;
         private System.Windows.Forms.DataGridViewTextBoxColumn nname;
         private System.Windows.Forms.DataGridViewTextBoxColumn Phone;
         private System.Windows.Forms.DataGridViewTextBoxColumn City;
-        private Guna.UI.WinForms.GunaTextBox textBox1;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn State;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Blalace;
     }
 }

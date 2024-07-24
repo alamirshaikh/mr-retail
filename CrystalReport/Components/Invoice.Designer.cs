@@ -74,6 +74,18 @@ namespace CrystalReport.Components
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel7 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new Guna.UI.WinForms.GunaDataGridView();
+            this.sr = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dsf = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Qtyssss = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.unn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Ratesss = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GST = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Discountsssss = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Amountsss = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.datacgst = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataSGST = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataIGST = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Deletesss = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panel8 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.panel10 = new System.Windows.Forms.Panel();
@@ -151,18 +163,6 @@ namespace CrystalReport.Components
             this.gunaButton1 = new Guna.UI.WinForms.GunaButton();
             this.gunaButton2 = new Guna.UI.WinForms.GunaButton();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.sr = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dsf = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Qtyssss = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.unn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Ratesss = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GST = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Discountsssss = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Amountsss = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.datacgst = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataSGST = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataIGST = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Deletesss = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -752,6 +752,81 @@ namespace CrystalReport.Components
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellEnter);
             this.dataGridView1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dataGridView1_KeyDown);
+            // 
+            // sr
+            // 
+            this.sr.FillWeight = 75.13794F;
+            this.sr.HeaderText = "Sr.No";
+            this.sr.Name = "sr";
+            // 
+            // dsf
+            // 
+            this.dsf.FillWeight = 150.2056F;
+            this.dsf.HeaderText = "Description";
+            this.dsf.Name = "dsf";
+            // 
+            // Qtyssss
+            // 
+            this.Qtyssss.FillWeight = 71.10511F;
+            this.Qtyssss.HeaderText = "Qty";
+            this.Qtyssss.Name = "Qtyssss";
+            // 
+            // unn
+            // 
+            this.unn.HeaderText = "Unit";
+            this.unn.Name = "unn";
+            // 
+            // Ratesss
+            // 
+            this.Ratesss.FillWeight = 110.8285F;
+            this.Ratesss.HeaderText = "Rate";
+            this.Ratesss.Name = "Ratesss";
+            // 
+            // GST
+            // 
+            this.GST.HeaderText = "GST";
+            this.GST.Name = "GST";
+            // 
+            // Discountsssss
+            // 
+            this.Discountsssss.FillWeight = 110.8285F;
+            this.Discountsssss.HeaderText = "Discount";
+            this.Discountsssss.Name = "Discountsssss";
+            // 
+            // Amountsss
+            // 
+            this.Amountsss.FillWeight = 110.8285F;
+            this.Amountsss.HeaderText = "Amount";
+            this.Amountsss.Name = "Amountsss";
+            // 
+            // datacgst
+            // 
+            this.datacgst.HeaderText = "CGST";
+            this.datacgst.Name = "datacgst";
+            this.datacgst.Visible = false;
+            // 
+            // dataSGST
+            // 
+            this.dataSGST.HeaderText = "SGST";
+            this.dataSGST.Name = "dataSGST";
+            this.dataSGST.Visible = false;
+            // 
+            // dataIGST
+            // 
+            this.dataIGST.HeaderText = "IGST";
+            this.dataIGST.Name = "dataIGST";
+            this.dataIGST.Visible = false;
+            // 
+            // Deletesss
+            // 
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.NullValue = "Delete";
+            this.Deletesss.DefaultCellStyle = dataGridViewCellStyle9;
+            this.Deletesss.FillWeight = 71.06599F;
+            this.Deletesss.HeaderText = "Delete";
+            this.Deletesss.Name = "Deletesss";
+            this.Deletesss.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Deletesss.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // panel8
             // 
@@ -1445,13 +1520,12 @@ namespace CrystalReport.Components
             this.comboBox1.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
-            "NON  GST",
+            "NON GST",
             "GST"});
             this.comboBox1.Location = new System.Drawing.Point(500, 27);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(127, 21);
             this.comboBox1.TabIndex = 12;
-            this.comboBox1.Text = "NON GST";
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // label10
@@ -1460,7 +1534,7 @@ namespace CrystalReport.Components
             this.label10.BackColor = System.Drawing.Color.Transparent;
             this.label10.Font = new System.Drawing.Font("Yu Gothic UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.label10.Location = new System.Drawing.Point(501, 6);
+            this.label10.Location = new System.Drawing.Point(500, 6);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(63, 15);
             this.label10.TabIndex = 13;
@@ -1762,81 +1836,6 @@ namespace CrystalReport.Components
             this.dataGridViewImageColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewImageColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.dataGridViewImageColumn1.Width = 85;
-            // 
-            // sr
-            // 
-            this.sr.FillWeight = 75.13794F;
-            this.sr.HeaderText = "Sr.No";
-            this.sr.Name = "sr";
-            // 
-            // dsf
-            // 
-            this.dsf.FillWeight = 150.2056F;
-            this.dsf.HeaderText = "Description";
-            this.dsf.Name = "dsf";
-            // 
-            // Qtyssss
-            // 
-            this.Qtyssss.FillWeight = 71.10511F;
-            this.Qtyssss.HeaderText = "Qty";
-            this.Qtyssss.Name = "Qtyssss";
-            // 
-            // unn
-            // 
-            this.unn.HeaderText = "Unit";
-            this.unn.Name = "unn";
-            // 
-            // Ratesss
-            // 
-            this.Ratesss.FillWeight = 110.8285F;
-            this.Ratesss.HeaderText = "Rate";
-            this.Ratesss.Name = "Ratesss";
-            // 
-            // GST
-            // 
-            this.GST.HeaderText = "GST";
-            this.GST.Name = "GST";
-            // 
-            // Discountsssss
-            // 
-            this.Discountsssss.FillWeight = 110.8285F;
-            this.Discountsssss.HeaderText = "Discount";
-            this.Discountsssss.Name = "Discountsssss";
-            // 
-            // Amountsss
-            // 
-            this.Amountsss.FillWeight = 110.8285F;
-            this.Amountsss.HeaderText = "Amount";
-            this.Amountsss.Name = "Amountsss";
-            // 
-            // datacgst
-            // 
-            this.datacgst.HeaderText = "CGST";
-            this.datacgst.Name = "datacgst";
-            this.datacgst.Visible = false;
-            // 
-            // dataSGST
-            // 
-            this.dataSGST.HeaderText = "SGST";
-            this.dataSGST.Name = "dataSGST";
-            this.dataSGST.Visible = false;
-            // 
-            // dataIGST
-            // 
-            this.dataIGST.HeaderText = "IGST";
-            this.dataIGST.Name = "dataIGST";
-            this.dataIGST.Visible = false;
-            // 
-            // Deletesss
-            // 
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle9.NullValue = "Delete";
-            this.Deletesss.DefaultCellStyle = dataGridViewCellStyle9;
-            this.Deletesss.FillWeight = 71.06599F;
-            this.Deletesss.HeaderText = "Delete";
-            this.Deletesss.Name = "Deletesss";
-            this.Deletesss.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Deletesss.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // Invoice
             // 

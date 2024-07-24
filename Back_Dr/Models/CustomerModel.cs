@@ -13,6 +13,8 @@ namespace Back_Dr.Sale.Models
 	public string cust_phone { get; set; }
         public string pstate { get; set; }
         public string pcity { get; set; }
-}
+
+        public decimal Balance { get; set; }
+    }
 
 }
