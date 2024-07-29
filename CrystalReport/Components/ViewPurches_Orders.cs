@@ -1,4 +1,5 @@
 ﻿using Back_Dr.Sale;
+using Dr.Sale.Components;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,9 +14,17 @@ namespace CrystalReport.Components
 {
     public partial class ViewPurches_Orders : UserControl
     {
+
+
+        public static EventHandler<string> getId;
+        public static EventHandler<bool> isoff;
+
+        private bool isof;
+
         public ViewPurches_Orders()
         {
             InitializeComponent();
+  
         }
 
 
@@ -135,7 +144,23 @@ namespace CrystalReport.Components
                 std.Show();
 
             }
+            else
+            {
+
+
+
+                getId.Invoke(this, StoreRoom.GetData = dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString());
+                isoff.Invoke(this, true);
+                this.FindForm()?.Hide();
+
+
+
 
             }
         }
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+    }
 }

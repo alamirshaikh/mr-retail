@@ -128,3 +128,7 @@ D:\New folder (2)\mr-retail\Back_Dr\obj\Debug\Back_Dr.csproj.CoreCompileInputs.c
 D:\New folder (2)\mr-retail\Back_Dr\obj\Debug\Back_Dr.csproj.CopyComplete
 D:\New folder (2)\mr-retail\Back_Dr\obj\Debug\Back_Dr.dll
 D:\New folder (2)\mr-retail\Back_Dr\obj\Debug\Back_Dr.pdb
+D:\New folder (2)\mr-retail\Back_Dr\bin\Debug\EPPlus.dll
+D:\New folder (2)\mr-retail\Back_Dr\bin\Debug\EPPlus.Interfaces.dll
+D:\New folder (2)\mr-retail\Back_Dr\bin\Debug\EPPlus.System.Drawing.dll
+D:\New folder (2)\mr-retail\Back_Dr\bin\Debug\EPPlus.xml

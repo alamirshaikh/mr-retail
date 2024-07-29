@@ -80,6 +80,7 @@ namespace CrystalReport.Components
             this.comboBox1.Items.AddRange(new object[] {
             "Point of Sale (POS)",
             "Purches Entry",
+            "Print Preview",
             "Purches Order",
             "Purches Retern",
             "Payment Suplier",
@@ -88,16 +89,16 @@ namespace CrystalReport.Components
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(258, 21);
             this.comboBox1.TabIndex = 3;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // comboBox2
             // 
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
-            "Sale Type"});
             this.comboBox2.Location = new System.Drawing.Point(15, 149);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(258, 21);
             this.comboBox2.TabIndex = 5;
+            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
             // label3
             // 
@@ -115,6 +116,7 @@ namespace CrystalReport.Components
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(258, 21);
             this.comboBox3.TabIndex = 7;
+            this.comboBox3.SelectedIndexChanged += new System.EventHandler(this.comboBox3_SelectedIndexChanged);
             // 
             // label4
             // 
@@ -133,6 +135,7 @@ namespace CrystalReport.Components
             this.button1.TabIndex = 8;
             this.button1.Text = "Save";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // panel2
             // 
@@ -156,6 +159,7 @@ namespace CrystalReport.Components
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(545, 301);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panel2);

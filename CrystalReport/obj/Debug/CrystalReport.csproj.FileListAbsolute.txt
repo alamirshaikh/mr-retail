@@ -1452,3 +1452,14 @@ D:\New folder (2)\mr-retail\CrystalReport\obj\Debug\CrystalReport.Components.GST
 D:\New folder (2)\mr-retail\CrystalReport\obj\Debug\CrystalReport.Components.Report_Bill.resources
 D:\New folder (2)\mr-retail\CrystalReport\obj\Debug\CrystalReport.Components.Report_Com.resources
 D:\New folder (2)\mr-retail\CrystalReport\obj\Debug\CrystalReport.Components.Profit.resources
+D:\New folder (2)\mr-retail\CrystalReport\bin\Debug\Thermal.rpt
+D:\New folder (2)\mr-retail\CrystalReport\bin\Debug\Thermal.cs
+D:\New folder (2)\mr-retail\CrystalReport\bin\Debug\EPPlus.dll
+D:\New folder (2)\mr-retail\CrystalReport\bin\Debug\EPPlus.Interfaces.dll
+D:\New folder (2)\mr-retail\CrystalReport\bin\Debug\EPPlus.System.Drawing.dll
+D:\New folder (2)\mr-retail\CrystalReport\bin\Debug\EPPlus.xml
+D:\New folder (2)\mr-retail\CrystalReport\obj\Debug\CrystalReport.Import_Records.resources
+D:\New folder (2)\mr-retail\CrystalReport\bin\Debug\ExcelDataReader.DataSet.dll
+D:\New folder (2)\mr-retail\CrystalReport\bin\Debug\ExcelDataReader.dll
+D:\New folder (2)\mr-retail\CrystalReport\bin\Debug\ExcelDataReader.xml
+D:\New folder (2)\mr-retail\CrystalReport\bin\Debug\ExcelDataReader.DataSet.xml

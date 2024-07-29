@@ -3,16 +3,21 @@ using Back_Dr.Sale;
 using CrystalDecisions.CrystalReports.Engine;
 using CrystalDecisions.ReportAppServer.DataDefModel;
 using CrystalDecisions.Shared;
+using CrystalDecisions.Windows.Forms;
+using CrystalReport.Components;
 using Dr.Sale.Components;
 using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Diagnostics;
 using System.Drawing.Printing;
 using System.IO;
 using System.Linq;
+using System.Web;
 using System.Windows.Forms;
 using ConnectionInfo = CrystalDecisions.Shared.ConnectionInfo;
+ 
 using ParameterField = CrystalDecisions.Shared.ParameterField;
 using Table = CrystalDecisions.CrystalReports.Engine.Table;
 using Tables = CrystalDecisions.CrystalReports.Engine.Tables;
@@ -21,7 +26,7 @@ namespace CrystalReport
 {
     public partial class ReportStd : Form
     {
-        private readonly string inv;
+        public   string inv;
         public string Address { get; set; }
         public string pl = "";
         private string _ar;
@@ -32,7 +37,14 @@ namespace CrystalReport
         private string _total;
         private List<WithoutSaveModels> _models;
         private string path;
+        private string _isInvoie = "no";
         private DataTable table1;
+        private string _i;
+        private string _p;
+        private string tss;
+
+
+       
 
         public ReportStd(string invoice, string place, string areas = "", string citys = "", string credit = "", string from = "", string to = "", string total = "", List<WithoutSaveModels> models = null)
         {
@@ -46,9 +58,10 @@ namespace CrystalReport
             _total = total;
             _models = models;
             InitializeComponent();
+
         }
 
-
+    
         public DataTable GetTable(string sql)
         {
             DataTable table = new DataTable();
@@ -72,7 +85,21 @@ namespace CrystalReport
             return table;
         }
 
-
+        public void OpenUrlInBrowser(string url)
+        {
+            try
+            {
+                Process.Start(new ProcessStartInfo
+                {
+                    FileName = url,
+                    UseShellExecute = true
+                });
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error opening URL: {ex.Message}");
+            }
+        }
 
 
         public void GetLeader(string type)
@@ -84,13 +111,28 @@ namespace CrystalReport
             if (type == "sup")
             {
                 path = Application.StartupPath + "/Ledger.rpt";
+                _isInvoie = "no";
+
+
+               int cust_s = MainEngine_.GetDataScript<int>("select cust_phone from Ledger_Supplier where SupplierID = " + inv + "").FirstOrDefault();
+
+
+                num.Text = MainEngine_.GetDataScript<string>("select partimobile from Parteis where ID = " + cust_s + "").FirstOrDefault();
+
 
             }
             else
             {
                 path = Application.StartupPath + "/CustomerLedger.rpt";
+                _isInvoie = "no";
 
+                int cust_s = MainEngine_.GetDataScript<int>("select cust_phone from Ledger_Supplier where CustomerID = " + inv + "").FirstOrDefault();
+
+
+                num.Text = MainEngine_.GetDataScript<string>("select cust_phone from Customer where id = " + cust_s + "").FirstOrDefault();
             }
+
+
 
 
             report.Load(path);
@@ -682,7 +724,7 @@ namespace CrystalReport
 
             path = Application.StartupPath + "/WithoutSaveBil.rpt";
 
-
+            _isInvoie = "yes";
             report.Load(path);
             // Set database login information for the report
             ConnectionInfo connectionInfo = new ConnectionInfo();
@@ -837,7 +879,7 @@ namespace CrystalReport
 
 
 
-        public void GetReport(string type)
+        public ReportDocument GetReport(string type,string ins="")
         {
 
             ReportDocument report = new ReportDocument();
@@ -847,11 +889,12 @@ namespace CrystalReport
                 //   path = Application.StartupPath + "/NewTirupat.rpt";
 
                 path = Application.StartupPath + $"/{StoreRoom.Template()}.rpt";
-
+                _isInvoie = "yes";
             }
             else
             {
                 path = Application.StartupPath + "/CustomerCreditBill.rpt";
+                _isInvoie = "no";
 
             }
             report.Load(path);
@@ -888,53 +931,122 @@ namespace CrystalReport
             if (type == "test")
             {
 
-                table1 = GetTable("SELECT * FROM SInvoice INNER JOIN Sale_Items ON SInvoice.InvoiceID = Sale_Items.Invoice WHERE SInvoice.InvoiceID = '" + inv + "'; ");
-                string cust_s = MainEngine_.GetDataScript<string>("select cust_name from SInvoice where items='" + inv + "'").FirstOrDefault().ToString();
-                decimal current = MainEngine_.GetDataScript<decimal>("select TotalBill from SInvoice where items = '" + inv + "'").FirstOrDefault();
 
-                IEnumerable<decimal> paids = MainEngine_.GetDataScript<decimal>("select Paid from CustomerTransactions where InvoiceId = '" + inv + "'").ToList();
-                decimal bal = MainEngine_.GetDataScript<decimal>($"SELECT Balance FROM Customer WHERE cust_name = '" + cust_s + "'").FirstOrDefault();
-                decimal paid = paids.Sum();
-
-                bal = Math.Abs(bal);
-
-                ParameterDiscreteValue tdebitval = new ParameterDiscreteValue();
-                ParameterDiscreteValue rcdval = new ParameterDiscreteValue();
-                rcd.ParameterFieldName = "rcd";
-                rcdval.Value = $"₹{paid}";
-                rcd.CurrentValues.Add(rcdval);
-
-
-                tdebit.ParameterFieldName = "blc";// Assuming tdebitval is a Crystal Report field
-
-                if (MainEngine_.GetDataScript<int>("select COUNT(id) from CustomerTransactions where Cust_Name = '" + cust_s + "'").FirstOrDefault() > 0)
+                if (ins!="")
                 {
+                    inv = ins;
 
-                    tdebitval.Value = $"₹{bal}";
 
 
+                    table1 = GetTable("SELECT * FROM SInvoice INNER JOIN Sale_Items ON SInvoice.InvoiceID = Sale_Items.Invoice WHERE SInvoice.InvoiceID = '" + inv + "'; ");
+                    string cust_s = MainEngine_.GetDataScript<string>("select cust_name from SInvoice where items='" + inv + "'").FirstOrDefault().ToString();
+                    decimal current = MainEngine_.GetDataScript<decimal>("select TotalBill from SInvoice where items = '" + inv + "'").FirstOrDefault();
+
+                    IEnumerable<decimal> paids = MainEngine_.GetDataScript<decimal>("select Paid from CustomerTransactions where InvoiceId = '" + inv + "'").ToList();
+
+
+                    num.Text = MainEngine_.GetDataScript<string>("select cust_phone from Customer where cust_name = '"+cust_s+ "'").FirstOrDefault();
+
+                    decimal bal = MainEngine_.GetDataScript<decimal>($"SELECT Balance FROM Customer WHERE cust_name = '" + cust_s + "'").FirstOrDefault();
+                    decimal paid = paids.Sum();
+
+                    bal = Math.Abs(bal);
+
+
+                    ParameterDiscreteValue tdebitval = new ParameterDiscreteValue();
+                    ParameterDiscreteValue rcdval = new ParameterDiscreteValue();
+                    rcd.ParameterFieldName = "rcd";
+                    rcdval.Value = $"₹{paid}";
+                    rcd.CurrentValues.Add(rcdval);
+
+
+                    tdebit.ParameterFieldName = "blc";// Assuming tdebitval is a Crystal Report field
+
+                    if (MainEngine_.GetDataScript<int>("select COUNT(id) from CustomerTransactions where Cust_Name = '" + cust_s + "'").FirstOrDefault() > 0)
+                    {
+
+                        tdebitval.Value = $"₹{bal}";
+
+
+                    }
+                    else
+                    {
+                        tdebitval.Value = $"₹{(current) - paid}";
+
+                    }
+                    tdebit.CurrentValues.Add(tdebitval);
+
+                    ParameterDiscreteValue oldval = new ParameterDiscreteValue();
+                    old.ParameterFieldName = "prc";
+
+
+                    decimal pss = (bal + paid) - current;
+
+
+                    oldval.Value = $"₹{pss}";
+                    old.CurrentValues.Add(oldval);
+
+                    pfield.Add(CreateParameterField("blc", $"₹{bal}"));
+                    pfield.Add(CreateParameterField("rcd", $"₹{paid}"));
+                    pfield.Add(CreateParameterField("prc", $"₹{(bal + paid) - current}"));
                 }
                 else
                 {
-                    tdebitval.Value = $"₹{(current) - paid}";
 
+
+                    table1 = GetTable("SELECT * FROM SInvoice INNER JOIN Sale_Items ON SInvoice.InvoiceID = Sale_Items.Invoice WHERE SInvoice.InvoiceID = '" + inv + "'; ");
+                    string cust_s = MainEngine_.GetDataScript<string>("select cust_name from SInvoice where items='" + inv + "'").FirstOrDefault().ToString();
+                    decimal current = MainEngine_.GetDataScript<decimal>("select TotalBill from SInvoice where items = '" + inv + "'").FirstOrDefault();
+
+                    IEnumerable<decimal> paids = MainEngine_.GetDataScript<decimal>("select Paid from CustomerTransactions where InvoiceId = '" + inv + "'").ToList();
+
+
+                    num.Text = MainEngine_.GetDataScript<string>("select cust_phone from Customer where cust_name = '" + cust_s + "'").FirstOrDefault();
+
+
+                    decimal bal = MainEngine_.GetDataScript<decimal>($"SELECT Balance FROM Customer WHERE cust_name = '" + cust_s + "'").FirstOrDefault();
+                    decimal paid = paids.Sum();
+
+                    bal = Math.Abs(bal);
+
+
+                    ParameterDiscreteValue tdebitval = new ParameterDiscreteValue();
+                    ParameterDiscreteValue rcdval = new ParameterDiscreteValue();
+                    rcd.ParameterFieldName = "rcd";
+                    rcdval.Value = $"₹{paid}";
+                    rcd.CurrentValues.Add(rcdval);
+
+
+                    tdebit.ParameterFieldName = "blc";// Assuming tdebitval is a Crystal Report field
+
+                    if (MainEngine_.GetDataScript<int>("select COUNT(id) from CustomerTransactions where Cust_Name = '" + cust_s + "'").FirstOrDefault() > 0)
+                    {
+
+                        tdebitval.Value = $"₹{bal}";
+
+
+                    }
+                    else
+                    {
+                        tdebitval.Value = $"₹{(current) - paid}";
+
+                    }
+                    tdebit.CurrentValues.Add(tdebitval);
+
+                    ParameterDiscreteValue oldval = new ParameterDiscreteValue();
+                    old.ParameterFieldName = "prc";
+
+
+                    decimal pss = (bal + paid) - current;
+
+
+                    oldval.Value = $"₹{pss}";
+                    old.CurrentValues.Add(oldval);
+
+                    pfield.Add(tdebit);
+                    pfield.Add(old);
+                    pfield.Add(rcd);
                 }
-                tdebit.CurrentValues.Add(tdebitval);
-
-                ParameterDiscreteValue oldval = new ParameterDiscreteValue();
-                old.ParameterFieldName = "prc";
-
-
-                decimal pss = (bal + paid) - current;
-
-
-                oldval.Value = $"₹{pss}";
-                old.CurrentValues.Add(oldval);
-
-                pfield.Add(tdebit);
-                pfield.Add(old);
-                pfield.Add(rcd);
-
 
 
             }
@@ -984,11 +1096,45 @@ namespace CrystalReport
             // Verify the report's database
             report.VerifyDatabase();
 
-            crystalReportViewer1.ParameterFieldInfo = pfield;
 
-            crystalReportViewer1.ReportSource = report;
+            if (!string.IsNullOrEmpty(ins))
+            {
+                CrystalReportViewer crs = new CrystalReportViewer
+                {
+                    ParameterFieldInfo = pfield,
+                    ReportSource = report
+                };
+                // Add the viewer to the form if necessary
+                this.Controls.Add(crs);
+            }
+            else
+            {
+                crystalReportViewer1.ParameterFieldInfo = pfield;
+
+                crystalReportViewer1.ReportSource = report;
+
+            }
+      
 
 
+            return report;
+
+        }
+
+
+
+        private ParameterField CreateParameterField(string name, object value)
+        {
+            ParameterField parameterField = new ParameterField
+            {
+                ParameterFieldName = name
+            };
+            ParameterDiscreteValue discreteValue = new ParameterDiscreteValue
+            {
+                Value = value
+            };
+            parameterField.CurrentValues.Add(discreteValue);
+            return parameterField;
         }
 
 
@@ -996,11 +1142,7 @@ namespace CrystalReport
 
 
 
-
-
-        
-
-  private void GetPurches_Return()
+        private void GetPurches_Return()
         {
             try
             {
@@ -1012,7 +1154,7 @@ namespace CrystalReport
 
                 path = Application.StartupPath + $"/Purches_Return_Report.rpt";
 
-
+                _isInvoie = "no";
                 report.Load(path);
                 // Set database login information for the report
                 ConnectionInfo connectionInfo = new ConnectionInfo();
@@ -1036,6 +1178,12 @@ namespace CrystalReport
 
 
                 table1 = GetTable("SELECT * FROM Purches_Return o INNER JOIN purches_Items_return p ON p.Bill = o.BillID where p.prb_bill = '" + inv + "' ");
+
+                string cust_s = MainEngine_.GetDataScript<string>("select partiname from Purches_Return where items='" + inv + "'").FirstOrDefault();
+
+                num.Text = MainEngine_.GetDataScript<string>("select company from Parties where company = '" + cust_s + "'").FirstOrDefault();
+
+
 
                 report.SetDataSource(table1);
                 //report.SetParameterValue("place",Address);
@@ -1070,7 +1218,7 @@ namespace CrystalReport
 
                 path = Application.StartupPath + $"/Purches_Order_Report.rpt";
 
-
+                _isInvoie = "no";
                 report.Load(path);
                 // Set database login information for the report
                 ConnectionInfo connectionInfo = new ConnectionInfo();
@@ -1094,6 +1242,11 @@ namespace CrystalReport
 
 
                 table1 = GetTable("SELECT * FROM Purches_Order o INNER JOIN purches_Items_orders p ON p.Bill = o.BillID where p.Bill = '" + inv + "' ");
+
+                string cust_s = MainEngine_.GetDataScript<string>("select partiname from Purches_Order where items='" + inv + "'").FirstOrDefault();
+
+                num.Text = MainEngine_.GetDataScript<string>("select company from Parties where company = '" + cust_s + "'").FirstOrDefault();
+
 
                 report.SetDataSource(table1);
                 //report.SetParameterValue("place",Address);
@@ -1129,8 +1282,8 @@ namespace CrystalReport
 
                     path = Application.StartupPath + $"/CUST_RECIPT.rpt";
 
-
-                    report.Load(path);
+                _isInvoie = "no";
+                report.Load(path);
                     // Set database login information for the report
                     ConnectionInfo connectionInfo = new ConnectionInfo();
                     connectionInfo.ServerName = @"mrsales"; // Replace with your server name
@@ -1154,7 +1307,11 @@ namespace CrystalReport
 
                     table1 = GetTable("select * from CustomerTransactions where InvoiceId ='" + inv + "' ");
 
-                    report.SetDataSource(table1);
+                string cust_s = MainEngine_.GetDataScript<string>("select cust_name from SInvoice where items='"+inv+"'").FirstOrDefault();
+
+                num.Text = MainEngine_.GetDataScript<string>("select cust_phone from Customer where cust_name = '" + cust_s + "'").FirstOrDefault();
+
+                report.SetDataSource(table1);
                     //report.SetParameterValue("place",Address);
 
 
@@ -1188,7 +1345,7 @@ namespace CrystalReport
                 //   path = Application.StartupPath + "/NewTirupat.rpt";
 
                 path = Application.StartupPath + $"/Exp_v.rpt";
-
+                _isInvoie = "no";
 
                 report.Load(path);
                 // Set database login information for the report
@@ -1236,7 +1393,90 @@ namespace CrystalReport
 
 
 
+        protected override bool ProcessCmdKey(ref System.Windows.Forms.Message msg, Keys keyData)
+        {
+            if (keyData == Keys.F1)
+            {
 
+                CrystalDecisions.Shared.PaperSize MapPaperSize(string paperSize)
+                {
+                    switch (paperSize)
+                    {
+                        case "PaperA4":
+                            return CrystalDecisions.Shared.PaperSize.PaperA4;
+                        case "PaperLetter":
+                            return CrystalDecisions.Shared.PaperSize.PaperLetter;
+                        case "PaperA5":
+                            return CrystalDecisions.Shared.PaperSize.PaperA5;
+                        case "PaperA3":
+                            return CrystalDecisions.Shared.PaperSize.PaperA3;
+                        case "PaperB5":
+                            return CrystalDecisions.Shared.PaperSize.PaperB5;
+                        case "PaperB4":
+                            return CrystalDecisions.Shared.PaperSize.PaperB4;
+                        // Add other cases as needed
+                        default:
+                            return CrystalDecisions.Shared.PaperSize.DefaultPaperSize; // Default case
+                    }
+                }
+                try
+                {
+                    System.Drawing.Printing.PrinterSettings settings = new System.Drawing.Printing.PrinterSettings();
+                    settings.PrinterName = StoreRoom.Printer_Name();
+
+                    // Set the output file path for the PDF
+                    settings.PrintToFile = true;
+
+                    if (StoreRoom.Printer_Name() == "Microsoft Print to PDF")
+                    {
+
+
+                        settings.PrintFileName = @"C:\Output\Invoice.pdf"; // Replace with your desired path
+                    }
+
+
+
+
+                    if (_isInvoie == "yes")
+                    {
+                        System.Drawing.Printing.PageSettings pagesettings = new System.Drawing.Printing.PageSettings();
+                        GetReport("test").PrintOptions.PrinterName = settings.PrinterName;
+                        GetReport("test").PrintOptions.PaperSize = MapPaperSize($"{StoreRoom.Printer_Size()}");
+
+                        // Print the report
+
+                        GetReport("test").PrintToPrinter(settings, pagesettings, false);
+
+                    }
+                    else
+                    {
+                        ReportDocument anotherReportDocument = (ReportDocument)crystalReportViewer1.ReportSource;
+
+                        anotherReportDocument.PrintOptions.PrinterName = settings.PrinterName;
+                        anotherReportDocument.PrintOptions.PaperSize = CrystalDecisions.Shared.PaperSize.DefaultPaperSize;
+
+                        // Print the report directly from the CrystalReportViewer
+                        crystalReportViewer1.PrintReport();
+                    }
+
+                    // Create and configure page settings
+
+
+
+
+
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+
+                return true; // Indicate that the key press has been handled
+            }
+
+            return base.ProcessCmdKey(ref msg, keyData);
+        }
 
 
 
@@ -1259,6 +1499,7 @@ namespace CrystalReport
                 }
                else if(pl == "wsave")
                 {
+                    _isInvoie = "yes";
 
                     WithoutSave();
 
@@ -1267,6 +1508,7 @@ namespace CrystalReport
 
                 else if(pl == "Cust_Pay")
                 {
+                    _isInvoie = "no";
                     Cust_Payment();
 
                 }
@@ -1274,7 +1516,7 @@ namespace CrystalReport
               else  if(pl== "Purches_Order")
                 {
 
-
+                    _isInvoie = "no";
                     GetPurches_Order();
 
                 }
@@ -1282,27 +1524,32 @@ namespace CrystalReport
 
                 else if(pl == "Purches_Return")
                 {
+                    _isInvoie = "no";
                     GetPurches_Return();
                 }
 
                 else if (pl == "AMIRSHAKH1234")
                 {
+                    _isInvoie = "no";
                     DayBook();
                 }
 
                 else if (pl == "Exp")
                 {
+                    _isInvoie = "no";
                     Exp();
                 }
 
 
                 if (pl == "Stock Report")
                 {
+                    _isInvoie = "no";
                     GetStock();
                 }
 
                 if (pl == "Customer Statment")
                 {
+                    _isInvoie = "no";
                     GetLeader("test");
 
                 }
@@ -1310,6 +1557,7 @@ namespace CrystalReport
 
                 else if (pl == "Invoice")
                 {
+
                     GetRecipt("test");
 
 
@@ -1317,19 +1565,21 @@ namespace CrystalReport
                 else if (pl == "Sales Report")
 
                 {
+                    _isInvoie = "no";
                     GetReports("tst");
                 }
                 else if (pl == "Supplier Ledger")
                 {
+                    _isInvoie = "no";
                     GetLeader("sup");
                 }
 
 
                 else
                 {
-                    Crys crs = new Crys();
-
+                    _isInvoie = "yes";
                     GetReport("test");
+
 
                 }
 
@@ -1345,11 +1595,142 @@ namespace CrystalReport
            
         }
 
+
+
+
+
+        public  void GlobleReport(string invs)
+        {
+
+
+
+            
+
+
+
+
+            CrystalDecisions.Shared.PaperSize MapPaperSize(string paperSize)
+            {
+                switch (paperSize)
+                {
+                    case "PaperA4":
+                        return CrystalDecisions.Shared.PaperSize.PaperA4;
+                    case "PaperLetter":
+                        return CrystalDecisions.Shared.PaperSize.PaperLetter;
+                    case "PaperA5":
+                        return CrystalDecisions.Shared.PaperSize.PaperA5;
+                    case "PaperA3":
+                        return CrystalDecisions.Shared.PaperSize.PaperA3;
+                    case "PaperB5":
+                        return CrystalDecisions.Shared.PaperSize.PaperB5;
+                    case "PaperB4":
+                        return CrystalDecisions.Shared.PaperSize.PaperB4;
+                    // Add other cases as needed
+                    default:
+                        return CrystalDecisions.Shared.PaperSize.DefaultPaperSize; // Default case
+                }
+            }
+           
+                System.Drawing.Printing.PrinterSettings settings = new System.Drawing.Printing.PrinterSettings();
+                settings.PrinterName = StoreRoom.Printer_Name();
+
+                // Set the output file path for the PDF
+                settings.PrintToFile = true;
+
+                if (StoreRoom.Printer_Name() == "Microsoft Print to PDF")
+                {
+
+
+                    settings.PrintFileName = @"C:\Output\Invoice.pdf"; // Replace with your desired path
+                }
+
+
+
+
+                    System.Drawing.Printing.PageSettings pagesettings = new System.Drawing.Printing.PageSettings();
+                    GetReport("test", invs).PrintOptions.PrinterName = settings.PrinterName;
+                    GetReport("test", invs).PrintOptions.PaperSize = MapPaperSize($"{StoreRoom.Printer_Size()}");
+
+                    // Print the report
+
+                    GetReport("test", invs).PrintToPrinter(settings, pagesettings, false);
+
+             
+
+
+            }
+
         private void pictureBox3_Click(object sender, EventArgs e)
         {
+
+            CrystalDecisions.Shared.PaperSize MapPaperSize(string paperSize)
+            {
+                switch (paperSize)
+                {
+                    case "PaperA4":
+                        return CrystalDecisions.Shared.PaperSize.PaperA4;
+                    case "PaperLetter":
+                        return CrystalDecisions.Shared.PaperSize.PaperLetter;
+                    case "PaperA5":
+                        return CrystalDecisions.Shared.PaperSize.PaperA5;
+                    case "PaperA3":
+                        return CrystalDecisions.Shared.PaperSize.PaperA3;
+                    case "PaperB5":
+                        return CrystalDecisions.Shared.PaperSize.PaperB5;
+                    case "PaperB4":
+                        return CrystalDecisions.Shared.PaperSize.PaperB4;
+                    // Add other cases as needed
+                    default:
+                        return CrystalDecisions.Shared.PaperSize.DefaultPaperSize; // Default case
+                }
+            }
             try
             {
-                crystalReportViewer1.PrintReport();
+                System.Drawing.Printing.PrinterSettings settings = new System.Drawing.Printing.PrinterSettings();
+                settings.PrinterName = StoreRoom.Printer_Name();
+
+                // Set the output file path for the PDF
+                settings.PrintToFile = true;
+
+
+                    if(StoreRoom.Printer_Name() == "Microsoft Print to PDF")
+                {
+                    settings.PrintFileName = @"C:\Output\" + inv + ".pdf"; // Replace with your desired path
+
+                }
+
+
+
+
+                if (_isInvoie == "yes")
+                {
+                    System.Drawing.Printing.PageSettings pagesettings = new System.Drawing.Printing.PageSettings();
+                    GetReport("test").PrintOptions.PrinterName = settings.PrinterName;
+                    GetReport("test").PrintOptions.PaperSize = MapPaperSize($"{StoreRoom.Printer_Size()}");
+
+                    // Print the report
+
+                    GetReport("test").PrintToPrinter(settings, pagesettings, false);
+
+                }
+                else
+                {
+                    ReportDocument anotherReportDocument = (ReportDocument)crystalReportViewer1.ReportSource;
+
+                    anotherReportDocument.PrintOptions.PrinterName = settings.PrinterName;
+                    anotherReportDocument.PrintOptions.PaperSize= CrystalDecisions.Shared.PaperSize.DefaultPaperSize;
+
+                    // Print the report directly from the CrystalReportViewer
+                    crystalReportViewer1.PrintReport();
+                }
+
+                // Create and configure page settings
+                
+
+                //redierct whatsapp 
+
+
+
             }
             catch (Exception ex)
             {
@@ -1360,6 +1741,96 @@ namespace CrystalReport
         private void crystalReportViewer1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void ReportStd_KeyPress(object sender, KeyPressEventArgs e)
+        {
+             
+        }
+
+        private void ReportStd_KeyUp(object sender, KeyEventArgs e)
+        {
+           
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+            CrystalDecisions.Shared.PaperSize MapPaperSize(string paperSize)
+            {
+                switch (paperSize)
+                {
+                    case "PaperA4":
+                        return CrystalDecisions.Shared.PaperSize.PaperA4;
+                    case "PaperLetter":
+                        return CrystalDecisions.Shared.PaperSize.PaperLetter;
+                    case "PaperA5":
+                        return CrystalDecisions.Shared.PaperSize.PaperA5;
+                    case "PaperA3":
+                        return CrystalDecisions.Shared.PaperSize.PaperA3;
+                    case "PaperB5":
+                        return CrystalDecisions.Shared.PaperSize.PaperB5;
+                    case "PaperB4":
+                        return CrystalDecisions.Shared.PaperSize.PaperB4;
+                    // Add other cases as needed
+                    default:
+                        return CrystalDecisions.Shared.PaperSize.DefaultPaperSize; // Default case
+                }
+            }
+            try
+            {
+                System.Drawing.Printing.PrinterSettings settings = new System.Drawing.Printing.PrinterSettings();
+                settings.PrinterName = StoreRoom.Printer_Name();
+
+                // Set the output file path for the PDF
+                settings.PrintToFile = true;
+
+
+
+                settings.PrintFileName = @"C:\Output\" + inv + ".pdf"; // Replace with your desired path
+
+
+
+
+                if (_isInvoie == "yes")
+                {
+                    System.Drawing.Printing.PageSettings pagesettings = new System.Drawing.Printing.PageSettings();
+                    GetReport("test").PrintOptions.PrinterName = settings.PrinterName;
+                    GetReport("test").PrintOptions.PaperSize = MapPaperSize($"{StoreRoom.Printer_Size()}");
+
+                    // Print the report
+
+                    GetReport("test").PrintToPrinter(settings, pagesettings, false);
+
+                }
+                else
+                {
+                    ReportDocument anotherReportDocument = (ReportDocument)crystalReportViewer1.ReportSource;
+
+                    anotherReportDocument.PrintOptions.PrinterName = settings.PrinterName;
+                    anotherReportDocument.PrintOptions.PaperSize = CrystalDecisions.Shared.PaperSize.DefaultPaperSize;
+
+                    // Print the report directly from the CrystalReportViewer
+                    crystalReportViewer1.PrintReport();
+                }
+
+                // Create and configure page settings
+
+                string whatsappUrl = $"https://wa.me/{num.Text}?text={HttpUtility.UrlEncode(message.Text)}";
+
+                OpenUrlInBrowser(whatsappUrl);
+                MessageBox.Show("Succefully Send");
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

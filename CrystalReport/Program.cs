@@ -19,7 +19,7 @@ namespace CrystalReport
             Application.SetCompatibleTextRenderingDefault(false);
 
  
-            Application.Run(new LoadPro());
+            Application.Run(new Form1());
  
 
 

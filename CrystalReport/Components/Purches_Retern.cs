@@ -1209,20 +1209,23 @@ namespace CrystalReport.Components
         {
             try
             {
-                // Convert input values, defaulting to 0 if they are null or empty
-                decimal rate = string.IsNullOrEmpty(rete.Text) ? 0 : Convert.ToDecimal(rete.Text);
-                decimal quantity = string.IsNullOrEmpty(textBox3.Text) ? 0 : Convert.ToDecimal(textBox3.Text);
-                decimal gst = string.IsNullOrEmpty(gsttext.Text) ? 0 : Convert.ToDecimal(gsttext.Text);
-                decimal discount = string.IsNullOrEmpty(disc.Text) ? 0 : Convert.ToDecimal(disc.Text);
+                if (textBox3.Text == "")
+                {
+                    textBox3.Text = "1";
+                }
+                v = decimal.Parse(textBox3.Text);
+                v = v * r;
+                amt.Text = v.ToString();
+                decimal discountPercentage = string.IsNullOrEmpty(disc.Text) ? 0m : decimal.Parse(disc.Text);
+                decimal originalAmount = (decimal.Parse(rete.Text) * decimal.Parse(textBox3.Text));
+                originalAmount = originalAmount + (originalAmount * decimal.Parse(gsttext.Text) / 100);
 
-                // Calculate the original amount (rate * quantity)
-                decimal org = rate * quantity;
+                decimal discountedAmount = originalAmount - (discountPercentage / 100m * originalAmount);
 
-                // Calculate the final amount after applying GST and discount
-                decimal finalAmount = org + gst - discount;
+                okdiscount = (discountPercentage / 100m * originalAmount);
 
-                // Set the final amount to amt.Text
-                amt.Text = finalAmount.ToString();
+                amt.Text = discountedAmount.ToString();
+
 
             }
             catch (Exception ex)

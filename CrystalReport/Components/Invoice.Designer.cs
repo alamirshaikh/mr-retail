@@ -29,12 +29,12 @@ namespace CrystalReport.Components
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel3 = new System.Windows.Forms.Panel();
             this.lmg2 = new System.Windows.Forms.Label();
             this.lmg = new System.Windows.Forms.Label();
@@ -74,18 +74,6 @@ namespace CrystalReport.Components
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel7 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new Guna.UI.WinForms.GunaDataGridView();
-            this.sr = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dsf = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Qtyssss = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.unn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Ratesss = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GST = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Discountsssss = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Amountsss = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.datacgst = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataSGST = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataIGST = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Deletesss = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panel8 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.panel10 = new System.Windows.Forms.Panel();
@@ -163,6 +151,23 @@ namespace CrystalReport.Components
             this.gunaButton1 = new Guna.UI.WinForms.GunaButton();
             this.gunaButton2 = new Guna.UI.WinForms.GunaButton();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.rate = new System.Windows.Forms.Label();
+            this.label38 = new System.Windows.Forms.Label();
+            this.comboBox6 = new System.Windows.Forms.ComboBox();
+            this.ids = new System.Windows.Forms.Label();
+            this.sr = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dsf = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Qtyssss = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.unn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Ratesss = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GST = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Discountsssss = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Amountsss = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.datacgst = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataSGST = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataIGST = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dsd = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Deletesss = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -194,6 +199,7 @@ namespace CrystalReport.Components
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.BackColor = System.Drawing.Color.White;
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.rate);
             this.panel3.Controls.Add(this.lmg2);
             this.panel3.Controls.Add(this.lmg);
             this.panel3.Controls.Add(this.msgdate);
@@ -668,8 +674,8 @@ namespace CrystalReport.Components
             // 
             // dataGridView1
             // 
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
-            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -678,14 +684,14 @@ namespace CrystalReport.Components
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 12F);
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 12F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.sr,
             this.dsf,
@@ -698,30 +704,31 @@ namespace CrystalReport.Components
             this.datacgst,
             this.dataSGST,
             this.dataIGST,
+            this.dsd,
             this.Deletesss});
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridView1.EnableHeadersVisualStyles = false;
             this.dataGridView1.GridColor = System.Drawing.Color.Gray;
             this.dataGridView1.Location = new System.Drawing.Point(1, 3);
             this.dataGridView1.Name = "dataGridView1";
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridView1.RowHeadersVisible = false;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
-            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(949, 177);
             this.dataGridView1.TabIndex = 15115555;
@@ -752,81 +759,6 @@ namespace CrystalReport.Components
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellEnter);
             this.dataGridView1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dataGridView1_KeyDown);
-            // 
-            // sr
-            // 
-            this.sr.FillWeight = 75.13794F;
-            this.sr.HeaderText = "Sr.No";
-            this.sr.Name = "sr";
-            // 
-            // dsf
-            // 
-            this.dsf.FillWeight = 150.2056F;
-            this.dsf.HeaderText = "Description";
-            this.dsf.Name = "dsf";
-            // 
-            // Qtyssss
-            // 
-            this.Qtyssss.FillWeight = 71.10511F;
-            this.Qtyssss.HeaderText = "Qty";
-            this.Qtyssss.Name = "Qtyssss";
-            // 
-            // unn
-            // 
-            this.unn.HeaderText = "Unit";
-            this.unn.Name = "unn";
-            // 
-            // Ratesss
-            // 
-            this.Ratesss.FillWeight = 110.8285F;
-            this.Ratesss.HeaderText = "Rate";
-            this.Ratesss.Name = "Ratesss";
-            // 
-            // GST
-            // 
-            this.GST.HeaderText = "GST";
-            this.GST.Name = "GST";
-            // 
-            // Discountsssss
-            // 
-            this.Discountsssss.FillWeight = 110.8285F;
-            this.Discountsssss.HeaderText = "Discount";
-            this.Discountsssss.Name = "Discountsssss";
-            // 
-            // Amountsss
-            // 
-            this.Amountsss.FillWeight = 110.8285F;
-            this.Amountsss.HeaderText = "Amount";
-            this.Amountsss.Name = "Amountsss";
-            // 
-            // datacgst
-            // 
-            this.datacgst.HeaderText = "CGST";
-            this.datacgst.Name = "datacgst";
-            this.datacgst.Visible = false;
-            // 
-            // dataSGST
-            // 
-            this.dataSGST.HeaderText = "SGST";
-            this.dataSGST.Name = "dataSGST";
-            this.dataSGST.Visible = false;
-            // 
-            // dataIGST
-            // 
-            this.dataIGST.HeaderText = "IGST";
-            this.dataIGST.Name = "dataIGST";
-            this.dataIGST.Visible = false;
-            // 
-            // Deletesss
-            // 
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle9.NullValue = "Delete";
-            this.Deletesss.DefaultCellStyle = dataGridViewCellStyle9;
-            this.Deletesss.FillWeight = 71.06599F;
-            this.Deletesss.HeaderText = "Delete";
-            this.Deletesss.Name = "Deletesss";
-            this.Deletesss.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Deletesss.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // panel8
             // 
@@ -1524,7 +1456,7 @@ namespace CrystalReport.Components
             "GST"});
             this.comboBox1.Location = new System.Drawing.Point(500, 27);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(127, 21);
+            this.comboBox1.Size = new System.Drawing.Size(73, 21);
             this.comboBox1.TabIndex = 12;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
@@ -1570,7 +1502,7 @@ namespace CrystalReport.Components
             "Without Save"});
             this.comboBox4.Location = new System.Drawing.Point(500, 73);
             this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(127, 21);
+            this.comboBox4.Size = new System.Drawing.Size(124, 21);
             this.comboBox4.TabIndex = 15;
             // 
             // label34
@@ -1591,6 +1523,9 @@ namespace CrystalReport.Components
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BackColor = System.Drawing.SystemColors.HighlightText;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.ids);
+            this.panel2.Controls.Add(this.label38);
+            this.panel2.Controls.Add(this.comboBox6);
             this.panel2.Controls.Add(this.info);
             this.panel2.Controls.Add(this.state);
             this.panel2.Controls.Add(this.checkBox3);
@@ -1621,7 +1556,7 @@ namespace CrystalReport.Components
             this.info.AutoSize = true;
             this.info.Font = new System.Drawing.Font("Tw Cen MT Condensed Extra Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.info.ForeColor = System.Drawing.Color.Red;
-            this.info.Location = new System.Drawing.Point(576, 5);
+            this.info.Location = new System.Drawing.Point(695, -1);
             this.info.Name = "info";
             this.info.Size = new System.Drawing.Size(60, 18);
             this.info.TabIndex = 12000009;
@@ -1837,6 +1772,130 @@ namespace CrystalReport.Components
             this.dataGridViewImageColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.dataGridViewImageColumn1.Width = 85;
             // 
+            // rate
+            // 
+            this.rate.AutoSize = true;
+            this.rate.Location = new System.Drawing.Point(802, 11);
+            this.rate.Name = "rate";
+            this.rate.Size = new System.Drawing.Size(52, 13);
+            this.rate.TabIndex = 50;
+            this.rate.Text = "rate0.000";
+            this.rate.Visible = false;
+            // 
+            // label38
+            // 
+            this.label38.AutoSize = true;
+            this.label38.BackColor = System.Drawing.Color.Transparent;
+            this.label38.Font = new System.Drawing.Font("Yu Gothic UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label38.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.label38.Location = new System.Drawing.Point(579, 6);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(56, 15);
+            this.label38.TabIndex = 12000011;
+            this.label38.Text = "Tax Type:";
+            // 
+            // comboBox6
+            // 
+            this.comboBox6.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.comboBox6.FormattingEnabled = true;
+            this.comboBox6.Items.AddRange(new object[] {
+            "Inclusive ",
+            "Exclusive "});
+            this.comboBox6.Location = new System.Drawing.Point(579, 27);
+            this.comboBox6.Name = "comboBox6";
+            this.comboBox6.Size = new System.Drawing.Size(73, 21);
+            this.comboBox6.TabIndex = 12000010;
+            // 
+            // ids
+            // 
+            this.ids.AutoSize = true;
+            this.ids.Location = new System.Drawing.Point(641, 55);
+            this.ids.Name = "ids";
+            this.ids.Size = new System.Drawing.Size(41, 13);
+            this.ids.TabIndex = 12000012;
+            this.ids.Text = "label40";
+            this.ids.Visible = false;
+            // 
+            // sr
+            // 
+            this.sr.FillWeight = 75.13794F;
+            this.sr.HeaderText = "Sr.No";
+            this.sr.Name = "sr";
+            // 
+            // dsf
+            // 
+            this.dsf.FillWeight = 150.2056F;
+            this.dsf.HeaderText = "Description";
+            this.dsf.Name = "dsf";
+            // 
+            // Qtyssss
+            // 
+            this.Qtyssss.FillWeight = 71.10511F;
+            this.Qtyssss.HeaderText = "Qty";
+            this.Qtyssss.Name = "Qtyssss";
+            // 
+            // unn
+            // 
+            this.unn.HeaderText = "Unit";
+            this.unn.Name = "unn";
+            // 
+            // Ratesss
+            // 
+            this.Ratesss.FillWeight = 110.8285F;
+            this.Ratesss.HeaderText = "Rate";
+            this.Ratesss.Name = "Ratesss";
+            // 
+            // GST
+            // 
+            this.GST.HeaderText = "GST";
+            this.GST.Name = "GST";
+            // 
+            // Discountsssss
+            // 
+            this.Discountsssss.FillWeight = 110.8285F;
+            this.Discountsssss.HeaderText = "Discount";
+            this.Discountsssss.Name = "Discountsssss";
+            // 
+            // Amountsss
+            // 
+            this.Amountsss.FillWeight = 110.8285F;
+            this.Amountsss.HeaderText = "Amount";
+            this.Amountsss.Name = "Amountsss";
+            // 
+            // datacgst
+            // 
+            this.datacgst.HeaderText = "CGST";
+            this.datacgst.Name = "datacgst";
+            this.datacgst.Visible = false;
+            // 
+            // dataSGST
+            // 
+            this.dataSGST.HeaderText = "SGST";
+            this.dataSGST.Name = "dataSGST";
+            this.dataSGST.Visible = false;
+            // 
+            // dataIGST
+            // 
+            this.dataIGST.HeaderText = "IGST";
+            this.dataIGST.Name = "dataIGST";
+            this.dataIGST.Visible = false;
+            // 
+            // dsd
+            // 
+            this.dsd.HeaderText = "ID";
+            this.dsd.Name = "dsd";
+            // 
+            // Deletesss
+            // 
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.NullValue = "Delete";
+            this.Deletesss.DefaultCellStyle = dataGridViewCellStyle3;
+            this.Deletesss.FillWeight = 71.06599F;
+            this.Deletesss.HeaderText = "Delete";
+            this.Deletesss.Name = "Deletesss";
+            this.Deletesss.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Deletesss.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
             // Invoice
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2026,6 +2085,10 @@ namespace CrystalReport.Components
         private DateTimePicker msgdate;
         private DateTimePicker expdate;
         private CheckBox info;
+        private Label rate;
+        private Label label38;
+        private ComboBox comboBox6;
+        private Label ids;
         private DataGridViewTextBoxColumn sr;
         private DataGridViewTextBoxColumn dsf;
         private DataGridViewTextBoxColumn Qtyssss;
@@ -2037,6 +2100,7 @@ namespace CrystalReport.Components
         private DataGridViewTextBoxColumn datacgst;
         private DataGridViewTextBoxColumn dataSGST;
         private DataGridViewTextBoxColumn dataIGST;
+        private DataGridViewTextBoxColumn dsd;
         private DataGridViewButtonColumn Deletesss;
     }
 }

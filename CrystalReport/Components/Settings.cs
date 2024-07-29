@@ -44,7 +44,8 @@ namespace CrystalReport.Components
                 var dynamicParams = new
                 {
                     PrinterName = printer1.Text,
-                    TemplateName = templates.Text
+                    TemplateName = templates.Text,
+                    Size = size.Text
                 };
 
                 // Assuming MainEngine_.Add<T> method handles execution of stored procedure

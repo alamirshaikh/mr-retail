@@ -550,6 +550,7 @@ namespace CrystalReport.Components
             this.label14.TabIndex = 1;
             this.label14.Text = "Sale Retern";
             this.label14.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.label14.Click += new System.EventHandler(this.label14_Click);
             // 
             // pictureBox14
             // 

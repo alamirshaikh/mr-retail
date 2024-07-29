@@ -164,7 +164,9 @@ namespace CrystalReport.Components
                     UNIT = units.Text,
                     BARCODE = barcode.Text,
                     STOCK = stt.Text,
-                    ID = id.Text
+                    ID = id.Text,
+                    
+      
 
                 };
 
@@ -211,10 +213,24 @@ namespace CrystalReport.Components
                 SALE.Text = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
                 COST.Text = dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString();
                 stt.Text = dataGridView1.Rows[e.RowIndex].Cells[6].Value.ToString();
-                
-            
-              
-               
+
+                colorss.Text = dataGridView1.Rows[e.RowIndex].Cells[10].Value.ToString();
+               sizess.Text = dataGridView1.Rows[e.RowIndex].Cells[11].Value.ToString();
+
+
+
+               cgsts.Text = dataGridView1.Rows[e.RowIndex].Cells[7].Value.ToString();
+                sgstsss.Text = dataGridView1.Rows[e.RowIndex].Cells[8].Value.ToString();
+                igsts.Text = dataGridView1.Rows[e.RowIndex].Cells[9].Value.ToString();
+ 
+
+
+
+
+
+
+
+
 
 
                 index = e.RowIndex;

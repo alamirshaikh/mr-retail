@@ -209,6 +209,17 @@ namespace CrystalReport
             this.label63 = new System.Windows.Forms.Label();
             this.label64 = new System.Windows.Forms.Label();
             this.record_timer = new System.Windows.Forms.Timer(this.components);
+            this.import_panel = new System.Windows.Forms.Panel();
+            this.pictureBox32 = new System.Windows.Forms.PictureBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.pictureBox31 = new System.Windows.Forms.PictureBox();
+            this.panel22 = new System.Windows.Forms.Panel();
+            this.pictureBox37 = new System.Windows.Forms.PictureBox();
+            this.label34 = new System.Windows.Forms.Label();
+            this.pictureBox38 = new System.Windows.Forms.PictureBox();
+            this.label35 = new System.Windows.Forms.Label();
+            this.label36 = new System.Windows.Forms.Label();
+            this.import_timer = new System.Windows.Forms.Timer(this.components);
             this.panel3.SuspendLayout();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
@@ -303,6 +314,12 @@ namespace CrystalReport
             this.panel30.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox63)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox64)).BeginInit();
+            this.import_panel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox32)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox31)).BeginInit();
+            this.panel22.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox37)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox38)).BeginInit();
             this.SuspendLayout();
             // 
             // panel3
@@ -2525,11 +2542,139 @@ namespace CrystalReport
             this.record_timer.Interval = 10;
             this.record_timer.Tick += new System.EventHandler(this.record_timer_Tick);
             // 
+            // import_panel
+            // 
+            this.import_panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(67)))));
+            this.import_panel.Controls.Add(this.pictureBox32);
+            this.import_panel.Controls.Add(this.label5);
+            this.import_panel.Controls.Add(this.pictureBox31);
+            this.import_panel.Controls.Add(this.panel22);
+            this.import_panel.Controls.Add(this.label36);
+            this.import_panel.Location = new System.Drawing.Point(200, 523);
+            this.import_panel.MaximumSize = new System.Drawing.Size(184, 97);
+            this.import_panel.MinimumSize = new System.Drawing.Size(184, 0);
+            this.import_panel.Name = "import_panel";
+            this.import_panel.Size = new System.Drawing.Size(184, 0);
+            this.import_panel.TabIndex = 19;
+            // 
+            // pictureBox32
+            // 
+            this.pictureBox32.Image = global::CrystalReport.Properties.Resources.excell;
+            this.pictureBox32.Location = new System.Drawing.Point(2, 52);
+            this.pictureBox32.Name = "pictureBox32";
+            this.pictureBox32.Size = new System.Drawing.Size(34, 27);
+            this.pictureBox32.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox32.TabIndex = 17;
+            this.pictureBox32.TabStop = false;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label5.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.BlanchedAlmond;
+            this.label5.Location = new System.Drawing.Point(42, 56);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(109, 17);
+            this.label5.TabIndex = 16;
+            this.label5.Text = "Export GST Sales";
+            // 
+            // pictureBox31
+            // 
+            this.pictureBox31.Image = global::CrystalReport.Properties.Resources.excell;
+            this.pictureBox31.Location = new System.Drawing.Point(4, 12);
+            this.pictureBox31.Name = "pictureBox31";
+            this.pictureBox31.Size = new System.Drawing.Size(34, 27);
+            this.pictureBox31.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox31.TabIndex = 15;
+            this.pictureBox31.TabStop = false;
+            // 
+            // panel22
+            // 
+            this.panel22.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(67)))));
+            this.panel22.Controls.Add(this.pictureBox37);
+            this.panel22.Controls.Add(this.label34);
+            this.panel22.Controls.Add(this.pictureBox38);
+            this.panel22.Controls.Add(this.label35);
+            this.panel22.Location = new System.Drawing.Point(0, 0);
+            this.panel22.MaximumSize = new System.Drawing.Size(184, 95);
+            this.panel22.MinimumSize = new System.Drawing.Size(184, 0);
+            this.panel22.Name = "panel22";
+            this.panel22.Size = new System.Drawing.Size(184, 0);
+            this.panel22.TabIndex = 6;
+            // 
+            // pictureBox37
+            // 
+            this.pictureBox37.Image = global::CrystalReport.Properties.Resources.icons8_customer_642;
+            this.pictureBox37.Location = new System.Drawing.Point(3, 42);
+            this.pictureBox37.Name = "pictureBox37";
+            this.pictureBox37.Size = new System.Drawing.Size(41, 31);
+            this.pictureBox37.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox37.TabIndex = 4;
+            this.pictureBox37.TabStop = false;
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.BackColor = System.Drawing.Color.Transparent;
+            this.label34.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label34.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label34.ForeColor = System.Drawing.Color.BlanchedAlmond;
+            this.label34.Location = new System.Drawing.Point(53, 49);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(83, 17);
+            this.label34.TabIndex = 5;
+            this.label34.Text = "Transactions";
+            // 
+            // pictureBox38
+            // 
+            this.pictureBox38.Image = global::CrystalReport.Properties.Resources.icons8_customer_642;
+            this.pictureBox38.Location = new System.Drawing.Point(3, 5);
+            this.pictureBox38.Name = "pictureBox38";
+            this.pictureBox38.Size = new System.Drawing.Size(41, 31);
+            this.pictureBox38.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox38.TabIndex = 3;
+            this.pictureBox38.TabStop = false;
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.BackColor = System.Drawing.Color.Transparent;
+            this.label35.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label35.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label35.ForeColor = System.Drawing.Color.BlanchedAlmond;
+            this.label35.Location = new System.Drawing.Point(51, 12);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(98, 17);
+            this.label35.TabIndex = 3;
+            this.label35.Text = "New Customer";
+            // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.BackColor = System.Drawing.Color.Transparent;
+            this.label36.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label36.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label36.ForeColor = System.Drawing.Color.BlanchedAlmond;
+            this.label36.Location = new System.Drawing.Point(44, 16);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(141, 17);
+            this.label36.TabIndex = 5;
+            this.label36.Text = "Import Product/Items";
+            this.label36.Click += new System.EventHandler(this.label36_Click_1);
+            // 
+            // import_timer
+            // 
+            this.import_timer.Interval = 10;
+            this.import_timer.Tick += new System.EventHandler(this.import_timer_Tick);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1154, 775);
+            this.Controls.Add(this.import_panel);
             this.Controls.Add(this.record_panel);
             this.Controls.Add(this.tran_panel);
             this.Controls.Add(this.master_panel);
@@ -2672,6 +2817,14 @@ namespace CrystalReport
             this.panel30.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox63)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox64)).EndInit();
+            this.import_panel.ResumeLayout(false);
+            this.import_panel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox32)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox31)).EndInit();
+            this.panel22.ResumeLayout(false);
+            this.panel22.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox37)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox38)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2855,5 +3008,16 @@ namespace CrystalReport
         private PictureBox pictureBox70;
         private Label label68;
         private Timer record_timer;
+        private Panel import_panel;
+        private PictureBox pictureBox31;
+        private Panel panel22;
+        private PictureBox pictureBox37;
+        private Label label34;
+        private PictureBox pictureBox38;
+        private Label label35;
+        private Label label36;
+        private PictureBox pictureBox32;
+        private Label label5;
+        private Timer import_timer;
     }
 }

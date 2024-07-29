@@ -35,6 +35,7 @@ namespace CrystalReport.Components
         private decimal Taxes = 0;
         private string temp_cust = "CASH";
         private string temp_invoice;
+        public static event EventHandler<string> IDSupp;
         private decimal senddiscount = 0;
         private bool enterKeyPressed = false;
 
@@ -104,15 +105,19 @@ namespace CrystalReport.Components
                     DataGridViewRow selectedRow = dgview.Rows[e.RowIndex];
 
                     // Access the row's data, for example:
-                    string cellValue1 = selectedRow.Cells[0].Value.ToString(); // Assuming column 1 contains strings
-                    string cellValue2 = selectedRow.Cells[2].Value.ToString(); // Assuming column 3 contains strings
-                    
+                    string cellValue1 = selectedRow.Cells[1].Value.ToString(); // Assuming column 1 contains strings
+                    string cellValue2 = selectedRow.Cells[4].Value.ToString(); // Assuming column 3 contains strings
+
+                    string iddd = selectedRow.Cells[0].Value.ToString(); // Assuming column 3 contains strings
+
+
+                    ids.Text = iddd;
 
                     // Do something with the values or the selected row
                     // Example: Display the values in a message box
                     if (comboBox1.SelectedIndex == 1 || comboBox1.Text == "GST")
                     {
-                        gsttext.Text = selectedRow.Cells[3].Value.ToString();
+                        gsttext.Text = selectedRow.Cells[5].Value.ToString();
 
                     }
                     else
@@ -135,37 +140,68 @@ namespace CrystalReport.Components
                 else
                 {
                     // Retrieve the clicked row
-
                     DataGridViewRow selectedRow = dgview.Rows[e.RowIndex];
 
-                    // Access the row's data, for example:
-                    string cellValue1 = selectedRow.Cells[0].Value.ToString(); // Assuming column 1 contains strings
-                    string cellValue2 = selectedRow.Cells[2].Value.ToString(); // Assuming column 3 contains strings
+                    // Access the row's data
+                    string cellValue1 = selectedRow.Cells[1].Value.ToString(); // Assuming column 1 contains strings
+                    string cellValue2 = selectedRow.Cells[4].Value.ToString(); // Assuming column 3 contains strings
+                   
+                    string units = selectedRow.Cells[2].Value.ToString(); // Assuming column 3 contains strings
 
 
-                    // Do something with the values or the selected row
-                    // Example: Display the values in a message box
+                    string iddd = selectedRow.Cells[0].Value.ToString(); // Assuming column 3 contains strings
+
+
+                    ids.Text = iddd;
+
+                    rate.Text = cellValue2;
+
+                    comboBox5.Text = units;
+
+                    // Initialize variables for tax calculations
+                    decimal baseAmount;
+                    decimal taxAmount;
+                    decimal totalAmount;
+
+                    // Handle GST logic based on ComboBox selection
                     if (comboBox1.SelectedIndex == 1 || comboBox1.Text == "GST")
                     {
-                        gsttext.Text = selectedRow.Cells[3].Value.ToString();
+                        decimal gstRate = Convert.ToDecimal(selectedRow.Cells[5].Value); // GST rate in column 4
+                        gsttext.Text = gstRate.ToString();
 
+                        if (comboBox6.Text ==  "Inclusive ") // Assuming taxTypeComboBox is the control to select tax type
+                        {
+                            // Calculate for inclusive tax
+                            totalAmount = Convert.ToDecimal(cellValue2);
+                            baseAmount = totalAmount / (1 + gstRate / 100);
+                            taxAmount = totalAmount - baseAmount;
+                        }
+                        else
+                        {
+                            // Calculate for exclusive tax
+                            baseAmount = Convert.ToDecimal(cellValue2);
+                            taxAmount = baseAmount * (gstRate / 100);
+                            totalAmount = baseAmount + taxAmount;
+                        }
                     }
                     else
                     {
                         gsttext.Text = "0";
+                        baseAmount = Convert.ToDecimal(cellValue2);
+                        taxAmount = 0;
+                        totalAmount = baseAmount;
                     }
 
-                    desc.Text = cellValue1;
-                    amst = Convert.ToDecimal(cellValue2);
-                    r = Convert.ToDecimal(cellValue2);
-                    rete.Text = Convert.ToString(r);
-                    amt.Text = Convert.ToString(amst);
+                    // Update UI elements with the calculated values
+                     desc.Text = cellValue1;
+                    rete.Text = baseAmount.ToString("F2");
+                    amt.Text = totalAmount.ToString("F2");
 
-                    v = amst;
-                    q.Text = "1";
-                    disc.Text = "0";
-                    desc.Focus();
-                    dgview.Visible = false;
+                    q.Text = "1"; // Default quantity
+                    disc.Text = "0"; // Default discount
+                    desc.Focus(); // Set focus to description
+                    dgview.Visible = false; // Hide the DataGridView
+
                 }
             }
         }
@@ -180,26 +216,26 @@ namespace CrystalReport.Components
             string[] ClSize = ColSize.Split(',');
             string[] ClName = ColName.Split(',');
 
-            // Ensure the DataGridView has the right number of columns
-            if (dgview.Columns.Count < ClName.Length)
+            // Ensure the DataGridView has exactly 6 columns
+            if (dgview.Columns.Count < 6)
             {
-                while (dgview.Columns.Count < ClName.Length)
+                while (dgview.Columns.Count < 6)
                 {
                     dgview.Columns.Add(new DataGridViewTextBoxColumn());
                 }
             }
-            else if (dgview.Columns.Count > ClName.Length)
+            else if (dgview.Columns.Count > 6)
             {
-                while (dgview.Columns.Count > ClName.Length)
+                while (dgview.Columns.Count > 6)
                 {
                     dgview.Columns.RemoveAt(dgview.Columns.Count - 1);
                 }
             }
 
             // Set column sizes
-            for (int i = 0; i < ClSize.Length; i++)
+            for (int i = 0; i < 6; i++)
             {
-                if (int.Parse(ClSize[i]) != 0)
+                if (i < ClSize.Length && int.Parse(ClSize[i]) != 0)
                 {
                     dgview.Columns[i].Width = int.Parse(ClSize[i]);
                 }
@@ -209,10 +245,17 @@ namespace CrystalReport.Components
                 }
             }
 
-            // Set column names
-            for (int i = 0; i < ClName.Length; i++)
+            // Set column names and visibility
+            for (int i = 0; i < 6; i++)
             {
-                this.dgview.Columns[i].HeaderText = ClName[i];
+                if (i < ClName.Length)
+                {
+                    this.dgview.Columns[i].HeaderText = ClName[i];
+                }
+                else
+                {
+                    this.dgview.Columns[i].HeaderText = $"Column {i + 1}";
+                }
                 this.dgview.Columns[i].Visible = true;
             }
         }
@@ -388,7 +431,17 @@ namespace CrystalReport.Components
             }
 
 
-            if(keyData == Keys.F5)
+
+
+
+
+            if (keyData == Keys.F3)
+            {
+                gunaButton3.PerformClick();
+            }
+
+
+            if (keyData == Keys.F5)
             {
                 button1.PerformClick();
 
@@ -398,6 +451,13 @@ namespace CrystalReport.Components
 
             if (keyData == Keys.Enter)
             {
+
+
+                
+               
+             
+
+
                 // Handle the Enter key
                 if (amt.Text != "")
                 {
@@ -407,6 +467,16 @@ namespace CrystalReport.Components
                         button3.PerformClick();
                         return true;
                     }
+
+
+                     
+                   
+                     
+
+                }
+                else if(amt.Text == "")
+                {
+                    comboBox6.Focus();
                 }
 
                 if(dgview.Rows.Count > 0 && dgview.Visible == true)
@@ -415,52 +485,138 @@ namespace CrystalReport.Components
                     if (checkBox1.Checked)
                     {
 
+                        int selectedRow = dgview.SelectedRows[0].Index;
+                        // Retrieve the clicked row
 
-                        desc.Text = dgview.Rows[0].Cells[0].Value.ToString();
-                        amst = Convert.ToDecimal(dgview.Rows[0].Cells[2].Value.ToString());
-                        r = Convert.ToDecimal(dgview.Rows[0].Cells[2].Value.ToString());
-                        rete.Text = Convert.ToString(r);
-                        amt.Text = Convert.ToString(amst);
+
+                        // Access the row's data
+                        string cellValue1 = dgview.Rows[0].Cells[1].Value.ToString(); // Column 1 data
+                        string cellValue2 = dgview.Rows[0].Cells[4].Value.ToString(); // Column 3 data
+                        string iddd = dgview.Rows[0].Cells[0].Value.ToString(); // Column 3 data
+
+                        string units = dgview.Rows[0].Cells[2].Value.ToString(); // Column 3 data
+
+                        ids.Text = iddd;
+                        rate.Text = cellValue2;
+
+
+                        comboBox5.Text = units;
+
+
+                        // Initialize variables for tax calculations
+                        decimal baseAmount;
+                        decimal taxAmount;
+                        decimal totalAmount;
+
+                        // Handle GST logic based on ComboBox selection
                         if (comboBox1.SelectedIndex == 1 || comboBox1.Text == "GST")
                         {
-                            gsttext.Text = Convert.ToString(dgview.Rows[0].Cells[3].Value.ToString());
+                            decimal gstRate = Convert.ToDecimal(dgview.Rows[0].Cells[5].Value); // GST rate in column 4
+                            gsttext.Text = gstRate.ToString();
 
+                            if (comboBox6.Text ==  "Inclusive ") // Assuming taxTypeComboBox is the control to select tax type
+                            {
+                                // Calculate for inclusive tax
+                                totalAmount = Convert.ToDecimal(cellValue2);
+                                baseAmount = totalAmount / (1 + gstRate / 100);
+                                taxAmount = totalAmount - baseAmount;
+                            }
+                            else
+                            {
+                                // Calculate for exclusive tax
+                                baseAmount = Convert.ToDecimal(cellValue2);
+                                taxAmount = baseAmount * (gstRate / 100);
+                                totalAmount = baseAmount + taxAmount;
+                            }
                         }
                         else
                         {
                             gsttext.Text = "0";
+                            baseAmount = Convert.ToDecimal(cellValue2);
+                            taxAmount = 0;
+                            totalAmount = baseAmount;
                         }
-                        v = amst;
 
-                        q.Text = "1";
-                        disc.Text = "0";
+                        // Update UI elements with the calculated values
+                        desc.Text = cellValue1;
+                        rete.Text = baseAmount.ToString("F2");
+                        amt.Text = totalAmount.ToString("F2");
+
+                        q.Text = "1"; // Default quantity
+                        disc.Text = "0"; // Default discount
+                        desc.Focus(); // Set focus to description
+                        dgview.Visible = false; // Hide the DataGridView
+
                     
-                    }
+                }
                     else
                     {
 
-                        int rowindex = dgview.SelectedRows[0].Index;
+                        int selectedRow = dgview.SelectedRows[0].Index;
+                        // Retrieve the clicked row
+             
 
-                        desc.Text = dgview.Rows[rowindex].Cells[0].Value.ToString();
-                        amst = Convert.ToDecimal(dgview.Rows[rowindex].Cells[2].Value.ToString());
-                        r = Convert.ToDecimal(dgview.Rows[rowindex].Cells[2].Value.ToString());
-                        rete.Text = Convert.ToString(r);
-                        amt.Text = Convert.ToString(amst);
+                        // Access the row's data
+  
+
+                        string cellValue1 = dgview.Rows[0].Cells[1].Value.ToString(); // Column 1 data
+                        string cellValue2 = dgview.Rows[0].Cells[4].Value.ToString(); // Column 3 data
+                        string iddd = dgview.Rows[0].Cells[0].Value.ToString(); // Column 3 data
+
+                        string units = dgview.Rows[0].Cells[2].Value.ToString(); // Column 3 data
+
+                        ids.Text = iddd;
+                        rate.Text = cellValue2;
+
+
+                        comboBox5.Text = units;
+                        // Initialize variables for tax calculations
+                        decimal baseAmount;
+                        decimal taxAmount;
+                        decimal totalAmount;
+
+                        // Handle GST logic based on ComboBox selection
                         if (comboBox1.SelectedIndex == 1 || comboBox1.Text == "GST")
                         {
-                            gsttext.Text = Convert.ToString(dgview.Rows[0].Cells[3].Value.ToString());
+                            decimal gstRate = Convert.ToDecimal(dgview.Rows[0].Cells[5].Value); // GST rate in column 4
+                            gsttext.Text = gstRate.ToString();
 
+                            if (comboBox6.Text ==  "Inclusive ") // Assuming taxTypeComboBox is the control to select tax type
+                            {
+                                // Calculate for inclusive tax
+                                totalAmount = Convert.ToDecimal(cellValue2);
+                                baseAmount = totalAmount / (1 + gstRate / 100);
+                                taxAmount = totalAmount - baseAmount;
+                            }
+                            else
+                            {
+                                // Calculate for exclusive tax
+                                baseAmount = Convert.ToDecimal(cellValue2);
+                                taxAmount = baseAmount * (gstRate / 100);
+                                totalAmount = baseAmount + taxAmount;
+                            }
                         }
                         else
                         {
                             gsttext.Text = "0";
+                            baseAmount = Convert.ToDecimal(cellValue2);
+                            taxAmount = 0;
+                            totalAmount = baseAmount;
                         }
-                        v = amst;
 
-                        q.Text = "1";
-                        disc.Text = "0";
+                        // Update UI elements with the calculated values
+                        desc.Text = cellValue1;
+                        rete.Text = baseAmount.ToString("F2");
+                        amt.Text = totalAmount.ToString("F2");
+
+                        q.Text = "1"; // Default quantity
+                        disc.Text = "0"; // Default discount
+                        desc.Focus(); // Set focus to description
+                        dgview.Visible = false; // Hide the DataGridView
 
                     }
+
+                
                 }
 
 
@@ -476,7 +632,7 @@ namespace CrystalReport.Components
                 
                     SendKeys.Send("{TAB}"); // Simulate Tab key press
                  
-                    return true; // Mark the key as handled
+                    return true; // Mark the key as handled 
             }
 
             return base.ProcessCmdKey(ref msg, keyData);
@@ -485,15 +641,15 @@ namespace CrystalReport.Components
 
         private  void Invoice_Load(object sender, EventArgs e)
         {
-         
+            
 
 
             srs = 0;
-            comboBox1.SelectedIndex = 0;
+            comboBox1.Text = StoreRoom.GetSaleType();
             comboBox2.SelectedIndex = 0;
-            comboBox4.SelectedIndex = 0;
+            comboBox4.Text = StoreRoom.GetBillOption();
             List<string> units = Task.Run(() => MainEngine_.GetDataScript<string>("select Unit from Unit")).Result.ToList();
-
+            comboBox6.Text = StoreRoom.Sale_Tax();
 
             // Update the ComboBox on the UI thread
             comboBox5.Items.Clear();
@@ -667,7 +823,7 @@ namespace CrystalReport.Components
 
             dgview.Visible = true;
             dgview.BringToFront();
-            Search(9, 250, 430, 200, "Item Name,Stock,Price,GST", "100,100,100,100");
+            Search(9, 250, 430, 200, "ID,Item Name,Stock,Price,GST", "100,100,100,100,100");
 
 
             using (SqlConnection con = new SqlConnection(MainEngine_.SERVER_PATH))
@@ -694,13 +850,13 @@ namespace CrystalReport.Components
 
             dgview.Visible = true;
             dgview.BringToFront();
-            Search(9, 250, 430, 200, "Item Name,Stock,Price,GST", "100,100,100,100");
+            Search(9, 250, 600, 200, "ID,Item Name,UNIT,Stock,Price,GST", "100,100,100,100,100,100");
 
 
             using (SqlConnection con = new SqlConnection(MainEngine_.SERVER_PATH))
             {
                 con.Open();
-                string query = "SELECT TOP(40) ITEM_NAME, STOCK, SALE_PRICE, GST FROM Product_Item WHERE ITEM_NAME LIKE @SearchTerm + '%'";
+                string query = "SELECT TOP(40) ID,ITEM_NAME,UNIT,STOCK,SALE_PRICE,GST FROM Product_Item WHERE ITEM_NAME LIKE @SearchTerm + '%'";
                 using (SqlCommand cmd = new SqlCommand(query, con))
                 {
                     cmd.Parameters.AddWithValue("@SearchTerm", searchTerm);
@@ -725,7 +881,13 @@ namespace CrystalReport.Components
                     dgview.Rows[n].Cells[1].Value = row[1].ToString(); //stock 1 
                     dgview.Rows[n].Cells[2].Value = row[2].ToString();  // price 2 
                     dgview.Rows[n].Cells[3].Value = row[3].ToString(); // GST column 3
-                   
+                    dgview.Rows[n].Cells[4].Value = row[4].ToString(); // GST column 3
+                    dgview.Rows[n].Cells[5].Value = row[5].ToString(); // GST column 3
+ 
+
+
+
+
                 }
             }
         }
@@ -972,11 +1134,11 @@ namespace CrystalReport.Components
             }
             catch (Exception ex)
             {
-                // MessageBox.Show(ex.Message);
+                 MessageBox.Show(ex.Message);
             }
-            comboBox1.SelectedIndex = 0;
+            comboBox1.Text = StoreRoom.GetSaleType();
             comboBox2.SelectedIndex = 0;
-            comboBox4.SelectedIndex = 0;
+            comboBox4.Text = StoreRoom.GetBillOption();
             Taxes = 0; // Reset taxes
             tax.Text = Taxes.ToString();
         }
@@ -993,8 +1155,22 @@ namespace CrystalReport.Components
 
         private void PrintInvoice()
         {
+            
+            if (StoreRoom.GetPriview() == "YES")
+            {
             ReportStd rp = new ReportStd(temp_invoice, temp_cust);
-            rp.Show();
+
+                rp.Show();
+            }
+            else
+            {
+                ReportStd rp = new ReportStd(temp_invoice, temp_cust);
+ 
+       
+                rp.GlobleReport(temp_invoice);
+                MessageBox.Show("Print Was Send Succesfully!");
+            }
+            
         }
 
         private async void SaveData(string f="")
@@ -1091,17 +1267,18 @@ namespace CrystalReport.Components
                     description = dataGridView1.Rows[i].Cells[1].Value.ToString(),
                     qty = Convert.ToDecimal(dataGridView1.Rows[i].Cells[2].Value.ToString()),
                     per = dataGridView1.Rows[i].Cells[3].Value.ToString(),
-                   
                     rate = Convert.ToDecimal(dataGridView1.Rows[i].Cells[4].Value.ToString()),
                     GST = Convert.ToInt32(dataGridView1.Rows[i].Cells[5].Value.ToString()),
                     discount = Convert.ToDecimal(dataGridView1.Rows[i].Cells[6].Value.ToString()),
                     amount = Convert.ToDecimal(dataGridView1.Rows[i].Cells[7].Value.ToString()),
                     Invoice = invnum.Text,
-                  
+
                     GSTV = ((Convert.ToDecimal(dataGridView1.Rows[i].Cells[2].Value.ToString()) * Convert.ToDecimal(dataGridView1.Rows[i].Cells[4].Value.ToString())) * Convert.ToDecimal(dataGridView1.Rows[i].Cells[5].Value.ToString()) / 100),
                     CGST = Convert.ToDecimal(dataGridView1.Rows[i].Cells[8].Value.ToString()),
                     SGST = Convert.ToDecimal(dataGridView1.Rows[i].Cells[9].Value.ToString()),
                     IGST = Convert.ToDecimal(dataGridView1.Rows[i].Cells[10].Value.ToString()),
+                    ids = ids.Text
+         
                 
 
                 };
@@ -1694,7 +1871,7 @@ namespace CrystalReport.Components
             if (MainEngine_.GetDataScript<dynamic>("select ITEM_NAME from Product_Item where  ITEM_NAME = '" + desc.Text + "'").Count > 0)
             {
                  
-                    MainEngine_.GetDataScript<dynamic>("UPDATE Product_Item SET SALE_PRICE = " + rete.Text + " where ITEM_NAME = '" + desc.Text + "' ");
+                   // MainEngine_.GetDataScript<dynamic>("UPDATE Product_Item SET SALE_PRICE = " + rete.Text + " where ITEM_NAME = '" + desc.Text + "' ");
              
 
                 decimal discountPercentage = string.IsNullOrEmpty(disc.Text) ? 0m : decimal.Parse(disc.Text);
@@ -1728,7 +1905,7 @@ namespace CrystalReport.Components
                          /*   decimal finalAmount = (originalAmount + (originalAmount * Convert.ToDecimal(gsttext.Text)/100))- discount;
                             amt.Text = finalAmount.ToString();*/
 
-                            dataGridView1.Rows.Add(srs, desc.Text, q.Text,comboBox5.Text, rete.Text,gsttext.Text, disc.Text, amt.Text,cgst.Text,sgst.Text,igst.Text);
+                            dataGridView1.Rows.Add(srs, desc.Text, q.Text,comboBox5.Text, rate.Text,gsttext.Text, disc.Text, amt.Text,cgst.Text,sgst.Text,igst.Text,ids.Text);
 
                             TotalQty();
                             ItemsCount();
@@ -1798,7 +1975,7 @@ namespace CrystalReport.Components
                                 amt.Text = finalAmount.ToString();*/
 
 
-                            dataGridView1.Rows.Add(srs, desc.Text, q.Text, comboBox5.Text, rete.Text, gsttext.Text, disc.Text, amt.Text, cgst.Text, sgst.Text, igst.Text);
+                            dataGridView1.Rows.Add(srs, desc.Text, q.Text, comboBox5.Text, rate.Text, gsttext.Text, disc.Text, amt.Text, cgst.Text, sgst.Text, igst.Text, ids.Text);
 
                             TotalQty();
                                 ItemsCount();
@@ -1895,7 +2072,7 @@ namespace CrystalReport.Components
 
                             srs = srs + 1;
 
-                            dataGridView1.Rows.Add(srs, desc.Text, q.Text, comboBox5.Text, rete.Text, gsttext.Text, disc.Text, amt.Text, cgst.Text, sgst.Text, igst.Text);
+                            dataGridView1.Rows.Add(srs, desc.Text, q.Text, comboBox5.Text, rate.Text, gsttext.Text, disc.Text, amt.Text, cgst.Text, sgst.Text, igst.Text, ids.Text);
 
                             TotalQty();
                             ItemsCount();
@@ -1955,7 +2132,7 @@ namespace CrystalReport.Components
                             {
                                 srs = srs + 1;
 
-                                dataGridView1.Rows.Add(srs, desc.Text, q.Text, comboBox5.Text, rete.Text, gsttext.Text, disc.Text, amt.Text, cgst.Text, sgst.Text, igst.Text);
+                                dataGridView1.Rows.Add(srs, desc.Text, q.Text, comboBox5.Text, rate.Text, gsttext.Text, disc.Text, amt.Text, cgst.Text, sgst.Text, igst.Text,ids.Text);
 
                                 TotalQty();
                                 ItemsCount();
@@ -2088,7 +2265,7 @@ namespace CrystalReport.Components
 
                         srs = srs + 1;
 
-                        dataGridView1.Rows.Add(srs, desc.Text, q.Text, comboBox5.Text, rete.Text, gsttext.Text, disc.Text, amt.Text, cgst.Text, sgst.Text, igst.Text);
+                        dataGridView1.Rows.Add(srs, desc.Text, q.Text, comboBox5.Text, rate.Text, gsttext.Text, disc.Text, amt.Text, cgst.Text, sgst.Text, igst.Text,ids.Text);
 
                         TotalQty();
                         ItemsCount();
@@ -2149,7 +2326,7 @@ namespace CrystalReport.Components
                         {
                             srs = srs + 1;
 
-                            dataGridView1.Rows.Add(srs, desc.Text, q.Text,comboBox5.Text, rete.Text, gsttext.Text, disc.Text, amt.Text, cgst.Text, sgst.Text, igst.Text);
+                            dataGridView1.Rows.Add(srs, desc.Text, q.Text,comboBox5.Text, rate.Text, gsttext.Text, disc.Text, amt.Text, cgst.Text, sgst.Text, igst.Text,ids.Text);
 
                             TotalQty();
                             ItemsCount();
@@ -2413,63 +2590,143 @@ namespace CrystalReport.Components
                 if (checkBox1.Checked)
                 {
                     isDownKeyPressed = true;
-
-                    // Navigate and select next row in DataGridView when down arrow is pressed
-                    int currentIndex = dgview.SelectedRows.Count > 0 ? dgview.SelectedRows[0].Index : -1;
-                    int nextIndex = currentIndex + 1;
-
-                    if (nextIndex < dgview.Rows.Count)
+                    if (dgview.Rows.Count > 0)
                     {
-                        //   dgview.ClearSelection(); // Clear previous selection
-                        dgview.Rows[nextIndex].Selected = true;
-                        dgview.FirstDisplayedScrollingRowIndex = nextIndex;
-                        if (dgview.Rows[nextIndex].Cells[0].Value != null)
-                        {
-                            desc.Text = dgview.Rows[nextIndex].Cells[0].Value.ToString();
-                            amst = Convert.ToDecimal(dgview.Rows[nextIndex].Cells[2].Value.ToString());
-                            r = Convert.ToDecimal(dgview.Rows[nextIndex].Cells[2].Value.ToString());
-                            rete.Text = Convert.ToString(r);
-                            amt.Text = Convert.ToString(amst);
-                            if (comboBox1.SelectedIndex == 1 || comboBox1.Text == "GST")
-                            {
-                                gsttext.Text = Convert.ToString(dgview.Rows[nextIndex].Cells[3].Value.ToString());
 
+
+
+                        string units = dgview.Rows[0].Cells[2].Value.ToString();
+
+                        string ratess = dgview.Rows[0].Cells[4].Value.ToString();
+
+                        rate.Text = ratess;
+
+
+
+                        comboBox5.Text = units;
+
+                        // Retrieve and set the data
+                        desc.Text = dgview.Rows[0].Cells[1].Value.ToString();
+                        decimal baseAmount = Convert.ToDecimal(dgview.Rows[0].Cells[4].Value);
+                        string taxType = comboBox1.Text;
+
+                        decimal taxRate = comboBox1.SelectedIndex == 1 || taxType == "GST"
+                            ? Convert.ToDecimal(dgview.Rows[0].Cells[5].Value)
+                            : 0;
+
+                        // Initialize variables for tax calculations
+                        decimal taxAmount;
+                        decimal totalAmount;
+
+                        if (taxRate > 0)
+                        {
+                            if (taxType == "Inclusive ")
+                            {
+                                // Calculate for inclusive tax
+                                totalAmount = baseAmount;
+                                baseAmount = totalAmount / (1 + taxRate / 100);
+                                taxAmount = totalAmount - baseAmount;
                             }
                             else
                             {
-                                gsttext.Text = "0";
+                                // Calculate for exclusive tax
+                                taxAmount = baseAmount * (taxRate / 100);
+                                totalAmount = baseAmount + taxAmount;
                             }
-                            v = amst;
-                            q.Text = "1";
-                            disc.Text = "0";
-                        }
-                    }
-                    else
-                    {
-                        desc.Text = dgview.Rows[0].Cells[0].Value.ToString();
-                        amst = Convert.ToDecimal(dgview.Rows[0].Cells[2].Value.ToString());
-                        r = Convert.ToDecimal(dgview.Rows[0].Cells[2].Value.ToString());
-                        rete.Text = Convert.ToString(r);
-                        amt.Text = Convert.ToString(amst);
-
-                        if (comboBox1.SelectedIndex == 1 || comboBox1.Text == "GST")
-                        {
-                            gsttext.Text = Convert.ToString(dgview.Rows[0].Cells[3].Value.ToString());
-
                         }
                         else
                         {
-                            gsttext.Text = "0";
+                            taxAmount = 0;
+                            totalAmount = baseAmount;
                         }
-                        v = amst;
 
-                        q.Text = "1";
-                        disc.Text = "0";
-                    
-                    
+                        // Update UI elements with the calculated values
+                        rete.Text = baseAmount.ToString("F2");
+                        amt.Text = totalAmount.ToString("F2");
+                        gsttext.Text = taxAmount.ToString("F2");
+
+                        // Set other UI elements
+                        v = baseAmount;
+                        q.Text = "1"; // Default quantity
+                        disc.Text = "0"; // Default discount
+
+
                     }
-                
-            }
+                    else
+                    {
+                        if (dgview.Rows.Count > 0)
+                        {
+
+
+
+                            string units = dgview.Rows[0].Cells[2].Value.ToString();
+
+                            string idss = dgview.Rows[0].Cells[0].Value.ToString();
+
+                            ids.Text = idss;
+
+
+
+                            string ratess = dgview.Rows[0].Cells[4].Value.ToString();
+
+                            rate.Text =  ratess;
+
+
+
+                            comboBox5.Text = units;
+
+                            // Retrieve and set the data
+                            desc.Text = dgview.Rows[0].Cells[1].Value.ToString();
+                            decimal baseAmount = Convert.ToDecimal(dgview.Rows[0].Cells[4].Value);
+                            string taxType = comboBox1.Text;
+
+                            decimal taxRate = comboBox1.SelectedIndex == 1 || taxType == "GST"
+                                ? Convert.ToDecimal(dgview.Rows[0].Cells[5].Value)
+                                : 0;
+
+                            // Initialize variables for tax calculations
+                            decimal taxAmount;
+                            decimal totalAmount;
+
+                            if (taxRate > 0)
+                            {
+                                if (taxType == "Inclusive ")
+                                {
+                                    // Calculate for inclusive tax
+                                    totalAmount = baseAmount;
+                                    baseAmount = totalAmount / (1 + taxRate / 100);
+                                    taxAmount = totalAmount - baseAmount;
+                                }
+                                else
+                                {
+                                    // Calculate for exclusive tax
+                                    taxAmount = baseAmount * (taxRate / 100);
+                                    totalAmount = baseAmount + taxAmount;
+                                }
+                            }
+                            else
+                            {
+                                taxAmount = 0;
+                                totalAmount = baseAmount;
+                            }
+
+                            // Update UI elements with the calculated values
+                            rete.Text = baseAmount.ToString("F2");
+                            amt.Text = totalAmount.ToString("F2");
+                            gsttext.Text = taxAmount.ToString("F2");
+
+                            // Set other UI elements
+                            v = baseAmount;
+                            q.Text = "1"; // Default quantity
+                            disc.Text = "0"; // Default discount
+                            
+                        }
+
+
+
+                    }
+
+                }
                 else
                 {
 

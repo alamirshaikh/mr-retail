@@ -23,8 +23,12 @@ namespace Back_Dr.Models
 		public string UNIT { get; set; }
 		public string BARCODE { get; set; }
 		public string DESCRIPTION { get; set; }
-		public DateTime IDATE { get; set; }
-	 
+		public string IDATE { get; set; }
 
-	}
+        public string Color { get; set; }
+        public string Style { get; set; }
+
+
+
+    }
 }

@@ -1259,6 +1259,14 @@ namespace CrystalReport.Components
 
         private void desc_KeyDown(object sender, KeyEventArgs e)
         {
+
+
+            if (e.KeyCode == Keys.F1)
+            {
+                button2.PerformClick();
+            }
+
+
             if (e.KeyCode == Keys.Down)
             {
 

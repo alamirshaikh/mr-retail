@@ -1,15 +1,20 @@
 ﻿using Back_Dr.Sale;
 using Dapper;
+using OfficeOpenXml;
 using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 
+using ExcelDataReader;
+using System.Windows.Forms;
+using Excel = Microsoft.Office.Interop.Excel;
 namespace Dr.Sale.Components
 {
 
@@ -28,7 +33,47 @@ namespace Dr.Sale.Components
         public static DateTime dateTimePicker2 { get; set; }
 
 
-        public decimal SupplierName { get; set; }
+
+
+
+public static DataTable AddExcel(string file)
+    {
+        DataTable dataTable = new DataTable();
+
+        // Register the necessary encodings
+        //System.Text.Encoding.(System.Text.CodePagesEncodingProvider.Instance);
+
+        try
+        {
+            using (var stream = File.Open(file, FileMode.Open, FileAccess.Read))
+            {
+                using (var reader = ExcelReaderFactory.CreateReader(stream))
+                {
+                    var result = reader.AsDataSet(new ExcelDataSetConfiguration()
+                    {
+                        ConfigureDataTable = (_) => new ExcelDataTableConfiguration()
+                        {
+                            UseHeaderRow = true // Use first row as column names
+                        }
+                    });
+
+                    dataTable = result.Tables[0];
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            // Handle exceptions (e.g., logging)
+            Console.WriteLine($"Error reading Excel file: {ex.Message}");
+        }
+
+        return dataTable;
+    }
+
+
+
+
+    public decimal SupplierName { get; set; }
         
         public static string ShopName { get; set; }
 
@@ -82,10 +127,51 @@ namespace Dr.Sale.Components
             return MainEngine_.GetDataScript<string>("select Printer_Name from Printer_setings").FirstOrDefault();
         }
 
+        public static string Printer_Size()
+        {
+            return MainEngine_.GetDataScript<string>("select size from Printer_setings").FirstOrDefault();
+        }
+
+
+
+        public static string GetSaleType()
+        {
+            return MainEngine_.GetDataScript<string>("select defaults from DefaultGet where Comp = 'POS' AND sub ='Sale Type'").FirstOrDefault();
+        }
+
+
+
+        public static string GetBillOption()
+        {
+            return MainEngine_.GetDataScript<string>("select defaults from DefaultGet where Comp = 'POS' AND sub ='Bill Option'").FirstOrDefault();
+        }
+
+
+
+
+        public static string GetPriview()
+        {
+            return MainEngine_.GetDataScript<string>("select defaults from DefaultGet where Comp = 'POS' AND sub ='PRINTVIEW'").FirstOrDefault();
+        }
+
+
 
         public static string Template()
         {
             return MainEngine_.GetDataScript<string>("select Template_Name from Printer_setings").FirstOrDefault();
+        }
+
+      
+
+
+        public static string Purches_Tax()
+        {
+            return MainEngine_.GetDataScript<string>("select purches_tax from TaxSettings").FirstOrDefault();
+        }
+
+        public static string Sale_Tax()
+        {
+            return MainEngine_.GetDataScript<string>("select sale_tax from TaxSettings").FirstOrDefault();
         }
 
 

@@ -80,7 +80,7 @@ namespace CrystalReport.Components
 
         private void Report_Bill_Load(object sender, EventArgs e)
         {
-            label1.Text = "Report - "+StoreRoom.SendReport;
+            label1.Text = "Report - "+ _sp;
         }
     }
 }

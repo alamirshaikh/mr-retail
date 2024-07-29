@@ -190,10 +190,6 @@ namespace CrystalReport.Components
                         Exp = expdate.Value.ToString("yyyy/MM/dd"),
                         Color = Colors.Text,
                         Size = size.Text,
-
-
-
-
                     };
 
 
@@ -353,9 +349,14 @@ namespace CrystalReport.Components
             };
             file_name.Text = "Wait...";
 
-            await MainEngine_.Add<dynamic>(dynamic,"AddProduct_List");
-            // MessageBox.Show("Record has been successfully Saved","Recrod",MessageBoxButtons.OK,MessageBoxIcon.Information);
-            file_name.Text = "Record has been saved";          
+           DataTable tb =  StoreRoom.AddExcel(filePath);
+
+         MainEngine_.BulkInsertDataTable(tb);
+
+     
+            file_name.Text = "Record has been saved";
+
+            MessageBox.Show("Succefully Products Add!","Product Add?",MessageBoxButtons.OK,MessageBoxIcon.Information);
         }
 
         private void button1_Leave(object sender, EventArgs e)

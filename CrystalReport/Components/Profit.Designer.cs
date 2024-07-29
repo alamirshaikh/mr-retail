@@ -49,14 +49,26 @@ namespace CrystalReport.Components
             this.panel5 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.pr = new System.Windows.Forms.Panel();
+            this.prg = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
+            this.label16 = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
+            this.gst = new System.Windows.Forms.Label();
+            this.prd = new System.Windows.Forms.Label();
+            this.sales = new System.Windows.Forms.Label();
             this.panel9 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
             this.panel10 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
             this.panel11 = new System.Windows.Forms.Panel();
+            this.sake_re_gst = new System.Windows.Forms.Label();
+            this.purches_return = new System.Windows.Forms.Label();
+            this.purches = new System.Windows.Forms.Label();
+            this.sale_return = new System.Windows.Forms.Label();
+            this.salegst = new System.Windows.Forms.Label();
+            this.exp = new System.Windows.Forms.Label();
+            this.sale_discount = new System.Windows.Forms.Label();
             this.panel12 = new System.Windows.Forms.Panel();
             this.label29 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
@@ -66,18 +78,6 @@ namespace CrystalReport.Components
             this.label21 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.sales = new System.Windows.Forms.Label();
-            this.prd = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.prg = new System.Windows.Forms.Label();
-            this.purches = new System.Windows.Forms.Label();
-            this.salegst = new System.Windows.Forms.Label();
-            this.sale_discount = new System.Windows.Forms.Label();
-            this.exp = new System.Windows.Forms.Label();
-            this.sale_return = new System.Windows.Forms.Label();
-            this.purches_return = new System.Windows.Forms.Label();
-            this.sake_re_gst = new System.Windows.Forms.Label();
-            this.gst = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -309,6 +309,17 @@ namespace CrystalReport.Components
             this.pr.Size = new System.Drawing.Size(182, 597);
             this.pr.TabIndex = 28;
             // 
+            // prg
+            // 
+            this.prg.AutoSize = true;
+            this.prg.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.prg.Location = new System.Drawing.Point(8, 176);
+            this.prg.Name = "prg";
+            this.prg.Size = new System.Drawing.Size(16, 18);
+            this.prg.TabIndex = 52;
+            this.prg.Text = "0";
+            this.prg.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
             // panel8
             // 
             this.panel8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -316,6 +327,17 @@ namespace CrystalReport.Components
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(190, 39);
             this.panel8.TabIndex = 33;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.label16.Location = new System.Drawing.Point(8, 147);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(16, 18);
+            this.label16.TabIndex = 52;
+            this.label16.Text = "0";
+            this.label16.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // panel7
             // 
@@ -336,6 +358,39 @@ namespace CrystalReport.Components
             this.label6.TabIndex = 28;
             this.label6.Text = "AMOUNT";
             // 
+            // gst
+            // 
+            this.gst.AutoSize = true;
+            this.gst.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.gst.Location = new System.Drawing.Point(8, 84);
+            this.gst.Name = "gst";
+            this.gst.Size = new System.Drawing.Size(16, 18);
+            this.gst.TabIndex = 52;
+            this.gst.Text = "0";
+            this.gst.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // prd
+            // 
+            this.prd.AutoSize = true;
+            this.prd.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.prd.Location = new System.Drawing.Point(8, 117);
+            this.prd.Name = "prd";
+            this.prd.Size = new System.Drawing.Size(16, 18);
+            this.prd.TabIndex = 52;
+            this.prd.Text = "0";
+            this.prd.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // sales
+            // 
+            this.sales.AutoSize = true;
+            this.sales.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.sales.Location = new System.Drawing.Point(8, 56);
+            this.sales.Name = "sales";
+            this.sales.Size = new System.Drawing.Size(16, 18);
+            this.sales.TabIndex = 52;
+            this.sales.Text = "0";
+            this.sales.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
             // panel9
             // 
             this.panel9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -349,11 +404,11 @@ namespace CrystalReport.Components
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(85, 7);
+            this.label7.Location = new System.Drawing.Point(80, 9);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(73, 18);
+            this.label7.Size = new System.Drawing.Size(110, 18);
             this.label7.TabIndex = 28;
-            this.label7.Text = "ASSETS";
+            this.label7.Text = "LABALITIES";
             // 
             // panel10
             // 
@@ -389,6 +444,83 @@ namespace CrystalReport.Components
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(190, 597);
             this.panel11.TabIndex = 31;
+            // 
+            // sake_re_gst
+            // 
+            this.sake_re_gst.AutoSize = true;
+            this.sake_re_gst.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.sake_re_gst.Location = new System.Drawing.Point(11, 232);
+            this.sake_re_gst.Name = "sake_re_gst";
+            this.sake_re_gst.Size = new System.Drawing.Size(16, 18);
+            this.sake_re_gst.TabIndex = 53;
+            this.sake_re_gst.Text = "0";
+            this.sake_re_gst.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // purches_return
+            // 
+            this.purches_return.AutoSize = true;
+            this.purches_return.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.purches_return.Location = new System.Drawing.Point(11, 203);
+            this.purches_return.Name = "purches_return";
+            this.purches_return.Size = new System.Drawing.Size(16, 18);
+            this.purches_return.TabIndex = 53;
+            this.purches_return.Text = "0";
+            this.purches_return.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // purches
+            // 
+            this.purches.AutoSize = true;
+            this.purches.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.purches.Location = new System.Drawing.Point(11, 57);
+            this.purches.Name = "purches";
+            this.purches.Size = new System.Drawing.Size(16, 18);
+            this.purches.TabIndex = 53;
+            this.purches.Text = "0";
+            this.purches.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // sale_return
+            // 
+            this.sale_return.AutoSize = true;
+            this.sale_return.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.sale_return.Location = new System.Drawing.Point(11, 177);
+            this.sale_return.Name = "sale_return";
+            this.sale_return.Size = new System.Drawing.Size(16, 18);
+            this.sale_return.TabIndex = 53;
+            this.sale_return.Text = "0";
+            this.sale_return.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // salegst
+            // 
+            this.salegst.AutoSize = true;
+            this.salegst.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.salegst.Location = new System.Drawing.Point(11, 85);
+            this.salegst.Name = "salegst";
+            this.salegst.Size = new System.Drawing.Size(16, 18);
+            this.salegst.TabIndex = 53;
+            this.salegst.Text = "0";
+            this.salegst.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // exp
+            // 
+            this.exp.AutoSize = true;
+            this.exp.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.exp.Location = new System.Drawing.Point(11, 148);
+            this.exp.Name = "exp";
+            this.exp.Size = new System.Drawing.Size(16, 18);
+            this.exp.TabIndex = 53;
+            this.exp.Text = "0";
+            this.exp.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // sale_discount
+            // 
+            this.sale_discount.AutoSize = true;
+            this.sale_discount.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.sale_discount.Location = new System.Drawing.Point(11, 115);
+            this.sale_discount.Name = "sale_discount";
+            this.sale_discount.Size = new System.Drawing.Size(16, 18);
+            this.sale_discount.TabIndex = 53;
+            this.sale_discount.Text = "0";
+            this.sale_discount.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // panel12
             // 
@@ -483,138 +615,6 @@ namespace CrystalReport.Components
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(190, 39);
             this.panel2.TabIndex = 32;
-            // 
-            // sales
-            // 
-            this.sales.AutoSize = true;
-            this.sales.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.sales.Location = new System.Drawing.Point(8, 56);
-            this.sales.Name = "sales";
-            this.sales.Size = new System.Drawing.Size(16, 18);
-            this.sales.TabIndex = 52;
-            this.sales.Text = "0";
-            this.sales.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            // 
-            // prd
-            // 
-            this.prd.AutoSize = true;
-            this.prd.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.prd.Location = new System.Drawing.Point(8, 117);
-            this.prd.Name = "prd";
-            this.prd.Size = new System.Drawing.Size(16, 18);
-            this.prd.TabIndex = 52;
-            this.prd.Text = "0";
-            this.prd.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.label16.Location = new System.Drawing.Point(8, 147);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(16, 18);
-            this.label16.TabIndex = 52;
-            this.label16.Text = "0";
-            this.label16.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            // 
-            // prg
-            // 
-            this.prg.AutoSize = true;
-            this.prg.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.prg.Location = new System.Drawing.Point(8, 176);
-            this.prg.Name = "prg";
-            this.prg.Size = new System.Drawing.Size(16, 18);
-            this.prg.TabIndex = 52;
-            this.prg.Text = "0";
-            this.prg.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            // 
-            // purches
-            // 
-            this.purches.AutoSize = true;
-            this.purches.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.purches.Location = new System.Drawing.Point(11, 57);
-            this.purches.Name = "purches";
-            this.purches.Size = new System.Drawing.Size(16, 18);
-            this.purches.TabIndex = 53;
-            this.purches.Text = "0";
-            this.purches.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            // 
-            // salegst
-            // 
-            this.salegst.AutoSize = true;
-            this.salegst.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.salegst.Location = new System.Drawing.Point(11, 85);
-            this.salegst.Name = "salegst";
-            this.salegst.Size = new System.Drawing.Size(16, 18);
-            this.salegst.TabIndex = 53;
-            this.salegst.Text = "0";
-            this.salegst.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            // 
-            // sale_discount
-            // 
-            this.sale_discount.AutoSize = true;
-            this.sale_discount.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.sale_discount.Location = new System.Drawing.Point(11, 115);
-            this.sale_discount.Name = "sale_discount";
-            this.sale_discount.Size = new System.Drawing.Size(16, 18);
-            this.sale_discount.TabIndex = 53;
-            this.sale_discount.Text = "0";
-            this.sale_discount.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            // 
-            // exp
-            // 
-            this.exp.AutoSize = true;
-            this.exp.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.exp.Location = new System.Drawing.Point(11, 148);
-            this.exp.Name = "exp";
-            this.exp.Size = new System.Drawing.Size(16, 18);
-            this.exp.TabIndex = 53;
-            this.exp.Text = "0";
-            this.exp.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            // 
-            // sale_return
-            // 
-            this.sale_return.AutoSize = true;
-            this.sale_return.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.sale_return.Location = new System.Drawing.Point(11, 177);
-            this.sale_return.Name = "sale_return";
-            this.sale_return.Size = new System.Drawing.Size(16, 18);
-            this.sale_return.TabIndex = 53;
-            this.sale_return.Text = "0";
-            this.sale_return.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            // 
-            // purches_return
-            // 
-            this.purches_return.AutoSize = true;
-            this.purches_return.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.purches_return.Location = new System.Drawing.Point(11, 203);
-            this.purches_return.Name = "purches_return";
-            this.purches_return.Size = new System.Drawing.Size(16, 18);
-            this.purches_return.TabIndex = 53;
-            this.purches_return.Text = "0";
-            this.purches_return.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            // 
-            // sake_re_gst
-            // 
-            this.sake_re_gst.AutoSize = true;
-            this.sake_re_gst.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.sake_re_gst.Location = new System.Drawing.Point(11, 232);
-            this.sake_re_gst.Name = "sake_re_gst";
-            this.sake_re_gst.Size = new System.Drawing.Size(16, 18);
-            this.sake_re_gst.TabIndex = 53;
-            this.sake_re_gst.Text = "0";
-            this.sake_re_gst.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            // 
-            // gst
-            // 
-            this.gst.AutoSize = true;
-            this.gst.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.gst.Location = new System.Drawing.Point(8, 84);
-            this.gst.Name = "gst";
-            this.gst.Size = new System.Drawing.Size(16, 18);
-            this.gst.TabIndex = 52;
-            this.gst.Text = "0";
-            this.gst.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // Profit
             // 

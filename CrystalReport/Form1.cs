@@ -1,4 +1,5 @@
 using System;
+using System.Data;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.Threading.Tasks;
@@ -736,7 +737,8 @@ namespace CrystalReport
             isExpandingR = false;
             report_timer.Start();
             isExpandingSe = false;
-
+            isExpandingI = false;
+            import_timer.Start();
             isExpandingRe = false;
             record_timer.Start();
 
@@ -1005,8 +1007,8 @@ namespace CrystalReport
         private void panel14_MouseEnter(object sender, EventArgs e)
         {
             panel14.BackColor = Color.Chocolate;
-       
-            OffOpen();
+            Import_StartExpanding();
+            
 
         }
 
@@ -1249,7 +1251,7 @@ namespace CrystalReport
 
         private void label3_Click_2(object sender, EventArgs e)
         {
-
+            import_timer.Start();
         }
 
         private void panel16_Paint(object sender, PaintEventArgs e)
@@ -1308,13 +1310,14 @@ namespace CrystalReport
         private bool isExpandingSe = true; // Flag to indicate if the panel is expanding
         private bool isExpandingT = true;
         private bool isExpandingRe = true;
+        private bool isExpandingI = true;
 
         private void customer_t_Tick(object sender, EventArgs e)
         {
             try
             {
                 int targetHeight = 85; // Target height for expanding the panel
-                int step = 10;
+                int step = 50;
                 // Amount to increase or decrease the height by each tick
 
                 if (isExpanding)
@@ -1330,7 +1333,8 @@ namespace CrystalReport
                     isExpandingR = false;
                     report_timer.Start();
                     isExpandingSe = false;
-
+                    isExpandingI = false;
+                    import_timer.Start();
                     setting_timer.Start();
                     isExpandingT = false;
                     tran_timer.Start();
@@ -1395,6 +1399,14 @@ namespace CrystalReport
             supplier_timer.Start();
         }
 
+
+
+
+        private void Import_StartExpanding()
+        {
+            isExpandingI = true;
+            import_timer.Start();
+        }
 
 
         private void Master_StartExpanding()
@@ -1483,8 +1495,8 @@ namespace CrystalReport
         private void label3_MouseEnter(object sender, EventArgs e)
         {
             panel14.BackColor = Color.Chocolate;
-
-            OffOpen();
+            Import_StartExpanding();
+         
         }
 
         private void label17_MouseHover(object sender, EventArgs e)
@@ -1506,7 +1518,7 @@ namespace CrystalReport
             try
             {
                 int targetHeight = 120; // Target height for expanding the panel
-                int step = 10;         // Amount to increase or decrease the height by each tick
+                int step = 50;         // Amount to increase or decrease the height by each tick
 
                 if (isExpandingP)
                 {
@@ -1523,6 +1535,8 @@ namespace CrystalReport
                     isExpandingR = false;
                     report_timer.Start();
                     isExpandingSe = false;
+                    isExpandingI = false;
+                    import_timer.Start();
                     setting_timer.Start();
                     if (purches_panel.Height < targetHeight)
                     {
@@ -1613,7 +1627,7 @@ namespace CrystalReport
             try
             {
                 int targetHeight = 81; // Target height for expanding the panel
-                int step = 10;         // Amount to increase or decrease the height by each tick
+                int step = 50;         // Amount to increase or decrease the height by each tick
 
                 if (isExpandingS)
                 {
@@ -1628,6 +1642,8 @@ namespace CrystalReport
                     record_timer.Start();
                     master_timer.Start();
                     isExpandingR = false;
+                    isExpandingI = false;
+                    import_timer.Start();
                     report_timer.Start();
                     isExpandingSe = false;
                     setting_timer.Start();
@@ -1682,7 +1698,7 @@ namespace CrystalReport
             try
             {
                 int targetHeight = 215; // Target height for expanding the panel
-                int step = 10;         // Amount to increase or decrease the height by each tick
+                int step = 50;         // Amount to increase or decrease the height by each tick
 
                 if (isExpandingR)
                 {
@@ -1698,6 +1714,8 @@ namespace CrystalReport
                     supplier_timer.Start();
                     isExpandingSe = false;
                     setting_timer.Start();
+                    isExpandingI = false;
+                    import_timer.Start();
                     if (bill_panel.Height < targetHeight)
                     {
                         // Expand the panel
@@ -1749,7 +1767,7 @@ namespace CrystalReport
             try
             {
                 int targetHeight = 300; // Target height for expanding the panel
-                int step = 10;         // Amount to increase or decrease the height by each tick
+                int step = 50;         // Amount to increase or decrease the height by each tick
 
                 if (isExpandingM)
                 {
@@ -1765,6 +1783,8 @@ namespace CrystalReport
                     isExpandingR = false;
                     report_timer.Start();
                     isExpandingS = false;
+                    isExpandingI = false;
+                    import_timer.Start();
                     supplier_timer.Start();
                     isExpandingSe = false;
                     setting_timer.Start();
@@ -1821,7 +1841,7 @@ namespace CrystalReport
             try
             {
                 int targetHeight = 240; // Target height for expanding the panel
-                int step = 10;         // Amount to increase or decrease the height by each tick
+                int step = 50;         // Amount to increase or decrease the height by each tick
 
                 if (isExpandingT)
                 {
@@ -1835,6 +1855,8 @@ namespace CrystalReport
                     isExpandingP = false;
                     purches_timer.Start();
                     isExpandingR = false;
+                    isExpandingI = false;
+                    import_timer.Start();
                     report_timer.Start();
                     isExpandingS = false;
                     supplier_timer.Start();
@@ -2094,7 +2116,7 @@ namespace CrystalReport
             try
             {
                 int targetHeight = 240; // Target height for expanding the panel
-                int step = 10;         // Amount to increase or decrease the height by each tick
+                int step = 50;         // Amount to increase or decrease the height by each tick
 
                 if (isExpandingRe)
                 {
@@ -2102,6 +2124,8 @@ namespace CrystalReport
                     customer_t.Start();
                     isExpandingT = false;
                     tran_timer.Start();
+                    isExpandingI = false;
+                    import_timer.Start();
 
                     isExpandingM = false;
                     master_timer.Start();
@@ -2503,6 +2527,85 @@ namespace CrystalReport
             catch (Exception ex)
             {
 
+            }
+        }
+
+        private void import_timer_Tick(object sender, EventArgs e)
+        {
+            try
+            {
+                int targetHeight = 97; // Target height for expanding the panel
+                int step = 50;         // Amount to increase or decrease the height by each tick
+
+                if (isExpandingI)
+                {
+                    isExpanding = false;
+                    customer_t.Start();
+                    isExpandingT = false;
+                    tran_timer.Start();
+
+                    isExpandingRe = false;
+                    record_timer.Start();
+                    isExpandingM = false;
+                    master_timer.Start();
+
+                    isExpandingP = false;
+                    purches_timer.Start();
+                    isExpandingR = false;
+                    report_timer.Start();
+                    isExpandingS = false;
+                    supplier_timer.Start();
+                    isExpandingSe = false;
+                    setting_timer.Start();
+                    if (tran_panel.Height < targetHeight)
+                    {
+                        // Expand the panel
+                        import_panel.Height += step;
+
+                        // Ensure the panel does not exceed the target height
+                        if (import_panel.Height >= targetHeight)
+                        {
+                            import_panel.Height = targetHeight; // Set exact target height
+                            import_timer.Stop(); // Stop the timer once the target height is reached
+                        }
+                    }
+                }
+                else
+                {
+                    if (import_panel.Height >= 0)
+                    {
+                        // Collapse the panel
+                        import_panel.Height -= step;
+
+                        // Ensure the panel does not go below zero
+                        if (import_panel.Height <= 0)
+                        {
+                            import_panel.Height = 0; // Set exact zero height
+                            import_timer.Stop(); // Stop the timer once the panel is fully collapsed
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                // Log the exception message or handle it accordingly
+                MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void label36_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+               
+                Import_Records records = new Import_Records(null);
+                records.Show();
+                OffOpen();
+
+            }
+            catch (Exception ex)
+            {
+                 
             }
         }
     }
