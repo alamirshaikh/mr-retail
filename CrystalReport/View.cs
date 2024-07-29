@@ -133,6 +133,15 @@ namespace CrystalReport
 
                 }
 
+
+                else if (getForm == "CostomerList")
+                {
+                    panel1.Controls.Clear();
+                    CostomerList item = new CostomerList("JUSR");
+                    item.Dock = DockStyle.Fill;
+                    panel1.Controls.Add(item);
+
+                }
  
             }
             catch (Exception ex)

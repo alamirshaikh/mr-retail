@@ -1206,6 +1206,102 @@ namespace CrystalReport
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+        private void GetSale_Return()
+        {
+            try
+            {
+
+
+                ReportDocument report = new ReportDocument();
+
+                //   path = Application.StartupPath + "/NewTirupat.rpt";
+
+                path = Application.StartupPath + $"/Sale_Retern_Report.rpt";
+
+                _isInvoie = "no";
+                report.Load(path);
+                // Set database login information for the report
+                ConnectionInfo connectionInfo = new ConnectionInfo();
+                connectionInfo.ServerName = @"mrsales"; // Replace with your server name
+                connectionInfo.DatabaseName = "drsale";
+                connectionInfo.UserID = "mrsales"; // Replace with your database username
+                connectionInfo.Password = "mrsale@123"; // Replace with your database password
+
+
+                Tables tables = report.Database.Tables;
+                foreach (Table table in tables)
+                {
+                    TableLogOnInfo tableLogOnInfo = table.LogOnInfo;
+                    tableLogOnInfo.ConnectionInfo = connectionInfo;
+                    table.ApplyLogOnInfo(tableLogOnInfo);
+                }
+
+
+
+
+
+
+                table1 = GetTable("SELECT * FROM Sale_Return o INNER JOIN Sale_Items_return p ON p.Bill = o.BillID where p.prb_bill = '" + inv + "' ");
+
+                string cust_s = MainEngine_.GetDataScript<string>("select partiname from Sale_Return where items='" + inv + "'").FirstOrDefault();
+ 
+
+                report.SetDataSource(table1);
+                //report.SetParameterValue("place",Address);
+
+
+                // Verify the report's database
+                report.VerifyDatabase();
+
+                crystalReportViewer1.ReportSource = report;
+
+            }
+            catch (Exception ex)
+            {
+
+
+
+            }
+
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         private void GetPurches_Order()
         {
             try
@@ -1532,6 +1628,13 @@ namespace CrystalReport
                 {
                     _isInvoie = "no";
                     DayBook();
+                }
+
+                else if(pl == "Sale_Return")
+                {
+                    _isInvoie = "no";
+                    GetSale_Return();
+
                 }
 
                 else if (pl == "Exp")

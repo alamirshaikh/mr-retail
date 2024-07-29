@@ -498,6 +498,12 @@
     <Compile Include="Components\Profit.Designer.cs">
       <DependentUpon>Profit.cs</DependentUpon>
     </Compile>
+    <Compile Include="Components\Sale_Retern.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Components\Sale_Retern.Designer.cs">
+      <DependentUpon>Sale_Retern.cs</DependentUpon>
+    </Compile>
     <Compile Include="Components\Purches_Retern.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -774,6 +780,13 @@
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="Sale_Retern_Report.cs">
+      <DependentUpon>Sale_Retern_Report.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Purches_Return_Report.cs">
       <DependentUpon>Purches_Return_Report.rpt</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -928,6 +941,9 @@
     <EmbeddedResource Include="Components\Profit.resx">
       <DependentUpon>Profit.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Components\Sale_Retern.resx">
+      <DependentUpon>Sale_Retern.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Components\Purches_Retern.resx">
       <DependentUpon>Purches_Retern.cs</DependentUpon>
     </EmbeddedResource>
@@ -1070,6 +1086,11 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sale_Retern_Report.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Sale_Retern_Report.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="Purches_Return_Report.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

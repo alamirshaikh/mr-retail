@@ -1463,3 +1463,6 @@ D:\New folder (2)\mr-retail\CrystalReport\bin\Debug\ExcelDataReader.DataSet.dll
 D:\New folder (2)\mr-retail\CrystalReport\bin\Debug\ExcelDataReader.dll
 D:\New folder (2)\mr-retail\CrystalReport\bin\Debug\ExcelDataReader.xml
 D:\New folder (2)\mr-retail\CrystalReport\bin\Debug\ExcelDataReader.DataSet.xml
+D:\New folder (2)\mr-retail\CrystalReport\obj\Debug\CrystalReport.Components.Sale_Retern.resources
+D:\New folder (2)\mr-retail\CrystalReport\bin\Debug\Sale_Retern_Report.rpt
+D:\New folder (2)\mr-retail\CrystalReport\bin\Debug\Sale_Retern_Report.cs

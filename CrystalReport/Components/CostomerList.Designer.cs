@@ -129,7 +129,7 @@ namespace CrystalReport.Components
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
             this.data.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.data.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.data.Size = new System.Drawing.Size(928, 629);
+            this.data.Size = new System.Drawing.Size(949, 629);
             this.data.TabIndex = 20;
             this.data.Theme = Guna.UI.WinForms.GunaDataGridViewPresetThemes.Turquoise;
             this.data.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;

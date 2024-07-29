@@ -34,7 +34,7 @@ namespace CrystalReport.Components
         private async void LoadInitialData()
         {
             // Fetch initial set of data
-            fetchedData = await Task.Run(() => MainEngine_.GetDataScript<dynamic>("select * from Purches_Order"));
+            fetchedData = await Task.Run(() => MainEngine_.GetDataScript<dynamic>("select * from Purches_Order order by id desc"));
 
             // Show the initial set of records in the DataGridView
             DisplayRecords(0, 100); // Display the first 100 records as an example

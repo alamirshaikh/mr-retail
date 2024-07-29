@@ -101,19 +101,6 @@ namespace CrystalReport.Components
             this.q = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.dataGridView1 = new Guna.UI.WinForms.GunaDataGridView();
-            this.sr = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hhhds = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dsf = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Qtyssss = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.per = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Ratesss = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CGSTS = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ssss = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IGSTSSS = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Discountsssss = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Amountsss = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IDs = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Deletesss = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panel9 = new System.Windows.Forms.Panel();
             this.items = new System.Windows.Forms.TextBox();
             this.panel11 = new System.Windows.Forms.Panel();
@@ -153,6 +140,25 @@ namespace CrystalReport.Components
             this.panel23 = new System.Windows.Forms.Panel();
             this.label31 = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
+            this.sale = new System.Windows.Forms.TextBox();
+            this.label33 = new System.Windows.Forms.Label();
+            this.label34 = new System.Windows.Forms.Label();
+            this.mrp = new System.Windows.Forms.TextBox();
+            this.sr = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hhhds = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dsf = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Qtyssss = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.per = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Ratesss = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CGSTS = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ssss = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IGSTSSS = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Discountsssss = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Amountsss = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IDs = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sale_rate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MRPPP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Deletesss = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel2.SuspendLayout();
@@ -620,6 +626,10 @@ namespace CrystalReport.Components
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.BackColor = System.Drawing.Color.White;
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.mrp);
+            this.panel3.Controls.Add(this.label34);
+            this.panel3.Controls.Add(this.label33);
+            this.panel3.Controls.Add(this.sale);
             this.panel3.Controls.Add(this.stock);
             this.panel3.Controls.Add(this.label24);
             this.panel3.Controls.Add(this.label32);
@@ -708,7 +718,7 @@ namespace CrystalReport.Components
             this.label37.AutoSize = true;
             this.label37.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.label37.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.label37.Location = new System.Drawing.Point(281, 65);
+            this.label37.Location = new System.Drawing.Point(273, 65);
             this.label37.Name = "label37";
             this.label37.Size = new System.Drawing.Size(43, 15);
             this.label37.TabIndex = 35;
@@ -719,7 +729,7 @@ namespace CrystalReport.Components
             // 
             this.igst.BackColor = System.Drawing.Color.Yellow;
             this.igst.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.igst.Location = new System.Drawing.Point(333, 60);
+            this.igst.Location = new System.Drawing.Point(325, 60);
             this.igst.Name = "igst";
             this.igst.Size = new System.Drawing.Size(78, 23);
             this.igst.TabIndex = 34;
@@ -731,7 +741,7 @@ namespace CrystalReport.Components
             this.label36.AutoSize = true;
             this.label36.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.label36.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.label36.Location = new System.Drawing.Point(144, 64);
+            this.label36.Location = new System.Drawing.Point(136, 64);
             this.label36.Name = "label36";
             this.label36.Size = new System.Drawing.Size(48, 15);
             this.label36.TabIndex = 33;
@@ -742,7 +752,7 @@ namespace CrystalReport.Components
             // 
             this.cgst.BackColor = System.Drawing.Color.Yellow;
             this.cgst.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.cgst.Location = new System.Drawing.Point(197, 60);
+            this.cgst.Location = new System.Drawing.Point(189, 60);
             this.cgst.Name = "cgst";
             this.cgst.Size = new System.Drawing.Size(78, 23);
             this.cgst.TabIndex = 32;
@@ -754,7 +764,7 @@ namespace CrystalReport.Components
             this.label35.AutoSize = true;
             this.label35.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.label35.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.label35.Location = new System.Drawing.Point(10, 63);
+            this.label35.Location = new System.Drawing.Point(2, 63);
             this.label35.Name = "label35";
             this.label35.Size = new System.Drawing.Size(46, 15);
             this.label35.TabIndex = 31;
@@ -765,7 +775,7 @@ namespace CrystalReport.Components
             // 
             this.sgst.BackColor = System.Drawing.Color.Yellow;
             this.sgst.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.sgst.Location = new System.Drawing.Point(59, 59);
+            this.sgst.Location = new System.Drawing.Point(51, 59);
             this.sgst.Name = "sgst";
             this.sgst.Size = new System.Drawing.Size(78, 23);
             this.sgst.TabIndex = 30;
@@ -857,7 +867,7 @@ namespace CrystalReport.Components
             this.button3.BackgroundImage = global::CrystalReport.Properties.Resources.add;
             this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Location = new System.Drawing.Point(637, 58);
+            this.button3.Location = new System.Drawing.Point(909, 60);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(28, 27);
             this.button3.TabIndex = 7;
@@ -871,7 +881,7 @@ namespace CrystalReport.Components
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.label9.ForeColor = System.Drawing.Color.Black;
-            this.label9.Location = new System.Drawing.Point(430, 65);
+            this.label9.Location = new System.Drawing.Point(702, 67);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(54, 15);
             this.label9.TabIndex = 2;
@@ -921,7 +931,7 @@ namespace CrystalReport.Components
             this.amt.BackColor = System.Drawing.SystemColors.Control;
             this.amt.Enabled = false;
             this.amt.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.amt.Location = new System.Drawing.Point(490, 61);
+            this.amt.Location = new System.Drawing.Point(762, 63);
             this.amt.Name = "amt";
             this.amt.ReadOnly = true;
             this.amt.Size = new System.Drawing.Size(140, 23);
@@ -1005,6 +1015,8 @@ namespace CrystalReport.Components
             this.Discountsssss,
             this.Amountsss,
             this.IDs,
+            this.sale_rate,
+            this.MRPPP,
             this.Deletesss});
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(220)))), ((int)(((byte)(239)))));
@@ -1057,93 +1069,6 @@ namespace CrystalReport.Components
             this.dataGridView1.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.White;
             this.dataGridView1.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClickAsync);
-            // 
-            // sr
-            // 
-            this.sr.FillWeight = 75.13794F;
-            this.sr.HeaderText = "Sr.No";
-            this.sr.MinimumWidth = 9;
-            this.sr.Name = "sr";
-            // 
-            // hhhds
-            // 
-            this.hhhds.HeaderText = "hsn";
-            this.hhhds.Name = "hhhds";
-            // 
-            // dsf
-            // 
-            this.dsf.FillWeight = 150.2056F;
-            this.dsf.HeaderText = "Description";
-            this.dsf.MinimumWidth = 9;
-            this.dsf.Name = "dsf";
-            // 
-            // Qtyssss
-            // 
-            this.Qtyssss.FillWeight = 71.10511F;
-            this.Qtyssss.HeaderText = "Qty";
-            this.Qtyssss.MinimumWidth = 9;
-            this.Qtyssss.Name = "Qtyssss";
-            // 
-            // per
-            // 
-            this.per.HeaderText = "per";
-            this.per.Name = "per";
-            // 
-            // Ratesss
-            // 
-            this.Ratesss.FillWeight = 110.8285F;
-            this.Ratesss.HeaderText = "Rate";
-            this.Ratesss.MinimumWidth = 9;
-            this.Ratesss.Name = "Ratesss";
-            // 
-            // CGSTS
-            // 
-            this.CGSTS.HeaderText = "CGST";
-            this.CGSTS.Name = "CGSTS";
-            // 
-            // ssss
-            // 
-            this.ssss.HeaderText = "SGST";
-            this.ssss.Name = "ssss";
-            // 
-            // IGSTSSS
-            // 
-            this.IGSTSSS.HeaderText = "IGST";
-            this.IGSTSSS.Name = "IGSTSSS";
-            // 
-            // Discountsssss
-            // 
-            this.Discountsssss.FillWeight = 110.8285F;
-            this.Discountsssss.HeaderText = "Discount";
-            this.Discountsssss.MinimumWidth = 9;
-            this.Discountsssss.Name = "Discountsssss";
-            // 
-            // Amountsss
-            // 
-            this.Amountsss.FillWeight = 110.8285F;
-            this.Amountsss.HeaderText = "Amount";
-            this.Amountsss.MinimumWidth = 9;
-            this.Amountsss.Name = "Amountsss";
-            // 
-            // IDs
-            // 
-            this.IDs.HeaderText = "ID";
-            this.IDs.Name = "IDs";
-            this.IDs.Visible = false;
-            // 
-            // Deletesss
-            // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.NullValue = "Remove";
-            this.Deletesss.DefaultCellStyle = dataGridViewCellStyle3;
-            this.Deletesss.FillWeight = 71.06599F;
-            this.Deletesss.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.Deletesss.HeaderText = "Delete";
-            this.Deletesss.MinimumWidth = 9;
-            this.Deletesss.Name = "Deletesss";
-            this.Deletesss.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Deletesss.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.Deletesss.Text = "Remove";
             // 
             // panel9
             // 
@@ -1620,6 +1545,149 @@ namespace CrystalReport.Components
             this.panel8.TabIndex = 122203;
             this.panel8.Paint += new System.Windows.Forms.PaintEventHandler(this.panel8_Paint);
             // 
+            // sale
+            // 
+            this.sale.BackColor = System.Drawing.Color.White;
+            this.sale.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.sale.Location = new System.Drawing.Point(469, 59);
+            this.sale.Name = "sale";
+            this.sale.Size = new System.Drawing.Size(101, 23);
+            this.sale.TabIndex = 42;
+            this.sale.Text = "0";
+            this.sale.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.label33.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label33.Location = new System.Drawing.Point(409, 64);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(57, 15);
+            this.label33.TabIndex = 43;
+            this.label33.Text = "Sale  Rate";
+            this.label33.UseWaitCursor = true;
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.label34.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label34.Location = new System.Drawing.Point(574, 64);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(35, 15);
+            this.label34.TabIndex = 44;
+            this.label34.Text = "MRP:";
+            this.label34.UseWaitCursor = true;
+            // 
+            // mrp
+            // 
+            this.mrp.BackColor = System.Drawing.Color.White;
+            this.mrp.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.mrp.Location = new System.Drawing.Point(614, 60);
+            this.mrp.Name = "mrp";
+            this.mrp.Size = new System.Drawing.Size(82, 23);
+            this.mrp.TabIndex = 45;
+            this.mrp.Text = "0";
+            this.mrp.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // sr
+            // 
+            this.sr.FillWeight = 75.13794F;
+            this.sr.HeaderText = "Sr.No";
+            this.sr.MinimumWidth = 9;
+            this.sr.Name = "sr";
+            // 
+            // hhhds
+            // 
+            this.hhhds.HeaderText = "hsn";
+            this.hhhds.Name = "hhhds";
+            // 
+            // dsf
+            // 
+            this.dsf.FillWeight = 150.2056F;
+            this.dsf.HeaderText = "Description";
+            this.dsf.MinimumWidth = 9;
+            this.dsf.Name = "dsf";
+            // 
+            // Qtyssss
+            // 
+            this.Qtyssss.FillWeight = 71.10511F;
+            this.Qtyssss.HeaderText = "Qty";
+            this.Qtyssss.MinimumWidth = 9;
+            this.Qtyssss.Name = "Qtyssss";
+            // 
+            // per
+            // 
+            this.per.HeaderText = "per";
+            this.per.Name = "per";
+            // 
+            // Ratesss
+            // 
+            this.Ratesss.FillWeight = 110.8285F;
+            this.Ratesss.HeaderText = "Rate";
+            this.Ratesss.MinimumWidth = 9;
+            this.Ratesss.Name = "Ratesss";
+            // 
+            // CGSTS
+            // 
+            this.CGSTS.HeaderText = "CGST";
+            this.CGSTS.Name = "CGSTS";
+            // 
+            // ssss
+            // 
+            this.ssss.HeaderText = "SGST";
+            this.ssss.Name = "ssss";
+            // 
+            // IGSTSSS
+            // 
+            this.IGSTSSS.HeaderText = "IGST";
+            this.IGSTSSS.Name = "IGSTSSS";
+            // 
+            // Discountsssss
+            // 
+            this.Discountsssss.FillWeight = 110.8285F;
+            this.Discountsssss.HeaderText = "Discount";
+            this.Discountsssss.MinimumWidth = 9;
+            this.Discountsssss.Name = "Discountsssss";
+            // 
+            // Amountsss
+            // 
+            this.Amountsss.FillWeight = 110.8285F;
+            this.Amountsss.HeaderText = "Amount";
+            this.Amountsss.MinimumWidth = 9;
+            this.Amountsss.Name = "Amountsss";
+            // 
+            // IDs
+            // 
+            this.IDs.HeaderText = "ID";
+            this.IDs.Name = "IDs";
+            this.IDs.Visible = false;
+            // 
+            // sale_rate
+            // 
+            this.sale_rate.HeaderText = "Sale";
+            this.sale_rate.Name = "sale_rate";
+            // 
+            // MRPPP
+            // 
+            this.MRPPP.HeaderText = "MRP";
+            this.MRPPP.Name = "MRPPP";
+            // 
+            // Deletesss
+            // 
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.NullValue = "Remove";
+            this.Deletesss.DefaultCellStyle = dataGridViewCellStyle3;
+            this.Deletesss.FillWeight = 71.06599F;
+            this.Deletesss.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.Deletesss.HeaderText = "Delete";
+            this.Deletesss.MinimumWidth = 9;
+            this.Deletesss.Name = "Deletesss";
+            this.Deletesss.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Deletesss.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Deletesss.Text = "Remove";
+            // 
             // Purches_Order
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1787,6 +1855,12 @@ namespace CrystalReport.Components
         private Label label24;
         private Label label28;
         private RichTextBox richTextBox1;
+        private Label label26;
+        private ComboBox comboBox1;
+        private TextBox mrp;
+        private Label label34;
+        private Label label33;
+        private TextBox sale;
         private DataGridViewTextBoxColumn sr;
         private DataGridViewTextBoxColumn hhhds;
         private DataGridViewTextBoxColumn dsf;
@@ -1799,8 +1873,8 @@ namespace CrystalReport.Components
         private DataGridViewTextBoxColumn Discountsssss;
         private DataGridViewTextBoxColumn Amountsss;
         private DataGridViewTextBoxColumn IDs;
+        private DataGridViewTextBoxColumn sale_rate;
+        private DataGridViewTextBoxColumn MRPPP;
         private DataGridViewButtonColumn Deletesss;
-        private Label label26;
-        private ComboBox comboBox1;
     }
 }

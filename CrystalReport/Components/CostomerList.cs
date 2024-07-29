@@ -117,6 +117,21 @@ namespace CrystalReport.Components
         private void data_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             rowindex = e.RowIndex;
+            if (_ter == "SaleReport")
+            {
+               
+            }
+
+            else if (_ter == "ledger")
+            { 
+
+            }
+            else
+            {
+                OnDataTransferred(data.Rows[rowindex].Cells[1].Value.ToString());
+                HideOR?.Invoke(this, true);
+                this.FindForm()?.Hide();
+            }
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)

@@ -256,7 +256,7 @@ namespace CrystalReport.Components
 
 
                                 sr_no = Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value.ToString()),
-                                HSN = dataGridView1.Rows[i].Cells[1].Value.ToString(),
+                                HSN = dataGridView1.Rows[i].Cells[1].Value.ToString() ??string.Empty ,
                                 description = dataGridView1.Rows[i].Cells[2].Value.ToString(),
                                 qty = Convert.ToInt32(dataGridView1.Rows[i].Cells[3].Value.ToString()),
                             
@@ -301,7 +301,8 @@ namespace CrystalReport.Components
                         IGSTV = Convert.ToDecimal(igsto.Text),
                         prb_bill = textBox1.Text,
                         prb_date = dateTimePicker2.Value.ToString(),
-                        spr_id = Convert.ToInt64(supid.Text)
+                        spr_id = Convert.ToInt64(supid.Text),
+                        Tax = comboBox1.Text
 
                     };
 
@@ -470,6 +471,7 @@ namespace CrystalReport.Components
             supplier_name.Focus();
             Search();
             textBox1.Text = GenerateInvoice();
+          
             List<string> units = Task.Run(() => MainEngine_.GetDataScript<string>("select Unit from Unit")).Result.ToList();
 
 
@@ -1119,7 +1121,7 @@ namespace CrystalReport.Components
             try
             {
 
-
+                comboBox1.Text = MainEngine_.GetDataScript<string>("select TAX from Bill where BillID = '" + textBox2.Text + "'").FirstOrDefault();
                 List<dynamic> list = MainEngine_.GetDataScript<dynamic>("select * from Purches_items where Bill = '" + textBox2.Text + "'").ToList();
                 int c = 0;
 

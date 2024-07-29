@@ -50,8 +50,55 @@ namespace CrystalReport.Components
 
         private void getId_s(object sender, string e)
         {
-          MessageBox.Show(StoreRoom.GetData.ToString());
+
+            try
+            {
+                supid.Text = Convert.ToInt64(StoreRoom.GetSID(StoreRoom.GetData.ToString())).ToString();
+
+                dataGridView1.Rows.Clear();
+                List<dynamic> getdata = MainEngine_.GetDataScript<dynamic>("select * from purches_Items_orders where Bill='" + StoreRoom.GetData + "'");
+                foreach (var item in getdata)
+                {
+
+
+                    desc.Text = item.description;
+                    dgview.Visible = false;
+                    rete.Text = Convert.ToString(item.rate);
+                    gsttext.Text = Convert.ToString(item.CGST+item.SGST+item.IGST);
+
+                    disc.Text = Convert.ToString(item.discount);
+                    q.Text = Convert.ToString(item.qty);
+                   
+                    unitss.Text = Convert.ToString(item.per);
+                    ctv.Text = Convert.ToString(item.rate);
+                    Colors.Text = item.Color;
+                    size.Text = item.Size;
+                    MRP.Text = Convert.ToString(item.MRP);
+                    sale_price.Text = Convert.ToString(item.Sale);
+                    ID.Text = Convert.ToString(item.prID);
+
+                    //mgs and exp
+
+                    button3.PerformClick();
+
+
+                }
+
+
+             
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message,"Order Error",MessageBoxButtons.OK,MessageBoxIcon.Error);    
+            }
+       
+
         }
+
+
+
 
 
 

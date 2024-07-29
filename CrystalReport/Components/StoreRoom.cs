@@ -161,7 +161,19 @@ public static DataTable AddExcel(string file)
             return MainEngine_.GetDataScript<string>("select Template_Name from Printer_setings").FirstOrDefault();
         }
 
-      
+
+         public static  int GetSID(string order)
+        {
+
+            string t=  MainEngine_.GetDataScript<string>("select partiname from Purches_Order where BillID='"+order+"'").FirstOrDefault();
+
+            return MainEngine_.GetDataScript<int>("select ID from Parties where company = '"+t+"'").FirstOrDefault();
+
+
+
+        }
+
+
 
 
         public static string Purches_Tax()

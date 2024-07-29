@@ -263,7 +263,9 @@ namespace CrystalReport.Components
                                 amount = Convert.ToDecimal(dataGridView1.Rows[i].Cells[10].Value.ToString()),
                                 Bill = inv,
                                 ID = Convert.ToInt32(dataGridView1.Rows[i].Cells[11].Value.ToString()),
- 
+                                Sale = Convert.ToDecimal(dataGridView1.Rows[i].Cells[12].Value.ToString()),
+
+                                MRP = Convert.ToDecimal(dataGridView1.Rows[i].Cells[13].Value.ToString())
 
 
                             };
@@ -843,7 +845,7 @@ namespace CrystalReport.Components
                             decimal finalAmount = (originalAmount + (originalAmount * Convert.ToDecimal(gsttext.Text) / 100)) - discount;
                             amt.Text = finalAmount.ToString();
 
-                            dataGridView1.Rows.Add(srs, hsn.Text,desc.Text, q.Text,unitss.Text,rete.Text,cgst.Text, sgst.Text, igst.Text,disc.Text, amt.Text,ID.Text);
+                            dataGridView1.Rows.Add(srs, hsn.Text,desc.Text, q.Text,unitss.Text,rete.Text,cgst.Text, sgst.Text, igst.Text,disc.Text, amt.Text,ID.Text,sale.Text,mrp.Text);
 
                             TotalQty();
                             ItemsCount();
@@ -910,7 +912,7 @@ namespace CrystalReport.Components
                                 srs = srs + 1;
                                 decimal finalAmount = (originalAmount + (originalAmount * Convert.ToDecimal(gsttext.Text) / 100)) - discount;
                                 amt.Text = finalAmount.ToString();
-                            dataGridView1.Rows.Add(srs, hsn.Text, desc.Text, q.Text, unitss.Text, rete.Text, cgst.Text, sgst.Text, igst.Text, disc.Text, amt.Text, ID.Text);
+                            dataGridView1.Rows.Add(srs, hsn.Text, desc.Text, q.Text, unitss.Text, rete.Text, cgst.Text, sgst.Text, igst.Text, disc.Text, amt.Text, ID.Text,sale.Text,mrp.Text);
                             TotalQty();
                                 ItemsCount();
                                 discountsu();
@@ -999,7 +1001,7 @@ namespace CrystalReport.Components
 
                             srs = srs + 1;
 
-                            dataGridView1.Rows.Add(srs, hsn.Text, desc.Text, q.Text, unitss.Text, rete.Text, cgst.Text, sgst.Text, igst.Text, disc.Text, amt.Text, ID.Text);
+                            dataGridView1.Rows.Add(srs, hsn.Text, desc.Text, q.Text, unitss.Text, rete.Text, cgst.Text, sgst.Text, igst.Text, disc.Text, amt.Text, ID.Text,sale.Text,mrp.Text);
                             TotalQty();
                             ItemsCount();
                             discountsu();
@@ -1054,7 +1056,7 @@ namespace CrystalReport.Components
                            
                                 srs = srs + 1;
 
-                            dataGridView1.Rows.Add(srs, hsn.Text, desc.Text, q.Text, unitss.Text, rete.Text, cgst.Text, sgst.Text, igst.Text, disc.Text, amt.Text, ID.Text);
+                            dataGridView1.Rows.Add(srs, hsn.Text, desc.Text, q.Text, unitss.Text, rete.Text, cgst.Text, sgst.Text, igst.Text, disc.Text, amt.Text, ID.Text,sale.Text,mrp.Text);
                             TotalQty();
                                 ItemsCount();
                                 discountsu();

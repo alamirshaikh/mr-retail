@@ -264,7 +264,9 @@ namespace CrystalReport.Components
         {
             try
             {
-                ComView cm = new ComView("ViewPurches_Orders");
+
+                ComView cm = new ComView("Sale_Retern");
+
                 cm.Show();
             }
             catch (Exception ex)
@@ -321,7 +323,9 @@ namespace CrystalReport.Components
 
         private void label14_Click(object sender, EventArgs e)
         {
+            ComView cm = new ComView("Sale_Retern");
 
+            cm.Show();
         }
     }
     }
