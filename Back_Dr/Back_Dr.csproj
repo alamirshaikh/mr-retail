@@ -182,6 +182,7 @@
     <Compile Include="Backup\GenerateScript.cs" />
     <Compile Include="Calculation.cs" />
     <Compile Include="Class1.cs" />
+    <Compile Include="GSTMODELS\SALE_REPORT_MODELS.cs" />
     <Compile Include="Inventory\ProductAdd.cs" />
     <Compile Include="MainEngine,.cs" />
     <Compile Include="Models\BarcodeSingle.cs" />

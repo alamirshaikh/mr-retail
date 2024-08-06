@@ -246,11 +246,11 @@ namespace CrystalReport.Components
             // 
             this.num.AutoSize = true;
             this.num.BackColor = System.Drawing.Color.Transparent;
-            this.num.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.num.ForeColor = System.Drawing.Color.Black;
+            this.num.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.num.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.num.Location = new System.Drawing.Point(204, 101);
             this.num.Name = "num";
-            this.num.Size = new System.Drawing.Size(120, 21);
+            this.num.Size = new System.Drawing.Size(94, 17);
             this.num.TabIndex = 15;
             this.num.Text = "+91935961070";
             // 
@@ -270,11 +270,11 @@ namespace CrystalReport.Components
             // 
             this.gst.AutoSize = true;
             this.gst.BackColor = System.Drawing.Color.Transparent;
-            this.gst.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gst.ForeColor = System.Drawing.Color.Black;
+            this.gst.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.gst.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.gst.Location = new System.Drawing.Point(210, 80);
             this.gst.Name = "gst";
-            this.gst.Size = new System.Drawing.Size(27, 21);
+            this.gst.Size = new System.Drawing.Size(23, 17);
             this.gst.TabIndex = 13;
             this.gst.Text = "ST";
             // 
@@ -294,11 +294,11 @@ namespace CrystalReport.Components
             // 
             this.state.AutoSize = true;
             this.state.BackColor = System.Drawing.Color.Transparent;
-            this.state.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.state.ForeColor = System.Drawing.Color.Black;
+            this.state.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.state.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.state.Location = new System.Drawing.Point(209, 58);
             this.state.Name = "state";
-            this.state.Size = new System.Drawing.Size(27, 21);
+            this.state.Size = new System.Drawing.Size(23, 17);
             this.state.TabIndex = 11;
             this.state.Text = "ST";
             // 
@@ -318,11 +318,11 @@ namespace CrystalReport.Components
             // 
             this.address.AutoSize = true;
             this.address.BackColor = System.Drawing.Color.Transparent;
-            this.address.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.address.ForeColor = System.Drawing.Color.Black;
+            this.address.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.address.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.address.Location = new System.Drawing.Point(210, 38);
             this.address.Name = "address";
-            this.address.Size = new System.Drawing.Size(69, 21);
+            this.address.Size = new System.Drawing.Size(61, 17);
             this.address.TabIndex = 9;
             this.address.Text = "Address:";
             // 

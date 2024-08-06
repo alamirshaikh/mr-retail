@@ -29,13 +29,14 @@ namespace CrystalReport.Components
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.gunaButton3 = new Guna.UI.WinForms.GunaButton();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -117,25 +118,6 @@ namespace CrystalReport.Components
             this.q = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.dataGridView1 = new Guna.UI.WinForms.GunaDataGridView();
-            this.sr = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dsf = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Qtyssss = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Ratesss = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CGSTS = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ssss = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IGSTSSS = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Discountsssss = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Amountsss = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.per = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hhhds = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.color = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Sizes = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.msgsss = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EXSSS = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.mrps = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SALES = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IDs = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Deletesss = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panel9 = new System.Windows.Forms.Panel();
             this.items = new System.Windows.Forms.TextBox();
             this.panel11 = new System.Windows.Forms.Panel();
@@ -175,7 +157,26 @@ namespace CrystalReport.Components
             this.panel23 = new System.Windows.Forms.Panel();
             this.label31 = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
-            this.gunaButton3 = new Guna.UI.WinForms.GunaButton();
+            this.sr = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dsf = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Qtyssss = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Ratesss = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CGSTS = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ssss = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IGSTSSS = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Discountsssss = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Amountsss = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.per = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hhhds = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.color = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Sizes = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.msgsss = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EXSSS = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mrps = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SALES = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IDs = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Deletesss = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.panel27 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel2.SuspendLayout();
@@ -202,6 +203,7 @@ namespace CrystalReport.Components
             this.panel24.SuspendLayout();
             this.panel23.SuspendLayout();
             this.panel8.SuspendLayout();
+            this.panel27.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -216,6 +218,34 @@ namespace CrystalReport.Components
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(961, 37);
             this.panel1.TabIndex = 1;
+            // 
+            // gunaButton3
+            // 
+            this.gunaButton3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.gunaButton3.AnimationHoverSpeed = 0.07F;
+            this.gunaButton3.AnimationSpeed = 0.03F;
+            this.gunaButton3.BackColor = System.Drawing.Color.DarkOrange;
+            this.gunaButton3.BaseColor = System.Drawing.Color.DodgerBlue;
+            this.gunaButton3.BorderColor = System.Drawing.Color.White;
+            this.gunaButton3.BorderSize = 2;
+            this.gunaButton3.CausesValidation = false;
+            this.gunaButton3.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.gunaButton3.FocusedColor = System.Drawing.Color.Empty;
+            this.gunaButton3.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaButton3.ForeColor = System.Drawing.Color.White;
+            this.gunaButton3.Image = null;
+            this.gunaButton3.ImageSize = new System.Drawing.Size(20, 20);
+            this.gunaButton3.Location = new System.Drawing.Point(764, 3);
+            this.gunaButton3.Name = "gunaButton3";
+            this.gunaButton3.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.gunaButton3.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.gunaButton3.OnHoverForeColor = System.Drawing.Color.White;
+            this.gunaButton3.OnHoverImage = null;
+            this.gunaButton3.OnPressedColor = System.Drawing.Color.Black;
+            this.gunaButton3.Size = new System.Drawing.Size(183, 30);
+            this.gunaButton3.TabIndex = 15115556;
+            this.gunaButton3.Text = "Get Purches Order";
+            this.gunaButton3.Click += new System.EventHandler(this.gunaButton3_Click);
             // 
             // pictureBox2
             // 
@@ -1178,8 +1208,8 @@ namespace CrystalReport.Components
             // 
             // dataGridView1
             // 
-            dataGridViewCellStyle13.BackColor = System.Drawing.Color.White;
-            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -1189,14 +1219,14 @@ namespace CrystalReport.Components
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
             this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.sr,
             this.dsf,
@@ -1217,33 +1247,33 @@ namespace CrystalReport.Components
             this.SALES,
             this.IDs,
             this.Deletesss});
-            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle16.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle16.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle16.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridView1.EnableHeadersVisualStyles = false;
             this.dataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(201)))), ((int)(((byte)(231)))));
-            this.dataGridView1.Location = new System.Drawing.Point(6, 362);
+            this.dataGridView1.Location = new System.Drawing.Point(3, 3);
             this.dataGridView1.Name = "dataGridView1";
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle17.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle17.Font = new System.Drawing.Font("Yu Gothic UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle17.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Yu Gothic UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 72;
-            dataGridViewCellStyle18.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle18.Font = new System.Drawing.Font("Yu Gothic UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Yu Gothic UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(940, 189);
+            this.dataGridView1.Size = new System.Drawing.Size(926, 198);
             this.dataGridView1.TabIndex = 15115555;
             this.dataGridView1.Theme = Guna.UI.WinForms.GunaDataGridViewPresetThemes.Indigo;
             this.dataGridView1.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
@@ -1268,131 +1298,6 @@ namespace CrystalReport.Components
             this.dataGridView1.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.White;
             this.dataGridView1.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClickAsync);
-            // 
-            // sr
-            // 
-            this.sr.FillWeight = 75.13794F;
-            this.sr.HeaderText = "Sr.No";
-            this.sr.MinimumWidth = 9;
-            this.sr.Name = "sr";
-            // 
-            // dsf
-            // 
-            this.dsf.FillWeight = 150.2056F;
-            this.dsf.HeaderText = "Description";
-            this.dsf.MinimumWidth = 9;
-            this.dsf.Name = "dsf";
-            // 
-            // Qtyssss
-            // 
-            this.Qtyssss.FillWeight = 71.10511F;
-            this.Qtyssss.HeaderText = "Qty";
-            this.Qtyssss.MinimumWidth = 9;
-            this.Qtyssss.Name = "Qtyssss";
-            // 
-            // Ratesss
-            // 
-            this.Ratesss.FillWeight = 110.8285F;
-            this.Ratesss.HeaderText = "Rate";
-            this.Ratesss.MinimumWidth = 9;
-            this.Ratesss.Name = "Ratesss";
-            // 
-            // CGSTS
-            // 
-            this.CGSTS.HeaderText = "CGST";
-            this.CGSTS.Name = "CGSTS";
-            // 
-            // ssss
-            // 
-            this.ssss.HeaderText = "SGST";
-            this.ssss.Name = "ssss";
-            // 
-            // IGSTSSS
-            // 
-            this.IGSTSSS.HeaderText = "IGST";
-            this.IGSTSSS.Name = "IGSTSSS";
-            // 
-            // Discountsssss
-            // 
-            this.Discountsssss.FillWeight = 110.8285F;
-            this.Discountsssss.HeaderText = "Discount";
-            this.Discountsssss.MinimumWidth = 9;
-            this.Discountsssss.Name = "Discountsssss";
-            // 
-            // Amountsss
-            // 
-            this.Amountsss.FillWeight = 110.8285F;
-            this.Amountsss.HeaderText = "Amount";
-            this.Amountsss.MinimumWidth = 9;
-            this.Amountsss.Name = "Amountsss";
-            // 
-            // per
-            // 
-            this.per.HeaderText = "per";
-            this.per.Name = "per";
-            this.per.Visible = false;
-            // 
-            // hhhds
-            // 
-            this.hhhds.HeaderText = "hsn";
-            this.hhhds.Name = "hhhds";
-            this.hhhds.Visible = false;
-            // 
-            // color
-            // 
-            this.color.HeaderText = "Color";
-            this.color.Name = "color";
-            this.color.Visible = false;
-            // 
-            // Sizes
-            // 
-            this.Sizes.HeaderText = "Size";
-            this.Sizes.Name = "Sizes";
-            this.Sizes.Visible = false;
-            // 
-            // msgsss
-            // 
-            this.msgsss.HeaderText = "MSG";
-            this.msgsss.Name = "msgsss";
-            this.msgsss.Visible = false;
-            // 
-            // EXSSS
-            // 
-            this.EXSSS.HeaderText = "Exp";
-            this.EXSSS.Name = "EXSSS";
-            this.EXSSS.Visible = false;
-            // 
-            // mrps
-            // 
-            this.mrps.HeaderText = "MRP";
-            this.mrps.Name = "mrps";
-            this.mrps.Visible = false;
-            // 
-            // SALES
-            // 
-            this.SALES.HeaderText = "SALE";
-            this.SALES.Name = "SALES";
-            this.SALES.Visible = false;
-            // 
-            // IDs
-            // 
-            this.IDs.HeaderText = "ID";
-            this.IDs.Name = "IDs";
-            this.IDs.Visible = false;
-            // 
-            // Deletesss
-            // 
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle15.NullValue = "Remove";
-            this.Deletesss.DefaultCellStyle = dataGridViewCellStyle15;
-            this.Deletesss.FillWeight = 71.06599F;
-            this.Deletesss.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.Deletesss.HeaderText = "Delete";
-            this.Deletesss.MinimumWidth = 9;
-            this.Deletesss.Name = "Deletesss";
-            this.Deletesss.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Deletesss.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.Deletesss.Text = "Remove";
             // 
             // panel9
             // 
@@ -1656,7 +1561,7 @@ namespace CrystalReport.Components
             this.button2.ForeColor = System.Drawing.Color.Black;
             this.button2.Image = global::CrystalReport.Properties.Resources.diskette;
             this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(95, 575);
+            this.button2.Location = new System.Drawing.Point(97, 581);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(116, 37);
             this.button2.TabIndex = 8;
@@ -1695,7 +1600,7 @@ namespace CrystalReport.Components
             this.button1.ForeColor = System.Drawing.Color.Black;
             this.button1.Image = global::CrystalReport.Properties.Resources.printer_sec1;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(6, 575);
+            this.button1.Location = new System.Drawing.Point(8, 581);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(85, 37);
             this.button1.TabIndex = 122209;
@@ -1868,40 +1773,143 @@ namespace CrystalReport.Components
             this.panel8.TabIndex = 122203;
             this.panel8.Paint += new System.Windows.Forms.PaintEventHandler(this.panel8_Paint);
             // 
-            // gunaButton3
+            // sr
             // 
-            this.gunaButton3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.gunaButton3.AnimationHoverSpeed = 0.07F;
-            this.gunaButton3.AnimationSpeed = 0.03F;
-            this.gunaButton3.BackColor = System.Drawing.Color.DarkOrange;
-            this.gunaButton3.BaseColor = System.Drawing.Color.DodgerBlue;
-            this.gunaButton3.BorderColor = System.Drawing.Color.White;
-            this.gunaButton3.BorderSize = 2;
-            this.gunaButton3.CausesValidation = false;
-            this.gunaButton3.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.gunaButton3.FocusedColor = System.Drawing.Color.Empty;
-            this.gunaButton3.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaButton3.ForeColor = System.Drawing.Color.White;
-            this.gunaButton3.Image = null;
-            this.gunaButton3.ImageSize = new System.Drawing.Size(20, 20);
-            this.gunaButton3.Location = new System.Drawing.Point(764, 3);
-            this.gunaButton3.Name = "gunaButton3";
-            this.gunaButton3.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
-            this.gunaButton3.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.gunaButton3.OnHoverForeColor = System.Drawing.Color.White;
-            this.gunaButton3.OnHoverImage = null;
-            this.gunaButton3.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaButton3.Size = new System.Drawing.Size(183, 30);
-            this.gunaButton3.TabIndex = 15115556;
-            this.gunaButton3.Text = "Get Purches Order";
-            this.gunaButton3.Click += new System.EventHandler(this.gunaButton3_Click);
+            this.sr.FillWeight = 75.13794F;
+            this.sr.HeaderText = "Sr.No";
+            this.sr.MinimumWidth = 9;
+            this.sr.Name = "sr";
+            // 
+            // dsf
+            // 
+            this.dsf.FillWeight = 150.2056F;
+            this.dsf.HeaderText = "Description";
+            this.dsf.MinimumWidth = 9;
+            this.dsf.Name = "dsf";
+            // 
+            // Qtyssss
+            // 
+            this.Qtyssss.FillWeight = 71.10511F;
+            this.Qtyssss.HeaderText = "Qty";
+            this.Qtyssss.MinimumWidth = 9;
+            this.Qtyssss.Name = "Qtyssss";
+            // 
+            // Ratesss
+            // 
+            this.Ratesss.FillWeight = 110.8285F;
+            this.Ratesss.HeaderText = "Rate";
+            this.Ratesss.MinimumWidth = 9;
+            this.Ratesss.Name = "Ratesss";
+            // 
+            // CGSTS
+            // 
+            this.CGSTS.HeaderText = "CGST";
+            this.CGSTS.Name = "CGSTS";
+            // 
+            // ssss
+            // 
+            this.ssss.HeaderText = "SGST";
+            this.ssss.Name = "ssss";
+            // 
+            // IGSTSSS
+            // 
+            this.IGSTSSS.HeaderText = "IGST";
+            this.IGSTSSS.Name = "IGSTSSS";
+            // 
+            // Discountsssss
+            // 
+            this.Discountsssss.FillWeight = 110.8285F;
+            this.Discountsssss.HeaderText = "Discount";
+            this.Discountsssss.MinimumWidth = 9;
+            this.Discountsssss.Name = "Discountsssss";
+            // 
+            // Amountsss
+            // 
+            this.Amountsss.FillWeight = 110.8285F;
+            this.Amountsss.HeaderText = "Amount";
+            this.Amountsss.MinimumWidth = 9;
+            this.Amountsss.Name = "Amountsss";
+            // 
+            // per
+            // 
+            this.per.HeaderText = "per";
+            this.per.Name = "per";
+            // 
+            // hhhds
+            // 
+            this.hhhds.HeaderText = "hsn";
+            this.hhhds.Name = "hhhds";
+            // 
+            // color
+            // 
+            this.color.HeaderText = "Color";
+            this.color.Name = "color";
+            // 
+            // Sizes
+            // 
+            this.Sizes.HeaderText = "Size";
+            this.Sizes.Name = "Sizes";
+            // 
+            // msgsss
+            // 
+            this.msgsss.HeaderText = "MSG";
+            this.msgsss.Name = "msgsss";
+            this.msgsss.Visible = false;
+            // 
+            // EXSSS
+            // 
+            this.EXSSS.HeaderText = "Exp";
+            this.EXSSS.Name = "EXSSS";
+            this.EXSSS.Visible = false;
+            // 
+            // mrps
+            // 
+            this.mrps.HeaderText = "MRP";
+            this.mrps.Name = "mrps";
+            // 
+            // SALES
+            // 
+            this.SALES.HeaderText = "SALE";
+            this.SALES.Name = "SALES";
+            // 
+            // IDs
+            // 
+            this.IDs.HeaderText = "ID";
+            this.IDs.Name = "IDs";
+            // 
+            // Deletesss
+            // 
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.NullValue = "Remove";
+            this.Deletesss.DefaultCellStyle = dataGridViewCellStyle3;
+            this.Deletesss.FillWeight = 71.06599F;
+            this.Deletesss.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.Deletesss.HeaderText = "Delete";
+            this.Deletesss.MinimumWidth = 9;
+            this.Deletesss.Name = "Deletesss";
+            this.Deletesss.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Deletesss.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Deletesss.Text = "Remove";
+            // 
+            // panel27
+            // 
+            this.panel27.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel27.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.panel27.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel27.Controls.Add(this.dataGridView1);
+            this.panel27.Location = new System.Drawing.Point(5, 363);
+            this.panel27.Name = "panel27";
+            this.panel27.Size = new System.Drawing.Size(934, 206);
+            this.panel27.TabIndex = 15115556;
             // 
             // Bill
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.panel27);
             this.Controls.Add(this.panel8);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
@@ -1958,6 +1966,7 @@ namespace CrystalReport.Components
             this.panel23.ResumeLayout(false);
             this.panel23.PerformLayout();
             this.panel8.ResumeLayout(false);
+            this.panel27.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -2080,6 +2089,12 @@ namespace CrystalReport.Components
         private Label ID;
         private TextBox supid;
         private Label label22;
+        private Label label38;
+        private ComboBox TAX_TYPE;
+        private Label label39;
+        private ComboBox comboBox1;
+        private Label ctv;
+        private Guna.UI.WinForms.GunaButton gunaButton3;
         private DataGridViewTextBoxColumn sr;
         private DataGridViewTextBoxColumn dsf;
         private DataGridViewTextBoxColumn Qtyssss;
@@ -2099,11 +2114,6 @@ namespace CrystalReport.Components
         private DataGridViewTextBoxColumn SALES;
         private DataGridViewTextBoxColumn IDs;
         private DataGridViewButtonColumn Deletesss;
-        private Label label38;
-        private ComboBox TAX_TYPE;
-        private Label label39;
-        private ComboBox comboBox1;
-        private Label ctv;
-        private Guna.UI.WinForms.GunaButton gunaButton3;
+        private Panel panel27;
     }
 }

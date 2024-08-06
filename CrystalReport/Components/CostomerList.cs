@@ -184,7 +184,7 @@ namespace CrystalReport.Components
 
                     if (_ter == "SaleReport")
                     {
-                        ReportStd rp = new ReportStd(data.Rows[rowindex].Cells[1].Value.ToString(), textBox1.Text);
+                        ReportStd rp = new ReportStd(data.Rows[rowindex].Cells[1].Value.ToString(), _ter);
                         rp.Show();
                     }
 

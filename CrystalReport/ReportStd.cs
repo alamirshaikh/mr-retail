@@ -114,22 +114,15 @@ namespace CrystalReport
                 _isInvoie = "no";
 
 
-               int cust_s = MainEngine_.GetDataScript<int>("select cust_phone from Ledger_Supplier where SupplierID = " + inv + "").FirstOrDefault();
-
-
-                num.Text = MainEngine_.GetDataScript<string>("select partimobile from Parteis where ID = " + cust_s + "").FirstOrDefault();
-
-
+               
             }
             else
             {
                 path = Application.StartupPath + "/CustomerLedger.rpt";
                 _isInvoie = "no";
 
-                int cust_s = MainEngine_.GetDataScript<int>("select cust_phone from Ledger_Supplier where CustomerID = " + inv + "").FirstOrDefault();
-
-
-                num.Text = MainEngine_.GetDataScript<string>("select cust_phone from Customer where id = " + cust_s + "").FirstOrDefault();
+            
+            
             }
 
 
@@ -463,7 +456,7 @@ namespace CrystalReport
 
             // Apply SQL command to the report
             // Replace with the desired invoice ID
-            DataTable table1 = GetTable($"exec GetSaleReport '{StoreRoom.dateTimePicker1} 00:00:00', '{StoreRoom.dateTimePicker2} 23:59:59'");
+            DataTable table1 = GetTable($"exec GetSaleReport '{StoreRoom.dateTimePicker1}', '{StoreRoom.dateTimePicker2}'");
 
             report.SetDataSource(table1);
             ParameterFields pfield = new ParameterFields();
@@ -877,6 +870,125 @@ namespace CrystalReport
 
 
 
+        public void GetSaleReport(string type, string ins = "")
+        {
+
+            ReportDocument report = new ReportDocument();
+          
+
+                //   path = Application.StartupPath + "/NewTirupat.rpt";
+
+                path = Application.StartupPath + $"/Sale_GST_REPORT.rpt";
+       
+            
+            
+            report.Load(path);
+            // Set database login information for the report
+            ConnectionInfo connectionInfo = new ConnectionInfo();
+            connectionInfo.ServerName = @"mrsales"; // Replace with your server name
+            connectionInfo.DatabaseName = "drsale";
+            connectionInfo.UserID = "mrsales"; // Replace with your database username
+            connectionInfo.Password = "mrsale@123"; // Replace with your database password
+
+
+            Tables tables = report.Database.Tables;
+            foreach (Table table in tables)
+            {
+                TableLogOnInfo tableLogOnInfo = table.LogOnInfo;
+                tableLogOnInfo.ConnectionInfo = connectionInfo;
+                table.ApplyLogOnInfo(tableLogOnInfo);
+            }
+
+            // Apply SQL command to the report
+            // Replace with the desired invoice ID
+            ParameterField CGST = new ParameterField();
+            ParameterField SGST = new ParameterField();
+            ParameterField IGST = new ParameterField();
+
+
+
+
+            ParameterFields pfield = new ParameterFields();
+
+            if (type == "test")
+            {
+
+
+
+                string startDate = $"{StoreRoom.dateTimePicker1.Date.ToString("yyyy-MM-dd")}";
+                string endDate = $"{StoreRoom.dateTimePicker2.Date.ToString("yyyy-MM-dd")}";
+
+
+                table1 = GetTable("SELECT * FROM SInvoice WHERE invdate>='"+ startDate + "' AND invdate<='"+ endDate + "' AND TAX = 'GST' ");
+
+
+
+
+
+                IEnumerable<decimal> cgst = MainEngine_.GetDataScript<decimal>($"SELECT sCGST FROM SInvoice WHERE invdate>='" + startDate + "' AND invdate<='" + endDate + "' AND TAX ='GST'  ").ToList();
+                IEnumerable<decimal> sgst = MainEngine_.GetDataScript<decimal>($"SELECT sSGST FROM SInvoice WHERE invdate>='" + startDate + "' AND invdate<='" + endDate + "' AND TAX ='GST' ").ToList();
+                IEnumerable<decimal> igst = MainEngine_.GetDataScript<decimal>($"SELECT sIGST FROM SInvoice WHERE invdate>='" + startDate + "' AND invdate<='" + endDate + "' AND TAX ='GST' ").ToList();
+
+                decimal paidcgst = cgst.Sum();
+                decimal paidsgst = sgst.Sum();
+                decimal paidigst = igst.Sum();
+
+                 
+
+                    ParameterDiscreteValue cgstvalue = new ParameterDiscreteValue();
+                    ParameterDiscreteValue sgstvalue = new ParameterDiscreteValue();
+                ParameterDiscreteValue igstvalue = new ParameterDiscreteValue();
+
+                CGST.ParameterFieldName = "CGST";
+                    cgstvalue.Value = $"{paidcgst}";
+                
+                CGST.CurrentValues.Add(cgstvalue);
+
+
+
+                SGST.ParameterFieldName = "SGST";
+                sgstvalue.Value = $"{paidsgst}";
+
+                SGST.CurrentValues.Add(sgstvalue);
+
+                IGST.ParameterFieldName = "IGST";
+                igstvalue.Value = $"{paidigst}";
+
+                IGST.CurrentValues.Add(igstvalue);
+
+
+
+
+
+                    pfield.Add(CGST);
+                    pfield.Add(SGST);
+                    pfield.Add(IGST);
+                }
+
+
+            
+         
+
+            report.SetDataSource(table1);
+            //report.SetParameterValue("place",Address);
+
+
+            // Verify the report's database
+            report.VerifyDatabase();
+
+
+          
+            
+                crystalReportViewer1.ParameterFieldInfo = pfield;
+
+                crystalReportViewer1.ReportSource = report;
+
+         
+
+
+
+
+        }
 
 
         public ReportDocument GetReport(string type,string ins="")
@@ -1179,10 +1291,7 @@ namespace CrystalReport
 
                 table1 = GetTable("SELECT * FROM Purches_Return o INNER JOIN purches_Items_return p ON p.Bill = o.BillID where p.prb_bill = '" + inv + "' ");
 
-                string cust_s = MainEngine_.GetDataScript<string>("select partiname from Purches_Return where items='" + inv + "'").FirstOrDefault();
-
-                num.Text = MainEngine_.GetDataScript<string>("select company from Parties where company = '" + cust_s + "'").FirstOrDefault();
-
+                
 
 
                 report.SetDataSource(table1);
@@ -1403,10 +1512,9 @@ namespace CrystalReport
 
                     table1 = GetTable("select * from CustomerTransactions where InvoiceId ='" + inv + "' ");
 
-                string cust_s = MainEngine_.GetDataScript<string>("select cust_name from SInvoice where items='"+inv+"'").FirstOrDefault();
-
-                num.Text = MainEngine_.GetDataScript<string>("select cust_phone from Customer where cust_name = '" + cust_s + "'").FirstOrDefault();
-
+                
+                
+                
                 report.SetDataSource(table1);
                     //report.SetParameterValue("place",Address);
 
@@ -1591,6 +1699,8 @@ namespace CrystalReport
 
                 if (pl == "AMIRSHAKH123")
                 {
+
+                    _isInvoie = "no";
                     GetReport("nion");
                 }
                else if(pl == "wsave")
@@ -1598,6 +1708,21 @@ namespace CrystalReport
                     _isInvoie = "yes";
 
                     WithoutSave();
+
+                }
+
+
+                else if(pl== "SaleReport")
+                {
+                    _isInvoie = "yes";
+                    GetReport("test");
+                }
+                else if(pl== "Sale_GST")
+                {
+                    _isInvoie = "no";
+
+                    GetSaleReport("test");
+
 
                 }
 
@@ -1661,7 +1786,7 @@ namespace CrystalReport
                 else if (pl == "Invoice")
                 {
 
-                    GetRecipt("test");
+                    GetReport("test");
 
 
                 }
@@ -1677,16 +1802,6 @@ namespace CrystalReport
                     GetLeader("sup");
                 }
 
-
-                else
-                {
-                    _isInvoie = "yes";
-                    GetReport("test");
-
-
-                }
-
-               
 
 
 

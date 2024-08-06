@@ -35,6 +35,7 @@ namespace Mr.RetailGenerator
             getmac = ComputerInfo.GetComputerId();
 
             FoxLearn.License.KeyManager km = new FoxLearn.License.KeyManager(getmac);
+            
             KeyValuesClass kv = new KeyValuesClass();
             string produckey = string.Empty;
 
@@ -81,6 +82,11 @@ namespace Mr.RetailGenerator
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

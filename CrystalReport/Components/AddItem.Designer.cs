@@ -224,11 +224,11 @@ namespace CrystalReport.Components
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(9, 8);
+            this.label1.Location = new System.Drawing.Point(9, 5);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(189, 21);
+            this.label1.Size = new System.Drawing.Size(109, 21);
             this.label1.TabIndex = 10000000;
-            this.label1.Text = "New Item (नवीन आयटम)";
+            this.label1.Text = "Product Entry";
             // 
             // panel1
             // 
@@ -299,9 +299,9 @@ namespace CrystalReport.Components
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button1.Location = new System.Drawing.Point(4, 6);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(102, 29);
+            this.button1.Size = new System.Drawing.Size(124, 29);
             this.button1.TabIndex = 11;
-            this.button1.Text = "Add item";
+            this.button1.Text = "Add item (F1)";
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -330,7 +330,7 @@ namespace CrystalReport.Components
             this.button2.ForeColor = System.Drawing.Color.Black;
             this.button2.Image = global::CrystalReport.Properties.Resources.eraser;
             this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(117, 6);
+            this.button2.Location = new System.Drawing.Point(134, 6);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(107, 29);
             this.button2.TabIndex = 14;
@@ -378,7 +378,7 @@ namespace CrystalReport.Components
             this.panel4.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel4.Location = new System.Drawing.Point(-1, 66);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(939, 366);
+            this.panel4.Size = new System.Drawing.Size(944, 366);
             this.panel4.TabIndex = 13;
             this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
             // 
@@ -462,7 +462,7 @@ namespace CrystalReport.Components
             // 
             this.checkBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(553, 216);
+            this.checkBox1.Location = new System.Drawing.Point(558, 216);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(51, 21);
             this.checkBox1.TabIndex = 42;
@@ -477,7 +477,7 @@ namespace CrystalReport.Components
             this.igst.Location = new System.Drawing.Point(700, 272);
             this.igst.Name = "igst";
             this.igst.Size = new System.Drawing.Size(87, 26);
-            this.igst.TabIndex = 37;
+            this.igst.TabIndex = 8;
             this.igst.Text = "0";
             this.igst.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -488,7 +488,7 @@ namespace CrystalReport.Components
             this.cgst.Location = new System.Drawing.Point(540, 274);
             this.cgst.Name = "cgst";
             this.cgst.Size = new System.Drawing.Size(87, 26);
-            this.cgst.TabIndex = 36;
+            this.cgst.TabIndex = 7;
             this.cgst.Text = "0";
             this.cgst.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -499,7 +499,7 @@ namespace CrystalReport.Components
             this.sgst.Location = new System.Drawing.Point(349, 277);
             this.sgst.Name = "sgst";
             this.sgst.Size = new System.Drawing.Size(87, 26);
-            this.sgst.TabIndex = 35;
+            this.sgst.TabIndex = 6;
             this.sgst.Text = "0";
             this.sgst.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -568,7 +568,7 @@ namespace CrystalReport.Components
             this.gst.Location = new System.Drawing.Point(137, 276);
             this.gst.Name = "gst";
             this.gst.Size = new System.Drawing.Size(94, 28);
-            this.gst.TabIndex = 29;
+            this.gst.TabIndex = 5;
             this.gst.SelectedIndexChanged += new System.EventHandler(this.gst_SelectedIndexChanged);
             // 
             // label21
@@ -589,7 +589,7 @@ namespace CrystalReport.Components
             this.panel6.Controls.Add(this.size);
             this.panel6.Controls.Add(this.label20);
             this.panel6.Controls.Add(this.label19);
-            this.panel6.Location = new System.Drawing.Point(549, 108);
+            this.panel6.Location = new System.Drawing.Point(554, 108);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(384, 94);
             this.panel6.TabIndex = 27;
@@ -659,7 +659,7 @@ namespace CrystalReport.Components
             this.hsn.Location = new System.Drawing.Point(138, 201);
             this.hsn.Name = "hsn";
             this.hsn.Size = new System.Drawing.Size(233, 26);
-            this.hsn.TabIndex = 26;
+            this.hsn.TabIndex = 3;
             this.hsn.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label15
@@ -721,7 +721,7 @@ namespace CrystalReport.Components
             // pictureBox2
             // 
             this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox2.Location = new System.Drawing.Point(608, 23);
+            this.pictureBox2.Location = new System.Drawing.Point(613, 23);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(284, 63);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -744,9 +744,9 @@ namespace CrystalReport.Components
             this.label5.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(1, 14);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(162, 17);
+            this.label5.Size = new System.Drawing.Size(67, 17);
             this.label5.TabIndex = 1;
-            this.label5.Text = "Selling Price/विक्री किंमत :   ";
+            this.label5.Text = "Sale Price:";
             // 
             // label7
             // 
@@ -797,7 +797,7 @@ namespace CrystalReport.Components
             this.sprice.Location = new System.Drawing.Point(202, 14);
             this.sprice.Name = "sprice";
             this.sprice.Size = new System.Drawing.Size(286, 26);
-            this.sprice.TabIndex = 5;
+            this.sprice.TabIndex = 9;
             this.sprice.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // cprice
@@ -808,7 +808,7 @@ namespace CrystalReport.Components
             this.cprice.Location = new System.Drawing.Point(99, 10);
             this.cprice.Name = "cprice";
             this.cprice.Size = new System.Drawing.Size(316, 26);
-            this.cprice.TabIndex = 8;
+            this.cprice.TabIndex = 12;
             this.cprice.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // ds
@@ -818,7 +818,7 @@ namespace CrystalReport.Components
             this.ds.Location = new System.Drawing.Point(203, 96);
             this.ds.Name = "ds";
             this.ds.Size = new System.Drawing.Size(286, 60);
-            this.ds.TabIndex = 7;
+            this.ds.TabIndex = 11;
             this.ds.Text = "";
             // 
             // dss
@@ -829,7 +829,7 @@ namespace CrystalReport.Components
             this.dss.Location = new System.Drawing.Point(98, 113);
             this.dss.Name = "dss";
             this.dss.Size = new System.Drawing.Size(316, 56);
-            this.dss.TabIndex = 10;
+            this.dss.TabIndex = 15;
             this.dss.Text = "";
             // 
             // ac
@@ -840,7 +840,7 @@ namespace CrystalReport.Components
             this.ac.Location = new System.Drawing.Point(203, 59);
             this.ac.Name = "ac";
             this.ac.Size = new System.Drawing.Size(286, 28);
-            this.ac.TabIndex = 6;
+            this.ac.TabIndex = 10;
             // 
             // acc
             // 
@@ -851,7 +851,7 @@ namespace CrystalReport.Components
             this.acc.Location = new System.Drawing.Point(98, 77);
             this.acc.Name = "acc";
             this.acc.Size = new System.Drawing.Size(316, 28);
-            this.acc.TabIndex = 9;
+            this.acc.TabIndex = 14;
             // 
             // label14
             // 
@@ -873,7 +873,7 @@ namespace CrystalReport.Components
             this.panel5.Controls.Add(this.label9);
             this.panel5.Location = new System.Drawing.Point(-2, 35);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(940, 31);
+            this.panel5.Size = new System.Drawing.Size(948, 31);
             this.panel5.TabIndex = 15;
             // 
             // label9
@@ -973,7 +973,7 @@ namespace CrystalReport.Components
             this.MRP.Location = new System.Drawing.Point(99, 42);
             this.MRP.Name = "MRP";
             this.MRP.Size = new System.Drawing.Size(316, 26);
-            this.MRP.TabIndex = 12;
+            this.MRP.TabIndex = 13;
             this.MRP.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label25

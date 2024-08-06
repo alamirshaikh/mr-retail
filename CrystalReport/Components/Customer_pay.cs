@@ -213,5 +213,10 @@ namespace CrystalReport.Components
             }
             
         }
+
+        private void trdate_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

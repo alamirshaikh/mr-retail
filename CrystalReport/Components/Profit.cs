@@ -29,8 +29,8 @@ namespace CrystalReport.Components
             {
                 var dy = new
                 {
-                    startDate = dateTimePicker1.Value.ToString("yyyy-MM-dd"),
-                    endDate = dateTimePicker2.Value.ToString("yyyy-MM-dd")
+                    startDate = dateTimePicker1.Value.ToString("yyyy/MM/dd"),
+                    endDate = dateTimePicker2.Value.ToString("yyyy/MM/dd")
                 };
 
                 // Fetch data from the stored procedure

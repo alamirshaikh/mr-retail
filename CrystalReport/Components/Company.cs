@@ -87,17 +87,25 @@ namespace CrystalReport.Components
             {
                 try
                 {
-
                     string savePath = Path.Combine(Directory.GetCurrentDirectory(), "company.png");
-                    
-      
-                    if(File.Exists(savePath))
+
+                    if (File.Exists(savePath))
                     {
-                        File.Delete(savePath);
-
+                        try
+                        {
+                            File.Delete(savePath);
+                        }
+                        catch (IOException ioEx)
+                        {
+                            MessageBox.Show("File is in use: " + ioEx.Message);
+                            return;
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("An error occurred while deleting the file: " + ex.Message);
+                            return;
+                        }
                     }
-
-
 
                     if (!string.IsNullOrEmpty(imagePath))
                     {
@@ -107,20 +115,14 @@ namespace CrystalReport.Components
                         {
                             using (Image image = Image.FromFile(imagePath))
                             {
-                                // Get the original width and height
                                 int originalWidth = image.Width;
                                 int originalHeight = image.Height;
-
-                                // Set the desired width and height
                                 int newWidth = 220; // Example: New width
                                 int newHeight = 192; // Example: New height
 
-                                // Resize the image
                                 using (Image resizedImage = ResizeImage(image, newWidth, newHeight))
                                 {
-                                    // Save as JPEG
                                     resizedImage.Save(savePath, ImageFormat.Png);
-
                                 }
                             }
                         }
@@ -131,19 +133,27 @@ namespace CrystalReport.Components
                             using (Image image = Image.FromFile(imagePath))
                             {
                                 using (Image resizedImage = ResizeImage(image, newWidth, newHeight))
-                            {
-                                // Save as JPEG
-                                  savePath = Path.Combine(Directory.GetCurrentDirectory(), "company.png");
-                                resizedImage.Save(savePath, ImageFormat.Png);
-
+                                {
+                                    resizedImage.Save(savePath, ImageFormat.Png);
+                                }
                             }
-                            File.Copy(imagePath, savePath, true);
-                        }
-                        }
 
-
+                            try
+                            {
+                                File.Copy(imagePath, savePath, true);
+                            }
+                            catch (IOException ioEx)
+                            {
+                                MessageBox.Show("File is in use: " + ioEx.Message);
+                                return;
+                            }
+                            catch (Exception ex)
+                            {
+                                MessageBox.Show("An error occurred while copying the file: " + ex.Message);
+                                return;
+                            }
+                        }
                     }
-
 
                     var para = new
                     {
@@ -174,26 +184,19 @@ namespace CrystalReport.Components
 
                     await MainEngine_.Add(para, "InsOwner");
 
-                    MessageBox.Show("Your Information HasBeen Saved!", "Owner Details", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Your Information Has Been Saved!", "Owner Details", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     if (c < 1 || c == null)
                     {
-
+                        // Additional actions if needed
                     }
-
-
-
-
-
-
                 }
                 catch (Exception ex)
                 {
-
                     MessageBox.Show(ex.Message);
-
-
                 }
+
+
             }
             else
             {

@@ -51,6 +51,18 @@ namespace CrystalReport
 
                 WindowState = FormWindowState.Maximized;
             }
+
+
+            else if(getForm == "Itemlist")
+                {
+
+                    panel1.Controls.Clear();
+                    Itemlist item = new Itemlist();
+                    item.Dock = DockStyle.Fill;
+                    panel1.Controls.Add(item);
+
+                    WindowState = FormWindowState.Maximized;
+                }
             else
             {
 

@@ -32,11 +32,6 @@ namespace CrystalReport
         {
             this.components = new System.ComponentModel.Container();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.gunaButton5 = new Guna.UI.WinForms.GunaButton();
-            this.gunaButton4 = new Guna.UI.WinForms.GunaButton();
-            this.gunaButton3 = new Guna.UI.WinForms.GunaButton();
-            this.gunaButton2 = new Guna.UI.WinForms.GunaButton();
-            this.gunaButton1 = new Guna.UI.WinForms.GunaButton();
             this.lices = new System.Windows.Forms.Label();
             this.lis = new System.Windows.Forms.Label();
             this.main = new System.Windows.Forms.Panel();
@@ -44,9 +39,6 @@ namespace CrystalReport
             this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.timer3 = new System.Windows.Forms.Timer(this.components);
             this.timer4 = new System.Windows.Forms.Timer(this.components);
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.label12 = new System.Windows.Forms.Label();
-            this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.label14 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -57,269 +49,309 @@ namespace CrystalReport
             this.label6 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel25 = new System.Windows.Forms.Panel();
-            this.pictureBox52 = new System.Windows.Forms.PictureBox();
             this.label50 = new System.Windows.Forms.Label();
             this.panel18 = new System.Windows.Forms.Panel();
             this.label18 = new System.Windows.Forms.Label();
-            this.pictureBox15 = new System.Windows.Forms.PictureBox();
             this.panel17 = new System.Windows.Forms.Panel();
             this.label10 = new System.Windows.Forms.Label();
-            this.pictureBox18 = new System.Windows.Forms.PictureBox();
             this.panel16 = new System.Windows.Forms.Panel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
             this.panel15 = new System.Windows.Forms.Panel();
-            this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.bill = new System.Windows.Forms.Label();
             this.panel14 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.panel13 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
-            this.pictureBox17 = new System.Windows.Forms.PictureBox();
             this.panel12 = new System.Windows.Forms.Panel();
-            this.pictureBox12 = new System.Windows.Forms.PictureBox();
             this.panel10 = new System.Windows.Forms.Panel();
-            this.pictureBox10 = new System.Windows.Forms.PictureBox();
             this.panel9 = new System.Windows.Forms.Panel();
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.panel8 = new System.Windows.Forms.Panel();
-            this.pictureBox14 = new System.Windows.Forms.PictureBox();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.pictureBox13 = new System.Windows.Forms.PictureBox();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.panelssssss = new System.Windows.Forms.Panel();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox16 = new System.Windows.Forms.PictureBox();
             this.gunaDragControl1 = new Guna.UI.WinForms.GunaDragControl(this.components);
             this.report = new System.Windows.Forms.Timer(this.components);
             this.timer5 = new System.Windows.Forms.Timer(this.components);
             this.bexpand = new System.Windows.Forms.Timer(this.components);
             this.panelcustomer = new System.Windows.Forms.Panel();
             this.panel19 = new System.Windows.Forms.Panel();
-            this.pictureBox21 = new System.Windows.Forms.PictureBox();
             this.label19 = new System.Windows.Forms.Label();
-            this.pictureBox22 = new System.Windows.Forms.PictureBox();
             this.label20 = new System.Windows.Forms.Label();
-            this.pictureBox20 = new System.Windows.Forms.PictureBox();
             this.label16 = new System.Windows.Forms.Label();
-            this.pictureBox19 = new System.Windows.Forms.PictureBox();
             this.label11 = new System.Windows.Forms.Label();
             this.customer_t = new System.Windows.Forms.Timer(this.components);
             this.purches_panel = new System.Windows.Forms.Panel();
-            this.pictureBox27 = new System.Windows.Forms.PictureBox();
             this.label25 = new System.Windows.Forms.Label();
-            this.pictureBox25 = new System.Windows.Forms.PictureBox();
             this.panel21 = new System.Windows.Forms.Panel();
-            this.pictureBox23 = new System.Windows.Forms.PictureBox();
             this.label21 = new System.Windows.Forms.Label();
-            this.pictureBox24 = new System.Windows.Forms.PictureBox();
             this.label22 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
-            this.pictureBox26 = new System.Windows.Forms.PictureBox();
             this.label24 = new System.Windows.Forms.Label();
             this.purches_timer = new System.Windows.Forms.Timer(this.components);
             this.label29 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
             this.panel20 = new System.Windows.Forms.Panel();
-            this.pictureBox29 = new System.Windows.Forms.PictureBox();
             this.label26 = new System.Windows.Forms.Label();
-            this.pictureBox30 = new System.Windows.Forms.PictureBox();
             this.label27 = new System.Windows.Forms.Label();
             this.supplier_p = new System.Windows.Forms.Panel();
-            this.pictureBox28 = new System.Windows.Forms.PictureBox();
-            this.pictureBox11 = new System.Windows.Forms.PictureBox();
             this.supplier_timer = new System.Windows.Forms.Timer(this.components);
             this.report_timer = new System.Windows.Forms.Timer(this.components);
             this.setting_timer = new System.Windows.Forms.Timer(this.components);
             this.master_timer = new System.Windows.Forms.Timer(this.components);
             this.bill_panel = new System.Windows.Forms.Panel();
-            this.pictureBox40 = new System.Windows.Forms.PictureBox();
             this.label41 = new System.Windows.Forms.Label();
-            this.pictureBox51 = new System.Windows.Forms.PictureBox();
             this.label49 = new System.Windows.Forms.Label();
-            this.pictureBox50 = new System.Windows.Forms.PictureBox();
             this.label48 = new System.Windows.Forms.Label();
-            this.pictureBox49 = new System.Windows.Forms.PictureBox();
             this.label47 = new System.Windows.Forms.Label();
-            this.pictureBox48 = new System.Windows.Forms.PictureBox();
             this.label46 = new System.Windows.Forms.Label();
-            this.pictureBox41 = new System.Windows.Forms.PictureBox();
             this.panel26 = new System.Windows.Forms.Panel();
-            this.pictureBox42 = new System.Windows.Forms.PictureBox();
             this.label38 = new System.Windows.Forms.Label();
-            this.pictureBox43 = new System.Windows.Forms.PictureBox();
             this.label39 = new System.Windows.Forms.Label();
             this.label40 = new System.Windows.Forms.Label();
             this.master_panel = new System.Windows.Forms.Panel();
-            this.pictureBox54 = new System.Windows.Forms.PictureBox();
             this.label52 = new System.Windows.Forms.Label();
-            this.pictureBox53 = new System.Windows.Forms.PictureBox();
             this.label51 = new System.Windows.Forms.Label();
             this.panel28 = new System.Windows.Forms.Panel();
-            this.pictureBox44 = new System.Windows.Forms.PictureBox();
             this.label42 = new System.Windows.Forms.Label();
-            this.pictureBox45 = new System.Windows.Forms.PictureBox();
             this.label43 = new System.Windows.Forms.Label();
-            this.pictureBox46 = new System.Windows.Forms.PictureBox();
             this.label44 = new System.Windows.Forms.Label();
-            this.pictureBox47 = new System.Windows.Forms.PictureBox();
             this.label45 = new System.Windows.Forms.Label();
             this.tran_panel = new System.Windows.Forms.Panel();
-            this.pictureBox62 = new System.Windows.Forms.PictureBox();
             this.label60 = new System.Windows.Forms.Label();
-            this.pictureBox61 = new System.Windows.Forms.PictureBox();
             this.label59 = new System.Windows.Forms.Label();
-            this.pictureBox55 = new System.Windows.Forms.PictureBox();
             this.label53 = new System.Windows.Forms.Label();
-            this.pictureBox56 = new System.Windows.Forms.PictureBox();
             this.label54 = new System.Windows.Forms.Label();
             this.panel29 = new System.Windows.Forms.Panel();
-            this.pictureBox57 = new System.Windows.Forms.PictureBox();
             this.label55 = new System.Windows.Forms.Label();
-            this.pictureBox58 = new System.Windows.Forms.PictureBox();
             this.label56 = new System.Windows.Forms.Label();
-            this.pictureBox59 = new System.Windows.Forms.PictureBox();
             this.label57 = new System.Windows.Forms.Label();
-            this.pictureBox60 = new System.Windows.Forms.PictureBox();
             this.label58 = new System.Windows.Forms.Label();
             this.tran_timer = new System.Windows.Forms.Timer(this.components);
             this.record_panel = new System.Windows.Forms.Panel();
-            this.pictureBox70 = new System.Windows.Forms.PictureBox();
             this.label68 = new System.Windows.Forms.Label();
-            this.pictureBox69 = new System.Windows.Forms.PictureBox();
             this.label67 = new System.Windows.Forms.Label();
-            this.pictureBox68 = new System.Windows.Forms.PictureBox();
             this.label66 = new System.Windows.Forms.Label();
-            this.pictureBox67 = new System.Windows.Forms.PictureBox();
             this.label65 = new System.Windows.Forms.Label();
-            this.pictureBox65 = new System.Windows.Forms.PictureBox();
-            this.pictureBox66 = new System.Windows.Forms.PictureBox();
             this.panel30 = new System.Windows.Forms.Panel();
-            this.pictureBox63 = new System.Windows.Forms.PictureBox();
             this.label61 = new System.Windows.Forms.Label();
-            this.pictureBox64 = new System.Windows.Forms.PictureBox();
             this.label62 = new System.Windows.Forms.Label();
             this.label63 = new System.Windows.Forms.Label();
             this.label64 = new System.Windows.Forms.Label();
             this.record_timer = new System.Windows.Forms.Timer(this.components);
             this.import_panel = new System.Windows.Forms.Panel();
-            this.pictureBox32 = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.pictureBox31 = new System.Windows.Forms.PictureBox();
             this.panel22 = new System.Windows.Forms.Panel();
-            this.pictureBox37 = new System.Windows.Forms.PictureBox();
             this.label34 = new System.Windows.Forms.Label();
-            this.pictureBox38 = new System.Windows.Forms.PictureBox();
             this.label35 = new System.Windows.Forms.Label();
             this.label36 = new System.Windows.Forms.Label();
             this.import_timer = new System.Windows.Forms.Timer(this.components);
+            this.panel_tax = new System.Windows.Forms.Panel();
+            this.label72 = new System.Windows.Forms.Label();
+            this.panel23 = new System.Windows.Forms.Panel();
+            this.label30 = new System.Windows.Forms.Label();
+            this.label31 = new System.Windows.Forms.Label();
+            this.label71 = new System.Windows.Forms.Label();
+            this.label70 = new System.Windows.Forms.Label();
+            this.label69 = new System.Windows.Forms.Label();
+            this.label37 = new System.Windows.Forms.Label();
+            this.label32 = new System.Windows.Forms.Label();
+            this.label33 = new System.Windows.Forms.Label();
+            this.timer_tax = new System.Windows.Forms.Timer(this.components);
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.label12 = new System.Windows.Forms.Label();
+            this.pictureBox74 = new System.Windows.Forms.PictureBox();
+            this.pictureBox73 = new System.Windows.Forms.PictureBox();
+            this.pictureBox72 = new System.Windows.Forms.PictureBox();
+            this.pictureBox71 = new System.Windows.Forms.PictureBox();
+            this.pictureBox39 = new System.Windows.Forms.PictureBox();
+            this.pictureBox33 = new System.Windows.Forms.PictureBox();
+            this.pictureBox34 = new System.Windows.Forms.PictureBox();
+            this.pictureBox35 = new System.Windows.Forms.PictureBox();
+            this.pictureBox36 = new System.Windows.Forms.PictureBox();
+            this.pictureBox32 = new System.Windows.Forms.PictureBox();
+            this.pictureBox31 = new System.Windows.Forms.PictureBox();
+            this.pictureBox37 = new System.Windows.Forms.PictureBox();
+            this.pictureBox38 = new System.Windows.Forms.PictureBox();
+            this.pictureBox70 = new System.Windows.Forms.PictureBox();
+            this.pictureBox69 = new System.Windows.Forms.PictureBox();
+            this.pictureBox68 = new System.Windows.Forms.PictureBox();
+            this.pictureBox67 = new System.Windows.Forms.PictureBox();
+            this.pictureBox65 = new System.Windows.Forms.PictureBox();
+            this.pictureBox66 = new System.Windows.Forms.PictureBox();
+            this.pictureBox63 = new System.Windows.Forms.PictureBox();
+            this.pictureBox64 = new System.Windows.Forms.PictureBox();
+            this.pictureBox62 = new System.Windows.Forms.PictureBox();
+            this.pictureBox61 = new System.Windows.Forms.PictureBox();
+            this.pictureBox55 = new System.Windows.Forms.PictureBox();
+            this.pictureBox56 = new System.Windows.Forms.PictureBox();
+            this.pictureBox57 = new System.Windows.Forms.PictureBox();
+            this.pictureBox58 = new System.Windows.Forms.PictureBox();
+            this.pictureBox59 = new System.Windows.Forms.PictureBox();
+            this.pictureBox60 = new System.Windows.Forms.PictureBox();
+            this.pictureBox54 = new System.Windows.Forms.PictureBox();
+            this.pictureBox53 = new System.Windows.Forms.PictureBox();
+            this.pictureBox44 = new System.Windows.Forms.PictureBox();
+            this.pictureBox45 = new System.Windows.Forms.PictureBox();
+            this.pictureBox46 = new System.Windows.Forms.PictureBox();
+            this.pictureBox47 = new System.Windows.Forms.PictureBox();
+            this.pictureBox40 = new System.Windows.Forms.PictureBox();
+            this.pictureBox51 = new System.Windows.Forms.PictureBox();
+            this.pictureBox50 = new System.Windows.Forms.PictureBox();
+            this.pictureBox49 = new System.Windows.Forms.PictureBox();
+            this.pictureBox48 = new System.Windows.Forms.PictureBox();
+            this.pictureBox41 = new System.Windows.Forms.PictureBox();
+            this.pictureBox42 = new System.Windows.Forms.PictureBox();
+            this.pictureBox43 = new System.Windows.Forms.PictureBox();
+            this.pictureBox28 = new System.Windows.Forms.PictureBox();
+            this.pictureBox11 = new System.Windows.Forms.PictureBox();
+            this.pictureBox29 = new System.Windows.Forms.PictureBox();
+            this.pictureBox30 = new System.Windows.Forms.PictureBox();
+            this.pictureBox27 = new System.Windows.Forms.PictureBox();
+            this.pictureBox25 = new System.Windows.Forms.PictureBox();
+            this.pictureBox23 = new System.Windows.Forms.PictureBox();
+            this.pictureBox24 = new System.Windows.Forms.PictureBox();
+            this.pictureBox26 = new System.Windows.Forms.PictureBox();
+            this.pictureBox21 = new System.Windows.Forms.PictureBox();
+            this.pictureBox22 = new System.Windows.Forms.PictureBox();
+            this.pictureBox20 = new System.Windows.Forms.PictureBox();
+            this.pictureBox19 = new System.Windows.Forms.PictureBox();
+            this.gunaButton5 = new Guna.UI.WinForms.GunaButton();
+            this.gunaButton4 = new Guna.UI.WinForms.GunaButton();
+            this.gunaButton3 = new Guna.UI.WinForms.GunaButton();
+            this.gunaButton2 = new Guna.UI.WinForms.GunaButton();
+            this.gunaButton1 = new Guna.UI.WinForms.GunaButton();
+            this.pictureBox52 = new System.Windows.Forms.PictureBox();
+            this.pictureBox15 = new System.Windows.Forms.PictureBox();
+            this.pictureBox18 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox9 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox17 = new System.Windows.Forms.PictureBox();
+            this.pictureBox12 = new System.Windows.Forms.PictureBox();
+            this.pictureBox10 = new System.Windows.Forms.PictureBox();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
+            this.pictureBox14 = new System.Windows.Forms.PictureBox();
+            this.pictureBox13 = new System.Windows.Forms.PictureBox();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox16 = new System.Windows.Forms.PictureBox();
+            this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.panel3.SuspendLayout();
-            this.panel6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel25.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox52)).BeginInit();
             this.panel18.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).BeginInit();
             this.panel17.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox18)).BeginInit();
             this.panel16.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel15.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             this.panel14.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel13.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).BeginInit();
             this.panel12.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
             this.panel10.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
             this.panel9.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             this.panel8.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).BeginInit();
             this.panel7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
             this.panel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.panelssssss.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).BeginInit();
             this.panelcustomer.SuspendLayout();
             this.panel19.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox21)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox22)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox20)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).BeginInit();
             this.purches_panel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox27)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox25)).BeginInit();
             this.panel21.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox23)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox24)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox26)).BeginInit();
             this.panel20.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox29)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox30)).BeginInit();
             this.supplier_p.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox28)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
             this.bill_panel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox40)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox51)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox50)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox49)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox48)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox41)).BeginInit();
             this.panel26.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox42)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox43)).BeginInit();
             this.master_panel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox54)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox53)).BeginInit();
             this.panel28.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox44)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox45)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox46)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox47)).BeginInit();
             this.tran_panel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox62)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox61)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox55)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox56)).BeginInit();
             this.panel29.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox57)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox58)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox59)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox60)).BeginInit();
             this.record_panel.SuspendLayout();
+            this.panel30.SuspendLayout();
+            this.import_panel.SuspendLayout();
+            this.panel22.SuspendLayout();
+            this.panel_tax.SuspendLayout();
+            this.panel23.SuspendLayout();
+            this.panel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox74)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox73)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox72)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox71)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox39)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox33)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox34)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox35)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox36)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox32)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox31)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox37)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox38)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox70)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox69)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox68)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox67)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox65)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox66)).BeginInit();
-            this.panel30.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox63)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox64)).BeginInit();
-            this.import_panel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox32)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox31)).BeginInit();
-            this.panel22.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox37)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox38)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox62)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox61)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox55)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox56)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox57)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox58)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox59)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox60)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox54)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox53)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox44)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox45)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox46)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox47)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox40)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox51)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox50)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox49)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox48)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox41)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox42)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox43)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox28)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox29)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox30)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox27)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox25)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox23)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox24)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox26)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox21)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox22)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox20)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox52)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox18)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             this.SuspendLayout();
             // 
             // panel3
@@ -340,141 +372,6 @@ namespace CrystalReport
             this.panel3.Size = new System.Drawing.Size(958, 44);
             this.panel3.TabIndex = 1;
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
-            // 
-            // gunaButton5
-            // 
-            this.gunaButton5.AnimationHoverSpeed = 0.07F;
-            this.gunaButton5.AnimationSpeed = 0.03F;
-            this.gunaButton5.BackColor = System.Drawing.Color.DarkOrange;
-            this.gunaButton5.BaseColor = System.Drawing.SystemColors.ControlLightLight;
-            this.gunaButton5.BorderColor = System.Drawing.Color.Black;
-            this.gunaButton5.BorderSize = 1;
-            this.gunaButton5.CausesValidation = false;
-            this.gunaButton5.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.gunaButton5.FocusedColor = System.Drawing.Color.Empty;
-            this.gunaButton5.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaButton5.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.gunaButton5.Image = global::CrystalReport.Properties.Resources.expenses;
-            this.gunaButton5.ImageSize = new System.Drawing.Size(20, 20);
-            this.gunaButton5.Location = new System.Drawing.Point(469, 3);
-            this.gunaButton5.Name = "gunaButton5";
-            this.gunaButton5.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
-            this.gunaButton5.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.gunaButton5.OnHoverForeColor = System.Drawing.Color.White;
-            this.gunaButton5.OnHoverImage = null;
-            this.gunaButton5.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaButton5.Size = new System.Drawing.Size(113, 37);
-            this.gunaButton5.TabIndex = 13;
-            this.gunaButton5.Text = "Kharcha";
-            this.gunaButton5.Click += new System.EventHandler(this.gunaButton5_Click);
-            // 
-            // gunaButton4
-            // 
-            this.gunaButton4.AnimationHoverSpeed = 0.07F;
-            this.gunaButton4.AnimationSpeed = 0.03F;
-            this.gunaButton4.BackColor = System.Drawing.Color.DarkOrange;
-            this.gunaButton4.BaseColor = System.Drawing.SystemColors.ControlLightLight;
-            this.gunaButton4.BorderColor = System.Drawing.Color.Black;
-            this.gunaButton4.BorderSize = 1;
-            this.gunaButton4.CausesValidation = false;
-            this.gunaButton4.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.gunaButton4.FocusedColor = System.Drawing.Color.Empty;
-            this.gunaButton4.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaButton4.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.gunaButton4.Image = global::CrystalReport.Properties.Resources.cashback;
-            this.gunaButton4.ImageSize = new System.Drawing.Size(20, 20);
-            this.gunaButton4.Location = new System.Drawing.Point(348, 3);
-            this.gunaButton4.Name = "gunaButton4";
-            this.gunaButton4.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
-            this.gunaButton4.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.gunaButton4.OnHoverForeColor = System.Drawing.Color.White;
-            this.gunaButton4.OnHoverImage = null;
-            this.gunaButton4.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaButton4.Size = new System.Drawing.Size(113, 37);
-            this.gunaButton4.TabIndex = 12;
-            this.gunaButton4.Text = "Recovery";
-            this.gunaButton4.Click += new System.EventHandler(this.gunaButton4_Click);
-            // 
-            // gunaButton3
-            // 
-            this.gunaButton3.AnimationHoverSpeed = 0.07F;
-            this.gunaButton3.AnimationSpeed = 0.03F;
-            this.gunaButton3.BackColor = System.Drawing.Color.DarkOrange;
-            this.gunaButton3.BaseColor = System.Drawing.Color.AntiqueWhite;
-            this.gunaButton3.BorderColor = System.Drawing.Color.Black;
-            this.gunaButton3.BorderSize = 1;
-            this.gunaButton3.CausesValidation = false;
-            this.gunaButton3.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.gunaButton3.FocusedColor = System.Drawing.Color.Empty;
-            this.gunaButton3.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaButton3.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.gunaButton3.Image = global::CrystalReport.Properties.Resources.backup;
-            this.gunaButton3.ImageSize = new System.Drawing.Size(20, 20);
-            this.gunaButton3.Location = new System.Drawing.Point(588, 3);
-            this.gunaButton3.Name = "gunaButton3";
-            this.gunaButton3.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
-            this.gunaButton3.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.gunaButton3.OnHoverForeColor = System.Drawing.Color.White;
-            this.gunaButton3.OnHoverImage = null;
-            this.gunaButton3.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaButton3.Size = new System.Drawing.Size(99, 37);
-            this.gunaButton3.TabIndex = 8;
-            this.gunaButton3.Text = "Backup";
-            this.gunaButton3.Click += new System.EventHandler(this.gunaButton3_Click);
-            // 
-            // gunaButton2
-            // 
-            this.gunaButton2.AnimationHoverSpeed = 0.07F;
-            this.gunaButton2.AnimationSpeed = 0.03F;
-            this.gunaButton2.BackColor = System.Drawing.Color.DarkOrange;
-            this.gunaButton2.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.gunaButton2.BorderColor = System.Drawing.Color.Black;
-            this.gunaButton2.BorderSize = 1;
-            this.gunaButton2.CausesValidation = false;
-            this.gunaButton2.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.gunaButton2.FocusedColor = System.Drawing.Color.Empty;
-            this.gunaButton2.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaButton2.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.gunaButton2.Image = global::CrystalReport.Properties.Resources.sales;
-            this.gunaButton2.ImageSize = new System.Drawing.Size(20, 20);
-            this.gunaButton2.Location = new System.Drawing.Point(205, 3);
-            this.gunaButton2.Name = "gunaButton2";
-            this.gunaButton2.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
-            this.gunaButton2.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.gunaButton2.OnHoverForeColor = System.Drawing.Color.White;
-            this.gunaButton2.OnHoverImage = null;
-            this.gunaButton2.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaButton2.Size = new System.Drawing.Size(135, 37);
-            this.gunaButton2.TabIndex = 1000000000;
-            this.gunaButton2.Text = "Sale History";
-            this.gunaButton2.Click += new System.EventHandler(this.gunaButton2_Click);
-            // 
-            // gunaButton1
-            // 
-            this.gunaButton1.AnimationHoverSpeed = 0.07F;
-            this.gunaButton1.AnimationSpeed = 0.03F;
-            this.gunaButton1.BackColor = System.Drawing.Color.DarkOrange;
-            this.gunaButton1.BaseColor = System.Drawing.SystemColors.ControlLightLight;
-            this.gunaButton1.BorderColor = System.Drawing.Color.Black;
-            this.gunaButton1.BorderSize = 1;
-            this.gunaButton1.CausesValidation = false;
-            this.gunaButton1.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.gunaButton1.FocusedColor = System.Drawing.Color.Empty;
-            this.gunaButton1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaButton1.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.gunaButton1.Image = global::CrystalReport.Properties.Resources.rupee_indian;
-            this.gunaButton1.ImageSize = new System.Drawing.Size(20, 20);
-            this.gunaButton1.Location = new System.Drawing.Point(6, 3);
-            this.gunaButton1.Name = "gunaButton1";
-            this.gunaButton1.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
-            this.gunaButton1.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.gunaButton1.OnHoverForeColor = System.Drawing.Color.White;
-            this.gunaButton1.OnHoverImage = null;
-            this.gunaButton1.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaButton1.Size = new System.Drawing.Size(193, 37);
-            this.gunaButton1.TabIndex = 12000000;
-            this.gunaButton1.Text = "Transaction History";
-            this.gunaButton1.Click += new System.EventHandler(this.gunaButton1_Click);
             // 
             // lices
             // 
@@ -503,9 +400,9 @@ namespace CrystalReport
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.main.BackColor = System.Drawing.Color.White;
-            this.main.Location = new System.Drawing.Point(203, 46);
+            this.main.Location = new System.Drawing.Point(201, 46);
             this.main.Name = "main";
-            this.main.Size = new System.Drawing.Size(953, 729);
+            this.main.Size = new System.Drawing.Size(955, 729);
             this.main.TabIndex = 2;
             this.main.Paint += new System.Windows.Forms.PaintEventHandler(this.main_Paint);
             // 
@@ -521,51 +418,12 @@ namespace CrystalReport
             // timer3
             // 
             this.timer3.Interval = 1;
+            this.timer3.Tick += new System.EventHandler(this.timer3_Tick);
             // 
             // timer4
             // 
             this.timer4.Interval = 2;
             this.timer4.Tick += new System.EventHandler(this.timer4_Tick);
-            // 
-            // panel6
-            // 
-            this.panel6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.panel6.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(67)))));
-            this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel6.Controls.Add(this.label12);
-            this.panel6.Controls.Add(this.pictureBox8);
-            this.panel6.Location = new System.Drawing.Point(0, 736);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(199, 41);
-            this.panel6.TabIndex = 0;
-            this.panel6.Paint += new System.Windows.Forms.PaintEventHandler(this.panel6_Paint);
-            // 
-            // label12
-            // 
-            this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label12.AutoSize = true;
-            this.label12.BackColor = System.Drawing.Color.Transparent;
-            this.label12.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label12.Font = new System.Drawing.Font("Verdana", 11.25F);
-            this.label12.ForeColor = System.Drawing.Color.BlanchedAlmond;
-            this.label12.Location = new System.Drawing.Point(50, 13);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(60, 18);
-            this.label12.TabIndex = 4;
-            this.label12.Text = "Logout";
-            this.label12.Click += new System.EventHandler(this.label12_Click);
-            // 
-            // pictureBox8
-            // 
-            this.pictureBox8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.pictureBox8.Image = global::CrystalReport.Properties.Resources.logout;
-            this.pictureBox8.Location = new System.Drawing.Point(3, 3);
-            this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(37, 35);
-            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox8.TabIndex = 4;
-            this.pictureBox8.TabStop = false;
             // 
             // label14
             // 
@@ -741,16 +599,6 @@ namespace CrystalReport
             this.panel25.MouseEnter += new System.EventHandler(this.panel25_MouseEnter);
             this.panel25.MouseLeave += new System.EventHandler(this.panel25_MouseLeave);
             // 
-            // pictureBox52
-            // 
-            this.pictureBox52.Image = global::CrystalReport.Properties.Resources.master;
-            this.pictureBox52.Location = new System.Drawing.Point(2, 0);
-            this.pictureBox52.Name = "pictureBox52";
-            this.pictureBox52.Size = new System.Drawing.Size(42, 29);
-            this.pictureBox52.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox52.TabIndex = 0;
-            this.pictureBox52.TabStop = false;
-            // 
             // label50
             // 
             this.label50.AutoSize = true;
@@ -794,16 +642,6 @@ namespace CrystalReport
             this.label18.MouseEnter += new System.EventHandler(this.label18_MouseEnter);
             this.label18.MouseLeave += new System.EventHandler(this.panel18_MouseLeave);
             // 
-            // pictureBox15
-            // 
-            this.pictureBox15.Image = global::CrystalReport.Properties.Resources.owner;
-            this.pictureBox15.Location = new System.Drawing.Point(-2, 3);
-            this.pictureBox15.Name = "pictureBox15";
-            this.pictureBox15.Size = new System.Drawing.Size(38, 30);
-            this.pictureBox15.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox15.TabIndex = 6;
-            this.pictureBox15.TabStop = false;
-            // 
             // panel17
             // 
             this.panel17.Controls.Add(this.label10);
@@ -832,16 +670,6 @@ namespace CrystalReport
             this.label10.MouseEnter += new System.EventHandler(this.label10_MouseEnter_1);
             this.label10.MouseLeave += new System.EventHandler(this.panel17_MouseLeave);
             // 
-            // pictureBox18
-            // 
-            this.pictureBox18.Image = global::CrystalReport.Properties.Resources.settings_64;
-            this.pictureBox18.Location = new System.Drawing.Point(-1, 3);
-            this.pictureBox18.Name = "pictureBox18";
-            this.pictureBox18.Size = new System.Drawing.Size(38, 30);
-            this.pictureBox18.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox18.TabIndex = 15;
-            this.pictureBox18.TabStop = false;
-            // 
             // panel16
             // 
             this.panel16.Controls.Add(this.pictureBox2);
@@ -853,16 +681,6 @@ namespace CrystalReport
             this.panel16.Click += new System.EventHandler(this.label4_Click_1);
             this.panel16.MouseEnter += new System.EventHandler(this.panel16_MouseEnter);
             this.panel16.MouseLeave += new System.EventHandler(this.panel16_MouseLeave);
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::CrystalReport.Properties.Resources.icons8_rupee_501;
-            this.pictureBox2.Location = new System.Drawing.Point(-1, 3);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(38, 30);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 11;
-            this.pictureBox2.TabStop = false;
             // 
             // label4
             // 
@@ -892,16 +710,6 @@ namespace CrystalReport
             this.panel15.MouseEnter += new System.EventHandler(this.panel15_MouseEnter);
             this.panel15.MouseLeave += new System.EventHandler(this.panel15_MouseLeave);
             // 
-            // pictureBox9
-            // 
-            this.pictureBox9.Image = global::CrystalReport.Properties.Resources.icons8_bill_641;
-            this.pictureBox9.Location = new System.Drawing.Point(-1, 2);
-            this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Size = new System.Drawing.Size(40, 31);
-            this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox9.TabIndex = 6;
-            this.pictureBox9.TabStop = false;
-            // 
             // bill
             // 
             this.bill.AutoSize = true;
@@ -930,16 +738,6 @@ namespace CrystalReport
             this.panel14.Click += new System.EventHandler(this.label3_Click_2);
             this.panel14.MouseEnter += new System.EventHandler(this.panel14_MouseEnter);
             this.panel14.MouseLeave += new System.EventHandler(this.panel14_MouseLeave);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::CrystalReport.Properties.Resources.excell;
-            this.pictureBox1.Location = new System.Drawing.Point(3, 6);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(34, 27);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 14;
-            this.pictureBox1.TabStop = false;
             // 
             // label3
             // 
@@ -978,23 +776,12 @@ namespace CrystalReport
             this.label7.ForeColor = System.Drawing.Color.BlanchedAlmond;
             this.label7.Location = new System.Drawing.Point(53, 10);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(63, 17);
+            this.label7.Size = new System.Drawing.Size(85, 17);
             this.label7.TabIndex = 3;
-            this.label7.Text = "GSTR File";
+            this.label7.Text = "GST / Report";
             this.label7.Click += new System.EventHandler(this.label7_Click);
             this.label7.MouseEnter += new System.EventHandler(this.label7_MouseEnter);
             this.label7.MouseLeave += new System.EventHandler(this.panel13_MouseLeave);
-            // 
-            // pictureBox17
-            // 
-            this.pictureBox17.Image = global::CrystalReport.Properties.Resources.icons8_payment_641;
-            this.pictureBox17.Location = new System.Drawing.Point(1, 2);
-            this.pictureBox17.Name = "pictureBox17";
-            this.pictureBox17.Size = new System.Drawing.Size(43, 31);
-            this.pictureBox17.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox17.TabIndex = 0;
-            this.pictureBox17.TabStop = false;
-            this.pictureBox17.Click += new System.EventHandler(this.pictureBox4_Click);
             // 
             // panel12
             // 
@@ -1008,17 +795,6 @@ namespace CrystalReport
             this.panel12.MouseEnter += new System.EventHandler(this.panel12_MouseEnter);
             this.panel12.MouseLeave += new System.EventHandler(this.panel12_MouseLeave);
             // 
-            // pictureBox12
-            // 
-            this.pictureBox12.Image = global::CrystalReport.Properties.Resources.companyyy;
-            this.pictureBox12.Location = new System.Drawing.Point(4, 2);
-            this.pictureBox12.Name = "pictureBox12";
-            this.pictureBox12.Size = new System.Drawing.Size(43, 31);
-            this.pictureBox12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox12.TabIndex = 0;
-            this.pictureBox12.TabStop = false;
-            this.pictureBox12.Click += new System.EventHandler(this.pictureBox4_Click);
-            // 
             // panel10
             // 
             this.panel10.Controls.Add(this.label13);
@@ -1030,17 +806,6 @@ namespace CrystalReport
             this.panel10.Click += new System.EventHandler(this.label13_Click);
             this.panel10.MouseEnter += new System.EventHandler(this.panel10_MouseEnter);
             this.panel10.MouseLeave += new System.EventHandler(this.panel10_MouseLeave);
-            // 
-            // pictureBox10
-            // 
-            this.pictureBox10.Image = global::CrystalReport.Properties.Resources.purches2;
-            this.pictureBox10.Location = new System.Drawing.Point(-1, 3);
-            this.pictureBox10.Name = "pictureBox10";
-            this.pictureBox10.Size = new System.Drawing.Size(41, 28);
-            this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox10.TabIndex = 0;
-            this.pictureBox10.TabStop = false;
-            this.pictureBox10.Click += new System.EventHandler(this.pictureBox4_Click);
             // 
             // panel9
             // 
@@ -1055,17 +820,6 @@ namespace CrystalReport
             this.panel9.MouseLeave += new System.EventHandler(this.panel9_MouseLeave);
             this.panel9.MouseHover += new System.EventHandler(this.panel9_MouseHover);
             // 
-            // pictureBox7
-            // 
-            this.pictureBox7.Image = global::CrystalReport.Properties.Resources.barcode;
-            this.pictureBox7.Location = new System.Drawing.Point(3, 2);
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(42, 31);
-            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox7.TabIndex = 0;
-            this.pictureBox7.TabStop = false;
-            this.pictureBox7.Click += new System.EventHandler(this.pictureBox4_Click);
-            // 
             // panel8
             // 
             this.panel8.Controls.Add(this.label8);
@@ -1077,16 +831,6 @@ namespace CrystalReport
             this.panel8.Click += new System.EventHandler(this.label8_Click_1);
             this.panel8.MouseEnter += new System.EventHandler(this.panel8_MouseEnter);
             this.panel8.MouseLeave += new System.EventHandler(this.panel8_MouseLeave);
-            // 
-            // pictureBox14
-            // 
-            this.pictureBox14.Image = global::CrystalReport.Properties.Resources.POS;
-            this.pictureBox14.Location = new System.Drawing.Point(3, 4);
-            this.pictureBox14.Name = "pictureBox14";
-            this.pictureBox14.Size = new System.Drawing.Size(42, 31);
-            this.pictureBox14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox14.TabIndex = 8;
-            this.pictureBox14.TabStop = false;
             // 
             // panel7
             // 
@@ -1100,17 +844,6 @@ namespace CrystalReport
             this.panel7.MouseEnter += new System.EventHandler(this.panel7_MouseEnter);
             this.panel7.MouseLeave += new System.EventHandler(this.panel7_MouseLeave);
             // 
-            // pictureBox13
-            // 
-            this.pictureBox13.Image = global::CrystalReport.Properties.Resources.icons8_customer_641;
-            this.pictureBox13.Location = new System.Drawing.Point(3, 2);
-            this.pictureBox13.Name = "pictureBox13";
-            this.pictureBox13.Size = new System.Drawing.Size(41, 31);
-            this.pictureBox13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox13.TabIndex = 0;
-            this.pictureBox13.TabStop = false;
-            this.pictureBox13.Click += new System.EventHandler(this.pictureBox4_Click);
-            // 
             // panel5
             // 
             this.panel5.Controls.Add(this.pictureBox6);
@@ -1123,17 +856,6 @@ namespace CrystalReport
             this.panel5.MouseEnter += new System.EventHandler(this.panel5_MouseEnter);
             this.panel5.MouseLeave += new System.EventHandler(this.panel5_MouseLeave);
             // 
-            // pictureBox6
-            // 
-            this.pictureBox6.Image = global::CrystalReport.Properties.Resources.stockk;
-            this.pictureBox6.Location = new System.Drawing.Point(4, 4);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(35, 25);
-            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox6.TabIndex = 0;
-            this.pictureBox6.TabStop = false;
-            this.pictureBox6.Click += new System.EventHandler(this.pictureBox4_Click);
-            // 
             // panel4
             // 
             this.panel4.Controls.Add(this.pictureBox5);
@@ -1145,17 +867,6 @@ namespace CrystalReport
             this.panel4.Click += new System.EventHandler(this.label14_Click);
             this.panel4.MouseEnter += new System.EventHandler(this.panel4_MouseEnter);
             this.panel4.MouseLeave += new System.EventHandler(this.panel4_MouseLeave);
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.Image = global::CrystalReport.Properties.Resources.stockssssss;
-            this.pictureBox5.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(40, 31);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox5.TabIndex = 0;
-            this.pictureBox5.TabStop = false;
-            this.pictureBox5.Click += new System.EventHandler(this.pictureBox4_Click);
             // 
             // panel2
             // 
@@ -1170,17 +881,6 @@ namespace CrystalReport
             this.panel2.MouseEnter += new System.EventHandler(this.panel2_MouseEnter);
             this.panel2.MouseLeave += new System.EventHandler(this.panel2_MouseLeave);
             // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Image = global::CrystalReport.Properties.Resources.transactions;
-            this.pictureBox4.Location = new System.Drawing.Point(4, 0);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(42, 29);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox4.TabIndex = 0;
-            this.pictureBox4.TabStop = false;
-            this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
-            // 
             // panelssssss
             // 
             this.panelssssss.Controls.Add(this.pictureBox3);
@@ -1193,16 +893,6 @@ namespace CrystalReport
             this.panelssssss.Paint += new System.Windows.Forms.PaintEventHandler(this.panelssssss_Paint_2);
             this.panelssssss.MouseEnter += new System.EventHandler(this.panelssssss_MouseEnter);
             this.panelssssss.MouseLeave += new System.EventHandler(this.panelssssss_MouseLeave);
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = global::CrystalReport.Properties.Resources.dashboard4;
-            this.pictureBox3.Location = new System.Drawing.Point(1, -1);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(45, 32);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 0;
-            this.pictureBox3.TabStop = false;
             // 
             // label1
             // 
@@ -1218,19 +908,6 @@ namespace CrystalReport
             this.label1.Text = "Dashboard";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             this.label1.MouseEnter += new System.EventHandler(this.label1_MouseEnter);
-            // 
-            // pictureBox16
-            // 
-            this.pictureBox16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(67)))));
-            this.pictureBox16.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox16.Image = global::CrystalReport.Properties.Resources.logo_no_background2;
-            this.pictureBox16.Location = new System.Drawing.Point(-1, 1);
-            this.pictureBox16.Name = "pictureBox16";
-            this.pictureBox16.Size = new System.Drawing.Size(200, 71);
-            this.pictureBox16.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox16.TabIndex = 0;
-            this.pictureBox16.TabStop = false;
-            this.pictureBox16.Click += new System.EventHandler(this.pictureBox16_Click);
             // 
             // gunaDragControl1
             // 
@@ -1280,16 +957,6 @@ namespace CrystalReport
             this.panel19.Size = new System.Drawing.Size(184, 0);
             this.panel19.TabIndex = 6;
             // 
-            // pictureBox21
-            // 
-            this.pictureBox21.Image = global::CrystalReport.Properties.Resources.icons8_customer_642;
-            this.pictureBox21.Location = new System.Drawing.Point(3, 42);
-            this.pictureBox21.Name = "pictureBox21";
-            this.pictureBox21.Size = new System.Drawing.Size(41, 31);
-            this.pictureBox21.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox21.TabIndex = 4;
-            this.pictureBox21.TabStop = false;
-            // 
             // label19
             // 
             this.label19.AutoSize = true;
@@ -1302,16 +969,6 @@ namespace CrystalReport
             this.label19.Size = new System.Drawing.Size(83, 17);
             this.label19.TabIndex = 5;
             this.label19.Text = "Transactions";
-            // 
-            // pictureBox22
-            // 
-            this.pictureBox22.Image = global::CrystalReport.Properties.Resources.icons8_customer_642;
-            this.pictureBox22.Location = new System.Drawing.Point(3, 5);
-            this.pictureBox22.Name = "pictureBox22";
-            this.pictureBox22.Size = new System.Drawing.Size(41, 31);
-            this.pictureBox22.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox22.TabIndex = 3;
-            this.pictureBox22.TabStop = false;
             // 
             // label20
             // 
@@ -1326,16 +983,6 @@ namespace CrystalReport
             this.label20.TabIndex = 3;
             this.label20.Text = "New Customer";
             // 
-            // pictureBox20
-            // 
-            this.pictureBox20.Image = global::CrystalReport.Properties.Resources.icons8_customer_642;
-            this.pictureBox20.Location = new System.Drawing.Point(3, 42);
-            this.pictureBox20.Name = "pictureBox20";
-            this.pictureBox20.Size = new System.Drawing.Size(41, 31);
-            this.pictureBox20.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox20.TabIndex = 4;
-            this.pictureBox20.TabStop = false;
-            // 
             // label16
             // 
             this.label16.AutoSize = true;
@@ -1349,16 +996,6 @@ namespace CrystalReport
             this.label16.TabIndex = 5;
             this.label16.Text = "Transactions";
             this.label16.Click += new System.EventHandler(this.label16_Click_1);
-            // 
-            // pictureBox19
-            // 
-            this.pictureBox19.Image = global::CrystalReport.Properties.Resources.icons8_customer_642;
-            this.pictureBox19.Location = new System.Drawing.Point(3, 5);
-            this.pictureBox19.Name = "pictureBox19";
-            this.pictureBox19.Size = new System.Drawing.Size(41, 31);
-            this.pictureBox19.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox19.TabIndex = 3;
-            this.pictureBox19.TabStop = false;
             // 
             // label11
             // 
@@ -1396,16 +1033,6 @@ namespace CrystalReport
             this.purches_panel.Size = new System.Drawing.Size(184, 0);
             this.purches_panel.TabIndex = 7;
             // 
-            // pictureBox27
-            // 
-            this.pictureBox27.Image = global::CrystalReport.Properties.Resources.purches4;
-            this.pictureBox27.Location = new System.Drawing.Point(5, 78);
-            this.pictureBox27.Name = "pictureBox27";
-            this.pictureBox27.Size = new System.Drawing.Size(41, 31);
-            this.pictureBox27.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox27.TabIndex = 9;
-            this.pictureBox27.TabStop = false;
-            // 
             // label25
             // 
             this.label25.AutoSize = true;
@@ -1419,16 +1046,6 @@ namespace CrystalReport
             this.label25.TabIndex = 8;
             this.label25.Text = "Purches Return";
             this.label25.Click += new System.EventHandler(this.label25_Click);
-            // 
-            // pictureBox25
-            // 
-            this.pictureBox25.Image = global::CrystalReport.Properties.Resources.purches4;
-            this.pictureBox25.Location = new System.Drawing.Point(4, 42);
-            this.pictureBox25.Name = "pictureBox25";
-            this.pictureBox25.Size = new System.Drawing.Size(41, 31);
-            this.pictureBox25.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox25.TabIndex = 7;
-            this.pictureBox25.TabStop = false;
             // 
             // panel21
             // 
@@ -1444,16 +1061,6 @@ namespace CrystalReport
             this.panel21.Size = new System.Drawing.Size(184, 0);
             this.panel21.TabIndex = 6;
             // 
-            // pictureBox23
-            // 
-            this.pictureBox23.Image = global::CrystalReport.Properties.Resources.icons8_customer_642;
-            this.pictureBox23.Location = new System.Drawing.Point(3, 42);
-            this.pictureBox23.Name = "pictureBox23";
-            this.pictureBox23.Size = new System.Drawing.Size(41, 31);
-            this.pictureBox23.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox23.TabIndex = 4;
-            this.pictureBox23.TabStop = false;
-            // 
             // label21
             // 
             this.label21.AutoSize = true;
@@ -1466,16 +1073,6 @@ namespace CrystalReport
             this.label21.Size = new System.Drawing.Size(83, 17);
             this.label21.TabIndex = 5;
             this.label21.Text = "Transactions";
-            // 
-            // pictureBox24
-            // 
-            this.pictureBox24.Image = global::CrystalReport.Properties.Resources.icons8_customer_642;
-            this.pictureBox24.Location = new System.Drawing.Point(3, 5);
-            this.pictureBox24.Name = "pictureBox24";
-            this.pictureBox24.Size = new System.Drawing.Size(41, 31);
-            this.pictureBox24.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox24.TabIndex = 3;
-            this.pictureBox24.TabStop = false;
             // 
             // label22
             // 
@@ -1503,16 +1100,6 @@ namespace CrystalReport
             this.label23.TabIndex = 5;
             this.label23.Text = "Purches Order";
             this.label23.Click += new System.EventHandler(this.label23_Click);
-            // 
-            // pictureBox26
-            // 
-            this.pictureBox26.Image = global::CrystalReport.Properties.Resources.purches4;
-            this.pictureBox26.Location = new System.Drawing.Point(3, 5);
-            this.pictureBox26.Name = "pictureBox26";
-            this.pictureBox26.Size = new System.Drawing.Size(41, 31);
-            this.pictureBox26.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox26.TabIndex = 3;
-            this.pictureBox26.TabStop = false;
             // 
             // label24
             // 
@@ -1575,16 +1162,6 @@ namespace CrystalReport
             this.panel20.Size = new System.Drawing.Size(184, 0);
             this.panel20.TabIndex = 6;
             // 
-            // pictureBox29
-            // 
-            this.pictureBox29.Image = global::CrystalReport.Properties.Resources.icons8_customer_642;
-            this.pictureBox29.Location = new System.Drawing.Point(3, 42);
-            this.pictureBox29.Name = "pictureBox29";
-            this.pictureBox29.Size = new System.Drawing.Size(41, 31);
-            this.pictureBox29.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox29.TabIndex = 4;
-            this.pictureBox29.TabStop = false;
-            // 
             // label26
             // 
             this.label26.AutoSize = true;
@@ -1597,16 +1174,6 @@ namespace CrystalReport
             this.label26.Size = new System.Drawing.Size(83, 17);
             this.label26.TabIndex = 5;
             this.label26.Text = "Transactions";
-            // 
-            // pictureBox30
-            // 
-            this.pictureBox30.Image = global::CrystalReport.Properties.Resources.icons8_customer_642;
-            this.pictureBox30.Location = new System.Drawing.Point(3, 5);
-            this.pictureBox30.Name = "pictureBox30";
-            this.pictureBox30.Size = new System.Drawing.Size(41, 31);
-            this.pictureBox30.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox30.TabIndex = 3;
-            this.pictureBox30.TabStop = false;
             // 
             // label27
             // 
@@ -1635,26 +1202,6 @@ namespace CrystalReport
             this.supplier_p.Name = "supplier_p";
             this.supplier_p.Size = new System.Drawing.Size(184, 0);
             this.supplier_p.TabIndex = 10;
-            // 
-            // pictureBox28
-            // 
-            this.pictureBox28.Image = global::CrystalReport.Properties.Resources.companyyy;
-            this.pictureBox28.Location = new System.Drawing.Point(6, 40);
-            this.pictureBox28.Name = "pictureBox28";
-            this.pictureBox28.Size = new System.Drawing.Size(43, 31);
-            this.pictureBox28.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox28.TabIndex = 8;
-            this.pictureBox28.TabStop = false;
-            // 
-            // pictureBox11
-            // 
-            this.pictureBox11.Image = global::CrystalReport.Properties.Resources.companyyy;
-            this.pictureBox11.Location = new System.Drawing.Point(6, 5);
-            this.pictureBox11.Name = "pictureBox11";
-            this.pictureBox11.Size = new System.Drawing.Size(43, 31);
-            this.pictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox11.TabIndex = 8;
-            this.pictureBox11.TabStop = false;
             // 
             // supplier_timer
             // 
@@ -1700,16 +1247,6 @@ namespace CrystalReport
             this.bill_panel.TabIndex = 11;
             this.bill_panel.Paint += new System.Windows.Forms.PaintEventHandler(this.panel25_Paint);
             // 
-            // pictureBox40
-            // 
-            this.pictureBox40.Image = global::CrystalReport.Properties.Resources.icons8_bill_641;
-            this.pictureBox40.Location = new System.Drawing.Point(-2, 181);
-            this.pictureBox40.Name = "pictureBox40";
-            this.pictureBox40.Size = new System.Drawing.Size(40, 31);
-            this.pictureBox40.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox40.TabIndex = 18;
-            this.pictureBox40.TabStop = false;
-            // 
             // label41
             // 
             this.label41.AutoSize = true;
@@ -1723,16 +1260,6 @@ namespace CrystalReport
             this.label41.TabIndex = 17;
             this.label41.Text = "Profit / Loss Report";
             this.label41.Click += new System.EventHandler(this.label41_Click);
-            // 
-            // pictureBox51
-            // 
-            this.pictureBox51.Image = global::CrystalReport.Properties.Resources.icons8_bill_641;
-            this.pictureBox51.Location = new System.Drawing.Point(-3, 149);
-            this.pictureBox51.Name = "pictureBox51";
-            this.pictureBox51.Size = new System.Drawing.Size(40, 31);
-            this.pictureBox51.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox51.TabIndex = 16;
-            this.pictureBox51.TabStop = false;
             // 
             // label49
             // 
@@ -1748,16 +1275,6 @@ namespace CrystalReport
             this.label49.Text = "Purches Report";
             this.label49.Click += new System.EventHandler(this.label49_Click);
             // 
-            // pictureBox50
-            // 
-            this.pictureBox50.Image = global::CrystalReport.Properties.Resources.icons8_bill_641;
-            this.pictureBox50.Location = new System.Drawing.Point(-3, 116);
-            this.pictureBox50.Name = "pictureBox50";
-            this.pictureBox50.Size = new System.Drawing.Size(40, 31);
-            this.pictureBox50.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox50.TabIndex = 14;
-            this.pictureBox50.TabStop = false;
-            // 
             // label48
             // 
             this.label48.AutoSize = true;
@@ -1772,16 +1289,6 @@ namespace CrystalReport
             this.label48.Text = "Stock Report";
             this.label48.Click += new System.EventHandler(this.label48_Click);
             // 
-            // pictureBox49
-            // 
-            this.pictureBox49.Image = global::CrystalReport.Properties.Resources.icons8_bill_641;
-            this.pictureBox49.Location = new System.Drawing.Point(-3, 79);
-            this.pictureBox49.Name = "pictureBox49";
-            this.pictureBox49.Size = new System.Drawing.Size(40, 31);
-            this.pictureBox49.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox49.TabIndex = 12;
-            this.pictureBox49.TabStop = false;
-            // 
             // label47
             // 
             this.label47.AutoSize = true;
@@ -1794,16 +1301,7 @@ namespace CrystalReport
             this.label47.Size = new System.Drawing.Size(83, 17);
             this.label47.TabIndex = 11;
             this.label47.Text = "Sales Report";
-            // 
-            // pictureBox48
-            // 
-            this.pictureBox48.Image = global::CrystalReport.Properties.Resources.icons8_bill_641;
-            this.pictureBox48.Location = new System.Drawing.Point(-4, 42);
-            this.pictureBox48.Name = "pictureBox48";
-            this.pictureBox48.Size = new System.Drawing.Size(40, 31);
-            this.pictureBox48.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox48.TabIndex = 10;
-            this.pictureBox48.TabStop = false;
+            this.label47.Click += new System.EventHandler(this.label47_Click);
             // 
             // label46
             // 
@@ -1819,17 +1317,6 @@ namespace CrystalReport
             this.label46.Text = "Customer Ledger";
             this.label46.Click += new System.EventHandler(this.label46_Click);
             // 
-            // pictureBox41
-            // 
-            this.pictureBox41.Image = global::CrystalReport.Properties.Resources.icons8_bill_641;
-            this.pictureBox41.Location = new System.Drawing.Point(-4, 8);
-            this.pictureBox41.Name = "pictureBox41";
-            this.pictureBox41.Size = new System.Drawing.Size(40, 31);
-            this.pictureBox41.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox41.TabIndex = 8;
-            this.pictureBox41.TabStop = false;
-            this.pictureBox41.Click += new System.EventHandler(this.pictureBox41_Click);
-            // 
             // panel26
             // 
             this.panel26.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(67)))));
@@ -1844,16 +1331,6 @@ namespace CrystalReport
             this.panel26.Size = new System.Drawing.Size(184, 0);
             this.panel26.TabIndex = 6;
             // 
-            // pictureBox42
-            // 
-            this.pictureBox42.Image = global::CrystalReport.Properties.Resources.icons8_customer_642;
-            this.pictureBox42.Location = new System.Drawing.Point(3, 42);
-            this.pictureBox42.Name = "pictureBox42";
-            this.pictureBox42.Size = new System.Drawing.Size(41, 31);
-            this.pictureBox42.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox42.TabIndex = 4;
-            this.pictureBox42.TabStop = false;
-            // 
             // label38
             // 
             this.label38.AutoSize = true;
@@ -1866,16 +1343,6 @@ namespace CrystalReport
             this.label38.Size = new System.Drawing.Size(83, 17);
             this.label38.TabIndex = 5;
             this.label38.Text = "Transactions";
-            // 
-            // pictureBox43
-            // 
-            this.pictureBox43.Image = global::CrystalReport.Properties.Resources.icons8_customer_642;
-            this.pictureBox43.Location = new System.Drawing.Point(3, 5);
-            this.pictureBox43.Name = "pictureBox43";
-            this.pictureBox43.Size = new System.Drawing.Size(41, 31);
-            this.pictureBox43.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox43.TabIndex = 3;
-            this.pictureBox43.TabStop = false;
             // 
             // label39
             // 
@@ -1923,16 +1390,6 @@ namespace CrystalReport
             this.master_panel.Size = new System.Drawing.Size(184, 0);
             this.master_panel.TabIndex = 7;
             // 
-            // pictureBox54
-            // 
-            this.pictureBox54.Image = global::CrystalReport.Properties.Resources.master;
-            this.pictureBox54.Location = new System.Drawing.Point(5, 116);
-            this.pictureBox54.Name = "pictureBox54";
-            this.pictureBox54.Size = new System.Drawing.Size(41, 31);
-            this.pictureBox54.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox54.TabIndex = 9;
-            this.pictureBox54.TabStop = false;
-            // 
             // label52
             // 
             this.label52.AutoSize = true;
@@ -1946,16 +1403,6 @@ namespace CrystalReport
             this.label52.TabIndex = 10;
             this.label52.Text = "Unit Master";
             this.label52.Click += new System.EventHandler(this.label52_Click);
-            // 
-            // pictureBox53
-            // 
-            this.pictureBox53.Image = global::CrystalReport.Properties.Resources.master;
-            this.pictureBox53.Location = new System.Drawing.Point(4, 79);
-            this.pictureBox53.Name = "pictureBox53";
-            this.pictureBox53.Size = new System.Drawing.Size(41, 31);
-            this.pictureBox53.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox53.TabIndex = 7;
-            this.pictureBox53.TabStop = false;
             // 
             // label51
             // 
@@ -1985,16 +1432,6 @@ namespace CrystalReport
             this.panel28.Size = new System.Drawing.Size(184, 0);
             this.panel28.TabIndex = 6;
             // 
-            // pictureBox44
-            // 
-            this.pictureBox44.Image = global::CrystalReport.Properties.Resources.icons8_customer_642;
-            this.pictureBox44.Location = new System.Drawing.Point(3, 42);
-            this.pictureBox44.Name = "pictureBox44";
-            this.pictureBox44.Size = new System.Drawing.Size(41, 31);
-            this.pictureBox44.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox44.TabIndex = 4;
-            this.pictureBox44.TabStop = false;
-            // 
             // label42
             // 
             this.label42.AutoSize = true;
@@ -2007,16 +1444,6 @@ namespace CrystalReport
             this.label42.Size = new System.Drawing.Size(83, 17);
             this.label42.TabIndex = 5;
             this.label42.Text = "Transactions";
-            // 
-            // pictureBox45
-            // 
-            this.pictureBox45.Image = global::CrystalReport.Properties.Resources.icons8_customer_642;
-            this.pictureBox45.Location = new System.Drawing.Point(3, 5);
-            this.pictureBox45.Name = "pictureBox45";
-            this.pictureBox45.Size = new System.Drawing.Size(41, 31);
-            this.pictureBox45.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox45.TabIndex = 3;
-            this.pictureBox45.TabStop = false;
             // 
             // label43
             // 
@@ -2031,16 +1458,6 @@ namespace CrystalReport
             this.label43.TabIndex = 3;
             this.label43.Text = "New Customer";
             // 
-            // pictureBox46
-            // 
-            this.pictureBox46.Image = global::CrystalReport.Properties.Resources.master;
-            this.pictureBox46.Location = new System.Drawing.Point(3, 42);
-            this.pictureBox46.Name = "pictureBox46";
-            this.pictureBox46.Size = new System.Drawing.Size(41, 31);
-            this.pictureBox46.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox46.TabIndex = 4;
-            this.pictureBox46.TabStop = false;
-            // 
             // label44
             // 
             this.label44.AutoSize = true;
@@ -2054,16 +1471,6 @@ namespace CrystalReport
             this.label44.TabIndex = 5;
             this.label44.Text = "Defaults Settings";
             this.label44.Click += new System.EventHandler(this.label44_Click);
-            // 
-            // pictureBox47
-            // 
-            this.pictureBox47.Image = global::CrystalReport.Properties.Resources.master;
-            this.pictureBox47.Location = new System.Drawing.Point(3, 5);
-            this.pictureBox47.Name = "pictureBox47";
-            this.pictureBox47.Size = new System.Drawing.Size(41, 31);
-            this.pictureBox47.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox47.TabIndex = 3;
-            this.pictureBox47.TabStop = false;
             // 
             // label45
             // 
@@ -2102,16 +1509,6 @@ namespace CrystalReport
             this.tran_panel.Size = new System.Drawing.Size(184, 0);
             this.tran_panel.TabIndex = 11;
             // 
-            // pictureBox62
-            // 
-            this.pictureBox62.Image = global::CrystalReport.Properties.Resources.transactions;
-            this.pictureBox62.Location = new System.Drawing.Point(5, 192);
-            this.pictureBox62.Name = "pictureBox62";
-            this.pictureBox62.Size = new System.Drawing.Size(41, 31);
-            this.pictureBox62.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox62.TabIndex = 13;
-            this.pictureBox62.TabStop = false;
-            // 
             // label60
             // 
             this.label60.AutoSize = true;
@@ -2125,16 +1522,6 @@ namespace CrystalReport
             this.label60.TabIndex = 14;
             this.label60.Text = "Purches View ";
             this.label60.Click += new System.EventHandler(this.label60_Click);
-            // 
-            // pictureBox61
-            // 
-            this.pictureBox61.Image = global::CrystalReport.Properties.Resources.transactions;
-            this.pictureBox61.Location = new System.Drawing.Point(5, 152);
-            this.pictureBox61.Name = "pictureBox61";
-            this.pictureBox61.Size = new System.Drawing.Size(41, 31);
-            this.pictureBox61.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox61.TabIndex = 11;
-            this.pictureBox61.TabStop = false;
             // 
             // label59
             // 
@@ -2150,16 +1537,6 @@ namespace CrystalReport
             this.label59.Text = "Expenses Voucher";
             this.label59.Click += new System.EventHandler(this.label59_Click);
             // 
-            // pictureBox55
-            // 
-            this.pictureBox55.Image = global::CrystalReport.Properties.Resources.transactions;
-            this.pictureBox55.Location = new System.Drawing.Point(5, 116);
-            this.pictureBox55.Name = "pictureBox55";
-            this.pictureBox55.Size = new System.Drawing.Size(41, 31);
-            this.pictureBox55.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox55.TabIndex = 9;
-            this.pictureBox55.TabStop = false;
-            // 
             // label53
             // 
             this.label53.AutoSize = true;
@@ -2173,16 +1550,6 @@ namespace CrystalReport
             this.label53.TabIndex = 10;
             this.label53.Text = "Payment (Supplier)";
             this.label53.Click += new System.EventHandler(this.label53_Click);
-            // 
-            // pictureBox56
-            // 
-            this.pictureBox56.Image = global::CrystalReport.Properties.Resources.transactions;
-            this.pictureBox56.Location = new System.Drawing.Point(4, 79);
-            this.pictureBox56.Name = "pictureBox56";
-            this.pictureBox56.Size = new System.Drawing.Size(41, 31);
-            this.pictureBox56.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox56.TabIndex = 7;
-            this.pictureBox56.TabStop = false;
             // 
             // label54
             // 
@@ -2212,16 +1579,6 @@ namespace CrystalReport
             this.panel29.Size = new System.Drawing.Size(184, 0);
             this.panel29.TabIndex = 6;
             // 
-            // pictureBox57
-            // 
-            this.pictureBox57.Image = global::CrystalReport.Properties.Resources.icons8_customer_642;
-            this.pictureBox57.Location = new System.Drawing.Point(3, 42);
-            this.pictureBox57.Name = "pictureBox57";
-            this.pictureBox57.Size = new System.Drawing.Size(41, 31);
-            this.pictureBox57.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox57.TabIndex = 4;
-            this.pictureBox57.TabStop = false;
-            // 
             // label55
             // 
             this.label55.AutoSize = true;
@@ -2234,16 +1591,6 @@ namespace CrystalReport
             this.label55.Size = new System.Drawing.Size(83, 17);
             this.label55.TabIndex = 5;
             this.label55.Text = "Transactions";
-            // 
-            // pictureBox58
-            // 
-            this.pictureBox58.Image = global::CrystalReport.Properties.Resources.icons8_customer_642;
-            this.pictureBox58.Location = new System.Drawing.Point(3, 5);
-            this.pictureBox58.Name = "pictureBox58";
-            this.pictureBox58.Size = new System.Drawing.Size(41, 31);
-            this.pictureBox58.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox58.TabIndex = 3;
-            this.pictureBox58.TabStop = false;
             // 
             // label56
             // 
@@ -2258,16 +1605,6 @@ namespace CrystalReport
             this.label56.TabIndex = 3;
             this.label56.Text = "New Customer";
             // 
-            // pictureBox59
-            // 
-            this.pictureBox59.Image = global::CrystalReport.Properties.Resources.transactions;
-            this.pictureBox59.Location = new System.Drawing.Point(3, 42);
-            this.pictureBox59.Name = "pictureBox59";
-            this.pictureBox59.Size = new System.Drawing.Size(41, 31);
-            this.pictureBox59.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox59.TabIndex = 4;
-            this.pictureBox59.TabStop = false;
-            // 
             // label57
             // 
             this.label57.AutoSize = true;
@@ -2280,16 +1617,6 @@ namespace CrystalReport
             this.label57.Size = new System.Drawing.Size(134, 17);
             this.label57.TabIndex = 5;
             this.label57.Text = "Sale Return (Cr.Note)";
-            // 
-            // pictureBox60
-            // 
-            this.pictureBox60.Image = global::CrystalReport.Properties.Resources.transactions;
-            this.pictureBox60.Location = new System.Drawing.Point(3, 5);
-            this.pictureBox60.Name = "pictureBox60";
-            this.pictureBox60.Size = new System.Drawing.Size(41, 31);
-            this.pictureBox60.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox60.TabIndex = 3;
-            this.pictureBox60.TabStop = false;
             // 
             // label58
             // 
@@ -2333,16 +1660,6 @@ namespace CrystalReport
             this.record_panel.Size = new System.Drawing.Size(184, 0);
             this.record_panel.TabIndex = 7;
             // 
-            // pictureBox70
-            // 
-            this.pictureBox70.Image = global::CrystalReport.Properties.Resources.stockssssss;
-            this.pictureBox70.Location = new System.Drawing.Point(1, 192);
-            this.pictureBox70.Name = "pictureBox70";
-            this.pictureBox70.Size = new System.Drawing.Size(37, 29);
-            this.pictureBox70.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox70.TabIndex = 14;
-            this.pictureBox70.TabStop = false;
-            // 
             // label68
             // 
             this.label68.AutoSize = true;
@@ -2356,17 +1673,6 @@ namespace CrystalReport
             this.label68.TabIndex = 15;
             this.label68.Text = "Purches Return";
             this.label68.Click += new System.EventHandler(this.label68_Click);
-            // 
-            // pictureBox69
-            // 
-            this.pictureBox69.Image = global::CrystalReport.Properties.Resources.stockssssss;
-            this.pictureBox69.Location = new System.Drawing.Point(1, 152);
-            this.pictureBox69.Name = "pictureBox69";
-            this.pictureBox69.Size = new System.Drawing.Size(37, 29);
-            this.pictureBox69.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox69.TabIndex = 12;
-            this.pictureBox69.TabStop = false;
-            this.pictureBox69.Click += new System.EventHandler(this.pictureBox69_Click);
             // 
             // label67
             // 
@@ -2382,16 +1688,6 @@ namespace CrystalReport
             this.label67.Text = "Purches Order";
             this.label67.Click += new System.EventHandler(this.label67_Click);
             // 
-            // pictureBox68
-            // 
-            this.pictureBox68.Image = global::CrystalReport.Properties.Resources.stockssssss;
-            this.pictureBox68.Location = new System.Drawing.Point(2, 115);
-            this.pictureBox68.Name = "pictureBox68";
-            this.pictureBox68.Size = new System.Drawing.Size(37, 29);
-            this.pictureBox68.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox68.TabIndex = 10;
-            this.pictureBox68.TabStop = false;
-            // 
             // label66
             // 
             this.label66.AutoSize = true;
@@ -2404,16 +1700,6 @@ namespace CrystalReport
             this.label66.Size = new System.Drawing.Size(83, 17);
             this.label66.TabIndex = 11;
             this.label66.Text = "Stock Adjest";
-            // 
-            // pictureBox67
-            // 
-            this.pictureBox67.Image = global::CrystalReport.Properties.Resources.stockssssss;
-            this.pictureBox67.Location = new System.Drawing.Point(2, 78);
-            this.pictureBox67.Name = "pictureBox67";
-            this.pictureBox67.Size = new System.Drawing.Size(37, 29);
-            this.pictureBox67.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox67.TabIndex = 8;
-            this.pictureBox67.TabStop = false;
             // 
             // label65
             // 
@@ -2429,26 +1715,6 @@ namespace CrystalReport
             this.label65.Text = "Stock List";
             this.label65.Click += new System.EventHandler(this.label65_Click);
             // 
-            // pictureBox65
-            // 
-            this.pictureBox65.Image = global::CrystalReport.Properties.Resources.stockssssss;
-            this.pictureBox65.Location = new System.Drawing.Point(4, 7);
-            this.pictureBox65.Name = "pictureBox65";
-            this.pictureBox65.Size = new System.Drawing.Size(37, 29);
-            this.pictureBox65.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox65.TabIndex = 7;
-            this.pictureBox65.TabStop = false;
-            // 
-            // pictureBox66
-            // 
-            this.pictureBox66.Image = global::CrystalReport.Properties.Resources.stockssssss;
-            this.pictureBox66.Location = new System.Drawing.Point(1, 42);
-            this.pictureBox66.Name = "pictureBox66";
-            this.pictureBox66.Size = new System.Drawing.Size(37, 29);
-            this.pictureBox66.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox66.TabIndex = 3;
-            this.pictureBox66.TabStop = false;
-            // 
             // panel30
             // 
             this.panel30.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(67)))));
@@ -2463,16 +1729,6 @@ namespace CrystalReport
             this.panel30.Size = new System.Drawing.Size(184, 0);
             this.panel30.TabIndex = 6;
             // 
-            // pictureBox63
-            // 
-            this.pictureBox63.Image = global::CrystalReport.Properties.Resources.icons8_customer_642;
-            this.pictureBox63.Location = new System.Drawing.Point(3, 42);
-            this.pictureBox63.Name = "pictureBox63";
-            this.pictureBox63.Size = new System.Drawing.Size(41, 31);
-            this.pictureBox63.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox63.TabIndex = 4;
-            this.pictureBox63.TabStop = false;
-            // 
             // label61
             // 
             this.label61.AutoSize = true;
@@ -2485,16 +1741,6 @@ namespace CrystalReport
             this.label61.Size = new System.Drawing.Size(83, 17);
             this.label61.TabIndex = 5;
             this.label61.Text = "Transactions";
-            // 
-            // pictureBox64
-            // 
-            this.pictureBox64.Image = global::CrystalReport.Properties.Resources.icons8_customer_642;
-            this.pictureBox64.Location = new System.Drawing.Point(3, 5);
-            this.pictureBox64.Name = "pictureBox64";
-            this.pictureBox64.Size = new System.Drawing.Size(41, 31);
-            this.pictureBox64.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox64.TabIndex = 3;
-            this.pictureBox64.TabStop = false;
             // 
             // label62
             // 
@@ -2557,16 +1803,6 @@ namespace CrystalReport
             this.import_panel.Size = new System.Drawing.Size(184, 0);
             this.import_panel.TabIndex = 19;
             // 
-            // pictureBox32
-            // 
-            this.pictureBox32.Image = global::CrystalReport.Properties.Resources.excell;
-            this.pictureBox32.Location = new System.Drawing.Point(2, 52);
-            this.pictureBox32.Name = "pictureBox32";
-            this.pictureBox32.Size = new System.Drawing.Size(34, 27);
-            this.pictureBox32.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox32.TabIndex = 17;
-            this.pictureBox32.TabStop = false;
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -2579,16 +1815,6 @@ namespace CrystalReport
             this.label5.Size = new System.Drawing.Size(109, 17);
             this.label5.TabIndex = 16;
             this.label5.Text = "Export GST Sales";
-            // 
-            // pictureBox31
-            // 
-            this.pictureBox31.Image = global::CrystalReport.Properties.Resources.excell;
-            this.pictureBox31.Location = new System.Drawing.Point(4, 12);
-            this.pictureBox31.Name = "pictureBox31";
-            this.pictureBox31.Size = new System.Drawing.Size(34, 27);
-            this.pictureBox31.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox31.TabIndex = 15;
-            this.pictureBox31.TabStop = false;
             // 
             // panel22
             // 
@@ -2604,16 +1830,6 @@ namespace CrystalReport
             this.panel22.Size = new System.Drawing.Size(184, 0);
             this.panel22.TabIndex = 6;
             // 
-            // pictureBox37
-            // 
-            this.pictureBox37.Image = global::CrystalReport.Properties.Resources.icons8_customer_642;
-            this.pictureBox37.Location = new System.Drawing.Point(3, 42);
-            this.pictureBox37.Name = "pictureBox37";
-            this.pictureBox37.Size = new System.Drawing.Size(41, 31);
-            this.pictureBox37.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox37.TabIndex = 4;
-            this.pictureBox37.TabStop = false;
-            // 
             // label34
             // 
             this.label34.AutoSize = true;
@@ -2626,16 +1842,6 @@ namespace CrystalReport
             this.label34.Size = new System.Drawing.Size(83, 17);
             this.label34.TabIndex = 5;
             this.label34.Text = "Transactions";
-            // 
-            // pictureBox38
-            // 
-            this.pictureBox38.Image = global::CrystalReport.Properties.Resources.icons8_customer_642;
-            this.pictureBox38.Location = new System.Drawing.Point(3, 5);
-            this.pictureBox38.Name = "pictureBox38";
-            this.pictureBox38.Size = new System.Drawing.Size(41, 31);
-            this.pictureBox38.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox38.TabIndex = 3;
-            this.pictureBox38.TabStop = false;
             // 
             // label35
             // 
@@ -2669,11 +1875,1094 @@ namespace CrystalReport
             this.import_timer.Interval = 10;
             this.import_timer.Tick += new System.EventHandler(this.import_timer_Tick);
             // 
+            // panel_tax
+            // 
+            this.panel_tax.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(67)))));
+            this.panel_tax.Controls.Add(this.pictureBox74);
+            this.panel_tax.Controls.Add(this.label72);
+            this.panel_tax.Controls.Add(this.pictureBox73);
+            this.panel_tax.Controls.Add(this.pictureBox72);
+            this.panel_tax.Controls.Add(this.pictureBox71);
+            this.panel_tax.Controls.Add(this.pictureBox39);
+            this.panel_tax.Controls.Add(this.pictureBox33);
+            this.panel_tax.Controls.Add(this.pictureBox34);
+            this.panel_tax.Controls.Add(this.panel23);
+            this.panel_tax.Controls.Add(this.label71);
+            this.panel_tax.Controls.Add(this.label70);
+            this.panel_tax.Controls.Add(this.label69);
+            this.panel_tax.Controls.Add(this.label37);
+            this.panel_tax.Controls.Add(this.label32);
+            this.panel_tax.Controls.Add(this.label33);
+            this.panel_tax.Location = new System.Drawing.Point(206, 488);
+            this.panel_tax.MaximumSize = new System.Drawing.Size(184, 260);
+            this.panel_tax.MinimumSize = new System.Drawing.Size(184, 0);
+            this.panel_tax.Name = "panel_tax";
+            this.panel_tax.Size = new System.Drawing.Size(184, 0);
+            this.panel_tax.TabIndex = 11;
+            // 
+            // label72
+            // 
+            this.label72.AutoSize = true;
+            this.label72.BackColor = System.Drawing.Color.Transparent;
+            this.label72.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label72.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label72.ForeColor = System.Drawing.Color.BlanchedAlmond;
+            this.label72.Location = new System.Drawing.Point(54, 117);
+            this.label72.Name = "label72";
+            this.label72.Size = new System.Drawing.Size(109, 17);
+            this.label72.TabIndex = 9;
+            this.label72.Text = "Purches Register";
+            this.label72.Click += new System.EventHandler(this.label72_Click);
+            // 
+            // panel23
+            // 
+            this.panel23.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(67)))));
+            this.panel23.Controls.Add(this.pictureBox35);
+            this.panel23.Controls.Add(this.label30);
+            this.panel23.Controls.Add(this.pictureBox36);
+            this.panel23.Controls.Add(this.label31);
+            this.panel23.Location = new System.Drawing.Point(0, 0);
+            this.panel23.MaximumSize = new System.Drawing.Size(184, 95);
+            this.panel23.MinimumSize = new System.Drawing.Size(184, 0);
+            this.panel23.Name = "panel23";
+            this.panel23.Size = new System.Drawing.Size(184, 0);
+            this.panel23.TabIndex = 6;
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.BackColor = System.Drawing.Color.Transparent;
+            this.label30.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label30.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label30.ForeColor = System.Drawing.Color.BlanchedAlmond;
+            this.label30.Location = new System.Drawing.Point(53, 49);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(83, 17);
+            this.label30.TabIndex = 5;
+            this.label30.Text = "Transactions";
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.BackColor = System.Drawing.Color.Transparent;
+            this.label31.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label31.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label31.ForeColor = System.Drawing.Color.BlanchedAlmond;
+            this.label31.Location = new System.Drawing.Point(51, 12);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(98, 17);
+            this.label31.TabIndex = 3;
+            this.label31.Text = "New Customer";
+            // 
+            // label71
+            // 
+            this.label71.AutoSize = true;
+            this.label71.BackColor = System.Drawing.Color.Transparent;
+            this.label71.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label71.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label71.ForeColor = System.Drawing.Color.BlanchedAlmond;
+            this.label71.Location = new System.Drawing.Point(54, 232);
+            this.label71.Name = "label71";
+            this.label71.Size = new System.Drawing.Size(58, 17);
+            this.label71.TabIndex = 5;
+            this.label71.Text = "GSTR 3B";
+            // 
+            // label70
+            // 
+            this.label70.AutoSize = true;
+            this.label70.BackColor = System.Drawing.Color.Transparent;
+            this.label70.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label70.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label70.ForeColor = System.Drawing.Color.BlanchedAlmond;
+            this.label70.Location = new System.Drawing.Point(53, 194);
+            this.label70.Name = "label70";
+            this.label70.Size = new System.Drawing.Size(48, 17);
+            this.label70.TabIndex = 5;
+            this.label70.Text = "GSTR 1";
+            this.label70.Click += new System.EventHandler(this.label70_Click);
+            // 
+            // label69
+            // 
+            this.label69.AutoSize = true;
+            this.label69.BackColor = System.Drawing.Color.Transparent;
+            this.label69.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label69.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label69.ForeColor = System.Drawing.Color.BlanchedAlmond;
+            this.label69.Location = new System.Drawing.Point(51, 155);
+            this.label69.Name = "label69";
+            this.label69.Size = new System.Drawing.Size(128, 17);
+            this.label69.TabIndex = 5;
+            this.label69.Text = "Purches Return Reg";
+            // 
+            // label37
+            // 
+            this.label37.AutoSize = true;
+            this.label37.BackColor = System.Drawing.Color.Transparent;
+            this.label37.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label37.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label37.ForeColor = System.Drawing.Color.BlanchedAlmond;
+            this.label37.Location = new System.Drawing.Point(53, 85);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(130, 17);
+            this.label37.TabIndex = 5;
+            this.label37.Text = "Sale Return Register";
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.BackColor = System.Drawing.Color.Transparent;
+            this.label32.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label32.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label32.ForeColor = System.Drawing.Color.BlanchedAlmond;
+            this.label32.Location = new System.Drawing.Point(53, 48);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(85, 17);
+            this.label32.TabIndex = 5;
+            this.label32.Text = "Sale Register";
+            this.label32.Click += new System.EventHandler(this.label32_Click_1);
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.BackColor = System.Drawing.Color.Transparent;
+            this.label33.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label33.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label33.ForeColor = System.Drawing.Color.BlanchedAlmond;
+            this.label33.Location = new System.Drawing.Point(51, 12);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(110, 17);
+            this.label33.TabIndex = 3;
+            this.label33.Text = "Sales GST Report";
+            this.label33.Click += new System.EventHandler(this.label33_Click_1);
+            // 
+            // timer_tax
+            // 
+            this.timer_tax.Interval = 10;
+            this.timer_tax.Tick += new System.EventHandler(this.timer_tax_Tick);
+            // 
+            // panel6
+            // 
+            this.panel6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.panel6.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(67)))));
+            this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel6.Controls.Add(this.label12);
+            this.panel6.Controls.Add(this.pictureBox8);
+            this.panel6.Location = new System.Drawing.Point(0, 736);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(199, 41);
+            this.panel6.TabIndex = 0;
+            this.panel6.Paint += new System.Windows.Forms.PaintEventHandler(this.panel6_Paint);
+            // 
+            // label12
+            // 
+            this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label12.AutoSize = true;
+            this.label12.BackColor = System.Drawing.Color.Transparent;
+            this.label12.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label12.Font = new System.Drawing.Font("Verdana", 11.25F);
+            this.label12.ForeColor = System.Drawing.Color.BlanchedAlmond;
+            this.label12.Location = new System.Drawing.Point(50, 13);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(60, 18);
+            this.label12.TabIndex = 4;
+            this.label12.Text = "Logout";
+            this.label12.Click += new System.EventHandler(this.label12_Click);
+            // 
+            // pictureBox74
+            // 
+            this.pictureBox74.Image = global::CrystalReport.Properties.Resources.gst;
+            this.pictureBox74.Location = new System.Drawing.Point(7, 110);
+            this.pictureBox74.Name = "pictureBox74";
+            this.pictureBox74.Size = new System.Drawing.Size(43, 31);
+            this.pictureBox74.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox74.TabIndex = 10;
+            this.pictureBox74.TabStop = false;
+            // 
+            // pictureBox73
+            // 
+            this.pictureBox73.Image = global::CrystalReport.Properties.Resources.gst;
+            this.pictureBox73.Location = new System.Drawing.Point(8, 224);
+            this.pictureBox73.Name = "pictureBox73";
+            this.pictureBox73.Size = new System.Drawing.Size(43, 31);
+            this.pictureBox73.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox73.TabIndex = 8;
+            this.pictureBox73.TabStop = false;
+            // 
+            // pictureBox72
+            // 
+            this.pictureBox72.Image = global::CrystalReport.Properties.Resources.gst;
+            this.pictureBox72.Location = new System.Drawing.Point(8, 186);
+            this.pictureBox72.Name = "pictureBox72";
+            this.pictureBox72.Size = new System.Drawing.Size(43, 31);
+            this.pictureBox72.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox72.TabIndex = 8;
+            this.pictureBox72.TabStop = false;
+            // 
+            // pictureBox71
+            // 
+            this.pictureBox71.Image = global::CrystalReport.Properties.Resources.gst;
+            this.pictureBox71.Location = new System.Drawing.Point(7, 147);
+            this.pictureBox71.Name = "pictureBox71";
+            this.pictureBox71.Size = new System.Drawing.Size(43, 31);
+            this.pictureBox71.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox71.TabIndex = 8;
+            this.pictureBox71.TabStop = false;
+            // 
+            // pictureBox39
+            // 
+            this.pictureBox39.Image = global::CrystalReport.Properties.Resources.gst;
+            this.pictureBox39.Location = new System.Drawing.Point(6, 78);
+            this.pictureBox39.Name = "pictureBox39";
+            this.pictureBox39.Size = new System.Drawing.Size(43, 31);
+            this.pictureBox39.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox39.TabIndex = 8;
+            this.pictureBox39.TabStop = false;
+            // 
+            // pictureBox33
+            // 
+            this.pictureBox33.Image = global::CrystalReport.Properties.Resources.gst;
+            this.pictureBox33.Location = new System.Drawing.Point(6, 40);
+            this.pictureBox33.Name = "pictureBox33";
+            this.pictureBox33.Size = new System.Drawing.Size(43, 31);
+            this.pictureBox33.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox33.TabIndex = 8;
+            this.pictureBox33.TabStop = false;
+            // 
+            // pictureBox34
+            // 
+            this.pictureBox34.Image = global::CrystalReport.Properties.Resources.gst;
+            this.pictureBox34.Location = new System.Drawing.Point(6, 5);
+            this.pictureBox34.Name = "pictureBox34";
+            this.pictureBox34.Size = new System.Drawing.Size(43, 31);
+            this.pictureBox34.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox34.TabIndex = 8;
+            this.pictureBox34.TabStop = false;
+            // 
+            // pictureBox35
+            // 
+            this.pictureBox35.Image = global::CrystalReport.Properties.Resources.icons8_customer_642;
+            this.pictureBox35.Location = new System.Drawing.Point(3, 42);
+            this.pictureBox35.Name = "pictureBox35";
+            this.pictureBox35.Size = new System.Drawing.Size(41, 31);
+            this.pictureBox35.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox35.TabIndex = 4;
+            this.pictureBox35.TabStop = false;
+            // 
+            // pictureBox36
+            // 
+            this.pictureBox36.Image = global::CrystalReport.Properties.Resources.icons8_customer_642;
+            this.pictureBox36.Location = new System.Drawing.Point(3, 5);
+            this.pictureBox36.Name = "pictureBox36";
+            this.pictureBox36.Size = new System.Drawing.Size(41, 31);
+            this.pictureBox36.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox36.TabIndex = 3;
+            this.pictureBox36.TabStop = false;
+            // 
+            // pictureBox32
+            // 
+            this.pictureBox32.Image = global::CrystalReport.Properties.Resources.excell;
+            this.pictureBox32.Location = new System.Drawing.Point(2, 52);
+            this.pictureBox32.Name = "pictureBox32";
+            this.pictureBox32.Size = new System.Drawing.Size(34, 27);
+            this.pictureBox32.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox32.TabIndex = 17;
+            this.pictureBox32.TabStop = false;
+            // 
+            // pictureBox31
+            // 
+            this.pictureBox31.Image = global::CrystalReport.Properties.Resources.excell;
+            this.pictureBox31.Location = new System.Drawing.Point(4, 12);
+            this.pictureBox31.Name = "pictureBox31";
+            this.pictureBox31.Size = new System.Drawing.Size(34, 27);
+            this.pictureBox31.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox31.TabIndex = 15;
+            this.pictureBox31.TabStop = false;
+            // 
+            // pictureBox37
+            // 
+            this.pictureBox37.Image = global::CrystalReport.Properties.Resources.icons8_customer_642;
+            this.pictureBox37.Location = new System.Drawing.Point(3, 42);
+            this.pictureBox37.Name = "pictureBox37";
+            this.pictureBox37.Size = new System.Drawing.Size(41, 31);
+            this.pictureBox37.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox37.TabIndex = 4;
+            this.pictureBox37.TabStop = false;
+            // 
+            // pictureBox38
+            // 
+            this.pictureBox38.Image = global::CrystalReport.Properties.Resources.icons8_customer_642;
+            this.pictureBox38.Location = new System.Drawing.Point(3, 5);
+            this.pictureBox38.Name = "pictureBox38";
+            this.pictureBox38.Size = new System.Drawing.Size(41, 31);
+            this.pictureBox38.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox38.TabIndex = 3;
+            this.pictureBox38.TabStop = false;
+            // 
+            // pictureBox70
+            // 
+            this.pictureBox70.Image = global::CrystalReport.Properties.Resources.stockssssss;
+            this.pictureBox70.Location = new System.Drawing.Point(1, 192);
+            this.pictureBox70.Name = "pictureBox70";
+            this.pictureBox70.Size = new System.Drawing.Size(37, 29);
+            this.pictureBox70.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox70.TabIndex = 14;
+            this.pictureBox70.TabStop = false;
+            // 
+            // pictureBox69
+            // 
+            this.pictureBox69.Image = global::CrystalReport.Properties.Resources.stockssssss;
+            this.pictureBox69.Location = new System.Drawing.Point(1, 152);
+            this.pictureBox69.Name = "pictureBox69";
+            this.pictureBox69.Size = new System.Drawing.Size(37, 29);
+            this.pictureBox69.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox69.TabIndex = 12;
+            this.pictureBox69.TabStop = false;
+            this.pictureBox69.Click += new System.EventHandler(this.pictureBox69_Click);
+            // 
+            // pictureBox68
+            // 
+            this.pictureBox68.Image = global::CrystalReport.Properties.Resources.stockssssss;
+            this.pictureBox68.Location = new System.Drawing.Point(2, 115);
+            this.pictureBox68.Name = "pictureBox68";
+            this.pictureBox68.Size = new System.Drawing.Size(37, 29);
+            this.pictureBox68.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox68.TabIndex = 10;
+            this.pictureBox68.TabStop = false;
+            // 
+            // pictureBox67
+            // 
+            this.pictureBox67.Image = global::CrystalReport.Properties.Resources.stockssssss;
+            this.pictureBox67.Location = new System.Drawing.Point(2, 78);
+            this.pictureBox67.Name = "pictureBox67";
+            this.pictureBox67.Size = new System.Drawing.Size(37, 29);
+            this.pictureBox67.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox67.TabIndex = 8;
+            this.pictureBox67.TabStop = false;
+            // 
+            // pictureBox65
+            // 
+            this.pictureBox65.Image = global::CrystalReport.Properties.Resources.stockssssss;
+            this.pictureBox65.Location = new System.Drawing.Point(4, 7);
+            this.pictureBox65.Name = "pictureBox65";
+            this.pictureBox65.Size = new System.Drawing.Size(37, 29);
+            this.pictureBox65.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox65.TabIndex = 7;
+            this.pictureBox65.TabStop = false;
+            // 
+            // pictureBox66
+            // 
+            this.pictureBox66.Image = global::CrystalReport.Properties.Resources.stockssssss;
+            this.pictureBox66.Location = new System.Drawing.Point(1, 42);
+            this.pictureBox66.Name = "pictureBox66";
+            this.pictureBox66.Size = new System.Drawing.Size(37, 29);
+            this.pictureBox66.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox66.TabIndex = 3;
+            this.pictureBox66.TabStop = false;
+            // 
+            // pictureBox63
+            // 
+            this.pictureBox63.Image = global::CrystalReport.Properties.Resources.icons8_customer_642;
+            this.pictureBox63.Location = new System.Drawing.Point(3, 42);
+            this.pictureBox63.Name = "pictureBox63";
+            this.pictureBox63.Size = new System.Drawing.Size(41, 31);
+            this.pictureBox63.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox63.TabIndex = 4;
+            this.pictureBox63.TabStop = false;
+            // 
+            // pictureBox64
+            // 
+            this.pictureBox64.Image = global::CrystalReport.Properties.Resources.icons8_customer_642;
+            this.pictureBox64.Location = new System.Drawing.Point(3, 5);
+            this.pictureBox64.Name = "pictureBox64";
+            this.pictureBox64.Size = new System.Drawing.Size(41, 31);
+            this.pictureBox64.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox64.TabIndex = 3;
+            this.pictureBox64.TabStop = false;
+            // 
+            // pictureBox62
+            // 
+            this.pictureBox62.Image = global::CrystalReport.Properties.Resources.transactions;
+            this.pictureBox62.Location = new System.Drawing.Point(5, 192);
+            this.pictureBox62.Name = "pictureBox62";
+            this.pictureBox62.Size = new System.Drawing.Size(41, 31);
+            this.pictureBox62.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox62.TabIndex = 13;
+            this.pictureBox62.TabStop = false;
+            // 
+            // pictureBox61
+            // 
+            this.pictureBox61.Image = global::CrystalReport.Properties.Resources.transactions;
+            this.pictureBox61.Location = new System.Drawing.Point(5, 152);
+            this.pictureBox61.Name = "pictureBox61";
+            this.pictureBox61.Size = new System.Drawing.Size(41, 31);
+            this.pictureBox61.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox61.TabIndex = 11;
+            this.pictureBox61.TabStop = false;
+            // 
+            // pictureBox55
+            // 
+            this.pictureBox55.Image = global::CrystalReport.Properties.Resources.transactions;
+            this.pictureBox55.Location = new System.Drawing.Point(5, 116);
+            this.pictureBox55.Name = "pictureBox55";
+            this.pictureBox55.Size = new System.Drawing.Size(41, 31);
+            this.pictureBox55.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox55.TabIndex = 9;
+            this.pictureBox55.TabStop = false;
+            // 
+            // pictureBox56
+            // 
+            this.pictureBox56.Image = global::CrystalReport.Properties.Resources.transactions;
+            this.pictureBox56.Location = new System.Drawing.Point(4, 79);
+            this.pictureBox56.Name = "pictureBox56";
+            this.pictureBox56.Size = new System.Drawing.Size(41, 31);
+            this.pictureBox56.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox56.TabIndex = 7;
+            this.pictureBox56.TabStop = false;
+            // 
+            // pictureBox57
+            // 
+            this.pictureBox57.Image = global::CrystalReport.Properties.Resources.icons8_customer_642;
+            this.pictureBox57.Location = new System.Drawing.Point(3, 42);
+            this.pictureBox57.Name = "pictureBox57";
+            this.pictureBox57.Size = new System.Drawing.Size(41, 31);
+            this.pictureBox57.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox57.TabIndex = 4;
+            this.pictureBox57.TabStop = false;
+            // 
+            // pictureBox58
+            // 
+            this.pictureBox58.Image = global::CrystalReport.Properties.Resources.icons8_customer_642;
+            this.pictureBox58.Location = new System.Drawing.Point(3, 5);
+            this.pictureBox58.Name = "pictureBox58";
+            this.pictureBox58.Size = new System.Drawing.Size(41, 31);
+            this.pictureBox58.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox58.TabIndex = 3;
+            this.pictureBox58.TabStop = false;
+            // 
+            // pictureBox59
+            // 
+            this.pictureBox59.Image = global::CrystalReport.Properties.Resources.transactions;
+            this.pictureBox59.Location = new System.Drawing.Point(3, 42);
+            this.pictureBox59.Name = "pictureBox59";
+            this.pictureBox59.Size = new System.Drawing.Size(41, 31);
+            this.pictureBox59.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox59.TabIndex = 4;
+            this.pictureBox59.TabStop = false;
+            // 
+            // pictureBox60
+            // 
+            this.pictureBox60.Image = global::CrystalReport.Properties.Resources.transactions;
+            this.pictureBox60.Location = new System.Drawing.Point(3, 5);
+            this.pictureBox60.Name = "pictureBox60";
+            this.pictureBox60.Size = new System.Drawing.Size(41, 31);
+            this.pictureBox60.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox60.TabIndex = 3;
+            this.pictureBox60.TabStop = false;
+            // 
+            // pictureBox54
+            // 
+            this.pictureBox54.Image = global::CrystalReport.Properties.Resources.master;
+            this.pictureBox54.Location = new System.Drawing.Point(5, 116);
+            this.pictureBox54.Name = "pictureBox54";
+            this.pictureBox54.Size = new System.Drawing.Size(41, 31);
+            this.pictureBox54.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox54.TabIndex = 9;
+            this.pictureBox54.TabStop = false;
+            // 
+            // pictureBox53
+            // 
+            this.pictureBox53.Image = global::CrystalReport.Properties.Resources.master;
+            this.pictureBox53.Location = new System.Drawing.Point(4, 79);
+            this.pictureBox53.Name = "pictureBox53";
+            this.pictureBox53.Size = new System.Drawing.Size(41, 31);
+            this.pictureBox53.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox53.TabIndex = 7;
+            this.pictureBox53.TabStop = false;
+            // 
+            // pictureBox44
+            // 
+            this.pictureBox44.Image = global::CrystalReport.Properties.Resources.icons8_customer_642;
+            this.pictureBox44.Location = new System.Drawing.Point(3, 42);
+            this.pictureBox44.Name = "pictureBox44";
+            this.pictureBox44.Size = new System.Drawing.Size(41, 31);
+            this.pictureBox44.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox44.TabIndex = 4;
+            this.pictureBox44.TabStop = false;
+            // 
+            // pictureBox45
+            // 
+            this.pictureBox45.Image = global::CrystalReport.Properties.Resources.icons8_customer_642;
+            this.pictureBox45.Location = new System.Drawing.Point(3, 5);
+            this.pictureBox45.Name = "pictureBox45";
+            this.pictureBox45.Size = new System.Drawing.Size(41, 31);
+            this.pictureBox45.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox45.TabIndex = 3;
+            this.pictureBox45.TabStop = false;
+            // 
+            // pictureBox46
+            // 
+            this.pictureBox46.Image = global::CrystalReport.Properties.Resources.master;
+            this.pictureBox46.Location = new System.Drawing.Point(3, 42);
+            this.pictureBox46.Name = "pictureBox46";
+            this.pictureBox46.Size = new System.Drawing.Size(41, 31);
+            this.pictureBox46.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox46.TabIndex = 4;
+            this.pictureBox46.TabStop = false;
+            // 
+            // pictureBox47
+            // 
+            this.pictureBox47.Image = global::CrystalReport.Properties.Resources.master;
+            this.pictureBox47.Location = new System.Drawing.Point(3, 5);
+            this.pictureBox47.Name = "pictureBox47";
+            this.pictureBox47.Size = new System.Drawing.Size(41, 31);
+            this.pictureBox47.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox47.TabIndex = 3;
+            this.pictureBox47.TabStop = false;
+            // 
+            // pictureBox40
+            // 
+            this.pictureBox40.Image = global::CrystalReport.Properties.Resources.icons8_bill_641;
+            this.pictureBox40.Location = new System.Drawing.Point(-2, 181);
+            this.pictureBox40.Name = "pictureBox40";
+            this.pictureBox40.Size = new System.Drawing.Size(40, 31);
+            this.pictureBox40.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox40.TabIndex = 18;
+            this.pictureBox40.TabStop = false;
+            // 
+            // pictureBox51
+            // 
+            this.pictureBox51.Image = global::CrystalReport.Properties.Resources.icons8_bill_641;
+            this.pictureBox51.Location = new System.Drawing.Point(-3, 149);
+            this.pictureBox51.Name = "pictureBox51";
+            this.pictureBox51.Size = new System.Drawing.Size(40, 31);
+            this.pictureBox51.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox51.TabIndex = 16;
+            this.pictureBox51.TabStop = false;
+            // 
+            // pictureBox50
+            // 
+            this.pictureBox50.Image = global::CrystalReport.Properties.Resources.icons8_bill_641;
+            this.pictureBox50.Location = new System.Drawing.Point(-3, 116);
+            this.pictureBox50.Name = "pictureBox50";
+            this.pictureBox50.Size = new System.Drawing.Size(40, 31);
+            this.pictureBox50.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox50.TabIndex = 14;
+            this.pictureBox50.TabStop = false;
+            // 
+            // pictureBox49
+            // 
+            this.pictureBox49.Image = global::CrystalReport.Properties.Resources.icons8_bill_641;
+            this.pictureBox49.Location = new System.Drawing.Point(-3, 79);
+            this.pictureBox49.Name = "pictureBox49";
+            this.pictureBox49.Size = new System.Drawing.Size(40, 31);
+            this.pictureBox49.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox49.TabIndex = 12;
+            this.pictureBox49.TabStop = false;
+            // 
+            // pictureBox48
+            // 
+            this.pictureBox48.Image = global::CrystalReport.Properties.Resources.icons8_bill_641;
+            this.pictureBox48.Location = new System.Drawing.Point(-4, 42);
+            this.pictureBox48.Name = "pictureBox48";
+            this.pictureBox48.Size = new System.Drawing.Size(40, 31);
+            this.pictureBox48.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox48.TabIndex = 10;
+            this.pictureBox48.TabStop = false;
+            // 
+            // pictureBox41
+            // 
+            this.pictureBox41.Image = global::CrystalReport.Properties.Resources.icons8_bill_641;
+            this.pictureBox41.Location = new System.Drawing.Point(-4, 8);
+            this.pictureBox41.Name = "pictureBox41";
+            this.pictureBox41.Size = new System.Drawing.Size(40, 31);
+            this.pictureBox41.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox41.TabIndex = 8;
+            this.pictureBox41.TabStop = false;
+            this.pictureBox41.Click += new System.EventHandler(this.pictureBox41_Click);
+            // 
+            // pictureBox42
+            // 
+            this.pictureBox42.Image = global::CrystalReport.Properties.Resources.icons8_customer_642;
+            this.pictureBox42.Location = new System.Drawing.Point(3, 42);
+            this.pictureBox42.Name = "pictureBox42";
+            this.pictureBox42.Size = new System.Drawing.Size(41, 31);
+            this.pictureBox42.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox42.TabIndex = 4;
+            this.pictureBox42.TabStop = false;
+            // 
+            // pictureBox43
+            // 
+            this.pictureBox43.Image = global::CrystalReport.Properties.Resources.icons8_customer_642;
+            this.pictureBox43.Location = new System.Drawing.Point(3, 5);
+            this.pictureBox43.Name = "pictureBox43";
+            this.pictureBox43.Size = new System.Drawing.Size(41, 31);
+            this.pictureBox43.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox43.TabIndex = 3;
+            this.pictureBox43.TabStop = false;
+            // 
+            // pictureBox28
+            // 
+            this.pictureBox28.Image = global::CrystalReport.Properties.Resources.companyyy;
+            this.pictureBox28.Location = new System.Drawing.Point(6, 40);
+            this.pictureBox28.Name = "pictureBox28";
+            this.pictureBox28.Size = new System.Drawing.Size(43, 31);
+            this.pictureBox28.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox28.TabIndex = 8;
+            this.pictureBox28.TabStop = false;
+            // 
+            // pictureBox11
+            // 
+            this.pictureBox11.Image = global::CrystalReport.Properties.Resources.companyyy;
+            this.pictureBox11.Location = new System.Drawing.Point(6, 5);
+            this.pictureBox11.Name = "pictureBox11";
+            this.pictureBox11.Size = new System.Drawing.Size(43, 31);
+            this.pictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox11.TabIndex = 8;
+            this.pictureBox11.TabStop = false;
+            // 
+            // pictureBox29
+            // 
+            this.pictureBox29.Image = global::CrystalReport.Properties.Resources.icons8_customer_642;
+            this.pictureBox29.Location = new System.Drawing.Point(3, 42);
+            this.pictureBox29.Name = "pictureBox29";
+            this.pictureBox29.Size = new System.Drawing.Size(41, 31);
+            this.pictureBox29.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox29.TabIndex = 4;
+            this.pictureBox29.TabStop = false;
+            // 
+            // pictureBox30
+            // 
+            this.pictureBox30.Image = global::CrystalReport.Properties.Resources.icons8_customer_642;
+            this.pictureBox30.Location = new System.Drawing.Point(3, 5);
+            this.pictureBox30.Name = "pictureBox30";
+            this.pictureBox30.Size = new System.Drawing.Size(41, 31);
+            this.pictureBox30.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox30.TabIndex = 3;
+            this.pictureBox30.TabStop = false;
+            // 
+            // pictureBox27
+            // 
+            this.pictureBox27.Image = global::CrystalReport.Properties.Resources.purches4;
+            this.pictureBox27.Location = new System.Drawing.Point(5, 78);
+            this.pictureBox27.Name = "pictureBox27";
+            this.pictureBox27.Size = new System.Drawing.Size(41, 31);
+            this.pictureBox27.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox27.TabIndex = 9;
+            this.pictureBox27.TabStop = false;
+            // 
+            // pictureBox25
+            // 
+            this.pictureBox25.Image = global::CrystalReport.Properties.Resources.purches4;
+            this.pictureBox25.Location = new System.Drawing.Point(4, 42);
+            this.pictureBox25.Name = "pictureBox25";
+            this.pictureBox25.Size = new System.Drawing.Size(41, 31);
+            this.pictureBox25.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox25.TabIndex = 7;
+            this.pictureBox25.TabStop = false;
+            // 
+            // pictureBox23
+            // 
+            this.pictureBox23.Image = global::CrystalReport.Properties.Resources.icons8_customer_642;
+            this.pictureBox23.Location = new System.Drawing.Point(3, 42);
+            this.pictureBox23.Name = "pictureBox23";
+            this.pictureBox23.Size = new System.Drawing.Size(41, 31);
+            this.pictureBox23.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox23.TabIndex = 4;
+            this.pictureBox23.TabStop = false;
+            // 
+            // pictureBox24
+            // 
+            this.pictureBox24.Image = global::CrystalReport.Properties.Resources.icons8_customer_642;
+            this.pictureBox24.Location = new System.Drawing.Point(3, 5);
+            this.pictureBox24.Name = "pictureBox24";
+            this.pictureBox24.Size = new System.Drawing.Size(41, 31);
+            this.pictureBox24.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox24.TabIndex = 3;
+            this.pictureBox24.TabStop = false;
+            // 
+            // pictureBox26
+            // 
+            this.pictureBox26.Image = global::CrystalReport.Properties.Resources.purches4;
+            this.pictureBox26.Location = new System.Drawing.Point(3, 5);
+            this.pictureBox26.Name = "pictureBox26";
+            this.pictureBox26.Size = new System.Drawing.Size(41, 31);
+            this.pictureBox26.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox26.TabIndex = 3;
+            this.pictureBox26.TabStop = false;
+            // 
+            // pictureBox21
+            // 
+            this.pictureBox21.Image = global::CrystalReport.Properties.Resources.icons8_customer_642;
+            this.pictureBox21.Location = new System.Drawing.Point(3, 42);
+            this.pictureBox21.Name = "pictureBox21";
+            this.pictureBox21.Size = new System.Drawing.Size(41, 31);
+            this.pictureBox21.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox21.TabIndex = 4;
+            this.pictureBox21.TabStop = false;
+            // 
+            // pictureBox22
+            // 
+            this.pictureBox22.Image = global::CrystalReport.Properties.Resources.icons8_customer_642;
+            this.pictureBox22.Location = new System.Drawing.Point(3, 5);
+            this.pictureBox22.Name = "pictureBox22";
+            this.pictureBox22.Size = new System.Drawing.Size(41, 31);
+            this.pictureBox22.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox22.TabIndex = 3;
+            this.pictureBox22.TabStop = false;
+            // 
+            // pictureBox20
+            // 
+            this.pictureBox20.Image = global::CrystalReport.Properties.Resources.icons8_customer_642;
+            this.pictureBox20.Location = new System.Drawing.Point(3, 42);
+            this.pictureBox20.Name = "pictureBox20";
+            this.pictureBox20.Size = new System.Drawing.Size(41, 31);
+            this.pictureBox20.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox20.TabIndex = 4;
+            this.pictureBox20.TabStop = false;
+            // 
+            // pictureBox19
+            // 
+            this.pictureBox19.Image = global::CrystalReport.Properties.Resources.icons8_customer_642;
+            this.pictureBox19.Location = new System.Drawing.Point(3, 5);
+            this.pictureBox19.Name = "pictureBox19";
+            this.pictureBox19.Size = new System.Drawing.Size(41, 31);
+            this.pictureBox19.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox19.TabIndex = 3;
+            this.pictureBox19.TabStop = false;
+            // 
+            // gunaButton5
+            // 
+            this.gunaButton5.AnimationHoverSpeed = 0.07F;
+            this.gunaButton5.AnimationSpeed = 0.03F;
+            this.gunaButton5.BackColor = System.Drawing.Color.DarkOrange;
+            this.gunaButton5.BaseColor = System.Drawing.SystemColors.ControlLightLight;
+            this.gunaButton5.BorderColor = System.Drawing.Color.Black;
+            this.gunaButton5.BorderSize = 1;
+            this.gunaButton5.CausesValidation = false;
+            this.gunaButton5.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.gunaButton5.FocusedColor = System.Drawing.Color.Empty;
+            this.gunaButton5.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaButton5.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.gunaButton5.Image = global::CrystalReport.Properties.Resources.expenses;
+            this.gunaButton5.ImageSize = new System.Drawing.Size(20, 20);
+            this.gunaButton5.Location = new System.Drawing.Point(469, 3);
+            this.gunaButton5.Name = "gunaButton5";
+            this.gunaButton5.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.gunaButton5.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.gunaButton5.OnHoverForeColor = System.Drawing.Color.White;
+            this.gunaButton5.OnHoverImage = null;
+            this.gunaButton5.OnPressedColor = System.Drawing.Color.Black;
+            this.gunaButton5.Size = new System.Drawing.Size(113, 37);
+            this.gunaButton5.TabIndex = 13;
+            this.gunaButton5.Text = "Kharcha";
+            this.gunaButton5.Click += new System.EventHandler(this.gunaButton5_Click);
+            // 
+            // gunaButton4
+            // 
+            this.gunaButton4.AnimationHoverSpeed = 0.07F;
+            this.gunaButton4.AnimationSpeed = 0.03F;
+            this.gunaButton4.BackColor = System.Drawing.Color.DarkOrange;
+            this.gunaButton4.BaseColor = System.Drawing.SystemColors.ControlLightLight;
+            this.gunaButton4.BorderColor = System.Drawing.Color.Black;
+            this.gunaButton4.BorderSize = 1;
+            this.gunaButton4.CausesValidation = false;
+            this.gunaButton4.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.gunaButton4.FocusedColor = System.Drawing.Color.Empty;
+            this.gunaButton4.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaButton4.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.gunaButton4.Image = global::CrystalReport.Properties.Resources.cashback;
+            this.gunaButton4.ImageSize = new System.Drawing.Size(20, 20);
+            this.gunaButton4.Location = new System.Drawing.Point(348, 3);
+            this.gunaButton4.Name = "gunaButton4";
+            this.gunaButton4.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.gunaButton4.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.gunaButton4.OnHoverForeColor = System.Drawing.Color.White;
+            this.gunaButton4.OnHoverImage = null;
+            this.gunaButton4.OnPressedColor = System.Drawing.Color.Black;
+            this.gunaButton4.Size = new System.Drawing.Size(113, 37);
+            this.gunaButton4.TabIndex = 12;
+            this.gunaButton4.Text = "Recovery";
+            this.gunaButton4.Click += new System.EventHandler(this.gunaButton4_Click);
+            // 
+            // gunaButton3
+            // 
+            this.gunaButton3.AnimationHoverSpeed = 0.07F;
+            this.gunaButton3.AnimationSpeed = 0.03F;
+            this.gunaButton3.BackColor = System.Drawing.Color.DarkOrange;
+            this.gunaButton3.BaseColor = System.Drawing.Color.AntiqueWhite;
+            this.gunaButton3.BorderColor = System.Drawing.Color.Black;
+            this.gunaButton3.BorderSize = 1;
+            this.gunaButton3.CausesValidation = false;
+            this.gunaButton3.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.gunaButton3.FocusedColor = System.Drawing.Color.Empty;
+            this.gunaButton3.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaButton3.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.gunaButton3.Image = global::CrystalReport.Properties.Resources.backup;
+            this.gunaButton3.ImageSize = new System.Drawing.Size(20, 20);
+            this.gunaButton3.Location = new System.Drawing.Point(588, 3);
+            this.gunaButton3.Name = "gunaButton3";
+            this.gunaButton3.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.gunaButton3.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.gunaButton3.OnHoverForeColor = System.Drawing.Color.White;
+            this.gunaButton3.OnHoverImage = null;
+            this.gunaButton3.OnPressedColor = System.Drawing.Color.Black;
+            this.gunaButton3.Size = new System.Drawing.Size(99, 37);
+            this.gunaButton3.TabIndex = 8;
+            this.gunaButton3.Text = "Backup";
+            this.gunaButton3.Click += new System.EventHandler(this.gunaButton3_Click);
+            // 
+            // gunaButton2
+            // 
+            this.gunaButton2.AnimationHoverSpeed = 0.07F;
+            this.gunaButton2.AnimationSpeed = 0.03F;
+            this.gunaButton2.BackColor = System.Drawing.Color.DarkOrange;
+            this.gunaButton2.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.gunaButton2.BorderColor = System.Drawing.Color.Black;
+            this.gunaButton2.BorderSize = 1;
+            this.gunaButton2.CausesValidation = false;
+            this.gunaButton2.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.gunaButton2.FocusedColor = System.Drawing.Color.Empty;
+            this.gunaButton2.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaButton2.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.gunaButton2.Image = global::CrystalReport.Properties.Resources.sales;
+            this.gunaButton2.ImageSize = new System.Drawing.Size(20, 20);
+            this.gunaButton2.Location = new System.Drawing.Point(205, 3);
+            this.gunaButton2.Name = "gunaButton2";
+            this.gunaButton2.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.gunaButton2.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.gunaButton2.OnHoverForeColor = System.Drawing.Color.White;
+            this.gunaButton2.OnHoverImage = null;
+            this.gunaButton2.OnPressedColor = System.Drawing.Color.Black;
+            this.gunaButton2.Size = new System.Drawing.Size(135, 37);
+            this.gunaButton2.TabIndex = 1000000000;
+            this.gunaButton2.Text = "Sale History";
+            this.gunaButton2.Click += new System.EventHandler(this.gunaButton2_Click);
+            // 
+            // gunaButton1
+            // 
+            this.gunaButton1.AnimationHoverSpeed = 0.07F;
+            this.gunaButton1.AnimationSpeed = 0.03F;
+            this.gunaButton1.BackColor = System.Drawing.Color.DarkOrange;
+            this.gunaButton1.BaseColor = System.Drawing.SystemColors.ControlLightLight;
+            this.gunaButton1.BorderColor = System.Drawing.Color.Black;
+            this.gunaButton1.BorderSize = 1;
+            this.gunaButton1.CausesValidation = false;
+            this.gunaButton1.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.gunaButton1.FocusedColor = System.Drawing.Color.Empty;
+            this.gunaButton1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaButton1.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.gunaButton1.Image = global::CrystalReport.Properties.Resources.rupee_indian;
+            this.gunaButton1.ImageSize = new System.Drawing.Size(20, 20);
+            this.gunaButton1.Location = new System.Drawing.Point(6, 3);
+            this.gunaButton1.Name = "gunaButton1";
+            this.gunaButton1.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.gunaButton1.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.gunaButton1.OnHoverForeColor = System.Drawing.Color.White;
+            this.gunaButton1.OnHoverImage = null;
+            this.gunaButton1.OnPressedColor = System.Drawing.Color.Black;
+            this.gunaButton1.Size = new System.Drawing.Size(193, 37);
+            this.gunaButton1.TabIndex = 12000000;
+            this.gunaButton1.Text = "Transaction History";
+            this.gunaButton1.Click += new System.EventHandler(this.gunaButton1_Click);
+            // 
+            // pictureBox52
+            // 
+            this.pictureBox52.Image = global::CrystalReport.Properties.Resources.master;
+            this.pictureBox52.Location = new System.Drawing.Point(2, 0);
+            this.pictureBox52.Name = "pictureBox52";
+            this.pictureBox52.Size = new System.Drawing.Size(42, 29);
+            this.pictureBox52.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox52.TabIndex = 0;
+            this.pictureBox52.TabStop = false;
+            // 
+            // pictureBox15
+            // 
+            this.pictureBox15.Image = global::CrystalReport.Properties.Resources.owner;
+            this.pictureBox15.Location = new System.Drawing.Point(-2, 3);
+            this.pictureBox15.Name = "pictureBox15";
+            this.pictureBox15.Size = new System.Drawing.Size(38, 30);
+            this.pictureBox15.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox15.TabIndex = 6;
+            this.pictureBox15.TabStop = false;
+            // 
+            // pictureBox18
+            // 
+            this.pictureBox18.Image = global::CrystalReport.Properties.Resources.settings_64;
+            this.pictureBox18.Location = new System.Drawing.Point(-1, 3);
+            this.pictureBox18.Name = "pictureBox18";
+            this.pictureBox18.Size = new System.Drawing.Size(38, 30);
+            this.pictureBox18.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox18.TabIndex = 15;
+            this.pictureBox18.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::CrystalReport.Properties.Resources.icons8_rupee_501;
+            this.pictureBox2.Location = new System.Drawing.Point(-1, 3);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(38, 30);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 11;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox9
+            // 
+            this.pictureBox9.Image = global::CrystalReport.Properties.Resources.icons8_bill_641;
+            this.pictureBox9.Location = new System.Drawing.Point(-1, 2);
+            this.pictureBox9.Name = "pictureBox9";
+            this.pictureBox9.Size = new System.Drawing.Size(40, 31);
+            this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox9.TabIndex = 6;
+            this.pictureBox9.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::CrystalReport.Properties.Resources.excell;
+            this.pictureBox1.Location = new System.Drawing.Point(3, 6);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(34, 27);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 14;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pictureBox17
+            // 
+            this.pictureBox17.Image = global::CrystalReport.Properties.Resources.gst;
+            this.pictureBox17.Location = new System.Drawing.Point(1, 2);
+            this.pictureBox17.Name = "pictureBox17";
+            this.pictureBox17.Size = new System.Drawing.Size(43, 31);
+            this.pictureBox17.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox17.TabIndex = 0;
+            this.pictureBox17.TabStop = false;
+            this.pictureBox17.Click += new System.EventHandler(this.pictureBox4_Click);
+            // 
+            // pictureBox12
+            // 
+            this.pictureBox12.Image = global::CrystalReport.Properties.Resources.companyyy;
+            this.pictureBox12.Location = new System.Drawing.Point(4, 2);
+            this.pictureBox12.Name = "pictureBox12";
+            this.pictureBox12.Size = new System.Drawing.Size(43, 31);
+            this.pictureBox12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox12.TabIndex = 0;
+            this.pictureBox12.TabStop = false;
+            this.pictureBox12.Click += new System.EventHandler(this.pictureBox4_Click);
+            // 
+            // pictureBox10
+            // 
+            this.pictureBox10.Image = global::CrystalReport.Properties.Resources.purches2;
+            this.pictureBox10.Location = new System.Drawing.Point(-1, 3);
+            this.pictureBox10.Name = "pictureBox10";
+            this.pictureBox10.Size = new System.Drawing.Size(41, 28);
+            this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox10.TabIndex = 0;
+            this.pictureBox10.TabStop = false;
+            this.pictureBox10.Click += new System.EventHandler(this.pictureBox4_Click);
+            // 
+            // pictureBox7
+            // 
+            this.pictureBox7.Image = global::CrystalReport.Properties.Resources.barcode;
+            this.pictureBox7.Location = new System.Drawing.Point(3, 2);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(42, 31);
+            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox7.TabIndex = 0;
+            this.pictureBox7.TabStop = false;
+            this.pictureBox7.Click += new System.EventHandler(this.pictureBox4_Click);
+            // 
+            // pictureBox14
+            // 
+            this.pictureBox14.Image = global::CrystalReport.Properties.Resources.POS;
+            this.pictureBox14.Location = new System.Drawing.Point(3, 4);
+            this.pictureBox14.Name = "pictureBox14";
+            this.pictureBox14.Size = new System.Drawing.Size(42, 31);
+            this.pictureBox14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox14.TabIndex = 8;
+            this.pictureBox14.TabStop = false;
+            // 
+            // pictureBox13
+            // 
+            this.pictureBox13.Image = global::CrystalReport.Properties.Resources.icons8_customer_641;
+            this.pictureBox13.Location = new System.Drawing.Point(3, 2);
+            this.pictureBox13.Name = "pictureBox13";
+            this.pictureBox13.Size = new System.Drawing.Size(41, 31);
+            this.pictureBox13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox13.TabIndex = 0;
+            this.pictureBox13.TabStop = false;
+            this.pictureBox13.Click += new System.EventHandler(this.pictureBox4_Click);
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.Image = global::CrystalReport.Properties.Resources.stockk;
+            this.pictureBox6.Location = new System.Drawing.Point(4, 4);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(35, 25);
+            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox6.TabIndex = 0;
+            this.pictureBox6.TabStop = false;
+            this.pictureBox6.Click += new System.EventHandler(this.pictureBox4_Click);
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Image = global::CrystalReport.Properties.Resources.stockssssss;
+            this.pictureBox5.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(40, 31);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox5.TabIndex = 0;
+            this.pictureBox5.TabStop = false;
+            this.pictureBox5.Click += new System.EventHandler(this.pictureBox4_Click);
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = global::CrystalReport.Properties.Resources.transactions;
+            this.pictureBox4.Location = new System.Drawing.Point(4, 0);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(42, 29);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox4.TabIndex = 0;
+            this.pictureBox4.TabStop = false;
+            this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::CrystalReport.Properties.Resources.dashboard4;
+            this.pictureBox3.Location = new System.Drawing.Point(1, -1);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(45, 32);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 0;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox16
+            // 
+            this.pictureBox16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(67)))));
+            this.pictureBox16.Image = global::CrystalReport.Properties.Resources.BillX2;
+            this.pictureBox16.Location = new System.Drawing.Point(26, 4);
+            this.pictureBox16.Name = "pictureBox16";
+            this.pictureBox16.Size = new System.Drawing.Size(145, 68);
+            this.pictureBox16.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox16.TabIndex = 0;
+            this.pictureBox16.TabStop = false;
+            this.pictureBox16.Click += new System.EventHandler(this.pictureBox16_Click);
+            // 
+            // pictureBox8
+            // 
+            this.pictureBox8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.pictureBox8.Image = global::CrystalReport.Properties.Resources.logout;
+            this.pictureBox8.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox8.Name = "pictureBox8";
+            this.pictureBox8.Size = new System.Drawing.Size(37, 35);
+            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox8.TabIndex = 4;
+            this.pictureBox8.TabStop = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1154, 775);
+            this.Controls.Add(this.panel_tax);
             this.Controls.Add(this.import_panel);
             this.Controls.Add(this.record_panel);
             this.Controls.Add(this.tran_panel);
@@ -2688,143 +2977,156 @@ namespace CrystalReport
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Mr.Retailer";
+            this.Text = "BillX";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel25.ResumeLayout(false);
             this.panel25.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox52)).EndInit();
             this.panel18.ResumeLayout(false);
             this.panel18.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).EndInit();
             this.panel17.ResumeLayout(false);
             this.panel17.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox18)).EndInit();
             this.panel16.ResumeLayout(false);
             this.panel16.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel15.ResumeLayout(false);
             this.panel15.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
             this.panel14.ResumeLayout(false);
             this.panel14.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel13.ResumeLayout(false);
             this.panel13.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).EndInit();
             this.panel12.ResumeLayout(false);
             this.panel12.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
             this.panel10.ResumeLayout(false);
             this.panel10.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).EndInit();
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.panelssssss.ResumeLayout(false);
             this.panelssssss.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).EndInit();
             this.panelcustomer.ResumeLayout(false);
             this.panelcustomer.PerformLayout();
             this.panel19.ResumeLayout(false);
             this.panel19.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox21)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox22)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox20)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).EndInit();
             this.purches_panel.ResumeLayout(false);
             this.purches_panel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox27)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox25)).EndInit();
             this.panel21.ResumeLayout(false);
             this.panel21.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox23)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox24)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox26)).EndInit();
             this.panel20.ResumeLayout(false);
             this.panel20.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox29)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox30)).EndInit();
             this.supplier_p.ResumeLayout(false);
             this.supplier_p.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox28)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
             this.bill_panel.ResumeLayout(false);
             this.bill_panel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox40)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox51)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox50)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox49)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox48)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox41)).EndInit();
             this.panel26.ResumeLayout(false);
             this.panel26.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox42)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox43)).EndInit();
             this.master_panel.ResumeLayout(false);
             this.master_panel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox54)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox53)).EndInit();
             this.panel28.ResumeLayout(false);
             this.panel28.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox44)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox45)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox46)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox47)).EndInit();
             this.tran_panel.ResumeLayout(false);
             this.tran_panel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox62)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox61)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox55)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox56)).EndInit();
             this.panel29.ResumeLayout(false);
             this.panel29.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox57)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox58)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox59)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox60)).EndInit();
             this.record_panel.ResumeLayout(false);
             this.record_panel.PerformLayout();
+            this.panel30.ResumeLayout(false);
+            this.panel30.PerformLayout();
+            this.import_panel.ResumeLayout(false);
+            this.import_panel.PerformLayout();
+            this.panel22.ResumeLayout(false);
+            this.panel22.PerformLayout();
+            this.panel_tax.ResumeLayout(false);
+            this.panel_tax.PerformLayout();
+            this.panel23.ResumeLayout(false);
+            this.panel23.PerformLayout();
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox74)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox73)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox72)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox71)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox39)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox33)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox34)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox35)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox36)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox32)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox31)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox37)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox38)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox70)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox69)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox68)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox67)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox65)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox66)).EndInit();
-            this.panel30.ResumeLayout(false);
-            this.panel30.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox63)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox64)).EndInit();
-            this.import_panel.ResumeLayout(false);
-            this.import_panel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox32)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox31)).EndInit();
-            this.panel22.ResumeLayout(false);
-            this.panel22.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox37)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox38)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox62)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox61)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox55)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox56)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox57)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox58)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox59)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox60)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox54)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox53)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox44)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox45)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox46)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox47)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox40)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox51)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox50)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox49)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox48)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox41)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox42)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox43)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox28)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox29)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox30)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox27)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox25)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox23)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox24)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox26)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox21)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox22)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox20)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox52)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox18)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2836,9 +3138,6 @@ namespace CrystalReport
         private System.Windows.Forms.Timer timer2;
         private System.Windows.Forms.Timer timer3;
         private System.Windows.Forms.Timer timer4;
-        private Panel panel6;
-        private Label label12;
-        private PictureBox pictureBox8;
         private PictureBox pictureBox5;
         private PictureBox pictureBox16;
         private PictureBox pictureBox13;
@@ -3019,5 +3318,29 @@ namespace CrystalReport
         private PictureBox pictureBox32;
         private Label label5;
         private Timer import_timer;
+        private Panel panel_tax;
+        private PictureBox pictureBox73;
+        private PictureBox pictureBox72;
+        private PictureBox pictureBox71;
+        private PictureBox pictureBox39;
+        private PictureBox pictureBox33;
+        private PictureBox pictureBox34;
+        private Panel panel23;
+        private PictureBox pictureBox35;
+        private Label label30;
+        private PictureBox pictureBox36;
+        private Label label31;
+        private Label label71;
+        private Label label70;
+        private Label label69;
+        private Label label37;
+        private Label label32;
+        private Label label33;
+        private PictureBox pictureBox74;
+        private Label label72;
+        private Timer timer_tax;
+        private Panel panel6;
+        private Label label12;
+        private PictureBox pictureBox8;
     }
 }

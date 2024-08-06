@@ -173,5 +173,15 @@ namespace CrystalReport.Components
                 MessageBox.Show(ex.Message, "Parti Error:", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
             }
         }
+
+        private void panel9_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

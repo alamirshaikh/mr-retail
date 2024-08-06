@@ -125,10 +125,10 @@ namespace CrystalReport
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(67)))));
-            this.pictureBox1.Image = global::CrystalReport.Properties.Resources.logo_no_background2;
-            this.pictureBox1.Location = new System.Drawing.Point(137, 12);
+            this.pictureBox1.Image = global::CrystalReport.Properties.Resources.BillX3;
+            this.pictureBox1.Location = new System.Drawing.Point(121, 9);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(413, 174);
+            this.pictureBox1.Size = new System.Drawing.Size(460, 201);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 13;
             this.pictureBox1.TabStop = false;

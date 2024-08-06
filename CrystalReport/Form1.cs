@@ -740,6 +740,8 @@ namespace CrystalReport
             isExpandingI = false;
             import_timer.Start();
             isExpandingRe = false;
+            isExpandingTax = false;
+            timer_tax.Start();
             record_timer.Start();
 
             setting_timer.Start();
@@ -994,7 +996,9 @@ namespace CrystalReport
         private void panel13_MouseEnter(object sender, EventArgs e)
         {
             panel13.BackColor = Color.Chocolate;
-            OffOpen();
+            StartExp_Tax();
+      
+            
 
         }
 
@@ -1311,6 +1315,7 @@ namespace CrystalReport
         private bool isExpandingT = true;
         private bool isExpandingRe = true;
         private bool isExpandingI = true;
+        private bool isExpandingTax =true;
 
         private void customer_t_Tick(object sender, EventArgs e)
         {
@@ -1324,6 +1329,8 @@ namespace CrystalReport
                 {
                     isExpandingRe = false;
                     record_timer.Start();
+                    isExpandingTax = false;
+                    timer_tax.Start();
                     isExpandingP = false;
                     purches_timer.Start();
                     isExpandingS = false;
@@ -1527,6 +1534,8 @@ namespace CrystalReport
                     isExpanding = false;
                     customer_t.Start();
                     isExpandingS = false;
+                    isExpandingTax = false;
+                    timer_tax.Start();
                     supplier_timer.Start();
                     isExpandingM = false;
                     isExpandingT = false;
@@ -1582,6 +1591,12 @@ namespace CrystalReport
         {
             isExpandingP = true;
            purches_timer.Start();
+        }
+
+        private void StartExp_Tax()
+        {
+            isExpandingTax = true;
+            timer_tax.Start();
         }
 
 
@@ -1642,6 +1657,8 @@ namespace CrystalReport
                     record_timer.Start();
                     master_timer.Start();
                     isExpandingR = false;
+                    isExpandingTax = false;
+                    timer_tax.Start();
                     isExpandingI = false;
                     import_timer.Start();
                     report_timer.Start();
@@ -1706,6 +1723,8 @@ namespace CrystalReport
                     customer_t.Start();
                     isExpandingP = false;
                     isExpandingT = false;
+                     isExpandingTax = false;
+                    timer_tax.Start();
                     tran_timer.Start();
                     purches_timer.Start();
                     isExpandingM = false;
@@ -1775,6 +1794,8 @@ namespace CrystalReport
                     customer_t.Start();
                     isExpandingRe = false;
                     record_timer.Start();
+                    isExpandingTax = false;
+                    timer_tax.Start();
                     isExpandingT = false;
                     tran_timer.Start();
 
@@ -1851,6 +1872,8 @@ namespace CrystalReport
                     isExpandingM = false;
                     master_timer.Start();
                     isExpandingRe = false;
+                    isExpandingTax = false;
+                    timer_tax.Start();
                     record_timer.Start();
                     isExpandingP = false;
                     purches_timer.Start();
@@ -2132,6 +2155,8 @@ namespace CrystalReport
 
                     isExpandingP = false;
                     purches_timer.Start();
+                    isExpandingTax = false;
+                    timer_tax.Start();
                     isExpandingR = false;
                     report_timer.Start();
                     isExpandingS = false;
@@ -2543,6 +2568,8 @@ namespace CrystalReport
                     customer_t.Start();
                     isExpandingT = false;
                     tran_timer.Start();
+                    isExpandingTax = false;
+                    timer_tax.Start();
 
                     isExpandingRe = false;
                     record_timer.Start();
@@ -2607,6 +2634,154 @@ namespace CrystalReport
             {
                  
             }
+        }
+
+        private void label47_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                Report_Bill cm = new Report_Bill("Sales Report");
+                cm.Show();
+                OffOpen();
+
+            }
+            catch (Exception ex)
+            {
+                 
+            }
+        }
+
+        private void timer_tax_Tick(object sender, EventArgs e)
+        {
+            
+
+
+                     try
+            {
+                int targetHeight = 260; // Target height for expanding the panel
+                int step = 50;         // Amount to increase or decrease the height by each tick
+
+                if (isExpandingTax)
+                {
+                    isExpanding = false;
+                    customer_t.Start();
+                    isExpandingT = false;
+                    tran_timer.Start();
+
+                    isExpandingI = false;
+                    timer_tax.Start();
+
+                    isExpandingRe = false;
+                    record_timer.Start();
+                    isExpandingM = false;
+                    master_timer.Start();
+
+                    isExpandingP = false;
+                    purches_timer.Start();
+                    isExpandingR = false;
+                    report_timer.Start();
+                    isExpandingS = false;
+                    supplier_timer.Start();
+                    isExpandingSe = false;
+                    setting_timer.Start();
+                    if (tran_panel.Height < targetHeight)
+                    {
+                        // Expand the panel
+                        panel_tax.Height += step;
+
+                        // Ensure the panel does not exceed the target height
+                        if (panel_tax.Height >= targetHeight)
+                        {
+                            panel_tax.Height = targetHeight; // Set exact target height
+                            timer_tax.Stop(); // Stop the timer once the target height is reached
+                        }
+                    }
+                }
+                else
+                {
+                    if (panel_tax.Height >= 0)
+                    {
+                        // Collapse the panel
+                        panel_tax.Height -= step;
+
+                        // Ensure the panel does not go below zero
+                        if (panel_tax.Height <= 0)
+                        {
+                            panel_tax.Height = 0; // Set exact zero height
+                            timer_tax.Stop(); // Stop the timer once the panel is fully collapsed
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                // Log the exception message or handle it accordingly
+                MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void timer3_Tick(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label33_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                Report_Bill cm = new Report_Bill("Sale_GST");
+                cm.Show();
+                OffOpen();
+
+            }
+            catch (Exception ex)
+            {
+                 
+            }
+        }
+
+        private void label70_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                GSTR1B cm = new GSTR1B();
+                cm.Show();
+                OffOpen();
+            }
+            catch (Exception ex)
+            {
+                 
+            }
+        }
+
+        private void label32_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                SALE_REGISTER cm = new SALE_REGISTER();
+                cm.Show();
+                OffOpen();
+            }
+            catch (Exception ex)
+            {
+                 
+            }
+        }
+
+        private void label72_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Purches_Register cm = new Purches_Register();
+                cm.Show();
+                OffOpen();
+            }
+            catch (Exception ex)
+            {
+
+            }
+
         }
     }
 }

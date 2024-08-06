@@ -38,6 +38,7 @@ namespace Dr.Sale.Components
             this.button2 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel1.SuspendLayout();
@@ -48,9 +49,9 @@ namespace Dr.Sale.Components
             this.textBox1.BackColor = System.Drawing.Color.MintCream;
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox1.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.textBox1.Location = new System.Drawing.Point(5, 59);
+            this.textBox1.Location = new System.Drawing.Point(6, 71);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(86, 29);
+            this.textBox1.Size = new System.Drawing.Size(135, 29);
             this.textBox1.TabIndex = 1;
             this.textBox1.Text = "PCS";
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -59,11 +60,11 @@ namespace Dr.Sale.Components
             // 
             this.button1.BackColor = System.Drawing.Color.Yellow;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.button1.Font = new System.Drawing.Font("Yu Gothic", 12F);
+            this.button1.Font = new System.Drawing.Font("Yu Gothic", 10F);
             this.button1.ForeColor = System.Drawing.Color.Black;
-            this.button1.Location = new System.Drawing.Point(138, 58);
+            this.button1.Location = new System.Drawing.Point(237, 74);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(63, 31);
+            this.button1.Size = new System.Drawing.Size(74, 31);
             this.button1.TabIndex = 2;
             this.button1.Text = "ADD";
             this.button1.UseVisualStyleBackColor = false;
@@ -73,13 +74,13 @@ namespace Dr.Sale.Components
             // 
             this.listBox1.BackColor = System.Drawing.Color.AliceBlue;
             this.listBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.listBox1.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.listBox1.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listBox1.ForeColor = System.Drawing.Color.RoyalBlue;
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 21;
+            this.listBox1.ItemHeight = 15;
             this.listBox1.Location = new System.Drawing.Point(5, 106);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(306, 191);
+            this.listBox1.Size = new System.Drawing.Size(185, 182);
             this.listBox1.TabIndex = 3;
             // 
             // label2
@@ -95,9 +96,9 @@ namespace Dr.Sale.Components
             // pictureBox1
             // 
             this.pictureBox1.Image = global::CrystalReport.Properties.Resources.delete;
-            this.pictureBox1.Location = new System.Drawing.Point(207, 55);
+            this.pictureBox1.Location = new System.Drawing.Point(198, 112);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(55, 35);
+            this.pictureBox1.Size = new System.Drawing.Size(33, 35);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
@@ -106,7 +107,7 @@ namespace Dr.Sale.Components
             // pictureBox2
             // 
             this.pictureBox2.Image = global::CrystalReport.Properties.Resources.add_enw;
-            this.pictureBox2.Location = new System.Drawing.Point(97, 55);
+            this.pictureBox2.Location = new System.Drawing.Point(196, 74);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(35, 35);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -117,11 +118,11 @@ namespace Dr.Sale.Components
             // 
             this.button2.BackColor = System.Drawing.Color.Yellow;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.button2.Font = new System.Drawing.Font("Yu Gothic", 12F);
+            this.button2.Font = new System.Drawing.Font("Yu Gothic", 10F);
             this.button2.ForeColor = System.Drawing.Color.Black;
-            this.button2.Location = new System.Drawing.Point(268, 55);
+            this.button2.Location = new System.Drawing.Point(237, 111);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(43, 35);
+            this.button2.Size = new System.Drawing.Size(74, 35);
             this.button2.TabIndex = 7;
             this.button2.Text = "Del";
             this.button2.UseVisualStyleBackColor = false;
@@ -147,12 +148,24 @@ namespace Dr.Sale.Components
             this.label1.TabIndex = 9;
             this.label1.Text = "UNIT";
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label3.Location = new System.Drawing.Point(12, 48);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(44, 20);
+            this.label3.TabIndex = 10;
+            this.label3.Text = "UNIT";
+            // 
             // Unit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(314, 309);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.pictureBox2);
@@ -184,5 +197,6 @@ namespace Dr.Sale.Components
         private Button button2;
         private Panel panel1;
         private Label label1;
+        private Label label3;
     }
 }

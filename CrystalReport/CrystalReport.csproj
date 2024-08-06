@@ -7,7 +7,7 @@
     <ProjectGuid>{A125215A-D250-4C6F-A004-EBA649B910FA}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>CrystalReport</RootNamespace>
-    <AssemblyName>Mr.Retail</AssemblyName>
+    <AssemblyName>BillX</AssemblyName>
     <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -54,7 +54,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>tr.ico</ApplicationIcon>
+    <ApplicationIcon>BillX.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
     <ManifestCertificateThumbprint>C4E6A95DB8BB2E829D96C7A96934C2A9658FBF80</ManifestCertificateThumbprint>
@@ -486,17 +486,41 @@
       <DependentUpon>DefaultMaster.cs</DependentUpon>
     </Compile>
     <Compile Include="Components\GetReportLib.cs" />
+    <Compile Include="Components\GSTR1B.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Components\GSTR1B.Designer.cs">
+      <DependentUpon>GSTR1B.cs</DependentUpon>
+    </Compile>
     <Compile Include="Components\GST_MASTER.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Components\GST_MASTER.Designer.cs">
       <DependentUpon>GST_MASTER.cs</DependentUpon>
     </Compile>
+    <Compile Include="Components\Messages.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Components\Messages.Designer.cs">
+      <DependentUpon>Messages.cs</DependentUpon>
+    </Compile>
     <Compile Include="Components\Profit.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Components\Profit.Designer.cs">
       <DependentUpon>Profit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Components\Purches_Register.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Components\Purches_Register.Designer.cs">
+      <DependentUpon>Purches_Register.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Components\SALE_REGISTER.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Components\SALE_REGISTER.Designer.cs">
+      <DependentUpon>SALE_REGISTER.cs</DependentUpon>
     </Compile>
     <Compile Include="Components\Sale_Retern.cs">
       <SubType>UserControl</SubType>
@@ -801,6 +825,13 @@
       <SubType>Component</SubType>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
+    <Compile Include="Sale_GST_REPORT.cs">
+      <DependentUpon>Sale_GST_REPORT.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Thermal.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -890,6 +921,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>StockReport.rpt</DependentUpon>
       <SubType>Component</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
     <Compile Include="TiruInvoice.cs">
       <AutoGen>True</AutoGen>
@@ -935,11 +967,23 @@
     <EmbeddedResource Include="Components\DefaultMaster.resx">
       <DependentUpon>DefaultMaster.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Components\GSTR1B.resx">
+      <DependentUpon>GSTR1B.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Components\GST_MASTER.resx">
       <DependentUpon>GST_MASTER.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Components\Messages.resx">
+      <DependentUpon>Messages.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Components\Profit.resx">
       <DependentUpon>Profit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Components\Purches_Register.resx">
+      <DependentUpon>Purches_Register.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Components\SALE_REGISTER.resx">
+      <DependentUpon>SALE_REGISTER.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Components\Sale_Retern.resx">
       <DependentUpon>Sale_Retern.cs</DependentUpon>
@@ -1102,6 +1146,11 @@
       <LastGenOutput>Purches_Order_Report.cs</LastGenOutput>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
+    <EmbeddedResource Include="Sale_GST_REPORT.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Sale_GST_REPORT.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
     <EmbeddedResource Include="Thermal.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>Thermal.cs</LastGenOutput>
@@ -1156,6 +1205,7 @@
     <EmbeddedResource Include="StockReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>StockReport.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="TiruInvoice.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -1303,6 +1353,7 @@
     <None Include="Resources\logo-color3.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="BillX.ico" />
     <Content Include="mrretail.ico" />
     <None Include="Resources\printer.png" />
     <None Include="Resources\trash-delete.png" />
@@ -1392,6 +1443,16 @@
     <None Include="Resources\transactions.png" />
     <None Include="Resources\profile.png" />
     <None Include="Resources\8671043.jpg" />
+    <None Include="Resources\pdf.png" />
+    <None Include="Resources\update.png" />
+    <None Include="Resources\BillX.png" />
+    <None Include="Resources\BillX1.png" />
+    <None Include="Resources\Logo BillX.jpg" />
+    <None Include="Resources\Logo BillX1.jpg" />
+    <None Include="Resources\BillX2.png" />
+    <None Include="Resources\BillX3.png" />
+    <None Include="Resources\BillX4.png" />
+    <None Include="Resources\Logo BillX2.jpg" />
     <Content Include="tr.ico" />
   </ItemGroup>
   <ItemGroup>

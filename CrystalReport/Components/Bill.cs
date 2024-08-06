@@ -232,18 +232,17 @@ namespace CrystalReport.Components
                 decimal discount = originalAmount * (discountPercentage / 100);
                 senddiscount -= discount;
 
-                decimal gstPercentage;
-                if (decimal.TryParse(gsttext.Text, out gstPercentage))
-                {
+                decimal gstPercentage = decimal.Parse(dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString())+ decimal.Parse(dataGridView1.Rows[e.RowIndex].Cells[5].Value.ToString())+ decimal.Parse(dataGridView1.Rows[e.RowIndex].Cells[6].Value.ToString());
+               
                     // Assuming originalAmount and tax are already defined and are decimals
                     Taxes -= originalAmounts * gstPercentage / 100;
                     tax.Text = Taxes.ToString();
 
 
                     // Ensure the cell values are not null and can be converted to decimal
-                    decimal percentageCGST = Convert.ToDecimal(dataGridView1.Rows[e.RowIndex].Cells[7].Value);
-                    decimal percentageSGST = Convert.ToDecimal(dataGridView1.Rows[e.RowIndex].Cells[8].Value);
-                    decimal percentageIGST = Convert.ToDecimal(dataGridView1.Rows[e.RowIndex].Cells[9].Value);
+                    decimal percentageCGST = Convert.ToDecimal(dataGridView1.Rows[e.RowIndex].Cells[4].Value);
+                    decimal percentageSGST = Convert.ToDecimal(dataGridView1.Rows[e.RowIndex].Cells[5].Value);
+                    decimal percentageIGST = Convert.ToDecimal(dataGridView1.Rows[e.RowIndex].Cells[6].Value);
 
                     // Calculate the monetary values based on the percentages
                     decimal cgstAmount = (percentageCGST / 100) * originalAmounts;
@@ -262,7 +261,7 @@ namespace CrystalReport.Components
 
 
 
-                }
+                
 
 
                 dataGridView1.Rows.RemoveAt(e.RowIndex);
@@ -361,7 +360,8 @@ namespace CrystalReport.Components
                         SGST = Convert.ToDecimal(sgsto.Text),
                         IGST = Convert.ToDecimal(igsto.Text),
                         TAX = TAX_TYPE.Text,
-                        spid = Convert.ToInt64(supid.Text)
+                        spid = Convert.ToInt64(supid.Text),
+                        TAX_TYPE = comboBox1.Text
                          
                     };
 

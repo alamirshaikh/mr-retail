@@ -36,6 +36,15 @@ namespace CrystalReport.Components
  
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
             {
+
+
+            if(keyData == Keys.F1)
+            {
+                button1.PerformClick();
+            }
+
+
+
             if (keyData == Keys.Enter)
             {
                 // Handle the Enter key
